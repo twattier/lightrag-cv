@@ -23,4 +23,5 @@ COPY src/ ./src/
 EXPOSE 8000
 
 # Run FastAPI with uvicorn
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# --timeout-keep-alive: Keep-alive timeout for long document processing (900s = 15min)
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000", "--timeout-keep-alive", "900"]

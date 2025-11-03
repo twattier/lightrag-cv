@@ -11,7 +11,7 @@
 ## Stories
 
 1. ✅ [Story 2.1: Docling REST API Implementation](../stories/story-2.1.md) - **Done** (2025-11-03)
-2. [Story 2.2: CIGREF English PDF Parsing and Quality Validation](../stories/story-2.2.md)
+2. ✅ [Story 2.2: CIGREF English PDF Parsing and Quality Validation](../stories/story-2.2.md) - **Done** (2025-11-04)
 3. [Story 2.3: CV Dataset Acquisition and Preprocessing](../stories/story-2.3.md)
 4. [Story 2.4: CV Parsing and Quality Validation](../stories/story-2.4.md)
 5. [Story 2.5: LightRAG Knowledge Base Ingestion - CIGREF Profiles](../stories/story-2.5.md)
@@ -22,8 +22,8 @@
 
 - **Status**: In Progress
 - **Story Count**: 7
-- **Completed**: 1/7 (14%)
-- **Current Story**: Story 2.2 (CIGREF English PDF Parsing)
+- **Completed**: 2/7 (29%)
+- **Current Story**: Story 2.3 (CV Dataset Acquisition)
 - **Dependencies**: Epic 1 (Foundation & Core Infrastructure) ✅ Complete
 - **Blocked By**: None
 
@@ -37,6 +37,17 @@
   - 100% standards compliance
   - QA Gate: PASS (100/100)
   - Manual validation confirmed
+
+- ✅ **Story 2.2 Complete** - CIGREF PDF parsing with hierarchical metadata enrichment:
+  - 681 chunks extracted from CIGREF English 2024 edition (4.8 MB PDF)
+  - 100/100 quality score (exceeds 85% NFR3 threshold)
+  - 253 tables and 41 job profiles successfully extracted
+  - **NEW:** Hierarchical metadata enrichment via pdfplumber
+  - 93.69% chunk coverage with domain/profile context tree
+  - 9 unique domains and 41 unique job profiles identified
+  - Complete metadata structure: domain_id, domain, job_profile_id, job_profile, section
+  - LightRAG-ready JSON output (750 KB) prepared for Story 2.5 ingestion
+  - GPU processing: 142 seconds (vs. 12-14 min CPU) = 5-6x speedup
 
 ---
 
