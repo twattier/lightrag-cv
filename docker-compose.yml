@@ -1,0 +1,119 @@
+services:
+  postgres:
+    build:
+      context: ./services/postgres
+      dockerfile: Dockerfile
+    container_name: lightrag-cv-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-lightrag_cv}
+      POSTGRES_USER: ${POSTGRES_USER:-lightrag}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?error}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./services/postgres/init:/docker-entrypoint-initdb.d:ro
+    networks:
+      - lightrag-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-lightrag} -d ${POSTGRES_DB:-lightrag_cv}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  docling:
+    build:
+      context: ./services/docling
+      dockerfile: Dockerfile
+    container_name: lightrag-cv-docling
+    environment:
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      DOCLING_INTERNAL_PORT: 8000
+    ports:
+      - "${DOCLING_PORT:-8000}:8000"
+    networks:
+      - lightrag-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:$${DOCLING_INTERNAL_PORT}/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  lightrag:
+    build:
+      context: ./services/lightrag
+      dockerfile: Dockerfile
+    container_name: lightrag-cv-lightrag
+    environment:
+      # Standard PostgreSQL config
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB:-lightrag_cv}
+      POSTGRES_USER: ${POSTGRES_USER:-lightrag}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?error}
+      # LightRAG-specific PostgreSQL env vars
+      POSTGRES_DATABASE: ${POSTGRES_DB:-lightrag_cv}
+      # Ollama configuration
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      OLLAMA_LLM_MODEL: ${OLLAMA_LLM_MODEL:-qwen3:8b}
+      OLLAMA_EMBEDDING_MODEL: ${OLLAMA_EMBEDDING_MODEL:-bge-m3:latest}
+      OLLAMA_RERANKER_MODEL: ${OLLAMA_RERANKER_MODEL:-xitao/bge-reranker-v2-m3}
+      OLLAMA_LLM_NUM_CTX: ${OLLAMA_LLM_NUM_CTX:-40960}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      LIGHTRAG_INTERNAL_PORT: 9621
+    ports:
+      - "${LIGHTRAG_PORT:-9621}:9621"
+    volumes:
+      - ./data/lightrag:/app/data/lightrag
+    networks:
+      - lightrag-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:$${LIGHTRAG_INTERNAL_PORT}/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  mcp-server:
+    build:
+      context: ./services/mcp-server
+      dockerfile: Dockerfile
+    container_name: lightrag-cv-mcp
+    environment:
+      LIGHTRAG_API_URL: http://lightrag:9621
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB:-lightrag_cv}
+      POSTGRES_USER: ${POSTGRES_USER:-lightrag}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?error}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      MCP_INTERNAL_PORT: 3000
+    ports:
+      - "${MCP_PORT:-3000}:3000"
+    networks:
+      - lightrag-network
+    depends_on:
+      lightrag:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:$${MCP_INTERNAL_PORT}/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+networks:
+  lightrag-network:
+    driver: bridge
+    name: lightrag-cv-network
+
+volumes:
+  postgres_data:
+    name: lightrag-cv-postgres-data

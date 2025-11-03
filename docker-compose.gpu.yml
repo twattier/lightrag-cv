@@ -1,0 +1,19 @@
+# GPU Profile Override for Docling Service
+# Usage: docker compose --profile gpu up
+
+services:
+  docling:
+    profiles:
+      - gpu
+    build:
+      context: ./services/docling
+      dockerfile: Dockerfile.gpu
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    environment:
+      GPU_ENABLED: "true"

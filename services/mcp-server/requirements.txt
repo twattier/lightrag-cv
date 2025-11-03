@@ -1,0 +1,21 @@
+# MCP Server Dependencies (Epic 3 implementation)
+
+# Web Framework
+fastapi==0.109.0
+uvicorn[standard]==0.25.0
+pydantic>=2.7.0,<3.0.0
+
+# MCP SDK
+# mcp==0.9.0  # Will be added in Epic 3
+
+# HTTP Client
+httpx==0.26.0
+
+# Database
+psycopg[binary]==3.1.16
+
+# Environment Management
+python-dotenv==1.0.0
+
+# Logging
+python-json-logger==2.0.7
