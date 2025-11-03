@@ -10,7 +10,7 @@
 
 ## Stories
 
-1. [Story 2.1: Docling REST API Implementation](../stories/story-2.1.md)
+1. ✅ [Story 2.1: Docling REST API Implementation](../stories/story-2.1.md) - **Done** (2025-11-03)
 2. [Story 2.2: CIGREF English PDF Parsing and Quality Validation](../stories/story-2.2.md)
 3. [Story 2.3: CV Dataset Acquisition and Preprocessing](../stories/story-2.3.md)
 4. [Story 2.4: CV Parsing and Quality Validation](../stories/story-2.4.md)
@@ -20,10 +20,23 @@
 
 ## Epic Status
 
-- **Status**: Not Started
+- **Status**: In Progress
 - **Story Count**: 7
-- **Dependencies**: Epic 1 (Foundation & Core Infrastructure)
+- **Completed**: 1/7 (14%)
+- **Current Story**: Story 2.2 (CIGREF English PDF Parsing)
+- **Dependencies**: Epic 1 (Foundation & Core Infrastructure) ✅ Complete
 - **Blocked By**: None
+
+## Progress Summary
+
+- ✅ **Story 2.1 Complete** - Docling REST API fully implemented with:
+  - FastAPI service with `/parse` and `/health` endpoints
+  - HybridChunker integration with BAAI/bge-m3 tokenizer
+  - Comprehensive error handling and validation
+  - 6 comprehensive integration tests
+  - 100% standards compliance
+  - QA Gate: PASS (100/100)
+  - Manual validation confirmed
 
 ---
 

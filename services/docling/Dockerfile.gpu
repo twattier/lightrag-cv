@@ -1,10 +1,15 @@
 FROM nvidia/cuda:12.2.0-runtime-ubuntu22.04
 
-# Install Python 3.11
+# Install Python 3.11 and system dependencies (including OpenCV requirements)
 RUN apt-get update && apt-get install -y \
     python3.11 \
     python3-pip \
     curl \
+    libgl1 \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Set Python 3.11 as default

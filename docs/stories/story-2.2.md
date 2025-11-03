@@ -33,11 +33,12 @@
 
 ## Story Status
 
-- **Status**: Not Started
+- **Status**: Ready to Start
 - **Assigned To**: TBD
 - **Estimated Effort**: 6-8 hours
-- **Dependencies**: Story 2.1 (Docling REST API Implementation)
+- **Dependencies**: Story 2.1 (Docling REST API Implementation) ✅ Complete
 - **Blocks**: Story 2.5
+- **Test Data**: ✅ CIGREF PDF downloaded (4.8 MB, 2024 English edition)
 
 ## QA
 

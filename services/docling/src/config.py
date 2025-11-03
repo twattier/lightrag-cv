@@ -1,6 +1,5 @@
 """Configuration management via environment variables."""
 
-import os
 from pydantic_settings import BaseSettings
 
 
@@ -15,6 +14,7 @@ class Settings(BaseSettings):
     GPU_ENABLED: bool = False
     MAX_CHUNK_SIZE: int = 1000
     CHUNK_OVERLAP: int = 200
+    MAX_FILE_SIZE_MB: int = 50  # Maximum file size for document uploads
 
     class Config:
         env_file = ".env"
