@@ -13,7 +13,7 @@
 1. ✅ [Story 2.1: Docling REST API Implementation](../stories/story-2.1.md) - **Done** (2025-11-03)
 2. ✅ [Story 2.2: CIGREF English PDF Parsing and Quality Validation](../stories/story-2.2.md) - **Done** (2025-11-04)
 3. ✅ [Story 2.5: LightRAG Knowledge Base Ingestion - CIGREF Profiles](../stories/story-2.5.md) - **Done** (2025-11-05)
-4. [Story 2.3: CV Dataset Acquisition and Preprocessing](../stories/story-2.3.md)
+4. ✅ [Story 2.3: CV Dataset Acquisition and Preprocessing](../stories/story-2.3.md) - **Done** (2025-11-05)
 5. [Story 2.4: CV Parsing and Quality Validation](../stories/story-2.4.md)
 6. [Story 2.6: LightRAG Knowledge Base Ingestion - CVs](../stories/story-2.6.md)
 7. [Story 2.7: Document Processing Performance Baseline](../stories/story-2.7.md)
@@ -22,8 +22,8 @@
 
 - **Status**: In Progress
 - **Story Count**: 7
-- **Completed**: 3/7 (43%)
-- **Current Story**: Story 2.3 (CV Dataset Acquisition)
+- **Completed**: 4/7 (57%)
+- **Current Story**: Story 2.4 (CV Parsing and Quality Validation)
 - **Dependencies**: Epic 1 (Foundation & Core Infrastructure) ✅ Complete
 - **Blocked By**: None
 
@@ -57,6 +57,16 @@
   - Created `scripts/ingest-cigref-batched.py` for processing in smaller batches
   - Entity and relationship extraction completed successfully
   - Validation confirmed: Entity count, relationship count, graph queries, retrieval tests all passing
+
+- ✅ **Story 2.3 Complete** - CV dataset acquisition and preprocessing:
+  - 25 English IT resumes successfully curated from Hugging Face datasets
+  - Balanced experience level distribution: 32% junior, 36% mid, 32% senior
+  - File size diversity: 30KB - 2.1MB across 1-8 page CVs
+  - Comprehensive metadata manifest with domain, experience, and source tracking
+  - 100% manual validation pass rate (5/5 samples validated)
+  - Documentation in test-data.md with composition statistics and limitations
+  - Dataset ready for Story 2.4 Docling parsing
+  - QA Gate: CONCERNS (70/100) - Accepted as-is for POC scope with code quality improvements deferred
 
 ---
 
