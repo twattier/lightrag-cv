@@ -117,10 +117,10 @@ graph TD
 **Dependencies**: 1.2
 **Blocks**: 1.4, 1.6
 
-**Deliverables**:
+**Deliverables** [NOTE: Custom `src/` implementation later replaced with official lightrag-server]:
 - `services/lightrag/Dockerfile` with LightRAG v0.0.0.post8
 - `services/lightrag/requirements.txt` (LightRAG, psycopg3, FastAPI, httpx)
-- `services/lightrag/src/main.py` with REST API wrapper
+- `services/lightrag/src/main.py` with REST API wrapper (removed in Story 2.5)
 - PostgreSQL storage adapters: PGKVStorage, PGVectorStorage, PGGraphStorage, PGDocStatusStorage
 - `/health` endpoint returning operational status
 - Port 9621 exposed
@@ -324,9 +324,9 @@ All planned deliverables completed:
 - docs/qa/gates/1.6-infrastructure-health-check.yml
 - docs/qa/gates/1.7-development-setup-documentation.yml
 
-**Code Changes**:
-- services/lightrag/src/api/routes.py (bug fix: parameter mismatch)
-- services/lightrag/src/services/lightrag_service.py (bug fix: missing method)
+**Code Changes** [Historical - custom implementation removed in Story 2.5]:
+- services/lightrag/src/api/routes.py (bug fix: parameter mismatch) - removed
+- services/lightrag/src/services/lightrag_service.py (bug fix: missing method) - removed
 
 ---
 

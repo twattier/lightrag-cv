@@ -1,7 +1,7 @@
 # LightRAG Service Dependencies
 
-# Core RAG Engine
-lightrag-hku==1.4.9.7
+# Core RAG Engine with API and Web UI
+lightrag-hku[api]==1.4.9.7
 
 # Web Framework
 fastapi==0.109.0

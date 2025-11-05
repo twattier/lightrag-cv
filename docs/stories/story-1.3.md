@@ -52,6 +52,8 @@
 
 ## QA Results
 
+> **NOTE (2025-11-05)**: This QA review documents the initial custom LightRAG service implementation (`services/lightrag/src/`). This custom implementation was later superseded by the official pre-built `lightrag-server` package in Story 2.5. The custom implementation has been removed as technical debt cleanup. References to custom code files below are historical.
+
 ### Review Date: 2025-11-03
 
 ### Reviewed By: Quinn (Test Architect)
@@ -62,14 +64,14 @@
 
 ### Refactoring Performed
 
-**Critical bugs fixed during review:**
+**Critical bugs fixed during review:** [HISTORICAL - custom implementation removed]
 
-- **File**: [services/lightrag/src/api/routes.py](../../services/lightrag/src/api/routes.py:58-65)
+- **File**: `services/lightrag/src/api/routes.py` (removed)
   - **Change**: Fixed parameter mismatch in `ingest_document` - route was passing `chunks` but service expected `document_text`
   - **Why**: Would cause AttributeError at runtime when ingestion endpoint called
   - **How**: Added chunk joining logic to convert chunk list to full text before calling service
 
-- **File**: [services/lightrag/src/services/lightrag_service.py](../../services/lightrag/src/services/lightrag_service.py:189-213)
+- **File**: `services/lightrag/src/services/lightrag_service.py` (removed)
   - **Change**: Added missing `get_document_status` method
   - **Why**: Method was called by routes.py but didn't exist, would cause AttributeError
   - **How**: Implemented basic stub returning document status (marked TODO for full implementation with doc_status_storage)
@@ -125,9 +127,9 @@ Beyond basic requirements, the implementation includes:
 
 ### Files Modified During Review
 
-**MODIFIED during QA review - Dev should review changes:**
-1. [services/lightrag/src/api/routes.py:58-65](../../services/lightrag/src/api/routes.py) - Fixed parameter mismatch (added chunk joining)
-2. [services/lightrag/src/services/lightrag_service.py:189-213](../../services/lightrag/src/services/lightrag_service.py) - Added missing get_document_status method
+**MODIFIED during QA review** [HISTORICAL - files removed in Story 2.5]:
+1. `services/lightrag/src/api/routes.py` (removed) - Fixed parameter mismatch (added chunk joining)
+2. `services/lightrag/src/services/lightrag_service.py` (removed) - Added missing get_document_status method
 
 ### Known Limitations (Acceptable for POC)
 

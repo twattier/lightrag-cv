@@ -96,9 +96,11 @@ All 7 stories passed QA review with excellent quality scores:
 
 ### Files Modified from Original Plan
 
+> **NOTE (2025-11-05)**: Files referencing `services/lightrag/src/` are historical - custom implementation was superseded by official `lightrag-server` in Story 2.5.
+
 - **docker-compose.yml**: Added `POSTGRES_DATABASE`, `*_INTERNAL_PORT` env vars, changed health checks to CMD-SHELL format
-- **services/lightrag/src/storage/pg_adapters.py**: Changed from custom implementation to re-exports of LightRAG built-ins
-- **services/lightrag/src/services/lightrag_service.py**: Full LightRAG initialization with Ollama and PostgreSQL config
+- **services/lightrag/src/storage/pg_adapters.py** (removed): Changed from custom implementation to re-exports of LightRAG built-ins
+- **services/lightrag/src/services/lightrag_service.py** (removed): Full LightRAG initialization with Ollama and PostgreSQL config
 
 ---
 

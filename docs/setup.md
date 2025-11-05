@@ -412,7 +412,7 @@ docker compose up -d
 # 2. Check health
 ./scripts/health-check.sh
 
-# 3. Make code changes (e.g., edit services/lightrag/src/main.py)
+# 3. Make configuration changes (e.g., update environment variables in .env)
 
 # 4. Rebuild and restart changed service
 docker compose up -d --build lightrag

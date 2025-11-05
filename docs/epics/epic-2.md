@@ -14,7 +14,7 @@
 2. ✅ [Story 2.2: CIGREF English PDF Parsing and Quality Validation](../stories/story-2.2.md) - **Done** (2025-11-04)
 3. [Story 2.3: CV Dataset Acquisition and Preprocessing](../stories/story-2.3.md)
 4. [Story 2.4: CV Parsing and Quality Validation](../stories/story-2.4.md)
-5. [Story 2.5: LightRAG Knowledge Base Ingestion - CIGREF Profiles](../stories/story-2.5.md)
+5. 🔄 [Story 2.5: LightRAG Knowledge Base Ingestion - CIGREF Profiles](../stories/story-2.5.md) - **Developed - Ready for QA Review** (Batch Processing Running)
 6. [Story 2.6: LightRAG Knowledge Base Ingestion - CVs](../stories/story-2.6.md)
 7. [Story 2.7: Document Processing Performance Baseline](../stories/story-2.7.md)
 
@@ -23,7 +23,8 @@
 - **Status**: In Progress
 - **Story Count**: 7
 - **Completed**: 2/7 (29%)
-- **Current Story**: Story 2.3 (CV Dataset Acquisition)
+- **In QA Review**: 1/7 (14%)
+- **Current Story**: Story 2.5 (CIGREF Ingestion - Batch Processing Running), Story 2.3 (CV Dataset Acquisition)
 - **Dependencies**: Epic 1 (Foundation & Core Infrastructure) ✅ Complete
 - **Blocked By**: None
 
@@ -48,6 +49,15 @@
   - Complete metadata structure: domain_id, domain, job_profile_id, job_profile, section
   - LightRAG-ready JSON output (750 KB) prepared for Story 2.5 ingestion
   - GPU processing: 142 seconds (vs. 12-14 min CPU) = 5-6x speedup
+
+- 🔄 **Story 2.5 Developed - Ready for QA Review** - CIGREF ingestion with batch processing:
+  - Phase 1: 92 chunks ingested with vector embeddings (1024-dim using bge-m3)
+  - PostgreSQL storage operational: All backends initialized
+  - HNSW index created for fast vector similarity search
+  - Phase 2: Implemented batch processing to overcome LLM timeout issue
+  - Created `scripts/ingest-cigref-batched.py` for processing in smaller batches
+  - **Batch processing currently running** - Entity and relationship extraction in progress
+  - Pending validation post-batch completion: Entity count, relationship count, graph queries, retrieval tests
 
 ---
 

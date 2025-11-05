@@ -47,20 +47,37 @@ services:
       dockerfile: Dockerfile
     container_name: lightrag-cv-lightrag
     environment:
-      # Standard PostgreSQL config
+      # PostgreSQL Connection
       POSTGRES_HOST: postgres
       POSTGRES_PORT: 5432
       POSTGRES_DB: ${POSTGRES_DB:-lightrag_cv}
+      POSTGRES_DATABASE: ${POSTGRES_DB:-lightrag_cv}
       POSTGRES_USER: ${POSTGRES_USER:-lightrag}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?error}
-      # LightRAG-specific PostgreSQL env vars
-      POSTGRES_DATABASE: ${POSTGRES_DB:-lightrag_cv}
-      # Ollama configuration
+      # PostgreSQL Storage Adapters
+      LIGHTRAG_KV_STORAGE: PGKVStorage
+      LIGHTRAG_VECTOR_STORAGE: PGVectorStorage
+      LIGHTRAG_GRAPH_STORAGE: PGGraphStorage
+      LIGHTRAG_DOC_STATUS_STORAGE: PGDocStatusStorage
+      # LLM Configuration (Ollama) - Official lightrag-server variables
+      LLM_BINDING: ollama
+      LLM_MODEL: ${OLLAMA_LLM_MODEL:-qwen3:8b}
+      LLM_BINDING_HOST: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      OLLAMA_LLM_NUM_CTX: ${OLLAMA_LLM_NUM_CTX:-40960}
+      LLM_TIMEOUT: ${LLM_TIMEOUT:-600}
+      # Embedding Configuration (Ollama) - Official lightrag-server variables
+      EMBEDDING_BINDING: ollama
+      EMBEDDING_MODEL: ${OLLAMA_EMBEDDING_MODEL:-bge-m3:latest}
+      EMBEDDING_DIM: 1024
+      EMBEDDING_BINDING_HOST: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      # Custom Service Configuration - Required for custom LightRAG service
       OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
       OLLAMA_LLM_MODEL: ${OLLAMA_LLM_MODEL:-qwen3:8b}
       OLLAMA_EMBEDDING_MODEL: ${OLLAMA_EMBEDDING_MODEL:-bge-m3:latest}
-      OLLAMA_RERANKER_MODEL: ${OLLAMA_RERANKER_MODEL:-xitao/bge-reranker-v2-m3}
-      OLLAMA_LLM_NUM_CTX: ${OLLAMA_LLM_NUM_CTX:-40960}
+      # Server Configuration
+      PORT: 9621
+      WORKING_DIR: /app/data/lightrag
+      WORKSPACE: default
       LOG_LEVEL: ${LOG_LEVEL:-INFO}
       LIGHTRAG_INTERNAL_PORT: 9621
     ports:

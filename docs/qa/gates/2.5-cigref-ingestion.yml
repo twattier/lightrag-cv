@@ -1,0 +1,157 @@
+# Quality Gate Decision: Story 2.5 - CIGREF Ingestion
+
+schema: 1
+story: "2.5"
+story_title: "LightRAG Knowledge Base Ingestion - CIGREF Profiles"
+gate: CONCERNS
+status_reason: "Core functionality proven with high-quality results (999 entities, 721 relationships), but batch ingestion incomplete (120/681 chunks). Remaining work is straightforward - fix connection configuration and complete ingestion."
+reviewer: "Quinn (Test Architect)"
+updated: "2025-11-05T12:00:00Z"
+
+# Issues requiring attention
+top_issues:
+  - id: "INGEST-001"
+    severity: medium
+    finding: "Batch processing incomplete - only 120/681 chunks (17.6%) successfully ingested"
+    suggested_action: "Fix PostgreSQL connection configuration and re-run batch ingestion script"
+    refs: ["scripts/ingest-cigref-batched.py", ".ai/cigref-batch-ingestion-summary.json"]
+
+  - id: "INGEST-002"
+    severity: medium
+    finding: "All 9 batch processing attempts failed with database connection errors"
+    suggested_action: "Verify POSTGRES_PORT=5434 in environment and ensure connection string is correct"
+    refs: [".ai/cigref-batch-ingestion.log"]
+
+  - id: "DOC-001"
+    severity: low
+    finding: "Validation report outdated - shows zeros instead of actual results (999 entities, 721 relationships)"
+    suggested_action: "Update docs/cigref-ingestion-validation.md with actual metrics from database queries"
+    refs: ["docs/cigref-ingestion-validation.md"]
+
+  - id: "TEST-001"
+    severity: low
+    finding: "Query test (AC5) not executed to validate retrieval functionality"
+    suggested_action: "Execute POST /query test with 'What are the skills required for Cloud Architect?' and document results"
+
+  - id: "CODE-001"
+    severity: low
+    finding: "Scripts use direct os.getenv() instead of centralized config.py (violates RULE 2)"
+    suggested_action: "Refactor scripts to use config.py for environment variable management"
+    refs: ["scripts/ingest-cigref.py:52-56", "scripts/ingest-cigref-batched.py:52-57"]
+
+  - id: "TECH-DEBT-001"
+    severity: low
+    finding: "Obsolete custom LightRAG API implementation still in codebase (superseded by pre-built lightrag-server)"
+    suggested_action: "Remove unused custom API files: services/lightrag/src/api/, services/lightrag/src/models/ (if only used by custom API)"
+    refs: ["services/lightrag/src/api/routes.py", "services/lightrag/src/api/__init__.py"]
+
+waiver: { active: false }
+
+# Risk assessment
+risk_summary:
+  totals:
+    critical: 0
+    high: 0
+    medium: 2  # INGEST-001, INGEST-002
+    low: 4     # DOC-001, TEST-001, CODE-001, TECH-DEBT-001
+  highest: medium
+  recommendations:
+    must_fix:
+      - "Fix batch processing connection issues (INGEST-001, INGEST-002)"
+      - "Complete full 681-chunk ingestion"
+      - "Update validation documentation with actual results (DOC-001)"
+      - "Execute and document query test (TEST-001)"
+    monitor:
+      - "Entity and relationship quality (currently excellent)"
+      - "LightRAG service performance during full ingestion"
+
+# Quality score calculation
+quality_score: 75
+# Base: 100
+# Deductions:
+#   -20 for incomplete ingestion (2 medium issues)
+#   -5 for missing query test (1 low issue)
+
+# Evidence from testing
+evidence:
+  tests_reviewed: 0  # No automated tests, manual validation only
+  risks_identified: 5
+  trace:
+    ac_covered: [1, 2, 3, 4, 6]  # AC1-4 and AC6 verified
+    ac_gaps: [5]  # AC5 (query test) not executed
+
+# Non-functional requirements validation
+nfr_validation:
+  security:
+    status: PASS
+    notes: "No security vulnerabilities. Passwords from environment variables, no sensitive data logged, parameterized queries used."
+
+  performance:
+    status: PASS
+    notes: "Async I/O throughout, batch processing prevents timeouts, configurable batch sizes. Good architecture."
+
+  reliability:
+    status: CONCERNS
+    notes: "Batch processing connection failures prevent completion. Core functionality proven reliable (999 entities, 721 relationships successfully extracted)."
+
+  maintainability:
+    status: PASS
+    notes: "Well-structured code, comprehensive documentation, good logging. Minor: should use config.py (RULE 2)."
+
+# Detailed recommendations
+recommendations:
+  immediate:  # Must complete before marking story Done
+    - action: "Verify PostgreSQL connection string uses POSTGRES_PORT=5434"
+      refs: ["scripts/ingest-cigref-batched.py:52-57"]
+      estimated_effort: "15 minutes"
+
+    - action: "Re-run batch ingestion: python3 scripts/ingest-cigref-batched.py --batch-size 85"
+      refs: ["scripts/ingest-cigref-batched.py"]
+      estimated_effort: "1-2 hours (processing time)"
+
+    - action: "Update validation report with actual metrics (999 entities, 721 relationships, 120 chunks)"
+      refs: ["docs/cigref-ingestion-validation.md"]
+      estimated_effort: "30 minutes"
+
+    - action: "Execute query test and document results in validation report"
+      refs: ["docs/cigref-ingestion-validation.md"]
+      estimated_effort: "15 minutes"
+
+  future:  # Technical debt for future sprints
+    - action: "Remove obsolete custom LightRAG API implementation (superseded by pre-built lightrag-server)"
+      refs: ["services/lightrag/src/api/routes.py", "services/lightrag/src/api/__init__.py", "services/lightrag/src/models/"]
+      estimated_effort: "1 hour"
+
+    - action: "Refactor scripts to use centralized config.py for environment variables (RULE 2 compliance)"
+      refs: ["scripts/ingest-cigref.py", "scripts/ingest-cigref-batched.py"]
+      estimated_effort: "30-60 minutes"
+
+    - action: "Add automated pytest-based validation tests"
+      refs: ["scripts/"]
+      estimated_effort: "2-3 hours"
+
+    - action: "Create GitHub Actions workflow for ingestion testing"
+      estimated_effort: "1-2 hours"
+
+# Current achievements (what's working well)
+achievements:
+  - "Successfully migrated to official pre-built lightrag-server (lightrag-hku[api]==1.4.9.7)"
+  - "High-quality entity extraction: 999 entities with excellent relevance"
+  - "Meaningful knowledge graph: 721 relationships successfully created"
+  - "Entity quality matches CIGREF profiles accurately (Green IT Manager, Enterprise Architect, etc.)"
+  - "Comprehensive documentation in docs/ingestion-process.md"
+  - "Well-structured async code with proper error handling"
+  - "Batch processing architecture prevents LLM timeout issues"
+  - "Database schema properly designed with batch tracking fields"
+
+# Acceptance criteria status summary
+acceptance_criteria:
+  AC1_ingestion_script: "PASS (with caveats - only 17.6% complete)"
+  AC2_embeddings_and_graph: "PASS (999 entities, 721 relationships)"
+  AC3_postgresql_validation: "PASS (queries verified)"
+  AC4_graph_coverage: "PASS (exceeds requirements: 14+ profiles, 20+ skills/domains)"
+  AC5_query_test: "NOT TESTED (service healthy, endpoint available)"
+  AC6_documentation: "PASS (comprehensive docs created)"
+
+# Expiration date (gate valid for 2 weeks)
+expires: "2025-11-19T12:00:00Z"
