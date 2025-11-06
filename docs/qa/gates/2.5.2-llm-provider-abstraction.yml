@@ -1,0 +1,131 @@
+# <!-- Powered by BMAD™ Core -->
+# Quality Gate Decision for Story 2.5.2: LLM Provider Abstraction & Multi-Provider Support
+
+schema: 1
+story: "2.5.2"
+story_title: "LLM Provider Abstraction & Multi-Provider Support"
+gate: CONCERNS
+status_reason: "Excellent implementation quality with comprehensive design, but critical backward compatibility issue must be fixed before production deployment. Missing OLLAMA_* variable fallback breaks AC #6."
+reviewer: "Quinn (Test Architect)"
+updated: "2025-11-06T00:00:00Z"
+
+waiver: { active: false }
+
+top_issues:
+  - id: "COMPAT-001"
+    severity: high
+    finding: "Backward compatibility NOT implemented - app/shared/config.py missing OLLAMA_* fallback chain"
+    suggested_action: "Add fallback: LLM_BINDING_HOST = os.getenv('LLM_BINDING_HOST') or os.getenv('OLLAMA_BASE_URL', 'http://localhost:11434')"
+    suggested_owner: dev
+    refs: ["app/shared/config.py:34-45"]
+
+  - id: "API-001"
+    severity: medium
+    finding: "Missing property methods llm_url and embedding_url claimed in Dev Notes line 479"
+    suggested_action: "Add @property methods to Settings class for provider-agnostic URL access"
+    suggested_owner: dev
+    refs: ["app/shared/config.py:74"]
+
+  - id: "DOC-001"
+    severity: medium
+    finding: "Documentation references runtime model override feature that doesn't exist in implementation"
+    suggested_action: "Remove 'Override Model at Runtime' section from app/README.md or implement feature"
+    suggested_owner: dev
+    refs: ["app/README.md:149-158"]
+
+risk_summary:
+  totals: { critical: 0, high: 1, medium: 2, low: 3 }
+  highest: high
+  recommendations:
+    must_fix:
+      - "Fix OLLAMA_* fallback chain for backward compatibility (AC #6)"
+      - "Add missing llm_url and embedding_url property methods"
+    monitor:
+      - "No automated test coverage - consider adding in Story 2.5.3"
+      - "Code duplication in retry logic (LLMProvider vs EmbeddingProvider)"
+      - "No circuit breaker pattern for provider failures"
+
+# Extended analysis
+quality_score: 70
+expires: "2025-11-20T00:00:00Z"
+
+evidence:
+  tests_reviewed: 0  # No automated tests
+  manual_validation: true  # Static validation only
+  risks_identified: 6
+  trace:
+    ac_covered: [2, 5, 7]  # AC #2, #5, #7 fully met
+    ac_partial: [1, 3, 4]  # AC #1, #3, #4 partially validated
+    ac_gaps: [6]  # AC #6 NOT met (backward compatibility)
+
+nfr_validation:
+  security:
+    status: PASS
+    notes: "API keys via env vars, proper Bearer token auth, no hardcoded secrets. Consider secrets manager for production."
+  performance:
+    status: PASS
+    notes: "Async I/O with httpx, configurable timeouts, exponential backoff. No connection pooling (acceptable for POC)."
+  reliability:
+    status: CONCERNS
+    notes: "Good retry logic but no circuit breaker, no provider health checks, no fallback provider strategy."
+  maintainability:
+    status: EXCELLENT
+    notes: "Clean abstraction design, comprehensive documentation, clear error messages, easy extensibility."
+
+recommendations:
+  immediate:
+    - action: "Fix backward compatibility - add OLLAMA_* variable fallback chain in config.py"
+      priority: "P0 - BLOCKER"
+      refs: ["app/shared/config.py:34-36", "app/shared/config.py:42"]
+
+    - action: "Add missing property methods: llm_url and embedding_url to Settings class"
+      priority: "P1 - High"
+      refs: ["app/shared/config.py:74"]
+
+    - action: "Verify backward compatibility with existing scripts using only OLLAMA_* env vars"
+      priority: "P0 - BLOCKER"
+      refs: ["scripts/classify-cvs-with-llm.py", "scripts/ingest-cigref.py"]
+
+  future:
+    - action: "Add pytest test suite with unit and integration tests"
+      priority: "P2 - Medium"
+      refs: ["app/shared/llm_client.py"]
+
+    - action: "Extract retry logic to shared RetryMixin class to eliminate duplication"
+      priority: "P2 - Medium"
+      refs: ["app/shared/llm_client.py:91-128", "app/shared/llm_client.py:335-369"]
+
+    - action: "Implement circuit breaker pattern for provider failure handling"
+      priority: "P3 - Low"
+      refs: ["app/shared/llm_client.py"]
+
+    - action: "Add provider health check endpoints or validation before requests"
+      priority: "P3 - Low"
+      refs: ["app/shared/llm_client.py"]
+
+history:
+  - at: "2025-11-06T00:00:00Z"
+    gate: CONCERNS
+    note: "Initial comprehensive review - Excellent code quality but critical backward compatibility gap in AC #6. Missing OLLAMA_* fallback breaks existing workflows."
+
+# Assessment Summary
+assessment:
+  code_quality: EXCELLENT  # Clean design, good error handling, comprehensive docs
+  test_coverage: MINIMAL   # Static validation only, no automated tests
+  standards_compliance: PARTIAL  # Follows most rules but missing AC #6 requirement
+  documentation: EXCELLENT  # Comprehensive README, inline examples, clear usage docs
+  architecture: EXCELLENT   # Clean abstraction with ABC pattern, easy to extend
+
+  strengths:
+    - "Clean factory pattern with abstract base classes"
+    - "Comprehensive error handling with custom exceptions"
+    - "Smart retry logic with exponential backoff"
+    - "Exceptional documentation with usage examples"
+    - "Proper async/await patterns throughout"
+
+  weaknesses:
+    - "No OLLAMA_* fallback chain breaks backward compatibility"
+    - "Zero automated test coverage"
+    - "Missing promised property methods"
+    - "No circuit breaker for reliability"
+    - "Retry logic duplicated across provider types"

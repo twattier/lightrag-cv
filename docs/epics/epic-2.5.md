@@ -51,7 +51,7 @@ Create `/app` directory structure and migrate shared `config.py` to centralized 
 ---
 
 ### Story 2.5.2: LLM Provider Abstraction & Multi-Provider Support
-**Effort**: 3-4 hours | **Status**: Not Started | **Dependencies**: Story 2.5.1
+**Effort**: 3-4 hours | **Status**: ⚠️ In Review (CONCERNS) | **Dependencies**: Story 2.5.1 ✅
 
 Abstract LLM provider configuration to support multiple providers (Ollama, OpenAI-compatible via LiteLLM) using unified environment variables matching LightRAG service patterns.
 
@@ -102,13 +102,26 @@ Abstract LLM provider configuration to support multiple providers (Ollama, OpenA
   ```
 
 **Acceptance Criteria**:
-- ✅ `app/shared/config.py` supports multi-provider configuration with backward compatibility
+- ⚠️ `app/shared/config.py` supports multi-provider configuration with backward compatibility (PARTIAL - fallback not implemented)
 - ✅ `app/shared/llm_client.py` provides unified interface for Ollama and OpenAI-compatible providers
-- ✅ LLM abstraction tested with simple one-liner (not dependent on migrated scripts)
-- ✅ LightRAG service health check passes: `curl http://localhost:9621/health`
+- ⚠️ LLM abstraction tested with simple one-liner (PARTIAL - static validation only)
+- ⚠️ LightRAG service health check passes: `curl http://localhost:9621/health` (NOT TESTED - services not running)
 - ✅ `.env.example` documents new unified variables matching LightRAG service pattern
-- ✅ Existing Ollama workflows continue to function without `.env` changes (backward compatibility)
+- ❌ Existing Ollama workflows continue to function without `.env` changes (FAIL - backward compatibility not implemented)
 - ✅ Documentation updated with provider configuration examples
+
+**QA Review Results** (2025-11-06):
+- **Gate**: CONCERNS (Quality Score: 70/100)
+- **Gate File**: [docs/qa/gates/2.5.2-llm-provider-abstraction.yml](../qa/gates/2.5.2-llm-provider-abstraction.yml)
+- **Story File**: [docs/stories/story-2.5.2.llm-provider-abstraction.md](../stories/story-2.5.2.llm-provider-abstraction.md)
+- **Status**: Changes Required
+- **Blocker**: Backward compatibility NOT implemented - missing OLLAMA_* fallback chain in app/shared/config.py (AC #6)
+- **Required Fixes**:
+  1. Add fallback pattern: `LLM_BINDING_HOST = os.getenv("LLM_BINDING_HOST") or os.getenv("OLLAMA_BASE_URL", "default")`
+  2. Add missing `llm_url` and `embedding_url` property methods
+  3. Verify backward compatibility with existing scripts using OLD env vars
+- **Strengths**: Excellent architecture (95/100 code quality), comprehensive documentation, clean abstraction design
+- **Next Steps**: Fix blocker issues, re-test, update gate to PASS
 
 ---
 
