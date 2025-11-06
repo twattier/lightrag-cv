@@ -14,7 +14,7 @@
 2. ✅ [Story 2.2: CIGREF English PDF Parsing and Quality Validation](../stories/story-2.2.md) - **Done** (2025-11-04)
 3. ✅ [Story 2.5: LightRAG Knowledge Base Ingestion - CIGREF Profiles](../stories/story-2.5.md) - **Done** (2025-11-05)
 4. ✅ [Story 2.3: CV Dataset Acquisition and Preprocessing](../stories/story-2.3.md) - **Done** (2025-11-05)
-5. [Story 2.4: CV Parsing and Quality Validation](../stories/story-2.4.md)
+5. ✅ [Story 2.4: CV Parsing and Quality Validation](../stories/story-2.4.md) - **Done** (2025-11-06)
 6. [Story 2.6: LightRAG Knowledge Base Ingestion - CVs](../stories/story-2.6.md)
 7. [Story 2.7: Document Processing Performance Baseline](../stories/story-2.7.md)
 
@@ -22,8 +22,8 @@
 
 - **Status**: In Progress
 - **Story Count**: 7
-- **Completed**: 4/7 (57%)
-- **Current Story**: Story 2.4 (CV Parsing and Quality Validation)
+- **Completed**: 5/7 (71%)
+- **Current Story**: Story 2.6 (LightRAG Knowledge Base Ingestion - CVs)
 - **Dependencies**: Epic 1 (Foundation & Core Infrastructure) ✅ Complete
 - **Blocked By**: None
 
@@ -67,6 +67,17 @@
   - Documentation in test-data.md with composition statistics and limitations
   - Dataset ready for Story 2.4 Docling parsing
   - QA Gate: CONCERNS (70/100) - Accepted as-is for POC scope with code quality improvements deferred
+
+- ✅ **Story 2.4 Complete** - CV parsing and quality validation:
+  - 100% parsing success rate (25/25 CVs parsed through Docling)
+  - 86% content extraction quality (exceeds NFR2 85% target)
+  - 282 total chunks extracted (11.3 avg per CV)
+  - LLM classification: 100% accuracy (14 Latin, 11 non-Latin CVs)
+  - Timeout mitigation successfully applied (120s→300s)
+  - Comprehensive validation documentation in cv-parsing-validation.md
+  - 5-sample manual quality inspection completed
+  - Parsed manifest created and ready for Story 2.6 ingestion
+  - QA Gate: CONCERNS (70/100) - Excellent functional results, code quality improvements documented
 
 ---
 

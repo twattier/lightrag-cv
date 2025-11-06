@@ -29,6 +29,12 @@ class Settings:
     LIGHTRAG_HOST: str = os.getenv("LIGHTRAG_HOST", "localhost")
     LIGHTRAG_PORT: int = int(os.getenv("LIGHTRAG_PORT", "9621"))
 
+    # Ollama configuration
+    OLLAMA_BASE_URL: str = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
+    OLLAMA_LLM_MODEL: str = os.getenv("OLLAMA_LLM_MODEL", "qwen2.5:7b-instruct-q4_K_M")
+    OLLAMA_HOST_PORT: int = int(os.getenv("OLLAMA_HOST_PORT", "11434"))
+    LLM_TIMEOUT: float = float(os.getenv("LLM_TIMEOUT", "1200"))
+
     # Data paths
     DATA_DIR: Path = Path("/home/wsluser/dev/lightrag-cv/data")
     CIGREF_DIR: Path = DATA_DIR / "cigref"

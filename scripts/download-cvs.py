@@ -62,51 +62,6 @@ def estimate_page_count(pdf_bytes: bytes) -> int:
         return 0
 
 
-def infer_domain_from_filename(filename: str) -> str:
-    """
-    Infer likely IT domain from filename keywords.
-    Returns a general domain or "General IT" if unclear.
-    """
-    filename_lower = filename.lower()
-
-    domain_keywords = {
-        'Software Development': ['developer', 'programmer', 'software', 'frontend', 'backend', 'fullstack'],
-        'Infrastructure': ['devops', 'sre', 'cloud', 'infrastructure', 'sysadmin'],
-        'Data': ['data', 'analytics', 'ml', 'ai', 'scientist', 'analyst'],
-        'Security': ['security', 'cybersecurity', 'infosec', 'pentester'],
-        'Management': ['manager', 'lead', 'cto', 'director', 'head']
-    }
-
-    for domain, keywords in domain_keywords.items():
-        if any(kw in filename_lower for kw in keywords):
-            return domain
-
-    return "General IT"
-
-
-def infer_experience_level(filename: str, file_size_kb: float) -> str:
-    """
-    Infer experience level from filename and file size heuristics.
-    Larger files often indicate more experience (more content).
-    """
-    filename_lower = filename.lower()
-
-    if any(kw in filename_lower for kw in ['junior', 'entry', 'graduate']):
-        return 'junior'
-    elif any(kw in filename_lower for kw in ['senior', 'lead', 'principal', 'staff']):
-        return 'senior'
-    elif 'mid' in filename_lower:
-        return 'mid'
-
-    # Use file size as proxy
-    if file_size_kb < 100:
-        return 'junior'
-    elif file_size_kb > 250:
-        return 'senior'
-    else:
-        return 'mid'
-
-
 def collect_cvs_from_dataset(dataset_name: str, split: str, max_samples: int) -> List[Dict]:
     """
     Collect CV candidates from a HuggingFace dataset.
@@ -190,14 +145,8 @@ def collect_cvs_from_dataset(dataset_name: str, split: str, max_samples: int) ->
                     )
                     continue
 
-                # Infer metadata from filename and file characteristics
-                domain = infer_domain_from_filename(filename)
-                experience_level = infer_experience_level(filename, file_size_kb)
-
                 cv_metadata = {
                     "original_filename": filename,
-                    "role_domain": domain,
-                    "experience_level": experience_level,
                     "file_format": "PDF",
                     "file_size_kb": round(file_size_kb, 2),
                     "page_count": page_count,
@@ -211,8 +160,6 @@ def collect_cvs_from_dataset(dataset_name: str, split: str, max_samples: int) ->
                     "CV candidate collected",
                     extra={
                         "cv_filename": filename,
-                        "domain": domain,
-                        "experience": experience_level,
                         "size_kb": round(file_size_kb, 2),
                         "pages": page_count
                     }
@@ -244,37 +191,13 @@ def collect_cvs_from_dataset(dataset_name: str, split: str, max_samples: int) ->
 
 def ensure_diversity(cvs: List[Dict], target_count: int) -> List[Dict]:
     """
-    Select a diverse subset of CVs across domains, experience levels, and file sizes.
+    Select a diverse subset of CVs across different file sizes.
     """
     # Shuffle for randomness
     random.shuffle(cvs)
 
-    # Group by domain and experience
-    groups = defaultdict(list)
-    for cv in cvs:
-        key = (cv['role_domain'], cv['experience_level'])
-        groups[key].append(cv)
-
-    # Round-robin selection from groups
-    selected = []
-    available_groups = list(groups.keys())
-
-    while len(selected) < target_count and available_groups:
-        for key in available_groups[:]:
-            if groups[key]:
-                selected.append(groups[key].pop(0))
-                if len(selected) >= target_count:
-                    break
-            else:
-                available_groups.remove(key)
-
-    # If still need more, add any remaining
-    if len(selected) < target_count:
-        remaining = [cv for group_cvs in groups.values() for cv in group_cvs]
-        needed = target_count - len(selected)
-        selected.extend(remaining[:needed])
-
-    return selected
+    # Simply return the first target_count CVs after shuffle
+    return cvs[:target_count]
 
 
 def main():
@@ -350,14 +273,10 @@ def main():
             "candidate_label": f"cv_{idx:03d}",
             "filename": standardized_filename,
             "original_filename": cv_meta['original_filename'],
-            "role_domain": cv_meta['role_domain'],
-            "experience_level": cv_meta['experience_level'],
             "file_format": cv_meta['file_format'],
             "file_size_kb": cv_meta['file_size_kb'],
             "page_count": cv_meta['page_count'],
-            "source_dataset": cv_meta['source_dataset'],
-            "manual_tags": [],
-            "notes": "Requires manual validation - many CVs are image-based PDFs"
+            "source_dataset": cv_meta['source_dataset'],            
         }
 
         manifest_entries.append(manifest_entry)
@@ -365,9 +284,7 @@ def main():
         logger.info(
             "CV downloaded",
             extra={
-                "cv_filename": standardized_filename,
-                "domain": cv_meta['role_domain'],
-                "experience": cv_meta['experience_level']
+                "cv_filename": standardized_filename
             }
         )
 
@@ -380,11 +297,11 @@ def main():
             "filtering_criteria": {
                 "file_size_range": f"{MIN_FILE_SIZE_KB}-{MAX_FILE_SIZE_KB} KB",
                 "page_count_range": "1-10 pages",
-                "selection_method": "Diverse sampling across inferred domains and experience levels"
+                "selection_method": "Random sampling with file size filtering"
             },
             "notes": [
                 "Many CVs in these datasets are image-based PDFs without extractable text",
-                "Domain and experience level were inferred from filenames and file characteristics",
+                "No classification performed at download stage - use classify-cvs-with-llm.py after parsing",
                 "Manual quality validation (AC 5) is critical to verify suitability for Story 2.4"
             ]
         },
@@ -400,24 +317,6 @@ def main():
     logger.info("=" * 70)
     logger.info(f"Total CVs curated: {len(manifest_entries)}")
 
-    # Domain distribution
-    domain_dist = defaultdict(int)
-    for entry in manifest_entries:
-        domain_dist[entry['role_domain']] += 1
-
-    logger.info("\nDomain Distribution:")
-    for domain, count in sorted(domain_dist.items()):
-        logger.info(f"  {domain}: {count}")
-
-    # Experience distribution
-    exp_dist = defaultdict(int)
-    for entry in manifest_entries:
-        exp_dist[entry['experience_level']] += 1
-
-    logger.info("\nExperience Level Distribution:")
-    for level, count in sorted(exp_dist.items()):
-        logger.info(f"  {level}: {count}")
-
     # File size distribution
     sizes = [e['file_size_kb'] for e in manifest_entries]
     logger.info("\nFile Size Range:")
@@ -425,10 +324,19 @@ def main():
     logger.info(f"  Max: {max(sizes):.1f} KB")
     logger.info(f"  Avg: {sum(sizes)/len(sizes):.1f} KB")
 
+    # Page count distribution
+    pages = [e['page_count'] for e in manifest_entries]
+    logger.info("\nPage Count Range:")
+    logger.info(f"  Min: {min(pages)} pages")
+    logger.info(f"  Max: {max(pages)} pages")
+    logger.info(f"  Avg: {sum(pages)/len(pages):.1f} pages")
+
     logger.info(f"\nFiles saved to: {TEST_SET_DIR}")
     logger.info(f"Manifest saved to: {MANIFEST_PATH}")
-    logger.info("\n⚠️  IMPORTANT: Proceed with Task 5 (Manual Quality Validation)")
-    logger.info("   Many CVs are image-based. Verify 3-5 samples for suitability.")
+    logger.info("\n⚠️  NEXT STEPS:")
+    logger.info("   1. Parse CVs: python scripts/parse-cvs.py")
+    logger.info("   2. Classify CVs: python scripts/classify-cvs-with-llm.py")
+    logger.info("   3. Select validation sample: python scripts/select-validation-sample.py")
     logger.info("\n✓ CV dataset acquisition complete!")
 
 

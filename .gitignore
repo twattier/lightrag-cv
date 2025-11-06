@@ -43,6 +43,7 @@ volumes/
 # Data files (CVs and CIGREF profiles)
 data/cigref/*
 data/cvs/*
+data/cvs.backup/*
 data/lightrag/*
 
 # Logs

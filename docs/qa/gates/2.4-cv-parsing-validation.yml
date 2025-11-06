@@ -1,0 +1,150 @@
+# Quality Gate Decision - Story 2.4: CV Parsing and Quality Validation
+
+# Required fields
+schema: 1
+story: "2.4"
+story_title: "CV Parsing and Quality Validation"
+gate: "CONCERNS"
+status_reason: "Excellent results (100% success, 86% quality) but code quality issues: multiple RULE 2 violations (hardcoded paths/URLs), debug code left in production, and script logic deviation. Maintainability concerns for production use."
+reviewer: "Quinn (Test Architect)"
+updated: "2025-11-06T00:00:00Z"
+
+# Waiver
+waiver:
+  active: false
+
+# Quality Score: 100 - (0×20 FAILs) - (3×10 CONCERNS) = 70/100
+quality_score: 70
+
+# Gate expires in 2 weeks
+expires: "2025-11-20T00:00:00Z"
+
+# Top Issues Identified
+top_issues:
+  - id: "CODE-001"
+    severity: high
+    finding: "Multiple RULE 2 violations: Hardcoded paths and URLs in all 5 scripts instead of using config.py"
+    details: |
+      - parse-cvs.py:350-354, 372: Hardcoded paths and docling_url
+      - classify-cvs-with-llm.py:22: Hardcoded OLLAMA_URL instead of settings.OLLAMA_BASE_URL
+      - select-validation-sample.py:75-77: Hardcoded paths
+      - create-parsed-manifest.py:92-97: Hardcoded paths
+      - validate-classification.py:12-14: Hardcoded paths
+    suggested_action: "Refactor all scripts to use settings from config.py for paths and URLs. Add DATA_DIR, CVS_DIR paths to config.py Settings class."
+    suggested_owner: "dev"
+    refs:
+      - "scripts/parse-cvs.py:350-354"
+      - "scripts/parse-cvs.py:372"
+      - "scripts/classify-cvs-with-llm.py:22"
+      - "scripts/select-validation-sample.py:75-77"
+      - "scripts/create-parsed-manifest.py:92-97"
+      - "scripts/validate-classification.py:12-14"
+
+  - id: "CODE-002"
+    severity: medium
+    finding: "Debug code left in production (classify-cvs-with-llm.py:86-89)"
+    details: |
+      Uses sys._debug_printed hack to print first LLM response. This should be
+      removed or converted to proper debug logging.
+    suggested_action: "Remove debug code or convert to conditional debug logging using logger.debug()"
+    suggested_owner: "dev"
+    refs:
+      - "scripts/classify-cvs-with-llm.py:86-89"
+
+  - id: "CODE-003"
+    severity: medium
+    finding: "Script logic deviation in select-validation-sample.py (line 88)"
+    details: |
+      Line 87 has the correct logic `sample = select_diverse_sample(successful_cvs, sample_size=5)`
+      but it's commented out. Line 88 sets `sample = successful_cvs` which returns ALL 14 CVs
+      instead of 5 as required by AC 3. However, manual validation WAS performed correctly
+      on 5 CVs as documented in cv-parsing-validation.md.
+    suggested_action: "Uncomment line 87 and remove line 88 to match intended behavior"
+    suggested_owner: "dev"
+    refs:
+      - "scripts/select-validation-sample.py:87-88"
+
+# Evidence
+evidence:
+  tests_reviewed: 0  # Manual testing only per test-strategy.md
+  manual_validations: 5  # 5 CVs manually inspected per AC 3
+  scripts_created: 5
+  documentation_files: 1
+  data_files_generated: 282  # 25 parsed CVs + manifests
+  trace:
+    ac_covered: [1, 2, 3, 4, 5, 6]  # All 6 ACs validated
+    ac_gaps: []
+
+# NFR Validation
+nfr_validation:
+  security:
+    status: PASS
+    notes: "No sensitive data logging (RULE 8). Data directory properly excluded from git. Contact info extraction appropriate."
+  performance:
+    status: PASS
+    notes: "100% success rate achieved. Timeout mitigation successful (120s→300s). Async concurrent processing with semaphore. Average 46.87s per CV."
+  reliability:
+    status: PASS
+    notes: "Comprehensive error handling (timeout, HTTP errors, exceptions). Statistics tracking. 282 chunks extracted from 25 CVs."
+  maintainability:
+    status: CONCERNS
+    notes: "Multiple RULE 2 violations reduce maintainability. Debug code and commented logic present. Excellent structured logging (RULE 7) and async implementation (RULE 9)."
+
+# Risk Summary
+risk_summary:
+  totals:
+    critical: 0
+    high: 1    # CODE-001: RULE 2 violations
+    medium: 2  # CODE-002, CODE-003
+    low: 0
+  highest: "high"
+  recommendations:
+    must_fix:
+      - "Refactor scripts to use config.py for all paths and URLs (CODE-001)"
+    monitor:
+      - "Ensure debug code removal before production deployment (CODE-002)"
+      - "Fix script logic to match intended 5-sample behavior (CODE-003)"
+
+# Recommendations
+recommendations:
+  immediate:
+    - action: "Add DATA_DIR, CVS_DIR, TEST_SET_DIR to config.py Settings class"
+      refs: ["scripts/config.py:38-42"]
+    - action: "Refactor parse-cvs.py to use settings.DOCLING_URL and settings.DATA_DIR paths"
+      refs: ["scripts/parse-cvs.py:350-354", "scripts/parse-cvs.py:372"]
+    - action: "Fix classify-cvs-with-llm.py to use settings.OLLAMA_BASE_URL"
+      refs: ["scripts/classify-cvs-with-llm.py:21-22"]
+    - action: "Restore correct 5-sample selection logic in select-validation-sample.py"
+      refs: ["scripts/select-validation-sample.py:87-88"]
+
+  future:
+    - action: "Remove debug code from classify-cvs-with-llm.py or convert to logger.debug()"
+      refs: ["scripts/classify-cvs-with-llm.py:86-89"]
+    - action: "Consider making timeout configurable via environment variable for production"
+      refs: ["scripts/parse-cvs.py:145"]
+    - action: "Consider abstracting quality rating assignment in create-parsed-manifest.py"
+      refs: ["scripts/create-parsed-manifest.py:36-39"]
+
+# Positive Findings
+strengths:
+  - "Excellent results: 100% parsing success rate (25/25 CVs)"
+  - "Quality exceeds NFR2 target: 86% vs 85% threshold"
+  - "Outstanding documentation: cv-parsing-validation.md is comprehensive with examples"
+  - "Excellent structured logging in parse-cvs.py (RULE 7 compliance)"
+  - "Proper async I/O implementation with semaphore-based concurrency control (RULE 9)"
+  - "Comprehensive error handling for timeout, HTTP, and general exceptions"
+  - "LLM classification: 100% accuracy (14 Latin, 11 non-Latin CVs)"
+  - "Successful timeout mitigation strategy (120s→300s)"
+  - "No sensitive data logging (RULE 8 compliance)"
+  - "282 total chunks extracted with good semantic preservation"
+  - "Parsed JSON structure ready for Story 2.6 LightRAG ingestion"
+
+# Notes
+notes:
+  - "POC scope with manual testing per test-strategy.md - no automated tests required"
+  - "Story 2.3 gate was CONCERNS (70/100) - this story maintains same score due to similar code quality issues"
+  - "Despite code quality concerns, functional results are EXCELLENT and exceed all targets"
+  - "All 6 acceptance criteria validated and met"
+  - "Ready for Story 2.6 with current implementation, but improvements recommended for production"
+  - "Timeout mitigation successfully applied after initial 16% failure rate"
+  - "Manual validation correctly performed on 5 CVs despite script returning 14"
