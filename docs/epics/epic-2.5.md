@@ -126,7 +126,7 @@ Abstract LLM provider configuration to support multiple providers (Ollama, OpenA
 ---
 
 ### Story 2.5.3: Migrate CIGREF & CV Workflow Scripts
-**Effort**: 3-4 hours | **Status**: Not Started | **Dependencies**: Story 2.5.2
+**Effort**: 3-4 hours | **Status**: ✅ Done (2025-11-06) | **Dependencies**: Story 2.5.2
 
 Move all CIGREF and CV workflow scripts to appropriate `/app` subdirectories with updated imports, leveraging the new LLM provider abstraction.
 
@@ -202,12 +202,21 @@ Remove obsolete scripts, consolidate artifacts, and update all documentation to 
 
 ## Epic Status
 
-- **Status**: Not Started
+- **Status**: In Progress
 - **Story Count**: 4
+- **Completed**: 3/4 (75%)
 - **Estimated Effort**: 12-16 hours
+- **Current Story**: Story 2.5.4 (Cleanup & Documentation Update)
 - **Dependencies**: Epic 2 (Stories 2.1-2.5) ✅ Complete
 - **Blocked By**: None
 - **Type**: Brownfield Refactoring (organizational + multi-provider LLM abstraction)
+
+### Progress Summary
+
+- ✅ **Story 2.5.1 Complete**: Application structure created, shared services migrated
+- ⚠️ **Story 2.5.2 In Review**: LLM provider abstraction (CONCERNS - backward compatibility issues)
+- ✅ **Story 2.5.3 Complete**: All 16 workflow scripts migrated to `/app` subdirectories
+- 🔄 **Story 2.5.4 Pending**: Documentation cleanup and obsolete script removal
 
 ## Success Criteria
 
