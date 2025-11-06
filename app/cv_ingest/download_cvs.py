@@ -2,6 +2,9 @@
 """
 CV Dataset Acquisition and Preprocessing Script
 
+Part of lightrag-cv application workflows.
+Module: app.cv_ingest.download_cvs
+
 Downloads and curates 20-30 CV samples from Hugging Face datasets.
 Since many CVs in these datasets are image-based PDFs without extractable text,
 this script uses a pragmatic approach:

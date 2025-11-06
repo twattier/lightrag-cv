@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
 Validate LLM classification results against expected ground truth values.
+
+Part of lightrag-cv application workflows.
+Module: app.cv_ingest.validate_classification
 """
 
 import json

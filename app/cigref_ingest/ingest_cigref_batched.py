@@ -1,6 +1,9 @@
 """
 CIGREF Knowledge Base Batch Ingestion Script
 
+Part of lightrag-cv application workflows.
+Module: app.cigref_ingest.ingest_cigref_batched
+
 This script implements batch processing to avoid LLM timeout issues during entity extraction.
 It splits the CIGREF data into smaller batches and processes each independently.
 
@@ -12,16 +15,16 @@ Strategy:
 
 Usage:
     # Process all chunks in batches of 5
-    python3 scripts/ingest-cigref-batched.py --batch-size 5
+    python -m app.cigref_ingest.ingest_cigref_batched --batch-size 5
 
     # Resume from batch 10
-    python3 scripts/ingest-cigref-batched.py --start-batch 10
+    python -m app.cigref_ingest.ingest_cigref_batched --start-batch 10
 
     # Start from specific chunk ID (e.g., chunk_37)
-    python3 scripts/ingest-cigref-batched.py --chunk-start chunk_37
+    python -m app.cigref_ingest.ingest_cigref_batched --chunk-start chunk_37
 
     # Combine chunk start with custom batch size
-    python3 scripts/ingest-cigref-batched.py --chunk-start chunk_37 --batch-size 10
+    python -m app.cigref_ingest.ingest_cigref_batched --chunk-start chunk_37 --batch-size 10
 """
 
 import asyncio
@@ -40,7 +43,7 @@ import psycopg
 from psycopg.rows import dict_row
 
 # Import centralized configuration (RULE 2: All Environment Variables via config.py)
-from config import settings
+from app.shared.config import settings
 
 # Configuration constants
 CIGREF_DATA_PATH = settings.CIGREF_PARSED_FILE

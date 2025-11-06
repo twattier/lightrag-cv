@@ -2,6 +2,9 @@
 """
 Create parsed CV manifest for LightRAG ingestion (Story 2.4 Task 8).
 
+Part of lightrag-cv application workflows.
+Module: app.cv_ingest.create_parsed_manifest
+
 Generates parsed-manifest.json with metadata for all successfully parsed CVs.
 """
 

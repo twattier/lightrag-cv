@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """CIGREF Knowledge Base Ingestion Script.
 
+Part of lightrag-cv application workflows.
+Module: app.cigref_ingest.ingest_cigref
+
 This script ingests parsed CIGREF profile data into the LightRAG knowledge base,
 including vector embeddings and graph relationships.
 
 Usage:
-    python scripts/ingest-cigref.py
+    python -m app.cigref_ingest.ingest_cigref
 
 Requirements:
     - CIGREF parsed data at /data/cigref/cigref-parsed.json
@@ -26,7 +29,7 @@ import httpx
 import psycopg
 
 # Import centralized configuration (RULE 2: All Environment Variables via config.py)
-from config import settings
+from app.shared.config import settings
 
 # Configure logging with structured output
 logging.basicConfig(

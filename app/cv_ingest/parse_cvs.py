@@ -2,11 +2,14 @@
 """
 CV Parsing Script for Story 2.4
 
+Part of lightrag-cv application workflows.
+Module: app.cv_ingest.parse_cvs
+
 Processes all CVs through Docling /parse endpoint and saves parsed outputs.
 Implements structured logging, async batch processing, and error handling.
 
 Usage:
-    python scripts/parse-cvs.py
+    python -m app.cv_ingest.parse_cvs
 """
 
 import asyncio
@@ -20,7 +23,7 @@ from typing import Dict, List, Optional, Tuple
 
 import httpx
 
-from config import settings
+from app.shared.config import settings
 
 # Configure structured logging (RULE 7)
 logging.basicConfig(

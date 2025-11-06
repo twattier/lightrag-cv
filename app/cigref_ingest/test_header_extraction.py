@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """
 Test pdfplumber header extraction from CIGREF PDF.
+
+Part of lightrag-cv application workflows.
+Module: app.cigref_ingest.test_header_extraction
+
 Extract headers from page 111 to validate approach.
 """
 

@@ -2,6 +2,9 @@
 """
 Download sample CVs from HuggingFace datasets for testing.
 
+Part of lightrag-cv application workflows.
+Module: app.cv_ingest.download_cv_samples
+
 Downloads a few samples from:
 - gigswar/cv_files
 - d4rk3r/resumes-raw-pdf

@@ -1,5 +1,10 @@
 #!/bin/bash
 # Download sample CV PDFs for testing
+#
+# Part of lightrag-cv application workflows.
+# Module: app.cv_ingest.download_sample_cvs.sh
+#
+# Usage: bash app/cv_ingest/download_sample_cvs.sh
 
 set -e
 

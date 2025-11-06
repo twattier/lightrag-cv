@@ -245,8 +245,99 @@ rm -rf app/
 - ✅ Original workflow scripts removed from `/scripts/`
 - ✅ Ready for Story 2.5.4 documentation updates
 
+---
+
+## Dev Agent Record
+
+### Tasks Completed
+
+- [x] **Task 1**: Git checkpoint created (commit 064931f)
+- [x] **Task 2**: Migrated 7 CIGREF workflow scripts to `/app/cigref_ingest/`
+- [x] **Task 3**: Migrated 9 CV workflow scripts to `/app/cv_ingest/`
+- [x] **Task 4**: Updated `classify_cvs_with_llm.py` for LLM abstraction
+- [ ] **Task 5**: Manual testing - CIGREF workflow (user to execute)
+- [ ] **Task 6**: Manual testing - CV parsing workflow (user to execute)
+- [ ] **Task 7**: Manual testing - LLM classification workflow (user to execute)
+- [x] **Task 8**: Removed original scripts from `/scripts/` (config.py + all workflow scripts)
+- [x] **Task 9**: Created documentation update list for Story 2.5.4
+
+### Agent Model Used
+
+- Claude Sonnet 4.5 (claude-sonnet-4-5-20250929)
+
+### File List
+
+**Created:**
+- None (files moved, not created)
+
+**Modified:**
+- `app/cigref_ingest/ingest_cigref.py` (imports + module docstring)
+- `app/cigref_ingest/ingest_cigref_batched.py` (imports + module docstring)
+- `app/cigref_ingest/analyze_cigref_parsing.py` (module docstring)
+- `app/cigref_ingest/enrich_cigref_hierarchy.py` (module docstring)
+- `app/cigref_ingest/prepare_cigref_for_lightrag.py` (module docstring)
+- `app/cigref_ingest/test_cigref_parsing.py` (module docstring)
+- `app/cigref_ingest/test_header_extraction.py` (module docstring)
+- `app/cv_ingest/parse_cvs.py` (imports + module docstring)
+- `app/cv_ingest/classify_cvs_with_llm.py` (imports + LLM abstraction integration + module docstring)
+- `app/cv_ingest/create_parsed_manifest.py` (module docstring)
+- `app/cv_ingest/download_cv_samples.py` (module docstring)
+- `app/cv_ingest/download_cvs.py` (module docstring)
+- `app/cv_ingest/explore_and_download_cvs.py` (module docstring)
+- `app/cv_ingest/download_sample_cvs.sh` (header comment)
+- `app/cv_ingest/select_validation_sample.py` (module docstring)
+- `app/cv_ingest/validate_classification.py` (module docstring)
+- `docs/stories/story-2.5.3-migrate-workflows.md` (Dev Agent Record section)
+
+**Deleted:**
+- `scripts/config.py` (moved to app/shared/config.py in Story 2.5.1)
+- All 16 workflow scripts from `/scripts/` (moved to `/app` subdirectories)
+
+### Documentation Update List for Story 2.5.4
+
+The following documentation files contain old script execution paths that need updating:
+
+1. `docs/stories/story-2.5.2-llm-provider-abstraction.md`
+2. `docs/stories/story-2.5.1-app-structure.md`
+3. `docs/stories/story-2.4.md`
+4. `docs/stories/story-2.5.md`
+5. `docs/qa/gates/2.5.2-llm-provider-abstraction.yml`
+6. `docs/qa/gates/2.4-cv-parsing-validation.yml`
+7. `docs/qa/gates/2.5-cigref-ingestion.yml`
+8. `docs/cv-parsing-validation.md`
+9. `docs/epics/epic-2.md`
+10. `docs/ingestion-process.md`
+
+**Update Pattern:**
+- `python scripts/ingest-cigref.py` → `python -m app.cigref_ingest.ingest_cigref`
+- `python scripts/parse-cvs.py` → `python -m app.cv_ingest.parse_cvs`
+- `python scripts/classify-cvs-with-llm.py` → `python -m app.cv_ingest.classify_cvs_with_llm`
+
+### Completion Notes
+
+**Implementation Complete (Code Changes):**
+- ✅ All 16 workflow scripts successfully migrated to `/app` subdirectories
+- ✅ All imports updated from `from config import` to `from app.shared.config import`
+- ✅ Module docstrings added to all migrated files
+- ✅ `classify_cvs_with_llm.py` fully integrated with LLM abstraction layer
+  - Replaced direct `httpx.AsyncClient()` with `get_llm_client()`
+  - Replaced `client.post(OLLAMA_URL)` with `client.generate()`
+  - Added proper exception handling for `LLMTimeoutError` and `LLMProviderError`
+- ✅ Original `scripts/config.py` removed
+- ✅ 6 infrastructure scripts remain in `/scripts/` as expected
+
+**Pending Manual Testing (User to Execute):**
+- ⏸️ Task 5: CIGREF workflow test (see story Dev Notes)
+- ⏸️ Task 6: CV parsing workflow test (see story Dev Notes)
+- ⏸️ Task 7: LLM classification workflow test (see story Dev Notes)
+- ⏸️ Task 10: Final service health checks
+
+**Next Story:**
+- Ready for Story 2.5.4 (Documentation Cleanup) with 10 files identified for updates
+
 ## Change Log
 
 | Date | Version | Description | Author |
 |------|---------|-------------|--------|
 | 2025-11-06 | 1.0 | Story created from Epic 2.5 validation with pragmatic fixes | Sarah (PO) |
+| 2025-11-06 | 1.1 | Implementation complete: All scripts migrated, LLM abstraction integrated | James (Dev) |

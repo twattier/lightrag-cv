@@ -2,6 +2,9 @@
 """
 Enrich CIGREF parsed output with hierarchical content tree metadata.
 
+Part of lightrag-cv application workflows.
+Module: app.cigref_ingest.enrich_cigref_hierarchy
+
 This script:
 1. Extracts page headers from CIGREF PDF using pdfplumber
 2. Parses domain and job profile information from headers
@@ -10,7 +13,7 @@ This script:
 5. Outputs cigref-enriched.json with complete metadata
 
 Usage:
-    python3 scripts/enrich-cigref-hierarchy.py
+    python -m app.cigref_ingest.enrich_cigref_hierarchy
 """
 
 import json

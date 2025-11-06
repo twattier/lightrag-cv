@@ -2,6 +2,9 @@
 """
 LLM-based CV classification for automatic metadata extraction.
 
+Part of lightrag-cv application workflows.
+Module: app.cv_ingest.classify_cvs_with_llm
+
 Analyzes parsed CV content using Ollama LLM to determine:
 - Language/script (latin vs non-latin characters)
 - Actual role/job domain
@@ -12,17 +15,14 @@ import json
 import asyncio
 from pathlib import Path
 from typing import Dict, List
-import httpx
 
-# Import configuration from config.py (RULE 2)
-from config import settings
+# Import configuration and LLM abstraction (RULE 2)
+from app.shared.config import settings
+from app.shared.llm_client import get_llm_client, LLMTimeoutError, LLMProviderError
 
-# Ollama configuration from .env
-#OLLAMA_URL = settings.OLLAMA_BASE_URL
-OLLAMA_URL = "http://localhost:11434"
 MODEL = settings.OLLAMA_LLM_MODEL
 
-async def analyze_cv_with_llm(cv_content: str, client: httpx.AsyncClient) -> Dict:
+async def analyze_cv_with_llm(cv_content: str, llm_client) -> Dict:
     """
     Use LLM to analyze CV and extract metadata.
 
@@ -64,23 +64,13 @@ EXAMPLES:
 Return ONLY the JSON object, nothing else."""
 
     try:
-        response = await client.post(
-            f"{OLLAMA_URL}/api/generate",
-            json={
-                "model": MODEL,
-                "prompt": prompt,
-                "stream": False,
-                "format": "json",
-                "options": {
-                    "temperature": 0.1,  # Low temperature for consistent classification
-                    "num_predict": 300
-                }
-            },
-            timeout=settings.LLM_TIMEOUT
+        # Use LLM abstraction layer instead of direct httpx calls
+        llm_response = await llm_client.generate(
+            prompt=prompt,
+            temperature=0.1,  # Low temperature for consistent classification
+            max_tokens=300,
+            format="json"
         )
-
-        result = response.json()
-        llm_response = result.get("response", "{}")
 
         # Debug: Print first analysis to verify LLM is working
         import sys
@@ -101,6 +91,14 @@ Return ONLY the JSON object, nothing else."""
     except json.JSONDecodeError as e:
         print(f"  ⚠️  JSON parsing failed: {e}")
         print(f"  Response was: {llm_response[:200]}")
+        return {
+            "is_latin_text": True,
+            "role_domain": "Unknown",
+            "job_title": "Unknown",
+            "experience_level": "Unknown"
+        }
+    except (LLMTimeoutError, LLMProviderError) as e:
+        print(f"  ⚠️  LLM provider error: {e}")
         return {
             "is_latin_text": True,
             "role_domain": "Unknown",
@@ -143,39 +141,41 @@ async def classify_all_cvs():
     print(f"Total CVs: {len(manifest['cvs'])}")
     print()
 
-    async with httpx.AsyncClient() as client:
-        for i, cv_meta in enumerate(manifest['cvs'], 1):
-            candidate_label = cv_meta['candidate_label']
-            parsed_file = parsed_dir / f"{candidate_label}_parsed.json"
+    # Get LLM client using abstraction layer
+    llm_client = get_llm_client()
 
-            if not parsed_file.exists():
-                print(f"⏭️  {candidate_label}: Skipped (no parsed file)")
-                continue
+    for i, cv_meta in enumerate(manifest['cvs'], 1):
+        candidate_label = cv_meta['candidate_label']
+        parsed_file = parsed_dir / f"{candidate_label}_parsed.json"
 
-            # Load parsed CV
-            with open(parsed_file, 'r') as f:
-                parsed_cv = json.load(f)
+        if not parsed_file.exists():
+            print(f"⏭️  {candidate_label}: Skipped (no parsed file)")
+            continue
 
-            # Extract text content
-            cv_text = extract_cv_text(parsed_cv)
+        # Load parsed CV
+        with open(parsed_file, 'r') as f:
+            parsed_cv = json.load(f)
 
-            # Analyze with LLM
-            print(f"🔍 {i}/25 - Analyzing {candidate_label}...")
-            analysis = await analyze_cv_with_llm(cv_text, client)
+        # Extract text content
+        cv_text = extract_cv_text(parsed_cv)
 
-            # Update manifest with LLM analysis
-            cv_meta['role_domain'] = analysis['role_domain']
-            cv_meta['job_title'] = analysis['job_title']
-            cv_meta['experience_level'] = analysis['experience_level']
-            cv_meta['is_latin_text'] = analysis['is_latin_text']
-            cv_meta['llm_classified'] = True
+        # Analyze with LLM using abstraction layer
+        print(f"🔍 {i}/25 - Analyzing {candidate_label}...")
+        analysis = await analyze_cv_with_llm(cv_text, llm_client)
 
-            # Print results
-            lang = "Latin" if analysis['is_latin_text'] else "Non-Latin"
-            print(f"   → {analysis['job_title']}")
-            print(f"   → {analysis['role_domain']} ({analysis['experience_level']})")
-            print(f"   → {lang}")
-            print()
+        # Update manifest with LLM analysis
+        cv_meta['role_domain'] = analysis['role_domain']
+        cv_meta['job_title'] = analysis['job_title']
+        cv_meta['experience_level'] = analysis['experience_level']
+        cv_meta['is_latin_text'] = analysis['is_latin_text']
+        cv_meta['llm_classified'] = True
+
+        # Print results
+        lang = "Latin" if analysis['is_latin_text'] else "Non-Latin"
+        print(f"   → {analysis['job_title']}")
+        print(f"   → {analysis['role_domain']} ({analysis['experience_level']})")
+        print(f"   → {lang}")
+        print()
 
     # Update manifest metadata
     latin_count = sum(1 for cv in manifest['cvs'] if cv.get('is_latin_text', True))

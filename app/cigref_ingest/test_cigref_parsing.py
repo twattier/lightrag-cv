@@ -2,6 +2,9 @@
 """
 Test CIGREF PDF parsing via Docling REST API.
 
+Part of lightrag-cv application workflows.
+Module: app.cigref_ingest.test_cigref_parsing
+
 This script:
 1. Reads the CIGREF IT Profile Nomenclature PDF (English 2024 edition)
 2. Submits it to the Docling /parse endpoint

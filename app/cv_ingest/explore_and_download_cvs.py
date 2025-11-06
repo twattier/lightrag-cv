@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
 Explore HuggingFace CV datasets and download samples.
+
+Part of lightrag-cv application workflows.
+Module: app.cv_ingest.explore_and_download_cvs
 """
 
 import os

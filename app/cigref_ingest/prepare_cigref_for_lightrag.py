@@ -2,6 +2,9 @@
 """
 Prepare CIGREF parsed output for LightRAG ingestion.
 
+Part of lightrag-cv application workflows.
+Module: app.cigref_ingest.prepare_cigref_for_lightrag
+
 Transform enriched Docling output to clean JSON format compatible with LightRAG:
 1. Add document-level metadata
 2. Clean and structure chunks

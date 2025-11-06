@@ -1,5 +1,7 @@
 # Environment configuration
 .env
+.env.llmproxy
+
 
 # Python
 __pycache__/

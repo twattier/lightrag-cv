@@ -2,6 +2,9 @@
 """
 Analyze CIGREF parsed output for quality validation.
 
+Part of lightrag-cv application workflows.
+Module: app.cigref_ingest.analyze_cigref_parsing
+
 This script performs structured analysis to validate extraction quality:
 1. Identify IT profile domains and individual profiles
 2. Validate structured sections (Missions, Activities, Deliverables, Skills)

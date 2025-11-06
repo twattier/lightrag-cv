@@ -2,6 +2,9 @@
 """
 Select 5 CVs for manual quality validation (Story 2.4 Task 3).
 
+Part of lightrag-cv application workflows.
+Module: app.cv_ingest.select_validation_sample
+
 Randomly selects 5 CVs from successfully parsed outputs ensuring diversity
 in experience levels and file sizes.
 """
