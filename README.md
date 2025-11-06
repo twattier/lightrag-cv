@@ -219,6 +219,15 @@ lightrag-cv/
 ├── .gitignore                  # Git exclusions
 ├── README.md                   # This file
 │
+├── app/                        # Application workflows (NEW)
+│   ├── README.md               # App structure & LLM provider docs
+│   ├── shared/                 # Shared configuration and utilities
+│   │   ├── config.py           # Centralized environment config
+│   │   └── llm_client.py       # LLM provider abstraction layer
+│   ├── cigref_ingest/          # CIGREF ingestion workflows
+│   ├── cv_ingest/              # CV processing workflows
+│   └── artifacts/              # SQL queries and dev artifacts
+│
 ├── services/                   # Microservices
 │   ├── docling/                # Document parsing service
 │   ├── lightrag/               # LightRAG retrieval service
@@ -235,13 +244,15 @@ lightrag-cv/
 │   ├── architecture/           # Technical architecture
 │   └── stories/                # User stories
 │
-└── scripts/                    # Utility scripts
+└── scripts/                    # Infrastructure scripts
     ├── validate-ollama.py      # Ollama connectivity validation
     ├── health-check.sh         # Comprehensive health check (bash)
     ├── health-check.py         # Comprehensive health check (Python/JSON)
-    ├── ingest-cigref.py        # CIGREF profile ingestion
-    └── ingest-cvs.py           # CV ingestion
+    ├── ingest-cigref.py        # CIGREF profile ingestion (legacy)
+    └── ingest-cvs.py           # CV ingestion (legacy)
 ```
+
+See [app/README.md](app/README.md) for application structure details and LLM provider configuration guide.
 
 ## Service Endpoints
 

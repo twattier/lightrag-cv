@@ -63,7 +63,6 @@ services:
       LLM_BINDING: ollama
       LLM_MODEL: ${OLLAMA_LLM_MODEL:-qwen3:8b}
       LLM_BINDING_HOST: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
-      OLLAMA_LLM_NUM_CTX: ${OLLAMA_LLM_NUM_CTX:-40960}
       LLM_TIMEOUT: ${LLM_TIMEOUT:-600}
       # Embedding Configuration (Ollama) - Official lightrag-server variables
       EMBEDDING_BINDING: ollama
@@ -71,10 +70,6 @@ services:
       EMBEDDING_DIM: 1024
       EMBEDDING_BINDING_HOST: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
       EMBEDDING_TIMEOUT: ${EMBEDDING_TIMEOUT:-300}
-      # Custom Service Configuration - Required for custom LightRAG service
-      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
-      OLLAMA_LLM_MODEL: ${OLLAMA_LLM_MODEL:-qwen3:8b}
-      OLLAMA_EMBEDDING_MODEL: ${OLLAMA_EMBEDDING_MODEL:-bge-m3:latest}
       # Server Configuration
       PORT: 9621
       WORKING_DIR: /app/data/lightrag

@@ -29,11 +29,20 @@ class Settings:
     LIGHTRAG_HOST: str = os.getenv("LIGHTRAG_HOST", "localhost")
     LIGHTRAG_PORT: int = int(os.getenv("LIGHTRAG_PORT", "9621"))
 
-    # Ollama configuration
-    OLLAMA_BASE_URL: str = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
-    OLLAMA_LLM_MODEL: str = os.getenv("OLLAMA_LLM_MODEL", "qwen2.5:7b-instruct-q4_K_M")
-    OLLAMA_HOST_PORT: int = int(os.getenv("OLLAMA_HOST_PORT", "11434"))
+    # LLM Provider Configuration (unified multi-provider support)
+    LLM_BINDING: str = os.getenv("LLM_BINDING", "ollama")  # Options: ollama, openai, litellm
+    LLM_BINDING_HOST: str = os.getenv("LLM_BINDING_HOST", "http://localhost:11434")
+    LLM_MODEL: str = os.getenv("LLM_MODEL", "qwen2.5:7b-instruct-q4_K_M")
+    LLM_BINDING_API_KEY: Optional[str] = os.getenv("LLM_BINDING_API_KEY")  # Required for openai/litellm
     LLM_TIMEOUT: float = float(os.getenv("LLM_TIMEOUT", "1200"))
+
+    # Embedding Provider Configuration
+    EMBEDDING_BINDING: str = os.getenv("EMBEDDING_BINDING", "ollama")
+    EMBEDDING_BINDING_HOST: str = os.getenv("EMBEDDING_BINDING_HOST", "http://localhost:11434")
+    EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "bge-m3:latest")
+    EMBEDDING_BINDING_API_KEY: Optional[str] = os.getenv("EMBEDDING_BINDING_API_KEY")
+    EMBEDDING_DIM: int = int(os.getenv("EMBEDDING_DIM", "1024"))  # bge-m3 default
+    EMBEDDING_TIMEOUT: float = float(os.getenv("EMBEDDING_TIMEOUT", "600"))
 
     # Data paths
     DATA_DIR: Path = Path("/home/wsluser/dev/lightrag-cv/data")
