@@ -69,15 +69,19 @@ class Settings:
         return f"http://{self.DOCLING_HOST}:{self.DOCLING_PORT}"
 
     # Data paths
-    DATA_DIR: Path = Path("/home/wsluser/dev/lightrag-cv/data")
+    DATA_DIR: Path = Path(__file__).parent.parent.parent / "data"
 
     CIGREF_DIR: Path = DATA_DIR / "cigref"
     CIGREF_FILE: Path = CIGREF_DIR / "Cigref_Nomenclature_des_profils_metiers_SI_EN_2024.pdf"
     CIGREF_PARSED: Path = CIGREF_DIR / "cigref-parsed.json"  # Output from cigref_1_parse.py
 
+    CV_DIR: Path = DATA_DIR / "cvs"
+    CV_DOCS_DIR: Path = CV_DIR / "docs"  # Downloaded CV PDFs
+    CV_PARSED_DIR: Path = CV_DIR / "parsed"  # Parsed JSON outputs
+    CV_MANIFEST: Path = CV_DIR / "cvs-manifest.json"
+
     # Ingestion settings
     INGESTION_TIMEOUT: int = int(os.getenv("INGESTION_TIMEOUT", "1200"))  # 20 minutes
-    DEFAULT_BATCH_SIZE: int = int(os.getenv("DEFAULT_BATCH_SIZE", "5"))
     MAX_RETRIES: int = int(os.getenv("MAX_RETRIES", "3"))
 
 

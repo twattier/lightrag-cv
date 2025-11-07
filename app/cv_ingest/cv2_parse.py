@@ -73,8 +73,8 @@ class CVParsingStats:
 class CVParser:
     """Handles CV parsing through Docling service."""
 
-    def __init__(self, docling_url: str = "http://localhost:8001"):
-        self.docling_url = docling_url
+    def __init__(self, docling_url: str = None):
+        self.docling_url = docling_url or settings.docling_url
         self.stats = CVParsingStats()
 
     async def check_docling_health(self) -> bool:
@@ -109,15 +109,17 @@ class CVParser:
         self,
         cv_path: Path,
         cv_metadata: Dict,
-        client: httpx.AsyncClient
+        client: httpx.AsyncClient,
+        retry_count: int = 0
     ) -> Optional[Dict]:
         """
-        Parse a single CV through Docling.
+        Parse a single CV through Docling with retry logic.
 
         Args:
             cv_path: Path to CV file
             cv_metadata: Metadata from cvs-manifest.json
             client: Async HTTP client
+            retry_count: Current retry attempt (internal)
 
         Returns:
             Parsed CV data dict or None if failed
@@ -137,7 +139,8 @@ class CVParser:
                 extra={
                     "candidate_label": candidate_label,
                     "cv_filename": cv_metadata["filename"],
-                    "file_size_kb": round(file_size_kb, 2)
+                    "file_size_kb": round(file_size_kb, 2),
+                    "retry_attempt": retry_count
                 }
             )
 
@@ -145,7 +148,7 @@ class CVParser:
             response = await client.post(
                 f"{self.docling_url}/parse",
                 files={"file": (cv_metadata["filename"], cv_content, "application/pdf")},
-                timeout=300.0  # 5 minutes per CV (increased for larger files)
+                timeout=settings.DOCLING_TIMEOUT
             )
 
             processing_time = time.time() - start_time
@@ -207,33 +210,55 @@ class CVParser:
 
         except httpx.TimeoutException:
             processing_time = time.time() - start_time
-            logger.error(
+            logger.warning(
                 "CV parse timeout",
                 extra={
                     "candidate_label": candidate_label,
-                    "processing_time_ms": round(processing_time * 1000, 2)
+                    "processing_time_ms": round(processing_time * 1000, 2),
+                    "retry_attempt": retry_count
                 }
             )
+            # Retry with exponential backoff
+            if retry_count < settings.MAX_RETRIES:
+                backoff_delay = min(4 * (2 ** retry_count), 60)  # Exponential backoff, max 60s
+                logger.info(
+                    f"Retrying after {backoff_delay}s",
+                    extra={"candidate_label": candidate_label}
+                )
+                await asyncio.sleep(backoff_delay)
+                return await self.parse_cv(cv_path, cv_metadata, client, retry_count + 1)
+
             self.stats.failures.append({
                 "candidate_label": candidate_label,
                 "cv_filename": cv_metadata["filename"],
-                "error": "Timeout after 300 seconds"
+                "error": f"Timeout after {settings.DOCLING_TIMEOUT}s (retries: {retry_count})"
             })
             return None
         except Exception as e:
             processing_time = time.time() - start_time
-            logger.error(
+            logger.warning(
                 "CV parse exception",
                 extra={
                     "candidate_label": candidate_label,
                     "error": str(e),
-                    "processing_time_ms": round(processing_time * 1000, 2)
+                    "processing_time_ms": round(processing_time * 1000, 2),
+                    "retry_attempt": retry_count
                 }
             )
+            # Retry with exponential backoff for certain errors
+            if retry_count < settings.MAX_RETRIES and isinstance(e, (httpx.ConnectError, httpx.ReadError)):
+                backoff_delay = min(4 * (2 ** retry_count), 60)
+                logger.info(
+                    f"Retrying after {backoff_delay}s",
+                    extra={"candidate_label": candidate_label, "error_type": type(e).__name__}
+                )
+                await asyncio.sleep(backoff_delay)
+                return await self.parse_cv(cv_path, cv_metadata, client, retry_count + 1)
+
             self.stats.failures.append({
                 "candidate_label": candidate_label,
                 "cv_filename": cv_metadata["filename"],
-                "error": str(e)
+                "error": f"{type(e).__name__}: {str(e)} (retries: {retry_count})"
             })
             return None
 
@@ -349,12 +374,10 @@ def print_summary(stats: CVParsingStats):
 
 async def main():
     """Main execution function."""
-    # Configuration paths
-    data_dir = Path("/home/wsluser/dev/lightrag-cv/data")
-    cvs_dir = data_dir / "cvs"
-    manifest_path = cvs_dir / "cvs-manifest.json"
-    test_set_dir = cvs_dir / "test-set"
-    output_dir = cvs_dir / "parsed"
+    # Configuration paths from centralized settings (RULE 2)
+    manifest_path = settings.CV_MANIFEST
+    docs_dir = settings.CV_DOCS_DIR
+    output_dir = settings.CV_PARSED_DIR
 
     # Validate paths
     if not manifest_path.exists():
@@ -364,15 +387,15 @@ async def main():
         )
         sys.exit(1)
 
-    if not test_set_dir.exists():
+    if not docs_dir.exists():
         logger.error(
-            "Test set directory not found",
-            extra={"path": str(test_set_dir)}
+            "CV docs directory not found",
+            extra={"path": str(docs_dir)}
         )
         sys.exit(1)
 
-    # Initialize parser
-    parser = CVParser(docling_url="http://localhost:8001")
+    # Initialize parser with config URL
+    parser = CVParser()
 
     # Check Docling health
     logger.info("Checking Docling service health...")
@@ -384,7 +407,7 @@ async def main():
     try:
         stats = await parser.parse_all_cvs(
             cvs_manifest_path=manifest_path,
-            test_set_dir=test_set_dir,
+            test_set_dir=docs_dir,
             output_dir=output_dir,
             max_concurrent=5
         )

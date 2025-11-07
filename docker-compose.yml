@@ -59,17 +59,19 @@ services:
       LIGHTRAG_VECTOR_STORAGE: PGVectorStorage
       LIGHTRAG_GRAPH_STORAGE: PGGraphStorage
       LIGHTRAG_DOC_STATUS_STORAGE: PGDocStatusStorage
-      # LLM Configuration (Ollama) - Official lightrag-server variables
-      LLM_BINDING: ollama
-      LLM_MODEL: ${OLLAMA_LLM_MODEL:-qwen3:8b}
-      LLM_BINDING_HOST: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
-      LLM_TIMEOUT: ${LLM_TIMEOUT:-600}
-      # Embedding Configuration (Ollama) - Official lightrag-server variables
-      EMBEDDING_BINDING: ollama
-      EMBEDDING_MODEL: ${OLLAMA_EMBEDDING_MODEL:-bge-m3:latest}
-      EMBEDDING_DIM: 1024
-      EMBEDDING_BINDING_HOST: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
-      EMBEDDING_TIMEOUT: ${EMBEDDING_TIMEOUT:-300}
+      # LLM Configuration - Official lightrag-server variables
+      LLM_BINDING: ${LLM_BINDING:-ollama}
+      LLM_MODEL: ${LLM_MODEL:-qwen3:8b}
+      LLM_BINDING_HOST: ${LLM_BINDING_HOST:-http://host.docker.internal:11434}
+      LLM_BINDING_API_KEY: ${LLM_BINDING_API_KEY:-}
+      LLM_TIMEOUT: ${LLM_TIMEOUT:-1200}
+      # Embedding Configuration - Official lightrag-server variables
+      EMBEDDING_BINDING: ${EMBEDDING_BINDING:-ollama}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-bge-m3:latest}
+      EMBEDDING_DIM: ${EMBEDDING_DIM:-1024}
+      EMBEDDING_BINDING_HOST: ${EMBEDDING_BINDING_HOST:-http://host.docker.internal:11434}
+      EMBEDDING_BINDING_API_KEY: ${EMBEDDING_BINDING_API_KEY:-}
+      EMBEDDING_TIMEOUT: ${EMBEDDING_TIMEOUT:-600}
       # Server Configuration
       PORT: 9621
       WORKING_DIR: /app/data/lightrag

@@ -23,10 +23,11 @@ Usage:
 import argparse
 import asyncio
 import json
+import re
 import sys
 from collections import defaultdict
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional, Tuple
 
 # Add project root to Python path for direct script execution
 project_root = Path(__file__).resolve().parent.parent.parent
@@ -34,12 +35,182 @@ if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
 
 import httpx
+import pdfplumber
 
-from app.cigref_ingest.enrich_cigref_hierarchy import (
-    build_page_hierarchy_map,
-    enrich_chunks_with_hierarchy,
-)
 from app.shared.config import settings
+
+
+# Header extraction configuration
+HEADER_HEIGHT = 50  # pixels from top of page
+
+# Regex patterns for parsing headers
+# Domain pattern: "3. APPLICATION LIFE CYCLE" or "1. STEERING, ORGANISING..."
+DOMAIN_PATTERN = re.compile(r'^(\d+)\.\s+([A-Z\s,]+?)(?:\s+P\s?AGE|\s*$)', re.MULTILINE)
+
+# Profile pattern: "3.5. SOFTWARE CONFIGURATION OFFICER"
+PROFILE_PATTERN = re.compile(r'^(\d+\.\d+)\.\s+([A-Z\s]+?)(?:\s+P\s?AGE|\s*$)', re.MULTILINE)
+
+
+def extract_page_header(page, header_height: int = HEADER_HEIGHT) -> str:
+    """
+    Extract text from the top header region of a page.
+
+    Args:
+        page: pdfplumber page object
+        header_height: Height in points from top to extract
+
+    Returns:
+        Extracted header text (stripped)
+    """
+    header_bbox = (0, 0, page.width, header_height)
+    header = page.crop(header_bbox)
+    header_text = header.extract_text() or ""
+    return header_text.strip()
+
+
+def parse_domain_from_header(header_text: str) -> Optional[Tuple[str, str]]:
+    """
+    Parse domain ID and name from header text.
+
+    Args:
+        header_text: Header text extracted from page
+
+    Returns:
+        Tuple of (domain_id, domain_name) or None if not found
+
+    Example:
+        "3. APPLICATION LIFE CYCLE P AGE | 105" → ("3", "APPLICATION LIFE CYCLE")
+    """
+    match = DOMAIN_PATTERN.search(header_text)
+    if match:
+        domain_id = match.group(1).strip()
+        domain_name = match.group(2).strip()
+        return (domain_id, domain_name)
+    return None
+
+
+def parse_profile_from_header(header_text: str) -> Optional[Tuple[str, str]]:
+    """
+    Parse job profile ID and name from header text.
+
+    Args:
+        header_text: Header text extracted from page
+
+    Returns:
+        Tuple of (profile_id, profile_name) or None if not found
+
+    Example:
+        "3.5. SOFTWARE CONFIGURATION OFFICER" → ("3.5", "SOFTWARE CONFIGURATION OFFICER")
+    """
+    match = PROFILE_PATTERN.search(header_text)
+    if match:
+        profile_id = match.group(1).strip()
+        profile_name = match.group(2).strip()
+        return (profile_id, profile_name)
+    return None
+
+
+def build_page_hierarchy_map(pdf_path: Path) -> Dict[int, Dict[str, Optional[str]]]:
+    """
+    Build a mapping of page numbers to their hierarchical context.
+
+    Args:
+        pdf_path: Path to CIGREF PDF
+
+    Returns:
+        Dictionary mapping page_number → {domain_id, domain, job_profile_id, job_profile}
+
+    Example:
+        {
+            111: {
+                "domain_id": "3",
+                "domain": "APPLICATION LIFE CYCLE",
+                "job_profile_id": "3.5",
+                "job_profile": "SOFTWARE CONFIGURATION OFFICER"
+            }
+        }
+    """
+    page_hierarchy = {}
+    current_domain = None
+    current_domain_id = None
+    current_profile = None
+    current_profile_id = None
+
+    print(f"   Extracting headers from PDF: {pdf_path.name}")
+
+    with pdfplumber.open(pdf_path) as pdf:
+        total_pages = len(pdf.pages)
+
+        for page_num in range(1, total_pages + 1):
+            page = pdf.pages[page_num - 1]  # pdfplumber is 0-indexed
+
+            # Extract header
+            header_text = extract_page_header(page)
+
+            # Parse domain from header
+            domain_match = parse_domain_from_header(header_text)
+            if domain_match:
+                current_domain_id, current_domain = domain_match
+
+            # Parse profile from header
+            profile_match = parse_profile_from_header(header_text)
+            if profile_match:
+                current_profile_id, current_profile = profile_match
+            # Note: If no profile in header, keep previous profile (carries over)
+
+            # Store hierarchy for this page
+            page_hierarchy[page_num] = {
+                "domain_id": current_domain_id,
+                "domain": current_domain,
+                "job_profile_id": current_profile_id,
+                "job_profile": current_profile
+            }
+
+            # Progress indicator
+            if page_num % 50 == 0:
+                print(f"      Processed {page_num}/{total_pages} pages...")
+
+    return page_hierarchy
+
+
+def enrich_chunks_with_hierarchy(
+    chunks: List[Dict[str, Any]],
+    page_hierarchy: Dict[int, Dict[str, Optional[str]]]
+) -> List[Dict[str, Any]]:
+    """
+    Enrich chunks with hierarchical metadata from page context.
+
+    Args:
+        chunks: List of chunk dictionaries from parsed output
+        page_hierarchy: Page number → hierarchy mapping
+
+    Returns:
+        Enriched chunks with domain/profile metadata added
+    """
+    enriched_chunks = []
+
+    for chunk in chunks:
+        # Copy chunk
+        enriched_chunk = chunk.copy()
+
+        # Get page number from chunk metadata
+        page_num = chunk.get("metadata", {}).get("page", 1)
+
+        # Get hierarchy for this page
+        hierarchy = page_hierarchy.get(page_num, {})
+
+        # Enrich metadata
+        if "metadata" not in enriched_chunk:
+            enriched_chunk["metadata"] = {}
+
+        enriched_chunk["metadata"]["domain_id"] = hierarchy.get("domain_id")
+        enriched_chunk["metadata"]["domain"] = hierarchy.get("domain")
+        enriched_chunk["metadata"]["job_profile_id"] = hierarchy.get("job_profile_id")
+        enriched_chunk["metadata"]["job_profile"] = hierarchy.get("job_profile")
+
+        enriched_chunks.append(enriched_chunk)
+
+    return enriched_chunks
 
 
 async def parse_cigref_with_docling() -> Dict[str, Any]:

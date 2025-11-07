@@ -3,17 +3,18 @@
 CV Dataset Acquisition and Preprocessing Script
 
 Part of lightrag-cv application workflows.
-Module: app.cv_ingest.download_cvs
+Module: app.cv_ingest.cv1_download
 
-Downloads and curates 20-30 CV samples from Hugging Face datasets.
+Downloads and curates CV samples from Hugging Face datasets.
 Since many CVs in these datasets are image-based PDFs without extractable text,
 this script uses a pragmatic approach:
 1. Download diverse samples based on file size and dataset distribution
-2. Rely on manual quality validation (Story AC 5) to verify suitability
+2. Rely on manual quality validation to verify suitability
 
-Story: Story 2.3 - CV Dataset Acquisition and Preprocessing
+Story: Story 2.5.3c - Refactor CV Ingest Workflow for Simplicity
 """
 
+import argparse
 import json
 import logging
 import random
@@ -32,6 +33,9 @@ except ImportError:
     from datasets import load_dataset
     import fitz
 
+# Import centralized configuration (RULE 2: All Environment Variables via config.py)
+from app.shared.config import settings
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -39,19 +43,10 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Constants
-PROJECT_ROOT = Path(__file__).parent.parent
-DATA_DIR = PROJECT_ROOT / "data"
-CVS_DIR = DATA_DIR / "cvs"
-TEST_SET_DIR = CVS_DIR / "test-set"
-MANIFEST_PATH = CVS_DIR / "cvs-manifest.json"
-
-TARGET_CV_COUNT = 25  # Target 20-30 CVs
-MAX_SAMPLES_TO_COLLECT = 100  # Collect candidates for selection
-
 # File size constraints (typical CV range)
 MIN_FILE_SIZE_KB = 30   # Filter out very small files (likely corrupt)
 MAX_FILE_SIZE_KB = 3000 # Filter out very large files (likely not standard CVs)
+MAX_SAMPLES_TO_COLLECT = 100  # Collect candidates for selection
 
 
 def estimate_page_count(pdf_bytes: bytes) -> int:
@@ -205,17 +200,31 @@ def ensure_diversity(cvs: List[Dict], target_count: int) -> List[Dict]:
 
 def main():
     """Main execution function."""
+    # Parse command-line arguments
+    parser = argparse.ArgumentParser(
+        description="Download and curate CV samples from Hugging Face datasets"
+    )
+    parser.add_argument(
+        "--max-cvs",
+        type=int,
+        default=25,
+        help="Maximum number of CVs to download (default: 25)"
+    )
+    args = parser.parse_args()
+
+    target_cv_count = args.max_cvs
+
     logger.info("=" * 70)
     logger.info("CV DATASET ACQUISITION AND PREPROCESSING")
-    logger.info("Story 2.3 - Curating 20-30 CV Samples")
+    logger.info(f"Story 2.5.3c - Downloading {target_cv_count} CV Samples")
     logger.info("=" * 70)
 
     # Set random seed for reproducibility
     random.seed(42)
 
-    # Create directories
-    TEST_SET_DIR.mkdir(parents=True, exist_ok=True)
-    logger.info(f"Created directory: {TEST_SET_DIR}")
+    # Create directories using centralized config
+    settings.CV_DOCS_DIR.mkdir(parents=True, exist_ok=True)
+    logger.info(f"Created directory: {settings.CV_DOCS_DIR}")
 
     # Collect CVs from datasets
     all_candidates = []
@@ -250,23 +259,23 @@ def main():
 
     logger.info(f"\nTotal candidates collected: {len(all_candidates)}")
 
-    if len(all_candidates) < 20:
-        logger.error(f"Insufficient candidates ({len(all_candidates)}). Need at least 20.")
+    if len(all_candidates) < target_cv_count:
+        logger.error(f"Insufficient candidates ({len(all_candidates)}). Need at least {target_cv_count}.")
         logger.info("Consider adjusting filtering criteria or max_samples.")
         sys.exit(1)
 
     # Select diverse final set
-    logger.info(f"\nSelecting {TARGET_CV_COUNT} diverse CVs...")
-    final_cvs = ensure_diversity(all_candidates, target_count=TARGET_CV_COUNT)
+    logger.info(f"\nSelecting {target_cv_count} diverse CVs...")
+    final_cvs = ensure_diversity(all_candidates, target_count=target_cv_count)
 
     # Download and organize files
-    logger.info(f"\nDownloading {len(final_cvs)} CVs to {TEST_SET_DIR}...")
+    logger.info(f"\nDownloading {len(final_cvs)} CVs to {settings.CV_DOCS_DIR}...")
     manifest_entries = []
 
     for idx, cv_meta in enumerate(final_cvs, start=1):
         # Standardized filename
         standardized_filename = f"cv_{idx:03d}.pdf"
-        output_path = TEST_SET_DIR / standardized_filename
+        output_path = settings.CV_DOCS_DIR / standardized_filename
 
         # Write file
         output_path.write_bytes(cv_meta['content'])
@@ -292,7 +301,7 @@ def main():
         )
 
     # Generate manifest
-    logger.info(f"\nGenerating manifest at {MANIFEST_PATH}...")
+    logger.info(f"\nGenerating manifest at {settings.CV_MANIFEST}...")
     manifest = {
         "metadata": {
             "total_cvs": len(manifest_entries),
@@ -304,14 +313,14 @@ def main():
             },
             "notes": [
                 "Many CVs in these datasets are image-based PDFs without extractable text",
-                "No classification performed at download stage - use classify-cvs-with-llm.py after parsing",
-                "Manual quality validation (AC 5) is critical to verify suitability for Story 2.4"
+                "No classification performed at download stage - use cv3_classify.py after parsing",
+                "Manual quality validation is critical to verify suitability"
             ]
         },
         "cvs": manifest_entries
     }
 
-    with open(MANIFEST_PATH, 'w', encoding='utf-8') as f:
+    with open(settings.CV_MANIFEST, 'w', encoding='utf-8') as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
 
     # Summary statistics
@@ -334,12 +343,12 @@ def main():
     logger.info(f"  Max: {max(pages)} pages")
     logger.info(f"  Avg: {sum(pages)/len(pages):.1f} pages")
 
-    logger.info(f"\nFiles saved to: {TEST_SET_DIR}")
-    logger.info(f"Manifest saved to: {MANIFEST_PATH}")
+    logger.info(f"\nFiles saved to: {settings.CV_DOCS_DIR}")
+    logger.info(f"Manifest saved to: {settings.CV_MANIFEST}")
     logger.info("\n⚠️  NEXT STEPS:")
-    logger.info("   1. Parse CVs: python scripts/parse-cvs.py")
-    logger.info("   2. Classify CVs: python scripts/classify-cvs-with-llm.py")
-    logger.info("   3. Select validation sample: python scripts/select-validation-sample.py")
+    logger.info("   1. Parse CVs: python -m app.cv_ingest.cv2_parse")
+    logger.info("   2. Classify CVs: python -m app.cv_ingest.cv3_classify")
+    logger.info("   3. Import CVs: python -m app.cv_ingest.cv4_import")
     logger.info("\n✓ CV dataset acquisition complete!")
 
 

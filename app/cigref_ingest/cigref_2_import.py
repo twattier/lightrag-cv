@@ -128,6 +128,8 @@ async def submit_domain_to_lightrag(
     texts = []
     file_sources = []
 
+    print(f"INGESTION_TIMEOUT = {settings.INGESTION_TIMEOUT}")
+
     # Prepare texts with metadata headers
     for chunk in chunks:
         chunk_id = chunk.get("chunk_id", "unknown")

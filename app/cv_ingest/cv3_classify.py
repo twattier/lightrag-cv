@@ -20,7 +20,7 @@ from typing import Dict, List
 from app.shared.config import settings
 from app.shared.llm_client import get_llm_client, LLMTimeoutError, LLMProviderError
 
-MODEL = settings.OLLAMA_LLM_MODEL
+MODEL = settings.LLM_MODEL
 
 async def analyze_cv_with_llm(cv_content: str, llm_client) -> Dict:
     """
@@ -125,10 +125,9 @@ def extract_cv_text(parsed_cv: Dict) -> str:
 async def classify_all_cvs():
     """Main execution - classify all parsed CVs."""
 
-    # Paths
-    data_dir = Path("/home/wsluser/dev/lightrag-cv/data/cvs")
-    parsed_dir = data_dir / "parsed"
-    manifest_path = data_dir / "cvs-manifest.json"
+    # Paths from centralized config (RULE 2)
+    parsed_dir = settings.CV_PARSED_DIR
+    manifest_path = settings.CV_MANIFEST
 
     # Load original manifest
     with open(manifest_path, 'r') as f:
