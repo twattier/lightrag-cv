@@ -23,11 +23,6 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Dict, List, Optional
 
-# Add project root to Python path for direct script execution
-project_root = Path(__file__).resolve().parent.parent.parent
-if str(project_root) not in sys.path:
-    sys.path.insert(0, str(project_root))
-
 try:
     from datasets import load_dataset
     import fitz  # PyMuPDF for page count

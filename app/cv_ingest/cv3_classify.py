@@ -13,14 +13,8 @@ Analyzes parsed CV content using Ollama LLM to determine:
 
 import json
 import asyncio
-import sys
 from pathlib import Path
 from typing import Dict, List
-
-# Add project root to Python path for direct script execution
-project_root = Path(__file__).resolve().parent.parent.parent
-if str(project_root) not in sys.path:
-    sys.path.insert(0, str(project_root))
 
 # Import configuration and LLM abstraction (RULE 2)
 from app.shared.config import settings
