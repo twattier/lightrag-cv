@@ -48,4 +48,46 @@ This is the **DEFINITIVE technology selection** for LightRAG-CV. All development
 | **Monitoring** | Docker Compose logs | N/A | Container log aggregation | `docker compose logs -f` sufficient for POC; Prometheus/Grafana deferred to Phase 2 |
 | **Secret Management** | .env files | N/A | Local secrets | .env for development; acceptable for single-user POC; Vault/SOPS for Phase 2 |
 
+## Multi-Provider LLM Support (Epic 2.5+)
+
+**Abstraction Layer**: `app/shared/llm_client.py` provides unified OpenAI-compatible interface for multiple LLM providers.
+
+### Supported Providers
+
+| Provider | Type | Use Case | Configuration |
+|----------|------|----------|---------------|
+| **Ollama** | Local | Development, privacy-sensitive workloads | `LLM_PROVIDER=ollama` |
+| **OpenAI-compatible APIs** | Remote | Production, cloud deployment | `LLM_PROVIDER=openai` or `LLM_PROVIDER=litellm` |
+
+### Configuration Variables
+
+All application scripts use these environment variables (configured in `.env`):
+
+| Variable | Default | Purpose | Example |
+|----------|---------|---------|---------|
+| `LLM_PROVIDER` | `ollama` | Provider selection (ollama, openai, litellm) | `ollama` |
+| `LLM_BASE_URL` | `http://localhost:11434/v1` | Provider API endpoint | `http://localhost:11434/v1` |
+| `LLM_MODEL` | `qwen2.5:7b` | Model identifier | `qwen2.5:7b` |
+| `LLM_API_KEY` | `ollama` | API key (ignored for Ollama) | `sk-...` for OpenAI |
+| `LLM_TEMPERATURE` | `0.0` | Generation temperature | `0.0` (deterministic) |
+
+### Backward Compatibility
+
+Legacy `OLLAMA_*` environment variables are still supported for backward compatibility:
+
+```bash
+# Legacy (still works)
+OLLAMA_HOST=http://localhost:11434
+OLLAMA_LLM_MODEL=qwen2.5:7b
+
+# Modern (Epic 2.5+, preferred)
+LLM_PROVIDER=ollama
+LLM_BASE_URL=http://localhost:11434/v1
+LLM_MODEL=qwen2.5:7b
+```
+
+**Migration Strategy**: New scripts use `LLM_*` variables. Legacy scripts continue to work with `OLLAMA_*` variables until deprecated in Phase 2.
+
+**Usage**: See [Coding Standards](coding-standards.md) for LLM client usage patterns and [app/README.md](../../app/README.md) for detailed configuration examples.
+
 ---

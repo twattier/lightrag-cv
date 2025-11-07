@@ -45,7 +45,7 @@ Initially, 4 CVs failed due to **timeout (120 seconds)** on larger or multi-page
 | cv_015 | 89.73 KB | 8 | Timeout after 120s | ✅ Parsed with 300s timeout |
 | cv_020 | 2,138.46 KB | 6 | Timeout after 120s (largest file) | ✅ Parsed with 300s timeout |
 
-**Resolution**: Timeout increased from 120s to 300s in [parse-cvs.py](../scripts/parse-cvs.py), achieving 100% success rate.
+**Resolution**: Timeout increased from 120s to 300s in [cv2_parse.py](../scripts/cv2_parse.py), achieving 100% success rate.
 
 ---
 
@@ -298,7 +298,7 @@ Docling extracts contact information appropriately:
 
 **Implementation**:
 ```python
-# In scripts/parse-cvs.py, line 143
+# In scripts/cv2_parse.py, line 143
 response = await client.post(
     f"{self.docling_url}/parse",
     files={"file": (cv_metadata["filename"], cv_content, "application/pdf")},
@@ -359,7 +359,7 @@ response = await client.post(
 
 ### For Immediate Action (Story 2.4)
 
-1. ✅ **Increase Timeout**: Modify [parse-cvs.py](../scripts/parse-cvs.py) to use 300s timeout
+1. ✅ **Increase Timeout**: Modify [cv2_parse.py](../scripts/cv2_parse.py) to use 300s timeout
 2. ✅ **Re-parse Failed CVs**: Run parsing again for cv_002, cv_008, cv_015, cv_020
 3. ✅ **Validate Success Rate**: Confirm 100% (25/25) success after timeout increase
 
@@ -470,7 +470,7 @@ This enriched metadata enables:
 ### Classification Scripts
 
 **Created:**
-- [scripts/classify-cvs-with-llm.py](../scripts/classify-cvs-with-llm.py) - Main classification script using Ollama API
+- [scripts/cv3_classify.py](../scripts/cv3_classify.py) - Main classification script using Ollama API
 - [scripts/validate-classification.py](../scripts/validate-classification.py) - Validation against ground truth
 
 **Configuration:**

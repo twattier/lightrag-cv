@@ -17,14 +17,14 @@ class LightRAGService:
         self.lightrag = LightRAG(config=self.config)
 ```
 
-**RULE 2: All Environment Variables via config.py**
+**RULE 2: All Environment Variables via app.shared.config**
 
 ```python
 # ❌ WRONG
 postgres_host = os.environ.get("POSTGRES_HOST")
 
-# ✅ CORRECT
-from config import settings
+# ✅ CORRECT (Epic 2.5+)
+from app.shared.config import settings
 postgres_host = settings.POSTGRES_HOST
 ```
 
@@ -133,5 +133,50 @@ candidates = lightrag_result.get("results", [])
 | Environment vars | UPPER_SNAKE_CASE | `POSTGRES_HOST` |
 | API endpoints | kebab-case | `/search-by-profile` |
 | Database tables | snake_case | `document_metadata` |
+
+## Application Execution Patterns (Epic 2.5+)
+
+**Module Execution**: All application scripts support both module and direct execution patterns.
+
+```bash
+# ✅ PREFERRED - Module execution (from repository root)
+python -m app.cigref_ingest.cigref_2_import
+python -m app.cv_ingest.cv2_parse
+python -m app.cv_ingest.cv3_classify
+
+# ✅ ALSO VALID - Direct execution (from repository root)
+python app/cigref_ingest/cigref_2_import.py
+python app/cv_ingest/cv2_parse.py
+python app/cv_ingest/cv3_classify.py
+```
+
+**PYTHONPATH Requirements**: Repository root must be in PYTHONPATH for imports to work correctly.
+
+```bash
+# Set PYTHONPATH (if not already configured)
+export PYTHONPATH=/home/wsluser/dev/lightrag-cv:$PYTHONPATH
+
+# Or run from repository root (recommended)
+cd /home/wsluser/dev/lightrag-cv
+python -m app.module.script
+```
+
+**LLM Client Usage**: Always use abstraction layer for LLM operations.
+
+```python
+# ✅ CORRECT - Use LLM client abstraction (Epic 2.5+)
+from app.shared.llm_client import get_llm_client
+
+client = get_llm_client()
+response = client.chat.completions.create(
+    model=client.model,
+    messages=[{"role": "user", "content": prompt}],
+    temperature=0.0
+)
+
+# ❌ WRONG - Direct Ollama API calls
+import ollama
+response = ollama.chat(...)  # Bypasses provider abstraction
+```
 
 ---

@@ -14,7 +14,7 @@ This is a **brownfield refactoring epic** to improve the organization of utility
 ### Current State (26 scripts)
 - Infrastructure scripts: `setup.sh`, health checks, GPU service management, Ollama validation
 - CIGREF workflow scripts: `ingest-cigref*.py`, `prepare-cigref*.py`, `analyze-cigref*.py`, etc.
-- CV workflow scripts: `parse-cvs.py`, `classify-cvs*.py`, `download*.py`, etc.
+- CV workflow scripts: `cv2_parse.py`, `classify-cvs*.py`, `download*.py`, etc.
 - Shared utilities: `config.py` (centralized configuration, **Ollama-only**)
 - Artifacts: `query-entities.sql`, `requirements.txt`
 - **LLM Provider Lock-in**: Scripts hardcoded to use Ollama (`OLLAMA_BASE_URL`, `OLLAMA_LLM_MODEL`)
@@ -132,20 +132,20 @@ Move all CIGREF and CV workflow scripts to appropriate `/app` subdirectories wit
 
 **Key Tasks**:
 - **CIGREF Workflows** → `/app/cigref_ingest/`:
-  - `ingest-cigref.py`, `ingest-cigref-batched.py`
+  - `cigref_1_parse.py`, `cigref_2_import.py`
   - `prepare-cigref-for-lightrag.py`
   - `analyze-cigref-parsing.py`, `test-cigref-parsing.py`
   - `enrich-cigref-hierarchy.py`, `test-header-extraction.py`
 
 - **CV Workflows** → `/app/cv_ingest/`:
-  - `parse-cvs.py`, `classify-cvs-with-llm.py`
-  - `download-cvs.py`, `download_cv_samples.py`, `explore_and_download_cvs.py`
+  - `cv2_parse.py`, `cv3_classify.py`
+  - `cv1_download.py`, `download_cv_samples.py`, `explore_and_download_cvs.py`
   - `download_sample_cvs.sh`
   - `create-parsed-manifest.py`
   - `select-validation-sample.py`, `validate-classification.py`
 
 - Update all imports: `from config import settings` → `from app.shared.config import settings`
-- **Update `classify-cvs-with-llm.py`**: Replace direct `httpx.post()` calls with `llm_client.generate()` abstraction
+- **Update `cv3_classify.py`**: Replace direct `httpx.post()` calls with `llm_client.generate()` abstraction
 - **Run 3 critical workflows manually** to verify:
   - `python -m app.cigref_ingest.ingest_cigref_batched` (test with 1 doc)
   - `python -m app.cv_ingest.parse_cvs` (test with 1 CV)
@@ -154,7 +154,7 @@ Move all CIGREF and CV workflow scripts to appropriate `/app` subdirectories wit
 **Acceptance Criteria**:
 - ✅ 16+ scripts migrated to `/app` subdirectories
 - ✅ All import paths updated and validated
-- ✅ `classify-cvs-with-llm.py` uses `llm_client.generate()` abstraction from Story 2.5.2
+- ✅ `cv3_classify.py` uses `llm_client.generate()` abstraction from Story 2.5.2
 - ✅ **Manual testing complete**: 3 critical workflows execute successfully:
   - CIGREF ingestion workflow (1 batch test)
   - CV parsing workflow (1 CV test)
@@ -232,13 +232,13 @@ Simplify CV ingestion into a clean 4-script workflow: `cv1_download.py` (downloa
 ---
 
 ### Story 2.5.4: Cleanup & Documentation Update
-**Effort**: 2-3 hours | **Status**: Not Started | **Dependencies**: Story 2.5.3c ✅
+**Effort**: 2-3 hours (Actual: 2 hours) | **Status**: ✅ Done (2025-11-07) | **Dependencies**: Story 2.5.3c ✅
 
 Remove obsolete scripts, consolidate artifacts, and update all documentation to reflect new structure and LLM provider configuration.
 
 **Key Tasks**:
 - **Obsolete Script Identification**:
-  - Compare `download-cvs.py`, `download_cv_samples.py`, `explore_and_download_cvs.py` for duplicates
+  - Compare `cv1_download.py`, `download_cv_samples.py`, `explore_and_download_cvs.py` for duplicates
   - Review test scripts for relevance (`test-cigref-parsing.py`, `test-header-extraction.py`)
   - Identify development artifacts vs. production workflows
   - Remove or archive obsolete versions to `.archive/` folder
@@ -269,23 +269,24 @@ Remove obsolete scripts, consolidate artifacts, and update all documentation to 
 
 ## Epic Status
 
-- **Status**: In Progress
+- **Status**: ✅ Done (2025-11-07)
 - **Story Count**: 6
-- **Completed**: 4/6 (67%)
-- **Estimated Effort**: 20-26 hours
-- **Current Story**: Story 2.5.4 (Cleanup & Documentation Update)
+- **Completed**: 6/6 (100%)
+- **Actual Effort**: ~20 hours
+- **Final Story**: Story 2.5.4 (Cleanup & Documentation Update) ✅
 - **Dependencies**: Epic 2 (Stories 2.1-2.5) ✅ Complete
 - **Blocked By**: None
 - **Type**: Brownfield Refactoring (organizational + multi-provider LLM abstraction)
+- **Completion Date**: 2025-11-07
 
 ### Progress Summary
 
 - ✅ **Story 2.5.1 Complete**: Application structure created, shared services migrated
-- ⚠️ **Story 2.5.2 In Review**: LLM provider abstraction (CONCERNS - backward compatibility issues)
+- ✅ **Story 2.5.2 Complete**: LLM provider abstraction with multi-provider support (Ollama, OpenAI, LiteLLM)
 - ✅ **Story 2.5.3 Done**: All 16 workflow scripts migrated to `/app` subdirectories (QA: PASS)
 - ✅ **Story 2.5.3b Done**: CIGREF ingestion refactored to 2 clean scripts, 642 chunks across 9 domains imported (QA: PASS)
 - ✅ **Story 2.5.3c Done**: CV ingestion refactored to 4-stage pipeline with metadata tracking (QA: PASS)
-- 🔄 **Story 2.5.4 Pending**: Documentation cleanup and obsolete script removal
+- ✅ **Story 2.5.4 Done**: Documentation completely updated - 14 files reflect Epic 2.5 structure, numbered scripts, and multi-provider LLM support
 
 ## Success Criteria
 
@@ -353,8 +354,8 @@ lightrag-cv/
 │   │
 │   ├── cigref_ingest/                # CIGREF workflows (7 files)
 │   │   ├── __init__.py
-│   │   ├── ingest-cigref.py
-│   │   ├── ingest-cigref-batched.py
+│   │   ├── cigref_1_parse.py
+│   │   ├── cigref_2_import.py
 │   │   ├── prepare-cigref-for-lightrag.py
 │   │   ├── analyze-cigref-parsing.py
 │   │   ├── test-cigref-parsing.py
@@ -363,9 +364,9 @@ lightrag-cv/
 │   │
 │   ├── cv_ingest/                    # CV workflows (9 files)
 │   │   ├── __init__.py
-│   │   ├── parse-cvs.py
-│   │   ├── classify-cvs-with-llm.py
-│   │   ├── download-cvs.py
+│   │   ├── cv2_parse.py
+│   │   ├── cv3_classify.py
+│   │   ├── cv1_download.py
 │   │   ├── download_cv_samples.py
 │   │   ├── create-parsed-manifest.py
 │   │   ├── select-validation-sample.py

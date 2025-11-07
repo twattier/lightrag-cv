@@ -15,7 +15,7 @@ This document describes the process for ingesting CIGREF IT profile data into th
 
 ## Ingestion Script
 
-The ingestion script is located at `scripts/ingest-cigref.py`.
+The ingestion script is located at `app/cigref_ingest/cigref_1_parse.py`.
 
 ### Features
 
@@ -35,7 +35,7 @@ The ingestion script is located at `scripts/ingest-cigref.py`.
 pip install -r scripts/requirements.txt
 
 # Run ingestion
-python3 scripts/ingest-cigref.py
+python3 app/cigref_ingest/cigref_1_parse.py
 ```
 
 ### Expected Processing Time
@@ -460,7 +460,7 @@ If ingestion fails with database errors:
 
 ### Completed
 
-✅ Task 1: CIGREF ingestion script created (`scripts/ingest-cigref.py`)
+✅ Task 1: CIGREF ingestion script created (`app/cigref_ingest/cigref_1_parse.py`)
 ✅ Task 2: document_metadata table implemented and tested
 ✅ Task 9: Ingestion documentation created
 

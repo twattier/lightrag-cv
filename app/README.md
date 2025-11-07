@@ -9,10 +9,18 @@ app/
 ├── shared/              # Shared configuration and utilities
 │   ├── config.py        # Centralized environment configuration
 │   └── llm_client.py    # LLM provider abstraction layer
-├── cigref_ingest/       # CIGREF nomenclature ingestion workflows
-├── cv_ingest/          # CV processing and classification workflows
-└── artifacts/          # SQL queries and development artifacts
+├── cigref_ingest/       # CIGREF nomenclature ingestion workflows (numbered: cigref_1_parse.py, cigref_2_import.py)
+├── cv_ingest/           # CV processing workflows (numbered: cv1_download.py, cv2_parse.py, cv3_classify.py, cv4_import.py)
+└── tests/               # SQL queries, tests, and development artifacts
 ```
+
+### Numbered Workflow Naming Convention
+
+Scripts within workflow directories follow a numbered naming pattern `{domain}{step}_{action}.py`:
+- **CIGREF workflows**: `cigref_1_parse.py` (parse documents), `cigref_2_import.py` (import to LightRAG)
+- **CV workflows**: `cv1_download.py` (download dataset), `cv2_parse.py` (parse CVs), `cv3_classify.py` (classify with LLM), `cv4_import.py` (import to LightRAG)
+
+Numbers indicate execution order within the workflow.
 
 ## LLM Provider Configuration
 

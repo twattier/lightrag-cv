@@ -101,6 +101,8 @@ Expected output:
 - First request to each model may take 30-60 seconds (model loading)
 - Subsequent requests typically complete in <1 second
 - Ollama must be accessible at `http://localhost:11434` from host
+
+> 💡 **Multi-Provider LLM Support**: Application scripts support Ollama (local), OpenAI, and LiteLLM providers via unified abstraction layer. Configure via `LLM_PROVIDER` in `.env`. See [app/README.md](app/README.md) for detailed configuration.
 - Containers access Ollama via `http://host.docker.internal:11434`
 
 ### 4. Build and Start Services
@@ -219,14 +221,14 @@ lightrag-cv/
 ├── .gitignore                  # Git exclusions
 ├── README.md                   # This file
 │
-├── app/                        # Application workflows (NEW)
+├── app/                        # Application workflows (Epic 2.5)
 │   ├── README.md               # App structure & LLM provider docs
 │   ├── shared/                 # Shared configuration and utilities
 │   │   ├── config.py           # Centralized environment config
-│   │   └── llm_client.py       # LLM provider abstraction layer
-│   ├── cigref_ingest/          # CIGREF ingestion workflows
-│   ├── cv_ingest/              # CV processing workflows
-│   └── artifacts/              # SQL queries and dev artifacts
+│   │   └── llm_client.py       # LLM provider abstraction (Ollama, OpenAI, LiteLLM)
+│   ├── cigref_ingest/          # CIGREF workflows (cigref_1_parse.py, cigref_2_import.py)
+│   ├── cv_ingest/              # CV workflows (cv1_download.py, cv2_parse.py, cv3_classify.py, cv4_import.py)
+│   └── tests/                  # SQL queries, tests, and dev artifacts
 │
 ├── services/                   # Microservices
 │   ├── docling/                # Document parsing service
@@ -244,12 +246,13 @@ lightrag-cv/
 │   ├── architecture/           # Technical architecture
 │   └── stories/                # User stories
 │
-└── scripts/                    # Infrastructure scripts
+└── scripts/                    # Infrastructure scripts only (Epic 2.5)
+    ├── setup.sh                # Environment setup
     ├── validate-ollama.py      # Ollama connectivity validation
     ├── health-check.sh         # Comprehensive health check (bash)
     ├── health-check.py         # Comprehensive health check (Python/JSON)
-    ├── ingest-cigref.py        # CIGREF profile ingestion (legacy)
-    └── ingest-cvs.py           # CV ingestion (legacy)
+    ├── start-docling-gpu.sh    # Start Docling with GPU
+    └── restart-docling-gpu.sh  # Restart Docling GPU service
 ```
 
 See [app/README.md](app/README.md) for application structure details and LLM provider configuration guide.

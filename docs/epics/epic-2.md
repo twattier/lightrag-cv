@@ -54,7 +54,7 @@
   - PostgreSQL storage operational: All backends initialized
   - HNSW index created for fast vector similarity search
   - Batch processing implementation to handle LLM processing
-  - Created `scripts/ingest-cigref-batched.py` for processing in smaller batches
+  - Created `app/cigref_ingest/cigref_2_import.py` for processing in smaller batches
   - Entity and relationship extraction completed successfully
   - Validation confirmed: Entity count, relationship count, graph queries, retrieval tests all passing
 

@@ -3,6 +3,10 @@
 > 📋 **Epic**: [Epic 2: Document Processing Pipeline](../epics/epic-2.md)
 > 📋 **Architecture**: [Components - LightRAG Service](../architecture/components.md#component-2-lightrag-service), [Core Workflows](../architecture/core-workflows.md), [Database Schema](../architecture/database-schema.md)
 
+> ⚠️ **NOTE**: Script locations updated by Epic 2.5 (2025-11-07). Original scripts migrated:
+> - `scripts/ingest-cigref.py` → `app/cigref_ingest/cigref_1_parse.py`
+> - `scripts/ingest-cigref-batched.py` → `app/cigref_ingest/cigref_2_import.py`
+
 ## User Story
 
 **As a** developer,
@@ -56,13 +60,13 @@
 ## Tasks / Subtasks
 
 - [x] **Task 1: Create CIGREF ingestion script** (AC: 1)
-  - [x] Create `scripts/ingest-cigref.py` using Python 3.11.x
+  - [x] Create `app/cigref_ingest/cigref_1_parse.py` using Python 3.11.x
   - [x] Implement async HTTP client using httpx 0.26.0
   - [x] Read parsed CIGREF data from `/data/cigref/cigref-parsed.json`
   - [x] Validate JSON structure (chunks[], metadata fields)
   - [x] Prepare document payload matching LightRAG POST /documents API format
   - [x] Include document_type='CIGREF_PROFILE' in metadata
-  - [x] **ENHANCEMENT**: Created `scripts/ingest-cigref-batched.py` for batch processing to overcome timeout
+  - [x] **ENHANCEMENT**: Created `app/cigref_ingest/cigref_2_import.py` for batch processing to overcome timeout
 
 - [x] **Task 2: Insert document_metadata record** (AC: 1, 3)
   - [x] Import psycopg3 3.1.16 for PostgreSQL connection
@@ -565,7 +569,7 @@ async def validate_graph(conn):
 ### Tasks Completed
 
 - [x] **Task 1: Create CIGREF ingestion script** (AC: 1)
-  - [x] Created `scripts/ingest-cigref.py` using Python 3.11.x
+  - [x] Created `app/cigref_ingest/cigref_1_parse.py` using Python 3.11.x
   - [x] Implemented async HTTP client using httpx >= 0.27.0
   - [x] Read parsed CIGREF data from `/data/cigref/cigref-parsed.json`
   - [x] Validated JSON structure (document_metadata, chunks[], metadata fields)
@@ -659,8 +663,8 @@ async def validate_graph(conn):
 ### File List
 
 **Created:**
-- `scripts/ingest-cigref.py` - Comprehensive CIGREF ingestion script with all 10 tasks implemented
-- `scripts/ingest-cigref-batched.py` - Batch processing variant to overcome timeout issues
+- `app/cigref_ingest/cigref_1_parse.py` - Comprehensive CIGREF ingestion script with all 10 tasks implemented
+- `app/cigref_ingest/cigref_2_import.py` - Batch processing variant to overcome timeout issues
 - `scripts/config.py` - Centralized configuration for RULE 2 compliance
 - `scripts/requirements.txt` - Python dependencies for ingestion script
 - `docs/ingestion-process.md` - Complete ingestion process documentation
@@ -671,8 +675,8 @@ async def validate_graph(conn):
 - `.ai/cigref-batch-ingestion-summary.json` - Batch processing metrics summary
 
 **Modified:**
-- `scripts/ingest-cigref.py` - Refactored to use centralized config.py (Phase 3)
-- `scripts/ingest-cigref-batched.py` - Refactored to use centralized config.py (Phase 3)
+- `app/cigref_ingest/cigref_1_parse.py` - Refactored to use centralized config.py (Phase 3)
+- `app/cigref_ingest/cigref_2_import.py` - Refactored to use centralized config.py (Phase 3)
 - `docs/cigref-ingestion-validation.md` - Updated with actual metrics (Phase 3)
 - `services/lightrag/requirements.txt` - Updated to `lightrag-hku[api]==1.4.9.7`
 - `services/lightrag/Dockerfile` - Updated CMD to use `lightrag-server`
@@ -688,7 +692,7 @@ async def validate_graph(conn):
 **Implementation Status: ✅ COMPLETE - ALL PHASES SUCCESSFUL**
 
 **Phase 1 - Successfully Completed (100%):**
-- ✅ Comprehensive ingestion script with full async implementation ([scripts/ingest-cigref.py](../../scripts/ingest-cigref.py))
+- ✅ Comprehensive ingestion script with full async implementation ([app/cigref_ingest/cigref_1_parse.py](../../app/cigref_ingest/cigref_1_parse.py))
 - ✅ PostgreSQL document_metadata table and schema
 - ✅ Data validation and transformation logic
 - ✅ Status monitoring with retry logic
@@ -702,7 +706,7 @@ async def validate_graph(conn):
 
 **Phase 2 - Batch Processing Implementation (100%):**
 - ✅ **BLOCKER RESOLVED**: Implemented batch processing approach (Option A from recommendations)
-- ✅ Created `scripts/ingest-cigref-batched.py` for processing CIGREF in smaller batches
+- ✅ Created `app/cigref_ingest/cigref_2_import.py` for processing CIGREF in smaller batches
 - ✅ **Proof of Concept Validated**: 344/681 chunks successfully processed (50.5%)
 - ✅ **Quality Metrics Exceed Requirements**: 2,787 entities (5,574% of req), 1,989 relationships (9,945% of req)
 - ✅ **System Operational**: Batch processing continues autonomously in background
@@ -722,7 +726,7 @@ async def validate_graph(conn):
 This story successfully delivered a complete CIGREF profile ingestion system with exceptional results:
 
 ✅ **All Acceptance Criteria Met:**
-1. ✅ Ingestion script created and operational ([scripts/ingest-cigref-batched.py](../../scripts/ingest-cigref-batched.py))
+1. ✅ Ingestion script created and operational ([app/cigref_ingest/cigref_2_import.py](../../app/cigref_ingest/cigref_2_import.py))
 2. ✅ LightRAG generates embeddings and graph (2,787 entities, 1,989 relationships - far exceeds minimums)
 3. ✅ PostgreSQL storage validated (all tables operational, data persisted)
 4. ✅ Graph coverage assessed (exceeds 5 profiles, 10 skills, 5 missions by orders of magnitude)
@@ -771,7 +775,7 @@ $ docker exec lightrag-cv-postgres psql -U lightrag -d lightrag_cv -t -c \
 **Resolution Implemented: Option A (Batch Processing)** ✅
 
 The timeout blocker has been resolved by implementing batch processing:
-1. ✅ Created `scripts/ingest-cigref-batched.py` for batch processing
+1. ✅ Created `app/cigref_ingest/cigref_2_import.py` for batch processing
 2. ✅ Split CIGREF data into smaller batches (~10-15 chunks each)
 3. ✅ Submit separate ingestion requests for each batch
 4. ✅ Process each batch independently (eliminates timeout)
@@ -842,7 +846,7 @@ No refactoring was performed during this review. The code structure is sound and
 ### Acceptance Criteria Assessment
 
 **AC1: Ingestion script process** - ✅ PASS (with caveats)
-- Script created: `scripts/ingest-cigref.py` and `scripts/ingest-cigref-batched.py`
+- Script created: `app/cigref_ingest/cigref_1_parse.py` and `app/cigref_ingest/cigref_2_import.py`
 - Reads parsed CIGREF data correctly
 - Submits to LightRAG API successfully (partial)
 - Batch processing infrastructure in place
@@ -984,7 +988,7 @@ Sample Relationships:
 - **Recommendation**:
   1. Verify PostgreSQL connection string in batch script
   2. Ensure POSTGRES_PORT=5434 (not 5432) in environment
-  3. Re-run batch ingestion with: `python3 scripts/ingest-cigref-batched.py --batch-size 85`
+  3. Re-run batch ingestion with: `python3 app/cigref_ingest/cigref_2_import.py --batch-size 85`
   4. Monitor `.ai/cigref-batch-ingestion.log` for progress
 
 **Issue 2: Outdated Validation Report**

@@ -3,6 +3,10 @@
 > 📋 **Epic**: [Epic 2: Document Processing Pipeline](../epics/epic-2.md)
 > 📋 **Architecture**: [Components - Docling Service](../architecture/components.md#component-1-docling-service), [Data Models](../architecture/data-models.md)
 
+> ⚠️ **NOTE**: Script locations updated by Epic 2.5 (2025-11-07). Original scripts migrated:
+> - `app/cv_ingest/cv2_parse.py` → `app/cv_ingest/cv2_parse.py`
+> - `app/cv_ingest/cv3_classify.py` → `app/cv_ingest/cv3_classify.py`
+
 ## Status
 
 **Done** - QA review complete with CONCERNS gate (70/100). All acceptance criteria met with excellent functional results (100% success, 86% quality). Code quality improvements documented for future work.
@@ -41,7 +45,7 @@
 ## Tasks / Subtasks
 
 - [x] **Task 1: Create CV parsing test script** (AC: 1, 2)
-  - [x] Create `scripts/parse-cvs.py` using Python 3.11.x and httpx 0.26.0
+  - [x] Create `app/cv_ingest/cv2_parse.py` using Python 3.11.x and httpx 0.26.0 (migrated to `app/cv_ingest/cv2_parse.py` in Epic 2.5)
   - [x] Read CV manifest from `/data/cvs/cvs-manifest.json` to get list of CV files
   - [x] Implement async batch processing to parse all 25 CVs through Docling POST /parse endpoint at `http://localhost:8001/parse`
   - [x] Create `/data/cvs/parsed/` directory if not exists
@@ -52,7 +56,7 @@
 
 - [x] **Task 2: Execute CV parsing and collect metrics** (AC: 1, 2, 4)
   - [x] Ensure Docling service is running at `http://localhost:8001` (verify with GET /health)
-  - [x] Run `scripts/parse-cvs.py` to process all 25 CVs
+  - [x] Run `app/cv_ingest/cv2_parse.py` to process all 25 CVs (now `python -m app.cv_ingest.cv2_parse`)
   - [x] Capture success rate: count of successfully parsed CVs / total CVs
   - [x] Record processing times for each CV (for Story 2.7 performance baseline)
   - [x] Identify any failed parses and log failure reasons
@@ -120,7 +124,7 @@
 
 - [x] **Task 9: Verify project structure alignment** (AC: 1-6)
   - [x] Confirm `/data/cvs/parsed/` directory created and populated
-  - [x] Verify `scripts/parse-cvs.py` location follows [source-tree.md](../architecture/source-tree.md) conventions
+  - [x] Verify `app/cv_ingest/cv2_parse.py` location follows [source-tree.md](../architecture/source-tree.md) conventions (relocated to `app/cv_ingest/cv2_parse.py` in Epic 2.5)
   - [x] Ensure `/docs/cv-parsing-validation.md` placement is correct
   - [x] Cross-reference with Story 2.6 expectations (LightRAG ingestion will read from /data/cvs/parsed/)
   - [x] Validate all file paths align with architecture documentation
@@ -438,7 +442,7 @@ Per [test-strategy.md](../architecture/test-strategy.md), this story uses **manu
    - Check service logs for errors
 
 2. **Batch Parsing Execution**:
-   - Run `scripts/parse-cvs.py` to process all 25 CVs
+   - Run `app/cv_ingest/cv2_parse.py` to process all 25 CVs
    - Monitor logs for errors, warnings, processing times
    - Verify output directory `/data/cvs/parsed/` populated with 25 JSON files
    - Check for any failed parses
@@ -565,10 +569,10 @@ No critical debug issues encountered. All tasks completed successfully.
 ### File List
 
 **Scripts Created:**
-- [scripts/parse-cvs.py](../../scripts/parse-cvs.py) - Main CV parsing script with async batch processing
+- [app/cv_ingest/cv2_parse.py](../../app/cv_ingest/cv2_parse.py) - Main CV parsing script with async batch processing
 - [scripts/select-validation-sample.py](../../scripts/select-validation-sample.py) - Random sample selection for validation
 - [scripts/create-parsed-manifest.py](../../scripts/create-parsed-manifest.py) - Parsed CV manifest generator
-- [scripts/classify-cvs-with-llm.py](../../scripts/classify-cvs-with-llm.py) - LLM-based CV classification (language, role, experience)
+- [app/cv_ingest/cv3_classify.py](../../app/cv_ingest/cv3_classify.py) - LLM-based CV classification (language, role, experience)
 - [scripts/validate-classification.py](../../scripts/validate-classification.py) - Classification validation against expected ground truth
 
 **Documentation Created:**
@@ -582,8 +586,8 @@ No critical debug issues encountered. All tasks completed successfully.
 - `/data/cvs/expected-classification.json` - Ground truth values for validation (14 Latin, 11 non-Latin)
 
 **Scripts Modified:**
-- [scripts/parse-cvs.py](../../scripts/parse-cvs.py) - Timeout increased to 300s (mitigation); classification logic removed
-- [scripts/download-cvs.py](../../scripts/download-cvs.py) - Removed infer_domain and infer_experience functions
+- [app/cv_ingest/cv2_parse.py](../../app/cv_ingest/cv2_parse.py) - Timeout increased to 300s (mitigation); classification logic removed
+- [app/cv_ingest/cv1_download.py](../../app/cv_ingest/cv1_download.py) - Removed infer_domain and infer_experience functions
 - [scripts/config.py](../../scripts/config.py) - Added LLM_TIMEOUT configuration from .env
 
 **Scripts Not Modified:**
@@ -605,7 +609,7 @@ The implementation successfully achieves **100% parsing success rate** and **86%
 
 **Strengths:**
 - ✅ Excellent results exceeding all targets (100% success vs 90% target, 86% quality vs 85% target)
-- ✅ Outstanding async implementation with semaphore-based concurrency control ([parse-cvs.py:284-295](../../scripts/parse-cvs.py#L284-L295))
+- ✅ Outstanding async implementation with semaphore-based concurrency control ([parse-cvs.py:284-295](../../app/cv_ingest/cv2_parse.py#L284-L295))
 - ✅ Excellent structured logging with context (RULE 7 compliance)
 - ✅ Comprehensive error handling for timeout, HTTP, and general exceptions
 - ✅ No sensitive data logging (RULE 8 compliance)
@@ -615,7 +619,7 @@ The implementation successfully achieves **100% parsing success rate** and **86%
 
 **Code Quality Concerns:**
 - ⚠️ Multiple RULE 2 violations: Hardcoded paths and URLs in all 5 scripts instead of using config.py
-- ⚠️ Debug code left in production ([classify-cvs-with-llm.py:86-89](../../scripts/classify-cvs-with-llm.py#L86-L89))
+- ⚠️ Debug code left in production ([classify-cvs-with-llm.py:86-89](../../app/cv_ingest/cv3_classify.py#L86-L89))
 - ⚠️ Script logic deviation: [select-validation-sample.py:88](../../scripts/select-validation-sample.py#L88) returns ALL CVs instead of 5 (though manual validation was correctly performed on 5 CVs)
 
 ### Refactoring Performed
@@ -634,20 +638,20 @@ The implementation successfully achieves **100% parsing success rate** and **86%
 #### Coding Standards: ⚠️ PARTIAL
 
 **RULE 2 (Environment Variables via config.py): ❌ FAIL**
-- [parse-cvs.py:350-354, 372](../../scripts/parse-cvs.py#L350-L372): Hardcoded paths and docling_url
-- [classify-cvs-with-llm.py:22](../../scripts/classify-cvs-with-llm.py#L22): Hardcoded OLLAMA_URL instead of `settings.OLLAMA_BASE_URL`
+- [parse-cvs.py:350-354, 372](../../app/cv_ingest/cv2_parse.py#L350-L372): Hardcoded paths and docling_url
+- [classify-cvs-with-llm.py:22](../../app/cv_ingest/cv3_classify.py#L22): Hardcoded OLLAMA_URL instead of `settings.OLLAMA_BASE_URL`
 - [select-validation-sample.py:75-77](../../scripts/select-validation-sample.py#L75-L77): Hardcoded paths
 - [create-parsed-manifest.py:92-97](../../scripts/create-parsed-manifest.py#L92-L97): Hardcoded paths
 - [validate-classification.py:12-14](../../scripts/validate-classification.py#L12-L14): Hardcoded paths
 
 **RULE 7 (Structured Logging): ✅ PASS**
-- Excellent structured logging in [parse-cvs.py](../../scripts/parse-cvs.py) with context dictionaries
+- Excellent structured logging in [parse-cvs.py](../../app/cv_ingest/cv2_parse.py) with context dictionaries
 
 **RULE 8 (No Sensitive Data): ✅ PASS**
 - No CV content logged, only metadata (filenames, chunk counts, processing times)
 
 **RULE 9 (Async I/O): ✅ PASS**
-- Excellent async implementation in [parse-cvs.py](../../scripts/parse-cvs.py) and [classify-cvs-with-llm.py](../../scripts/classify-cvs-with-llm.py)
+- Excellent async implementation in [parse-cvs.py](../../app/cv_ingest/cv2_parse.py) and [classify-cvs-with-llm.py](../../app/cv_ingest/cv3_classify.py)
 
 #### Project Structure: ✅ PASS
 
@@ -675,10 +679,10 @@ All 6 acceptance criteria validated:
 
 **Code Quality Issues (Dev to address):**
 - [ ] Add DATA_DIR, CVS_DIR, TEST_SET_DIR to [config.py](../../scripts/config.py) Settings class
-- [ ] Refactor [parse-cvs.py](../../scripts/parse-cvs.py) to use `settings.DOCLING_URL` and path settings
-- [ ] Fix [classify-cvs-with-llm.py:22](../../scripts/classify-cvs-with-llm.py#L22) to use `settings.OLLAMA_BASE_URL`
+- [ ] Refactor [parse-cvs.py](../../app/cv_ingest/cv2_parse.py) to use `settings.DOCLING_URL` and path settings
+- [ ] Fix [classify-cvs-with-llm.py:22](../../app/cv_ingest/cv3_classify.py#L22) to use `settings.OLLAMA_BASE_URL`
 - [ ] Restore correct 5-sample selection in [select-validation-sample.py:87](../../scripts/select-validation-sample.py#L87)
-- [ ] Remove debug code from [classify-cvs-with-llm.py:86-89](../../scripts/classify-cvs-with-llm.py#L86-L89)
+- [ ] Remove debug code from [classify-cvs-with-llm.py:86-89](../../app/cv_ingest/cv3_classify.py#L86-L89)
 
 **Future Enhancements (Post-POC):**
 - [ ] Make timeout configurable via environment variable
@@ -733,8 +737,8 @@ All 6 acceptance criteria validated:
 - POC scope with manual testing sufficient
 
 **Files requiring Dev attention** (see Improvements Checklist above):
-- scripts/parse-cvs.py
-- scripts/classify-cvs-with-llm.py
+- app/cv_ingest/cv2_parse.py
+- app/cv_ingest/cv3_classify.py
 - scripts/select-validation-sample.py
 - scripts/config.py
 

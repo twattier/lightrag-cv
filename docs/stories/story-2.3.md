@@ -3,6 +3,8 @@
 > 📋 **Epic**: [Epic 2: Document Processing Pipeline](../epics/epic-2.md)
 > 📋 **Architecture**: [Data Models](../architecture/data-models.md), [Source Tree](../architecture/source-tree.md), [Tech Stack](../architecture/tech-stack.md)
 
+> ⚠️ **NOTE**: Script locations updated by Epic 2.5 (2025-11-07). Original `scripts/download-cvs.py` → `app/cv_ingest/cv1_download.py`
+
 ## Status
 
 **Done** - QA Approved with CONCERNS gate (2025-11-05)
@@ -42,7 +44,7 @@
 
 - [x] **Task 1: Set up Hugging Face dataset access** (AC: 1)
   - [x] Install Hugging Face `datasets` library (version compatible with Python 3.11.x)
-  - [x] Create `scripts/download-cvs.py` for dataset acquisition
+  - [x] Create `scripts/download-cvs.py` for dataset acquisition (migrated to `app/cv_ingest/cv1_download.py` in Epic 2.5)
   - [x] Configure Hugging Face authentication if datasets require login
   - [x] Test connection to both datasets (`gigswar/cv_files`, `d4rk3r/resumes-raw-pdf`)
   - [x] Log dataset metadata (total count, available fields, formats)
@@ -107,7 +109,7 @@
 
 - [x] **Task 7: Verify project structure alignment** (AC: 1-6)
   - [x] Confirm `/data/cvs/test-set/` path aligns with [source-tree.md](../architecture/source-tree.md)
-  - [x] Verify `scripts/download-cvs.py` location follows project conventions
+  - [x] Verify `scripts/download-cvs.py` location follows project conventions (relocated to `app/cv_ingest/cv1_download.py` in Epic 2.5)
   - [x] Ensure `/docs/test-data.md` placement is correct
   - [x] Cross-reference with Story 2.4 expectations (parsed CVs will go to `/data/cvs/parsed/`)
   - [x] Log structure validation completion
@@ -153,10 +155,19 @@ lightrag-cv/
 │       ├── cvs-manifest.json         # Metadata manifest (CREATE in this story)
 │       └── parsed/                   # Parsed CVs (Story 2.4 creates)
 │
-├── scripts/                          # Utility scripts
-│   ├── download-cvs.py               # CREATE in this story
-│   ├── config.py                     # ✅ Exists (Story 2.5 created) - Use for RULE 2 compliance
-│   └── requirements.txt              # ✅ Exists - May need to add `datasets` library
+├── scripts/                          # Infrastructure scripts (Epic 2.5: workflow scripts moved to /app)
+│   ├── setup.sh                      # Environment setup
+│   ├── health-check.sh               # Service health checks
+│   └── ...                           # Other infrastructure scripts
+│
+├── app/                              # Application workflows (Epic 2.5)
+│   ├── cv_ingest/
+│   │   ├── cv1_download.py           # CREATED in this story as download-cvs.py (migrated Epic 2.5)
+│   │   └── ...
+│   ├── shared/
+│   │   ├── config.py                 # ✅ Exists (Story 2.5.2) - RULE 2 compliance
+│   │   └── ...
+│   └── requirements.txt              # ✅ Exists
 │
 └── docs/
     ├── test-data.md                  # CREATE in this story
@@ -514,7 +525,7 @@ No critical debugging required. Implementation completed successfully with the f
 ### File List
 
 **Created Files**:
-- `scripts/download-cvs.py` - CV dataset acquisition script (419 lines)
+- `scripts/download-cvs.py` - CV dataset acquisition script (419 lines) [migrated to `app/cv_ingest/cv1_download.py` in Epic 2.5]
 - `data/cvs/test-set/cv_001.pdf` through `cv_025.pdf` - 25 curated CV files
 - `data/cvs/cvs-manifest.json` - Metadata manifest for all CVs
 - `docs/test-data.md` - Comprehensive dataset documentation
@@ -569,10 +580,10 @@ No critical debugging required. Implementation completed successfully with the f
 ### Improvements Checklist
 
 **Code Quality Issues (Non-Blocking):**
-- [ ] Refactor [scripts/download-cvs.py:40-44](scripts/download-cvs.py#L40-L44) to use config.py for DATA_DIR, CVS_DIR paths (RULE 2)
+- [ ] Refactor [app/cv_ingest/cv1_download.py:40-44](../../app/cv_ingest/cv1_download.py#L40-L44) to use config.py for DATA_DIR, CVS_DIR paths (RULE 2) [Epic 2.5: migrated from scripts/download-cvs.py]
 - [ ] Add explicit Latin character filtering with unicodedata checks for AC 2 compliance
-- [ ] Replace generic Exception handlers with custom exceptions (RULE 6) at [scripts/download-cvs.py:221-229](scripts/download-cvs.py#L221-L229)
-- [ ] Add structured logging context (RULE 7) at [scripts/download-cvs.py:292,298,310](scripts/download-cvs.py#L292)
+- [ ] Replace generic Exception handlers with custom exceptions (RULE 6) at [app/cv_ingest/cv1_download.py:221-229](../../app/cv_ingest/cv1_download.py#L221-L229)
+- [ ] Add structured logging context (RULE 7) at [app/cv_ingest/cv1_download.py:292,298,310](../../app/cv_ingest/cv1_download.py#L292)
 
 **Test Coverage (Recommended for Maintainability):**
 - [ ] Add unit tests for `infer_domain_from_filename()` function
