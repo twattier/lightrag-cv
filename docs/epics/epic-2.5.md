@@ -164,8 +164,34 @@ Move all CIGREF and CV workflow scripts to appropriate `/app` subdirectories wit
 
 ---
 
+### Story 2.5.3b: Refactor CIGREF Ingestion for Simplicity
+**Effort**: 4-5 hours | **Status**: Approved | **Dependencies**: Story 2.5.3 ✅
+
+Simplify CIGREF ingestion by splitting into two clean scripts: `cigref_1_parse.py` (Docling parsing + enrichment + filtering) and `cigref_2_import.py` (LightRAG import grouped by domain).
+
+**Key Tasks**:
+- Create `cigref_1_parse.py`: Parse CIGREF PDF with Docling, enrich with hierarchy, filter chunks (domain OR job_profile), group by domain
+- Create `cigref_2_import.py`: Submit grouped chunks to LightRAG `/documents/texts`, support `--domain` parameter for selective import
+- Add missing config settings: `CIGREF_PARSED`, `DOCLING_HOST/PORT`, `INGESTION_TIMEOUT`, `DEFAULT_BATCH_SIZE`, `MAX_RETRIES`
+- Mark old scripts as deprecated (keep for reference): `ingest_cigref_batched.py`, `prepare_cigref_for_lightrag.py`
+- Manual testing: Parse workflow, single domain import, full import with database verification
+
+**Acceptance Criteria**:
+- ✅ `cigref_1_parse.py` creates filtered JSON grouped by domain from CIGREF PDF
+- ✅ `cigref_2_import.py` submits chunks to LightRAG by domain with optional `--domain` filter
+- ✅ Missing config settings added to `app/shared/config.py`
+- ✅ Old scripts marked deprecated (not deleted)
+- ✅ Manual testing complete: Parse + single domain + full import verified
+- ✅ No breaking changes to services or `.env`
+
+**Rationale**: Current `ingest_cigref_batched.py` is overly complex (504 lines) with manual batch monitoring. LightRAG has an internal queue, so we can simplify by submitting domains directly without batching logic.
+
+**Story File**: [docs/stories/2.5.3b.cigref-refactor.md](../stories/2.5.3b.cigref-refactor.md)
+
+---
+
 ### Story 2.5.4: Cleanup & Documentation Update
-**Effort**: 2-3 hours | **Status**: Not Started | **Dependencies**: Story 2.5.3
+**Effort**: 2-3 hours | **Status**: Not Started | **Dependencies**: Story 2.5.3b
 
 Remove obsolete scripts, consolidate artifacts, and update all documentation to reflect new structure and LLM provider configuration.
 
@@ -203,10 +229,10 @@ Remove obsolete scripts, consolidate artifacts, and update all documentation to 
 ## Epic Status
 
 - **Status**: In Progress
-- **Story Count**: 4
-- **Completed**: 3/4 (75%)
-- **Estimated Effort**: 12-16 hours
-- **Current Story**: Story 2.5.4 (Cleanup & Documentation Update)
+- **Story Count**: 5
+- **Completed**: 3/5 (60%)
+- **Estimated Effort**: 16-21 hours
+- **Current Story**: Story 2.5.3b (Refactor CIGREF Ingestion)
 - **Dependencies**: Epic 2 (Stories 2.1-2.5) ✅ Complete
 - **Blocked By**: None
 - **Type**: Brownfield Refactoring (organizational + multi-provider LLM abstraction)
@@ -216,6 +242,7 @@ Remove obsolete scripts, consolidate artifacts, and update all documentation to 
 - ✅ **Story 2.5.1 Complete**: Application structure created, shared services migrated
 - ⚠️ **Story 2.5.2 In Review**: LLM provider abstraction (CONCERNS - backward compatibility issues)
 - ✅ **Story 2.5.3 Complete**: All 16 workflow scripts migrated to `/app` subdirectories
+- ✅ **Story 2.5.3b Approved**: CIGREF ingestion refactoring (simplify to 2 scripts by domain)
 - 🔄 **Story 2.5.4 Pending**: Documentation cleanup and obsolete script removal
 
 ## Success Criteria

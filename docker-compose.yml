@@ -76,6 +76,9 @@ services:
       WORKSPACE: default
       LOG_LEVEL: ${LOG_LEVEL:-INFO}
       LIGHTRAG_INTERNAL_PORT: 9621
+      # Processing
+      MAX_PARALLEL_INSERT: ${MAX_PARALLEL_INSERT:-2}
+      MAX_ASYNC: ${MAX_ASYNC:-4}
     ports:
       - "${LIGHTRAG_PORT:-9621}:9621"
     volumes:

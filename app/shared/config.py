@@ -29,6 +29,10 @@ class Settings:
     LIGHTRAG_HOST: str = os.getenv("LIGHTRAG_HOST", "localhost")
     LIGHTRAG_PORT: int = int(os.getenv("LIGHTRAG_PORT", "9621"))
 
+    # Docling service configuration
+    DOCLING_HOST: str = os.getenv("DOCLING_HOST", "localhost")
+    DOCLING_PORT: int = int(os.getenv("DOCLING_PORT", "8001"))
+
     # LLM Provider Configuration (unified multi-provider support)
     LLM_BINDING: str = os.getenv("LLM_BINDING", "ollama")  # Options: ollama, openai, litellm
     LLM_BINDING_HOST: str = os.getenv("LLM_BINDING_HOST", "http://localhost:11434")
@@ -44,19 +48,7 @@ class Settings:
     EMBEDDING_DIM: int = int(os.getenv("EMBEDDING_DIM", "1024"))  # bge-m3 default
     EMBEDDING_TIMEOUT: float = float(os.getenv("EMBEDDING_TIMEOUT", "600"))
 
-    # Data paths
-    DATA_DIR: Path = Path("/home/wsluser/dev/lightrag-cv/data")
-    CIGREF_DIR: Path = DATA_DIR / "cigref"
-    CIGREF_PARSED_FILE: Path = CIGREF_DIR / "cigref-parsed.json"
-
-    # Processing configuration
-    INGESTION_TIMEOUT: float = 600.0  # 10 minutes
-    STATUS_POLL_INTERVAL: int = 10  # seconds
-    STATUS_MAX_ATTEMPTS: int = 60  # 10 minutes total
-
-    # Batch processing configuration
-    DEFAULT_BATCH_SIZE: int = 85  # chunks per batch
-    MAX_RETRIES: int = 3
+    DOCLING_TIMEOUT: float = 600.0
 
     @property
     def postgres_dsn(self) -> str:
@@ -70,6 +62,24 @@ class Settings:
     def lightrag_url(self) -> str:
         """LightRAG service base URL."""
         return f"http://{self.LIGHTRAG_HOST}:{self.LIGHTRAG_PORT}"
+
+    @property
+    def docling_url(self) -> str:
+        """Docling service base URL."""
+        return f"http://{self.DOCLING_HOST}:{self.DOCLING_PORT}"
+
+    # Data paths
+    DATA_DIR: Path = Path("/home/wsluser/dev/lightrag-cv/data")
+
+    CIGREF_DIR: Path = DATA_DIR / "cigref"
+    CIGREF_FILE: Path = CIGREF_DIR / "Cigref_Nomenclature_des_profils_metiers_SI_EN_2024.pdf"
+    CIGREF_PARSED: Path = CIGREF_DIR / "cigref-parsed.json"  # Output from cigref_1_parse.py
+
+    # Ingestion settings
+    INGESTION_TIMEOUT: int = int(os.getenv("INGESTION_TIMEOUT", "1200"))  # 20 minutes
+    DEFAULT_BATCH_SIZE: int = int(os.getenv("DEFAULT_BATCH_SIZE", "5"))
+    MAX_RETRIES: int = int(os.getenv("MAX_RETRIES", "3"))
+
 
 
 # Global settings instance
