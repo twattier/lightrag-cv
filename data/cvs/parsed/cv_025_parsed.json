@@ -1,0 +1,79 @@
+{
+  "document_id": "cv_025",
+  "document_type": "CV",
+  "source_filename": "cv_025.pdf",
+  "candidate_label": "cv_025",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "- Build a WordPress team.\n- Recruiting developers.\n- Plan your way.\n- Develop a to-do process\n- Project management.\n- Review code from the developer.\n- Website and Systems programming in pure PHP language, WordPress, Laravel, Odoo Shopify.\n- Create a new plugin\n- Setup Github, Gitlab, Server, Hosting, Domain\n- Cut CSS, JS, HTML, and responsive standards from PSD or Figma files as per customer request.\n- Achievements:\n- o\n- o\n- o\n- o\n- o\no\nFull name: Tran Anh Tuan\nDate of birth: 17-08-1991\nAddress: 66/16 Phan Sao Nam Street,\nWard 11, Tan Binh District.\nMobile:\nEmail:\nWebsite:\no\no\n- o\no\n- o\n- o\no\n- o\n- o\n- o\no\no\no\n- o\n- o\n- o\n- o\no\no",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "August - 2022 to now : Senior Team Lead at Floating Cube Studios",
+        "page": 1,
+        "token_count": 187
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "- Website and Systems programming in pure PHP language, Wordpress, Odoo, Laravel, C#, Github.\n- Cut css, js, html, reponsive standards from psd files as per customer request.\n- Other work required by the supervisor\n- Achievements:\no\no\no\n- o\n- o\no\n- o\no\no\no\no\no\n- o\no\no\no\no\no\no\no\no\no\no\no\no\no\n- o\n- o\no\no\no\n- o",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "July - 2018 to August - 2022 : Web and System Developer for QLM Group",
+        "page": 2,
+        "token_count": 105
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "- Web programming in pure PHP language, Wordpress.\n- Cut css, html, reponsive standards from psd files as per customer request.\n- Other work required by the supervisor",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "July - 2016 to July - 2018: Web design staff for Netviet Technology Co., Ltd",
+        "page": 3,
+        "token_count": 42
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "- Meet customers to introduce the product.\n- Design of the test machine system according to the prototype.\n- Work in provinces across the country.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "May - 2014 to July - 2016: Programmers for FPT Information System",
+        "page": 3,
+        "token_count": 30
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "FPT University (2009)\nShort-term courses: Communication Skills (2011)\nSKILLS\n- PHP, Wordpress, Laravel, Odoo, Prism, HTML, CSS, Github\n- Proficiency in Microsoft Word, Excel, Power Point\n- Basic communication English\n- Good leadership\n- Able to work under pressure\n- Creative thinking,\n- Negotiated negotiation\n- Working group\n- Develop personal career\n- Organizing effective work,",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "EDUCATION",
+        "page": 3,
+        "token_count": 89
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "- Love to travel with family and friends.\n- Football and watching football weekend.\n- Watch movie\n- Interested in programming language",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "HOBBIES",
+        "page": 4,
+        "token_count": 26
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 100.69,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 6,
+    "parsing_timestamp": "2025-11-07T13:02:27.812194Z",
+    "processing_time_ms": 7671,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

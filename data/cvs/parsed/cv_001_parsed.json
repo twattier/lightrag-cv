@@ -1,0 +1,89 @@
+{
+  "document_id": "cv_001",
+  "document_type": "CV",
+  "source_filename": "cv_001.pdf",
+  "candidate_label": "cv_001",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "Full name\n: Van Thi Xuan Trang\nDate of birth\n: 18/02/1989\nAddress\n: Huynh Tan Phat Street, Phu My Ward,\nDistrict 7, Ho Chi Minh City\nMobile :\nEmail :",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "PERSONAL DETAIL:",
+        "page": 1,
+        "token_count": 41
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "- GLYPH<1> 02/2024  -  06/2024: Certificate  in  Bakery  &  Pastry  skills  at  AZ  Career  &  Training  Academy  in Vietnam (Affiliated with LA XENIA - International Institute of Switzerland).\n- GLYPH<1> 07/2024 - 08/2024: Pastry trainee at Novotel Living Saigon South (4 star)\n- GLYPH<1> 08/2024 - 09/2024: Pastry trainee at Premier Village Phu Quoc Resort (5 star) include 215 villas with private swimming pool",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "CERTIFICATE:",
+        "page": 1,
+        "token_count": 114
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "- GLYPH<1> Communication is an essential skill for a commis chef. I frequently communicate with other kitchen staff, such as a pastry chef, sous chef as well as other commis.\n- GLYPH<1> Attention to detail is a crucial skill, as it ensures the quality of the food. As a commis chef, I also have strong attention to detail to ensure chefs follow the recipe correctly and prepare the dessert properly.\n- GLYPH<1> Teamwork: In the kitchen,  I  always  work  with  a  team  of  cooks  to  prepare  and  serve  desserts  to customers. My ability to work with others can help me to complete tasks more efficiently and to learn from others' expertise.\n- GLYPH<1> Flexible, caring, open-minded, enthusiastic and responsible: Being able to change my approach to tasks and being willing to learn new skills.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "SKILLS AND ABILITIES:",
+        "page": 1,
+        "token_count": 193
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "08/2023 to 02/2024: The Adora Premium at Phu My Hung - 803 Nguyen Van Linh, Tan Phu Ward, District 7\n(a part of the Adora System - The largest and most prestigious wedding and convention center in Ho Chi Minh City)",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "WORK EXPERIENCE",
+        "page": 1,
+        "token_count": 57
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "-   Receive the orders. Check and compare the time, number of guests and the type of dessert requests with Sales department;\n- -Check inventory, calculate quantity, receive the raw material and compare with accounting/purchasing;\n-   Prepare ingredients, weigh and divide ingredients according to the approved formula and quantity for the bakery kitchen's daily requirements;\n-   Support the Chief and Deputy Baker to make cakes according to the approved recipe and quantity (mousse cake, tiramisu, opera, pana cotta, cream brulee, flan...);",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Position: Pastry Commis",
+        "page": 1,
+        "token_count": 123
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "-   Make all kinds of sweet soup according to the party's request (longan tofu sweet soup, lotus seed sweet soup, dried jujubes & white fungus sweet soup)\n-   Serve cakes and tea at buffets and tea-breaks according to guests' requests;\n- -Preserve cakes and tea according to proper procedures;\n-   Maintain and use kitchen equipment well.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "CURRICULUM VITAE",
+        "page": 2,
+        "token_count": 86
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "- -Washes, chops, and cuts fruit and vegetable items\n- -Check inventory and requests resupply when necessary\n- -Plates meal items under the chef de partie's supervision\n-   Disposes of spoiled items and adheres to sanitation policies\n- -Measures, mixes, and prepares meal ingredients, sauces, and seasonings\n- -Continually develops culinary knowledge to produce high-quality meals.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "02/2023 to 07/2023: ICON SAIGON - 65 Hai Ba Trung Street, District 1, HCM (4 Stars Hotel) Position: Commis",
+        "page": 2,
+        "token_count": 98
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 102.25,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 7,
+    "parsing_timestamp": "2025-11-07T12:59:12.249023Z",
+    "processing_time_ms": 13104,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

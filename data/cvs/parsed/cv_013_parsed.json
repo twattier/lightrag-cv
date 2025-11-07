@@ -1,0 +1,159 @@
+{
+  "document_id": "cv_013",
+  "document_type": "CV",
+  "source_filename": "cv_013.pdf",
+  "candidate_label": "cv_013",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "Phone:\n9726675009\nEmail\n: bvasoya21@gmail.com\nAddress:\nC-103, Rajipa Avenue 100 Feet Anand Nagar Rd, opposite Siddheshwar\nPark, Satellite, Prahlad Nagar, Ahmedabad, Gujarat 380015",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Contact Information:",
+        "page": 1,
+        "token_count": 51
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "Looking forward to enhancing my professional skills in a workspace, solving problems effectively in a challenging position, and becoming a more responsible, knowledgeable, and respectable professional.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Career Objective:",
+        "page": 1,
+        "token_count": 37
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "MCA, Institution = Department of Computer Science, Rajkot. MCA, University/Board = Saurashtra University. MCA, Year of Passing = 2019. MCA, Percentage/CGPA = 8.33. BCA, Institution = Faculty of BCA, Shree K.V.Ramani Mahila College, Atkot. BCA, University/Board = Saurashtra University. BCA, Year of Passing = 2017. BCA, Percentage/CGPA = 8.92. HSC (Commerce), Institution = SMT.U.L.D. Girls School, Gondal. HSC (Commerce), University/Board = G.S.&H.S.E.B., Gandhinagar. HSC (Commerce), Year of Passing = 2014. HSC (Commerce), Percentage/CGPA = 71.87%. SSC, Institution = Mts. S.D. Secondary School, Atkot. SSC, University/Board = G.S.&H.S.E.B., Gandhinagar. SSC, Year of Passing = 2012. SSC, Percentage/CGPA = 65.00%",
+      "chunk_type": "table",
+      "metadata": {
+        "section": "Education:",
+        "page": 1,
+        "token_count": 253
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "Web Development: Angular 6 to Angular 17, Svelte.js, Electron.js, Micro-frontend, JavaScript, TypeScript, HTML, CSS, Bootstrap.\nBackend Technology: Node.js, MongoDB, CouchDB, elastic search (Express.js, Sails.js)\nAwareness: Deploy (IIS, Azure), Microsoft Azure (Docker, App Service), Hardware & Networking, Unit Testing, Functional Testing.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Technical Skills:",
+        "page": 1,
+        "token_count": 104
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "Windows XP, 7, 8, 10, 11, Unix/Linux, Android.\nVisual Studio Code, Sublime",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Development IDEs:",
+        "page": 2,
+        "token_count": 25
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "Adit -Software Engineer May 2021 -May 2025 Role: Software Engineer",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Experience:",
+        "page": 2,
+        "token_count": 17
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "January 2021 -April 2021 (4 months) Role: Angular Developer",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Shine Infosoft -Angular Developer",
+        "page": 2,
+        "token_count": 15
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "December 2018 -March 2020 (1 year 4 months) Role: Angular Developer",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Satva Solutions -Angular Developer",
+        "page": 2,
+        "token_count": 17
+      }
+    },
+    {
+      "chunk_id": "chunk_8",
+      "content": "Adit : Technology: Angular (Web), Node.js (Sails.js, Express), Svelte.js, Electron.js (Desktop App) Involvement: In this product i have worked in the calling module, there we are recorded all the external calls for the details of the patients. In the calling there are some features like voice mail , hold music, faxes,  add soft lines support plivo, Also I have worked with the SMS module where we have used plivo for communication like call or SMS, file upload, Worked with patients modules like we are add manually patients or some patients come from SMS, call or from appointment booking, Patient listing Worked with stripe payment for patients payments or little bit worked with module billing. Also worked in real time chat for internal users of organizations. I'm working in electron.js app we are loading one angular app for same view of web app but there we have based on desktop conditionally add or remove, also in desktop using pubsub bind Realtime notification updates.\nRenault Rent: Technology: Angular, .NET (MVC), HTML, JavaScript, Bootstrap Involvement: In Renault my role to handle front side some modules like, in 1 hour gap select a car for rent, In listing add cart to car or remove car from cart, order list create users, Login users integration API, validation etc.\nBTT:\nTechnology: Angular, .NET (Core), HTML, JavaScript, Bootstrap (ASPZERO)\nInvolvement\n: Bluetooth Device Integration, Real-Time Data Fetch, Doctor-Patient\nInteraction",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Projects:",
+        "page": 2,
+        "token_count": 357
+      }
+    },
+    {
+      "chunk_id": "chunk_9",
+      "content": "Technology: Angular, HTML, JavaScript, Bootstrap (Nebular Theme) Involvement: Roles for Customer, Restaurant Manager, and Admin; Menu and Order Management; PayPal Integration",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Restaurants App",
+        "page": 3,
+        "token_count": 41
+      }
+    },
+    {
+      "chunk_id": "chunk_10",
+      "content": "Technology: Angular, HTML, JavaScript, Bootstrap, Node.js, MongoDB Involvement : Fitness Center Locator, Calories Tracking with Fitbit, Embedded Workout Videos.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Train as You Go",
+        "page": 3,
+        "token_count": 47
+      }
+    },
+    {
+      "chunk_id": "chunk_11",
+      "content": "- Active Listener\n- Communication & Leadership\n- Flexible and Hard Working",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Strengths:",
+        "page": 3,
+        "token_count": 15
+      }
+    },
+    {
+      "chunk_id": "chunk_12",
+      "content": "\u2022\nAbility to rapidly build relationships and set up trust\n- Confident and determined\n- Ability to work individually as well as in a team.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Interpersonal Skills:",
+        "page": 3,
+        "token_count": 32
+      }
+    },
+    {
+      "chunk_id": "chunk_13",
+      "content": "Date of Birth: 29th July 1997\nLanguages Known: English, Hindi, Gujarati\nMarital Status: Married\nNationality/Religion: Indian / Hindu\nInterests & Hobbies: Travelling, Reading Novels, Listening to Music\nThanks,\nBansi Vasoya bvasoya21@gmail.com\n9726675009",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Personal Details:",
+        "page": 3,
+        "token_count": 71
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 224.08,
+    "page_count": 0,
+    "source_dataset": "gigswar/cv_files",
+    "chunks_count": 14,
+    "parsing_timestamp": "2025-11-07T12:59:38.941658Z",
+    "processing_time_ms": 2820,
+    "format": "PDF",
+    "tables_extracted": 1
+  }
+}

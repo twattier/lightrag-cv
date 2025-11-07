@@ -1,0 +1,129 @@
+{
+  "document_id": "cv_021",
+  "document_type": "CV",
+  "source_filename": "cv_021.pdf",
+  "candidate_label": "cv_021",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "H\u1ecd t\u00ean\nTR\u1ea6N V\u0102N TO\u00c1N\nC\u00f4ng vi\u1ec7c\nL\u1eadp tr\u00ecnh vi\u00ean\nNg\u00e0y sinh\n25/02/1988\nN\u01a1i sinh\nNam \u0110\u1ecbnh.\nGi\u1edbi t\u00ednh\nNam.\nT\u00ecnh tr\u1ea1ng h\u00f4n nh\u00e2n\n\u0110\u00e3 k\u1ebft h\u00f4n\n\u0110\u1ecba ch\u1ec9 li\u00ean h\u1ec7\nB\u1ea1ch Mai, Hai B\u00e0 Tr\u01b0ng, H\u00e0 N\u1ed9i\nEmail:\nS\u1ed1 \u0111i\u1ec7n tho\u1ea1",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "TH\u00d4NG TIN C\u00c1 NH\u00c2N",
+        "page": 1,
+        "token_count": 54
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "1, T\u00ean tr\u01b0\u1eddng = Tr\u01b0\u1eddng \u0110\u1ea1i H\u1ecdc Kinh Doanh V\u00e0 C\u00f4ng Ngh\u1ec7 H\u00e0 N\u1ed9. 1, Chuy\u00ean ng\u00e0nh = C\u00f4ng ngh\u1ec7 th\u00f4ng tin. 1, X\u1ebfp lo\u1ea1i = Trung B\u00ecnh Kh\u00e1. 1, N\u0103m TN = 2013",
+      "chunk_type": "table",
+      "metadata": {
+        "section": "I. H\u1ecdc v\u1ea5n",
+        "page": 1,
+        "token_count": 44
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "- -7 n\u0103m kinh nghi\u1ec7m l\u00e0m vi\u1ec7c trong l\u0129nh v\u1ef1c ph\u00e1t tri\u1ec3n web v\u00e0 \u1ee9ng d\u1ee5ng tr\u00ean n\u1ec1n t\u1ea3ng c#.\n- -C\u00f3 ki\u1ebfn th\u1ee9c v\u1ec1 ng\u00f4n ng\u1eef, n\u1ec1n t\u1ea3ng v\u00e0 c\u00f4ng ngh\u1ec7 nh\u01b0: Window Service, Console, HTML, CSS, JS, REST, WinForm, WebForm, MVC, core, SQL Server, React Native, JSON, XML,\nWeb Api, SPA( angular js, Vuejs, Angular, Blazor)\n- -C\u00f3 kinh nghi\u1ec7m l\u00e0m vi\u1ec7c v\u1edbi c\u00e1c n\u1ec1n t\u1ea3ng t\u01b0\u01a1ng \u0111\u01b0\u01a1ng sau: C# (web form, mvc, net core), window( form, service, console),Microservice.\n- -M\u00f4 h\u00ecnh l\u00e0m vi\u1ec7c Scrum.\nMobile Hybrid Application: React Native\nWeb application: Javascript, Jquery, AngularJs, Kendo UI\nDatbase: SQL server, MySQL, Postgresql, SQLite\nIDE: Visual Studio, Visual studio code, Postman, Sql Management, Photoshop, PgAdmin4.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "II. K\u1ef9 N\u0103ng v\u00e0 chuy\u00ean m\u00f4n",
+        "page": 1,
+        "token_count": 213
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "- -S\u1eed d\u1ee5ng word, excel, powerpoint, Jira, Trello,Slack, Postman, GitLab, GitHub, Jenkins, Docker.\n- -Design partent: Factory method, Singleton, Strategy Pattern, Repository.\n- -Principles: SOLID, RESTFULL\n- -C\u00f3 th\u1ec3 h\u1ecdc h\u1ecfi c\u00f4ng ngh\u1ec7 m\u1edbi m\u1ed9t c\u00e1ch nhanh ch\u00f3ng\n- -C\u00f3 th\u1ec3 l\u00e0m vi\u1ec7c \u0111\u1ed9c l\u1eadp v\u00e0 theo nh\u00f3m.\n- -Ch\u1ecbu kh\u00f3 h\u1ecdc h\u1ecfi v\u00e0 t\u00ecm t\u00f2i.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "CV - TR\u1ea6N V\u0102N TO\u00c1N",
+        "page": 2,
+        "token_count": 110
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "T\u1eeb: 5/2020 \u0110\u1ebfn: Hi\u1ec7n t\u1ea1i, C\u00f4ng ty = C\u00f4ng ty: VISECURITIES V\u1ecb tr\u00ed: Full Stack developer. M\u00f4 t\u1ea3 c\u00f4ng vi\u1ec7c: ph\u00e1t tri\u1ec3n web, d\u1ecbch v\u1ee5 window. T\u1eeb: 9/2017 \u0110\u1ebfn: 5/2020, C\u00f4ng ty = C\u00f4ng ty: VPBOX. V\u1ecb tr\u00ed: Full Stack developer. M\u00f4 t\u1ea3 c\u00f4ng vi\u1ec7c: ph\u00e1t tri\u1ec3n web, console. T\u1eeb: 2/2017 \u0110\u1ebfn: 9/2017, C\u00f4ng ty = C\u00f4ng ty: VIVU. V\u1ecb tr\u00ed: Full Stack developer. M\u00f4 t\u1ea3 c\u00f4ng vi\u1ec7c: Ph\u00e1t tri\u1ec3n web, d\u1ecbch v\u1ee5 window. T\u1eeb: 6/2016 \u0110\u1ebfn: 2/2017, C\u00f4ng ty = C\u00f4ng ty: F88. V\u1ecb tr\u00ed: Full Stack developer M\u00f4 t\u1ea3 c\u00f4ng vi\u1ec7c: \u2022 Ph\u00e1t tri\u1ec3n web, d\u1ecbch v\u1ee5 window.. T\u1eeb: 5/2015 \u0110\u1ebfn: 6/2016, C\u00f4ng ty = C\u00f4ng ty: Zopost. V\u1ecb tr\u00ed: Application. M\u00f4 t\u1ea3 c\u00f4ng vi\u1ec7c: \u2022 Ph\u00e1t tri\u1ec3n web, d\u1ecbch v\u1ee5 window, console. T\u1eeb: 4/2014 \u0110\u1ebfn: 5/2015, C\u00f4ng ty = C\u00f4ng ty: IBCT. V\u1ecb tr\u00ed: Full Stack developer M\u00f4 t\u1ea3 c\u00f4ng vi\u1ec7c: \u2022 \u1ee9ng d\u1ee5ng web.",
+      "chunk_type": "table",
+      "metadata": {
+        "section": "III. Kinh nghi\u1ec7m",
+        "page": 2,
+        "token_count": 233
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "Th\u1eddi gian, 1 = T\u00ean d\u1ef1 \u00e1n. Th\u1eddi gian, 2 = M\u00f4 t\u1ea3 d\u1ef1 \u00e1n\nT\u1eeb: 5/2020, 1 = T\u00ean d\u1ef1 \u00e1n. T\u1eeb: 5/2020, 2 = H\u1ec7 th\u1ed1ng giao d\u1ecbch tr\u00e1i phi\u1ebfu. \u0110\u1ebfn: hi\u1ec7n t\u1ea1i, 1 = V\u1ecb tr\u00ed. \u0110\u1ebfn: hi\u1ec7n t\u1ea1i, 2 = FullStack. , 1 = M\u00f4 t\u1ea3 c\u00f4ng vi\u1ec7c. , 2 = Fix bug, n\u00e2ng c\u1ea5p t\u00ednh n\u0103ng giao d\u1ecbch tr\u00e1i phi\u1ebfu, hi\u1ec7u ch\u1ec9nh Database. X\u1eed l\u00fd cu\u1ed9c g\u1ecdi \u0111\u1ebfn DVKH.. , 1 = M\u00f4 t\u1ea3 d\u1ef1 \u00e1n. , 2 = Giao d\u1ecbch tr\u00e1i phi\u1ebfu. , 1 = Ng\u00f4n ng\u1eef. , 2 = C# SQL Server HTML/CSS Javascript MySQL Oracle. , 1 = K\u1ef9 thu\u1eadt. , 2 = Jquery Bootstrap RabbitMq Singalr SQL-StoreProc SQL-Function SQL-View. , 1 = C\u00f4ng ty. , 2 = Ch\u1ee9ng kho\u00e1n qu\u1ed1c t\u1ebf Vi\u1ec7t Nam. , 1 = Kh\u00e1ch h\u00e0ng. , 2 = N\u1ed9i b\u1ed9 v\u00e0 \u0111\u1ed1i t\u00e1c OCB.. T\u1eeb: 9/2017, 1 = T\u00ean d\u1ef1 \u00e1n:. T\u1eeb: 9/2017, 2 = English E-Learning. \u0110\u1ebfn: 5/2020, 1 = V\u1ecb tr\u00ed:. \u0110\u1ebfn: 5/2020, 2 = Full-stack developer. , 1 = M\u00f4 t\u1ea3 c\u00f4ng vi\u1ec7c:. , 2 = Ph\u00e2n t\u00edch Ph\u00e1t tri\u1ec3n T\u1ed1i \u01b0u code, t\u1ed1i \u01b0u Database Tri\u1ec3n khai Fix-bug. , 1 = M\u00f4 t\u1ea3 d\u1ef1 \u00e1n:. , 2 = H\u1ecdc, \u00f4n luy\u1ec7n, thi ti\u1ebfng anh.. , 1 = Ng\u00f4n ng\u1eef. , 2 = C# SQL Server HTML/CSS\n, 1 = . , 2 = Javascript. , 1 = K\u1ef9 thu\u1eadt. , 2 = MVC 5 Bootstrap Jquery Signalr Entityframework Phaser Angularjs Konva js Stackoverflow Redis. , 1 = C\u00f4ng ty:. , 2 = VPBOX. , 1 = Kh\u00e1ch h\u00e0ng:. , 2 = Cho h\u1ecdc sinh trong nh\u00e0 tr\u01b0\u1eddng, ng\u01b0\u1eddi mu\u1ed1n h\u1ecdc ti\u1ebfng Anh. T\u1eeb: 2/2017 \u0110\u1ebfn: 6/2017, 1 = T\u00ean d\u1ef1 \u00e1n:. T\u1eeb: 2/2017 \u0110\u1ebfn: 6/2017, 2 = ViVu travel. , 1 = C\u00f4ng ty:. , 2 = Vivu. , 1 = Kh\u00e1ch h\u00e0ng:. , 2 = Cho c\u00e1c kh\u00e1ch s\u1ea1n. , 1 = Quy m\u00f4 d\u1ef1 \u00e1n:. , 2 = 6-8 th\u00e1ng. , 1 = V\u1ecb tr\u00ed:. , 2 = Full-stack developer. , 1 = M\u00f4 t\u1ea3 d\u1ef1 \u00e1n:. , 2 = \u0110\u1eb7t ph\u00f2ng, mua \u0111\u1ed3, \u0111i\u1ec1u khi\u1ec3n thi\u1ebft b\u1ecb ph\u00f2ng. , 1 = Ng\u00f4n ng\u1eef. , 2 = C# SQL Server Javascript HTM/ CSS C. , 1 = K\u1ef9 thu\u1eadt. , 2 = MVC 4 Window service Jquery Boostrap Fontawesome Arduino IDE. T\u1eeb: 6/2017 \u0110\u1ebfn: 9/2017, 1 = T\u00ean d\u1ef1 \u00e1n:. T\u1eeb: 6/2017 \u0110\u1ebfn: 9/2017, 2 = HR. T\u1eeb: 6/2017 \u0110\u1ebfn: 9/2017, 1 = Kh\u00e1ch h\u00e0ng:. T\u1eeb: 6/2017 \u0110\u1ebfn: 9/2017, 2 = N\u1ed9i b\u1ed9. T\u1eeb: 6/2017 \u0110\u1ebfn: 9/2017, 1 = Quy m\u00f4 d\u1ef1 \u00e1n:. T\u1eeb: 6/2017 \u0110\u1ebfn: 9/2017, 2 = 6 th\u00e1ng",
+      "chunk_type": "table",
+      "metadata": {
+        "section": "IV. D\u1ef1 \u00e1n \u0111\u00e3 tham gia",
+        "page": 2,
+        "token_count": 707
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": ", V\u1ecb tr\u00ed: = M\u00f4 t\u1ea3 d\u1ef1 \u00e1n:. , Full-stack developer = Ch\u00e2m c\u00f4ng, t\u00ednh c\u00f4ng, t\u00ednh l\u01b0\u01a1ng.. , V\u1ecb tr\u00ed: = Used Programming Languages:. , Full-stack developer = C# SQL Server Javascript HTM/ CSS. , V\u1ecb tr\u00ed: = K\u1ef9 thu\u1eadt. , Full-stack developer = MVC 4 Window service Jquery Boostrap. T\u1eeb: 6/2016 \u0110\u1ebfn: 2/2017, V\u1ecb tr\u00ed: = T\u00ean d\u1ef1 \u00e1n:. T\u1eeb: 6/2016 \u0110\u1ebfn: 2/2017, Full-stack developer = H\u1ec7 th\u1ed1ng c\u1ea7m \u0111\u1ed3. T\u1eeb: 6/2016 \u0110\u1ebfn: 2/2017, V\u1ecb tr\u00ed: = C\u00f4ng ty:. T\u1eeb: 6/2016 \u0110\u1ebfn: 2/2017, Full-stack developer = F88. T\u1eeb: 6/2016 \u0110\u1ebfn: 2/2017, V\u1ecb tr\u00ed: = Kh\u00e1ch h\u00e0ng:. T\u1eeb: 6/2016 \u0110\u1ebfn: 2/2017, Full-stack developer = N\u1ed9i b\u1ed9. T\u1eeb: 6/2016 \u0110\u1ebfn: 2/2017, V\u1ecb tr\u00ed: = Quy m\u00f4 d\u1ef1 \u00e1n:. T\u1eeb: 6/2016 \u0110\u1ebfn: 2/2017, Full-stack developer = 8 th\u00e1ng. T\u1eeb: 6/2016 \u0110\u1ebfn: 2/2017, V\u1ecb tr\u00ed: = V\u1ecb tr\u00ed:. T\u1eeb: 6/2016 \u0110\u1ebfn: 2/2017, Full-stack developer = Full stack developer.. T\u1eeb: 6/2016 \u0110\u1ebfn: 2/2017, V\u1ecb tr\u00ed: = M\u00f4 t\u1ea3 d\u1ef1 \u00e1n:. T\u1eeb: 6/2016 \u0110\u1ebfn: 2/2017, Full-stack developer = Qu\u1ea3n l\u00fd nh\u00e2n s\u1ef1, trung t\u00e2m giao d\u1ecbch, giao d\u1ecbch c\u1ea7m \u0111\u1ed3, b\u1ea3o m\u1eadt.. , V\u1ecb tr\u00ed: = Ng\u00f4n ng\u1eef. , Full-stack developer = C# SQL Server Javascript HTM/ CSS. , V\u1ecb tr\u00ed: = K\u1ef9 thu\u1eadt. , Full-stack developer = MVC 4 Window service Jquery Boostrap Fontawesome SQL-StoreProc SQL-Function SQL-View. T\u1eeb: 7/2015 \u0110\u1ebfn: 1/2016, V\u1ecb tr\u00ed: = T\u00ean d\u1ef1 \u00e1n:. T\u1eeb: 7/2015 \u0110\u1ebfn: 1/2016, Full-stack developer = SMS Gateway. T\u1eeb: 7/2015 \u0110\u1ebfn: 1/2016, V\u1ecb tr\u00ed: = C\u00f4ng ty:. T\u1eeb: 7/2015 \u0110\u1ebfn: 1/2016, Full-stack developer = Zopost. T\u1eeb: 7/2015 \u0110\u1ebfn: 1/2016, V\u1ecb tr\u00ed: = Kh\u00e1ch h\u00e0ng:. T\u1eeb: 7/2015 \u0110\u1ebfn: 1/2016, Full-stack developer = C\u00e1c \u0111\u1ed1i t\u00e1c c\u1ee7a sim B\u00f4ng Sen. T\u1eeb: 7/2015 \u0110\u1ebfn: 1/2016, V\u1ecb tr\u00ed: = Quy m\u00f4 d\u1ef1 \u00e1n:. T\u1eeb: 7/2015 \u0110\u1ebfn: 1/2016, Full-stack developer = 10-12 th\u00e1ng",
+      "chunk_type": "table",
+      "metadata": {
+        "section": "IV. D\u1ef1 \u00e1n \u0111\u00e3 tham gia",
+        "page": 5,
+        "token_count": 546
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": ", V\u1ecb tr\u00ed: = M\u00f4 t\u1ea3 d\u1ef1 \u00e1n:. , Back-end developer. = Nh\u1eadn n\u1ea1p ti\u1ec1n \u0111i\u1ec7n tho\u1ea1i, game.., g\u1eedi tin nh\u1eafn.. , V\u1ecb tr\u00ed: = Ng\u00f4n ng\u1eef. , Back-end developer. = C# SQL Server. , V\u1ecb tr\u00ed: = K\u1ef9 thu\u1eadt. , Back-end developer. = Window service Rabbit MQ Redis ServiceStack. T\u1eeb: 2/2016 \u0110\u1ebfn: 6/2016, V\u1ecb tr\u00ed: = T\u00ean d\u1ef1 \u00e1n:. T\u1eeb: 2/2016 \u0110\u1ebfn: 6/2016, Back-end developer. = H\u1ec7 th\u1ed1ng ph\u00e2n ph\u1ed1i v\u00e0 b\u00e1n l\u1ebb n\u00f4ng th\u00f4n BTCOM. T\u1eeb: 2/2016 \u0110\u1ebfn: 6/2016, V\u1ecb tr\u00ed: = C\u00f4ng ty:. T\u1eeb: 2/2016 \u0110\u1ebfn: 6/2016, Back-end developer. = Zopost. T\u1eeb: 2/2016 \u0110\u1ebfn: 6/2016, V\u1ecb tr\u00ed: = Kh\u00e1ch h\u00e0ng:. T\u1eeb: 2/2016 \u0110\u1ebfn: 6/2016, Back-end developer. = Internal. T\u1eeb: 2/2016 \u0110\u1ebfn: 6/2016, V\u1ecb tr\u00ed: = Quy m\u00f4 d\u1ef1 \u00e1n:. T\u1eeb: 2/2016 \u0110\u1ebfn: 6/2016, Back-end developer. = 20-30 th\u00e1ng. T\u1eeb: 2/2016 \u0110\u1ebfn: 6/2016, V\u1ecb tr\u00ed: = V\u1ecb tr\u00ed:. T\u1eeb: 2/2016 \u0110\u1ebfn: 6/2016, Back-end developer. = Full Stack developer.. T\u1eeb: 2/2016 \u0110\u1ebfn: 6/2016, V\u1ecb tr\u00ed: = M\u00f4 t\u1ea3 d\u1ef1 \u00e1n:. T\u1eeb: 2/2016 \u0110\u1ebfn: 6/2016, Back-end developer. = B\u00e1n h\u00e0ng, qu\u1ea3n l\u00fd kho, qu\u1ea3n l\u00fd v\u1eadn chuy\u1ec3n.. T\u1eeb: 2/2016 \u0110\u1ebfn: 6/2016, V\u1ecb tr\u00ed: = Ng\u00f4n ng\u1eef. T\u1eeb: 2/2016 \u0110\u1ebfn: 6/2016, Back-end developer. = C# SQL Server HTML/CSS Javascript Redis. T\u1eeb: 2/2016 \u0110\u1ebfn: 6/2016, V\u1ecb tr\u00ed: = K\u1ef9 thu\u1eadt. T\u1eeb: 2/2016 \u0110\u1ebfn: 6/2016, Back-end developer. = MVC 4 Jquery Boostrap Fontawesome Kendo UI ServiceStack. T\u1eeb: 4/2014 \u0110\u1ebfn: 8/2014, V\u1ecb tr\u00ed: = T\u00ean d\u1ef1 \u00e1n:. T\u1eeb: 4/2014 \u0110\u1ebfn: 8/2014, Back-end developer. = C\u1ed5ng th\u00f4ng tin IBCT. T\u1eeb: 4/2014 \u0110\u1ebfn: 8/2014, V\u1ecb tr\u00ed: = C\u00f4ng ty:. T\u1eeb: 4/2014 \u0110\u1ebfn: 8/2014, Back-end developer. = IBCT. T\u1eeb: 4/2014 \u0110\u1ebfn: 8/2014, V\u1ecb tr\u00ed: = Kh\u00e1ch h\u00e0ng:. T\u1eeb: 4/2014 \u0110\u1ebfn: 8/2014, Back-end developer. = Internal. T\u1eeb: 4/2014 \u0110\u1ebfn: 8/2014, V\u1ecb tr\u00ed: = Quy m\u00f4 d\u1ef1 \u00e1n:. T\u1eeb: 4/2014 \u0110\u1ebfn: 8/2014, Back-end developer. = 2 th\u00e1ng. T\u1eeb: 4/2014 \u0110\u1ebfn: 8/2014, V\u1ecb tr\u00ed: = V\u1ecb tr\u00ed:. T\u1eeb: 4/2014 \u0110\u1ebfn: 8/2014, Back-end developer. = Full stack developer.. T\u1eeb: 4/2014 \u0110\u1ebfn: 8/2014, V\u1ecb tr\u00ed: = M\u00f4 t\u1ea3 d\u1ef1 \u00e1n:. T\u1eeb: 4/2014 \u0110\u1ebfn: 8/2014, Back-end developer. = C\u1ed5ng th\u00f4ng tin c\u00f4ng ty. T\u1eeb: 4/2014 \u0110\u1ebfn: 8/2014, V\u1ecb tr\u00ed: = . T\u1eeb: 4/2014 \u0110\u1ebfn: 8/2014, Back-end developer. = SQL Server. T\u1eeb: 4/2014 \u0110\u1ebfn: 8/2014, V\u1ecb tr\u00ed: = Ng\u00f4n ng\u1eef. T\u1eeb: 4/2014 \u0110\u1ebfn: 8/2014, Back-end developer. = HTML/CSS C#",
+      "chunk_type": "table",
+      "metadata": {
+        "section": "IV. D\u1ef1 \u00e1n \u0111\u00e3 tham gia",
+        "page": 6,
+        "token_count": 713
+      }
+    },
+    {
+      "chunk_id": "chunk_8",
+      "content": ", 1 = . , 2 = Javascript. , 1 = K\u1ef9 thu\u1eadt. , 2 = MVC 3 Jquery. T\u1eeb: 8/2014, 1 = T\u00ean d\u1ef1 \u00e1n:. T\u1eeb: 8/2014, 2 = IBCT Golf. \u0110\u1ebfn: 12/2014, 1 = Kh\u00e1ch h\u00e0ng:. \u0110\u1ebfn: 12/2014, 2 = Internal. , 1 = Quy m\u00f4 d\u1ef1 \u00e1n:. , 2 = 3 th\u00e1ng. , 1 = V\u1ecb tr\u00ed:. , 2 = Full stack developer. , 1 = M\u00f4 t\u1ea3 d\u1ef1 \u00e1n:. , 2 = L\u01b0u tr\u1eef th\u00f4ng tin gi\u1ea3i \u0111\u1ea5u, \u0111i\u1ec3m s\u1ed1, t\u00ednh \u0111i\u1ec3m, x\u1ebfp h\u1ea1ng c\u00e1c golf th\u1ee7.. , 1 = Ng\u00f4n ng\u1eef. , 2 = SQL Server HTML/CSS C# Javascript. , 1 = K\u1ef9 thu\u1eadt. , 2 = MVC 3 Jquery Bootstrap. T\u1eeb: 12/2014, 1 = T\u00ean d\u1ef1 \u00e1n:. T\u1eeb: 12/2014, 2 = Whole sales Talk PC Version. \u0110\u1ebfn: 5/2015, 1 = Kh\u00e1ch h\u00e0ng:. \u0110\u1ebfn: 5/2015, 2 = Our source for BMX. , 1 = Quy m\u00f4 d\u1ef1 \u00e1n:. , 2 = 5 th\u00e1ng. , 1 = V\u1ecb tr\u00ed:. , 2 = Back-end developer. , 1 = M\u00f4 t\u1ea3 d\u1ef1 \u00e1n:. , 2 = Qu\u1ea3n l\u00fd th\u00f4ng tin ng\u01b0\u1eddi d\u00f9ng, qu\u1ea3n l\u00fd thanh \u0110\u1ebfn\u00e1n giao d\u1ecbch.. , 1 = Ng\u00f4n ng\u1eef. , 2 = SQL Server HTML/CSS C# Javascript. , 1 = K\u1ef9 thu\u1eadt. , 2 = MVC 3 Jquery Bootstrap Fontawesome",
+      "chunk_type": "table",
+      "metadata": {
+        "section": "IV. D\u1ef1 \u00e1n \u0111\u00e3 tham gia",
+        "page": 7,
+        "token_count": 342
+      }
+    },
+    {
+      "chunk_id": "chunk_9",
+      "content": "- -C\u00f4ng vi\u1ec7c \u1ed5n \u0111\u1ecbnh, thu nh\u1eadp v\u00e0 \u0111\u00e3i ng\u1ed9 x\u1ee9ng \u0111\u00e1ng v\u1edbi c\u00f4ng s\u1ee9c b\u1ecf ra.\n- -\u0110\u1ed3ng nghi\u1ec7p ho\u00e0 \u0111\u1ed3ng.\n- -L\u00e0m gi\u1edd h\u00e0nh ch\u00ednh, c\u00f3 th\u1ec3 OT n\u1ebfu c\u1ea7n.\n- -Kh\u00f4ng l\u00e0m vi\u1ec7c sai ph\u00e1p lu\u1eadt.\n- -M\u00f4i tr\u01b0\u1eddng l\u00e0m vi\u1ec7c t\u1ed1t.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "V. Mong mu\u1ed1n",
+        "page": 7,
+        "token_count": 64
+      }
+    },
+    {
+      "chunk_id": "chunk_10",
+      "content": "H\u1ecd t\u00ean:, 1 = Tr\u1ea7n Xu\u00e2n Tr\u01b0\u1eddng. C\u00f4ng ty:, 1 = VISECURITIES. V\u1ecb tr\u00ed:, 1 = Tr\u01b0\u1edfng ph\u00f2ng. \u0110i\u1ec7n tho\u1ea1i:, 1 = ",
+      "chunk_type": "table",
+      "metadata": {
+        "section": "VI. Ng\u01b0\u1eddi li\u00ean h\u1ec7",
+        "page": 8,
+        "token_count": 37
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 89.73,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 11,
+    "parsing_timestamp": "2025-11-07T13:02:29.907690Z",
+    "processing_time_ms": 32581,
+    "format": "PDF",
+    "tables_extracted": 9
+  }
+}

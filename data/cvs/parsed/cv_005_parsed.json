@@ -1,0 +1,219 @@
+{
+  "document_id": "cv_005",
+  "document_type": "CV",
+  "source_filename": "cv_005.pdf",
+  "candidate_label": "cv_005",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "March 13,1997\n.com",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "CONTACT INFORMATION",
+        "page": 1,
+        "token_count": 6
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "- \u00b7Short-term: Become product manager in6months\n- Long-term: Become product manager lead in 2 years",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "OBJECTIVE",
+        "page": 1,
+        "token_count": 29
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "- Jira\n- \u00b7Confluence\n- Miro\n- Figma\n- Google analytics\n- Holistic\n- Notion\n- Trello\n- Helpdesk\n- CRM\n- ERP\n- oopo\n- \u00b7ShareX",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Tools",
+        "page": 1,
+        "token_count": 41
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "Asascrummaster\n- \u00b7Daily meeting\n- \u00b7Grooming (Product backlog)\n- Sprintreview\n- \u00b7Retrospective",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Agile model",
+        "page": 1,
+        "token_count": 29
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "Major: Information Management\n2015-2019\nGPA: 7.71",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "University of Social Science and Humanities",
+        "page": 1,
+        "token_count": 11
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "AssociateProductManager/AssociateProductOwner/BusinessAnalyst",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "SieuViet Human ResourcesJoint StockCompany",
+        "page": 1,
+        "token_count": 17
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "- Big merge project\n- \u00b7WorkwithleadPM to defineroadmap\n- \u00b7Write PRD\n- \u00b7Workwith Marketing/Engineer Manager/Sales team/Support serviceteamtoreceivefeedbackaboutPRD\n- \u00b7Define success metrics\n- \u00b7Create theuserflow\n- \u00b7Feedback Ul/UXwith designer\n- \u00b7Manage the meeting notes\n- \u00b7Manage released project timeline\n- \u00b7Createrequestdata",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "ASSOCIATEPRODUCTMANAGER",
+        "page": 1,
+        "token_count": 95
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "WorkwithHeadofproduct/PMtodefineroadmapbyquarter",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "-Roadmap",
+        "page": 1,
+        "token_count": 16
+      }
+    },
+    {
+      "chunk_id": "chunk_8",
+      "content": "- 1UI/UX upgradeproject\n- \u00b7WorkwithPM/Engineer/Salesteamtofindthesolutionforthe features\n- \u00b7FeedbackUl/UXwithdesigner\n- Writetheuserstories\n- Manage backlog\n- Training Sales team\n- Completetheprojecton time\n- Job scoring project\n- \u00b7Setup A/B testing\n- \u00b7Writetheuser stories\n- \u00b7Review the features after building\n- \u00b7Analysis the result of the product",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "ASSOCIATEPRODUCTOWNER",
+        "page": 1,
+        "token_count": 98
+      }
+    },
+    {
+      "chunk_id": "chunk_9",
+      "content": "Telegram\nSlack\nSkype\nGoogle chat",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Social Media Channels",
+        "page": 2,
+        "token_count": 6
+      }
+    },
+    {
+      "chunk_id": "chunk_10",
+      "content": "TOEICCertificatewithscore470",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "2019",
+        "page": 2,
+        "token_count": 11
+      }
+    },
+    {
+      "chunk_id": "chunk_11",
+      "content": "I like reading book/blog about my job",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "INTERESTS",
+        "page": 2,
+        "token_count": 9
+      }
+    },
+    {
+      "chunk_id": "chunk_12",
+      "content": "Best Business Analyst\n- Step to step resume project\n- \u00b7FeedbackPRDwithPM\n- \u00b7FeedbackUl/UXwith designer\n- \u00b7Write theuser stories\n- \u00b7Review the features after building\n- Work with data team to define tracking",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "2020",
+        "page": 2,
+        "token_count": 53
+      }
+    },
+    {
+      "chunk_id": "chunk_13",
+      "content": "- Ul/UX upgrade project\n- \u00b7Planning for the project\n- Prioritizethe task\n- \u00b7Support to design UI\n- \u00b7Write business requirement document\n- \u00b7Review the test case for QC\n- \u00b7Review the features after building\n- \u00b7Report the process of the project\n- \u00b7Complete the project on time",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "BUSINESSANALYST",
+        "page": 2,
+        "token_count": 68
+      }
+    },
+    {
+      "chunk_id": "chunk_14",
+      "content": "- \u00b7Work with the business department toreceive the new request\n- \u00b7Writebusinessrequirementdocument\n- \u00b7Support developer/QCtounderstand therequirement\n- \u00b7Test planning and write the test case\n- \u00b7Report and manage theresultof thetest\n- \u00b7Receive feedback from other department to check bug and reportto developer\n- \u00b7Research the competitors",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "-Website Operation:",
+        "page": 2,
+        "token_count": 82
+      }
+    },
+    {
+      "chunk_id": "chunk_15",
+      "content": "Tester/Front-end developer",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "MID Viet Nam Company",
+        "page": 2,
+        "token_count": 8
+      }
+    },
+    {
+      "chunk_id": "chunk_16",
+      "content": "- -Restaurant Management Project\n- .Test web-app\n- \u00b7Writing user guide\n- \u00b7Support to input real data on production environment\n- \u00b7Support customer to use theproduct\n- -Bus Management Project\n- \u00b7Develop web\n- \u00b7Testweb-app\n- \u00b7Voice recording to playon thebus",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "2018-2019",
+        "page": 2,
+        "token_count": 72
+      }
+    },
+    {
+      "chunk_id": "chunk_17",
+      "content": "Front-end developer",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Optech Technology Company",
+        "page": 2,
+        "token_count": 4
+      }
+    },
+    {
+      "chunk_id": "chunk_18",
+      "content": "- \u00b7Building the website interface template\n- \u00b7Test and fix bug",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "2018-2019",
+        "page": 2,
+        "token_count": 14
+      }
+    },
+    {
+      "chunk_id": "chunk_19",
+      "content": "2015-2016\nVolunteer to organize Merry Christmas for the poor student\n2015-2016",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Volunteer at Ung Buou Hospital",
+        "page": 2,
+        "token_count": 16
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 1107.28,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 20,
+    "parsing_timestamp": "2025-11-07T13:01:57.302542Z",
+    "processing_time_ms": 177982,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

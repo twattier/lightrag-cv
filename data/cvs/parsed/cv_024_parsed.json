@@ -1,0 +1,129 @@
+{
+  "document_id": "cv_024",
+  "document_type": "CV",
+  "source_filename": "cv_024.pdf",
+  "candidate_label": "cv_024",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "VO VAN LAU Date of birth: June 10 th  1988\nPhone/Zalo/Viber: (+\n| E-mail:\nSkype: van lau | Linkedin:\nvan lau",
+      "chunk_type": "caption",
+      "metadata": {
+        "section": "",
+        "page": 1,
+        "token_count": 41
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "My goal is to obtain a position that challenges me and provides the opportunity to upgrade my knowledge about the new technology trends and applied technologies in the business management of the enterprise, especially to improve my skills in the future.\nI believe that applying information technology solutions combined with technology and management in business is obviously a primary key to the enterprise, which helps them get not only incredibly effective but also quick in their business, and my mission is to make that happens.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "PROFESSIONAL SUMMARY",
+        "page": 1,
+        "token_count": 93
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "PROTOTYPE:\n, microsoft visio.\nPRODUCTIVITY:\nPostman.\nPLATFORMS:\nWebsite, Winform, SQL server, Accounting Finance.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "TECHNICAL SKILLS",
+        "page": 1,
+        "token_count": 36
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "- Logical thinking\n- Team work\n- Problem solving\n- Risk management\n- Product management\n- Agile Methodologies\n- Analyst\n- Customer service",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "CORE COMPETENCIES",
+        "page": 1,
+        "token_count": 29
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "2021 - Present\n- Receive contracts, allocate training personnel, survey requirements and analyze operations from customers.\n- Write survey documents to send to customers for confirmation.\n- Write editing requests to the programming department.\n- Allocate personnel to test software and transfer software to customers.\n- Accept the software after reporting correctly.\n- Software warranty for customers after acceptance: consulting, customer support, handling arising errors.\n- Write reports and edit according to customer requirements.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Leader of ERP application & warranty consulting team",
+        "page": 1,
+        "token_count": 107
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "- Receive errors and correct ERP software errors from users.\n- Receive new requests from users of departments.\n- Analyze requirements and provide solutions in ERP software.\n- Work with ERP software providers to meet user requirements.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "IT Software",
+        "page": 2,
+        "token_count": 50
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "2020\n2018 - 2019\n- Working closely with the Client to clarify the requirement of the project.\n- Understand business processes to translate business needs and requirements into documents, process diagrams to support product development.\n- Work with Project Manager on the technical aspect to ensure all the customer's requirements are documented, communicated, and delivered.\n- Identifying and prioritizing technical and functional requirements.\n- Manage changes details throughout the project life cycles and work with the Project Manager to align the project timeline.\n- Design (UI/UX) and implement architecturally sound solutions.\n- Participate in user testing, create documentation and user manuals for business.\n- Train users on how to use our products.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Business Analyst",
+        "page": 2,
+        "token_count": 152
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "- Support clients and consult with solutions if any troubles/problems.\n- Regularly keep working on technical issues and their impacts on the business of clients.\n- Train customers on how to use our products.\n- Seize the opportunity to improve technical skills in enterprise resource planning systems.\n2011 - 2018\n- Be well equipped with essential customer service skills.\n- Write design specifications and estimates for programs, based on customer's requirements.\n- Communicate with project team members for any cooperation and giving plans/strategies for meeting goals.\nEDUCATION",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "ERP Functional Consultant & Customer Service Associate",
+        "page": 2,
+        "token_count": 115
+      }
+    },
+    {
+      "chunk_id": "chunk_8",
+      "content": "2007 - 2011\nBachelor of Bank Financial.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "UNIVERSITY OF ECONOMICS HO CHI MINH CITY",
+        "page": 3,
+        "token_count": 8
+      }
+    },
+    {
+      "chunk_id": "chunk_9",
+      "content": ".NET Programmer Certificate.\nJAVA Programmer Certificate.\nWindows Server 2008 Network Administration Certificate.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "VNUHCM - UNIVERSITY OF SCIENCE",
+        "page": 3,
+        "token_count": 23
+      }
+    },
+    {
+      "chunk_id": "chunk_10",
+      "content": "C# Programming Certificate.\nPP & MYSQL Programming Certificate.\nADDITIONAL INFORMATION\nFOREIGN LANGUAGE:\nEnglish (Low Intermediate level).\nREFERENCES:\nReferences available upon request",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "NHATNGHE ICT TRAINING CENTER",
+        "page": 3,
+        "token_count": 48
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 125.75,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 11,
+    "parsing_timestamp": "2025-11-07T13:02:20.110789Z",
+    "processing_time_ms": 3721,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

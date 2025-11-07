@@ -1,0 +1,69 @@
+{
+  "document_id": "cv_018",
+  "document_type": "CV",
+  "source_filename": "cv_018.pdf",
+  "candidate_label": "cv_018",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "I am interested in learning, improving, and achieving goals. I enjoy exploring new methods and solutions. I am honest, straightforward, and dedicated in my work.\n\ue911 -112020 062023",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "OBJECTIVE",
+        "page": 1,
+        "token_count": 45
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "Backend C#: API RESTful, DDD, tool, application win, service,... Frontend C#,PHP: angular, HTML, JS, CSS, Devexpress, Blazor, Winform...\nC#,PHP : MVC,Laravel, Net core 6.0,EF...\nProject: Information manager, Operational management, HRM,...\nSystem operation : Win, linux, AD, IIS, Nginx, nextcloud, mysql,sql,\napache, php...\nDataBase : Sql server, Mysql\n\ue911 -122018 082020",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "C\u00d4NG TY \u0110\u1ea6U T\u01af V\u00c0 X\u00c2Y D\u1ef0NG T\u00c2Y H\u1ed2",
+        "page": 1,
+        "token_count": 132
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "Backend c#,php: app windows, tool, API, service,...\nFrontend : HTML,JS,CSS,...\nC#,PHP: MVC, A\nLaravel, Net Core 3.1, Winform,EF\nSystem operation : windows , linux.\nDataBase : Mysql , SQL server.\nERP Dynamics NAV : system integration tool, web, mini game ...\n\ue911 -072014 062018",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "C\u00d4NG TY HOA SEN VI\u1ec6T GROUP",
+        "page": 1,
+        "token_count": 89
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "Backend C#, php: web , wap , app windown , service, tool web .\nFrontend C#,php : MVC, A CSS, HTML, JS.\nConnecting VAT service with telco,mobile, vina, viettel by API :SOAP or REST.\nSystem operation :pbx asterisk ,mysql ,sql server, ngnix,windown,linux.\nDataBase : sql server , mysql.\n\ue911 -082012 072013",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "VTC MOBILE",
+        "page": 1,
+        "token_count": 116
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "Introduction of office equipment and software products. Support, installation, repair of computer devices, printers",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "C\u00d4NG TY TIN H\u1eccC VINH KHANG",
+        "page": 1,
+        "token_count": 20
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 630.3,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 5,
+    "parsing_timestamp": "2025-11-07T13:01:36.582866Z",
+    "processing_time_ms": 5598,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

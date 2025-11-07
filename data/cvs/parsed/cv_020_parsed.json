@@ -1,0 +1,159 @@
+{
+  "document_id": "cv_020",
+  "document_type": "CV",
+  "source_filename": "cv_020.pdf",
+  "candidate_label": "cv_020",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "- \uf3c5 Di An city, Binh Duong, Viet Nam",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "INFORMATION",
+        "page": 1,
+        "token_count": 14
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "ANALYSIC AND DESIGN APPLICATION SYSTEM\nI have more than 10 years experience in Software Developer role. I am working as a software analyst and designer, Then, I get requests from clients to analyze, clarify, and detail by document. Finally, I make software design document with high and detail level.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "SKILLS",
+        "page": 1,
+        "token_count": 67
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "I have more than 5 years experience in Head/Lead Projects role. I am working as a PM with Waterfall and Agile process.\nTRAINGING, LECTURING, COACHING Training about Software system process for customers. Lecturing in academy, university, ...\nAPPLY BUSINESS IN DEVELOP SOFTWARE SYSTEM\nI have more 5 year experience working in retail, so I undersand about CRM/ CLM business and do better.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "HEAD/LEAD PROJECTS",
+        "page": 1,
+        "token_count": 99
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "Beside working management role, I also develop anvanced features as payment integartion, rebase notication integartion, email authencation integartion, google services integartion, media management, image analyst process, ...",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "DEVELOPING ADVANCED FEATURES",
+        "page": 1,
+        "token_count": 51
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "I am always self-study to improve professional qualications and management capacity to response all customer requirements.\nI am working hard to make product with service mindset, understanding requiremnets of customers to help them have a good experience.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "CAREER OBJECTIVE",
+        "page": 1,
+        "token_count": 49
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "Coding, testing with UT, IT, ST\nProgram language:\n+ Web base: HTML, JS, JQuery, ...\n+ C++: Command line, Library, ...\n+ C#: Winform, Console, MVC, ...\n- +Java: JSP, Spring FW, ...\nSQL: MS SQL, My SQL, Oracle SQL, Postgre SQL, ...",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Fsoft Ho Chi Minh Co., Ltd",
+        "page": 1,
+        "token_count": 79
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "Design, Document writing, Coding Di cult Features, Integrating, Revieving, Training, ... Program language:\n+ Web base: HTML, JS, JQuery, Node JS, ...\n+ C++: Command line, Library, ...\n+ C#: Winform, Console, MVC, API, .NET Core, WCF, Service, ...\n- +Java: Swing App, JSP , Spring FW, ...\n+ SQL: MS SQL, My SQL, Oracle SQL, Postgre SQL, ...\n+ No SQL: MongoDB",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "MS Apptech Co., Ltd",
+        "page": 1,
+        "token_count": 121
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "Mentoring, coaching, exam question, ...\nLECTURER\n// 08/2022 -now\nFPT Aptech, FPT University\nLecturing, coaching, exam question, ...",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "FUNiX",
+        "page": 1,
+        "token_count": 37
+      }
+    },
+    {
+      "chunk_id": "chunk_8",
+      "content": "\uf19d\nCOMPUTER SCIENCE\n// 10/2008 - 10/2012\nHo Chi Minh city open university\n\uf19d\nUNIVERSITY LECTURER CERTIFICATE\n// 09/2022 - 11/2022\nNational Academy of Education Management",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "EDUCATION",
+        "page": 1,
+        "token_count": 45
+      }
+    },
+    {
+      "chunk_id": "chunk_9",
+      "content": "Traveling, Relaxing, Walking, Running, Footbal, ..",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "HOBBIES",
+        "page": 2,
+        "token_count": 15
+      }
+    },
+    {
+      "chunk_id": "chunk_10",
+      "content": "Salary:\n+ Full-time: 50 milion VN \u0110 / month\n+ Part-time: 250.000 VN \u0110 /hour",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "MORE",
+        "page": 2,
+        "token_count": 25
+      }
+    },
+    {
+      "chunk_id": "chunk_11",
+      "content": "MALL, MART, SUPERMARTKET, COFFEE STORE, DEPARTMENT STORE, ...\nProject size: 20 - 40",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "// 10/2020 -12/2021, 05/2022 - now",
+        "page": 2,
+        "token_count": 29
+      }
+    },
+    {
+      "chunk_id": "chunk_12",
+      "content": "Desing, Document writing, Coding di cult features, Integrating, Reviewing, Training, ...",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Position Senior Developer, Head Project",
+        "page": 2,
+        "token_count": 21
+      }
+    },
+    {
+      "chunk_id": "chunk_13",
+      "content": "IOS Customer App, Android Customer App, Web Customer App, Web Api Service, WCF Service, Win app service, Win app console service, Web app admin, Web app CS, Win app admin, Payment Integration, Firebase notication Integration, Social Network Integration, Company Email Integration, ... \u00a9",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Structure projects",
+        "page": 2,
+        "token_count": 64
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 278.0,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 14,
+    "parsing_timestamp": "2025-11-07T13:01:57.623232Z",
+    "processing_time_ms": 8483,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

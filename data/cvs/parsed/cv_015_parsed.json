@@ -1,0 +1,139 @@
+{
+  "document_id": "cv_015",
+  "document_type": "CV",
+  "source_filename": "cv_015.pdf",
+  "candidate_label": "cv_015",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "-032020 122023",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "WORK EXPERIENCE",
+        "page": 1,
+        "token_count": 6
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "PACISOFT VIET NAM CO.,LTD\nConsulting on software products and solutions suitable to customer needs, expanding markets and growing sales.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Sales Account Manager",
+        "page": 1,
+        "token_count": 30
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "-092016 122023",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "EDUCATION",
+        "page": 1,
+        "token_count": 6
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "- Degree classi cation: Fairly good",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "AGRICULTURAL BUSINESS",
+        "page": 1,
+        "token_count": 12
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "- Certi ed ESET B2B Sales Professional.\n- Certi ed Bitdefender Sales Professional",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "CERTIFICATIONS",
+        "page": 1,
+        "token_count": 22
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "High sense of responsibility, ability to work independently and work well in groups\n- \ue94e Thu Duc City, Ho Chi Minh City, Viet Nam",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "SKILLS",
+        "page": 1,
+        "token_count": 30
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "Develop and improve yourself.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "OBJECTIVE",
+        "page": 1,
+        "token_count": 5
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "English",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "LANGUAGES",
+        "page": 1,
+        "token_count": 1
+      }
+    },
+    {
+      "chunk_id": "chunk_8",
+      "content": "Software",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "SOFTWARE",
+        "page": 1,
+        "token_count": 1
+      }
+    },
+    {
+      "chunk_id": "chunk_9",
+      "content": "- Tran Thi Truc Giang\nPacisoft Viet Nam Co.,ltd Admin 028.36.100 816",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "REFERENCES",
+        "page": 1,
+        "token_count": 25
+      }
+    },
+    {
+      "chunk_id": "chunk_10",
+      "content": "B2B SALES",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "TIEN",
+        "page": 1,
+        "token_count": 5
+      }
+    },
+    {
+      "chunk_id": "chunk_11",
+      "content": "Female\n05061998",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "PERSONAL INFORMATION",
+        "page": 1,
+        "token_count": 4
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 380.71,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 12,
+    "parsing_timestamp": "2025-11-07T12:59:59.421361Z",
+    "processing_time_ms": 1157,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

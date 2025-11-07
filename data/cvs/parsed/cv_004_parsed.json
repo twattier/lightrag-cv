@@ -1,0 +1,99 @@
+{
+  "document_id": "cv_004",
+  "document_type": "CV",
+  "source_filename": "cv_004.pdf",
+  "candidate_label": "cv_004",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "- \u00b7Communication and teamwork\n- \u00b7Document comprehension and presentation\n- Logical thinking andproblemsolving\n- Understanding equipment manuals (datasheet,manual,etc.)\n- \u00b7MsOffice,sode,VisualStudio",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "SOFT SKILLS",
+        "page": 1,
+        "token_count": 54
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "- \u00b7PLC,HMI programming(Siemens, Mitsubishi,Allen-Bradley)\n- Robotcontrol programming integratedwith automation solutions\n- Imageprocessingprogramming (C#,Python)\n- \u00b7Microcontroller programming",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "TECHNICAL SKILLS",
+        "page": 1,
+        "token_count": 55
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "- \u00b7English",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "LANGUAGES",
+        "page": 1,
+        "token_count": 3
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "TOEIC|19/05/2023-19/05/2025\n- \u00b7Listening:295\n- \u00b7Reading:285\n- Total Score:580",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "CERTIFICATES",
+        "page": 1,
+        "token_count": 28
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "Seeking a position as an Automation Engineer where I can apply my knowledge and skills in automation to design,develop,and optimize automated production systems.In the long term,Iaim to become a technical expert or project manager,developing advanced automation solutions integrated with intelligent systems,contributing to the sustainabledevelopmentofthebusiness.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "OBJECTIVE",
+        "page": 1,
+        "token_count": 76
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "B&I Electric-AutomationCo.,Ltd.\nIntern\n- \u00b7Readingelectrical drawings and assemblingcontrol cabinets.\n- \u00b7UsingEPLANsoftwaretodrawelectricalcircuitdiagrams.\n- \u00b7WorkedonATScabinetprojectfor theThienHoPetrol Company project in Tien Giang.\n- \u00b7WorkedonMSBmaindistributioncabinetprojectforBinhMinh Packaging Paper Factory in Binh Duong.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "WORK EXPERIENCE",
+        "page": 1,
+        "token_count": 103
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "Intern andFinal Project\n- \u00b7Training incontrolling andprogramming theNachi MZ-O7robot.\n- \u00b7Programming integrated automation systems withMitsubishi PLC, HMI,and conveyor systems.\n- \u00b7Training on sensors, solenoid valves, servo motors,step motors, inverters,etc.\n- \u00b7Basicindustrialcommunication(IP,TCP/IP,RS232,RS485).",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Saigon Hi-Tech Park Training Center",
+        "page": 1,
+        "token_count": 97
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "Ho Chi MinhCityUniversityof Technologyand Education2020-2024 Degree:BachelorofEngineering\nMajor: Control and Automation Engineering Technology\nGPA:7.45/10\nFinal Project:\"ControllingNachi MZO7RobotArmIntegratedwith Image Processing forProduct Classification\"\n- \u00b7ProgrammedNachi MZo7robotcontrol usingRobotlanguageandUser Task programming.\n- \u00b7ImageprocessingusingPythonprogramminglanguage.\n- \u00b7Sequential control programming using Mitsubishi PLC and HMI GOT1000.\nVideo:\nGithub:\nFeb2024-Jul2024\n0934765372\n91/1 Street 8,Linh Trung, Thu Duc City\nSep2023-Feb2024",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "EDUCATION",
+        "page": 1,
+        "token_count": 161
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 339.68,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 8,
+    "parsing_timestamp": "2025-11-07T12:59:58.240642Z",
+    "processing_time_ms": 58959,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}
