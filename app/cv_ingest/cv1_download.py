@@ -305,17 +305,7 @@ def main():
     manifest = {
         "metadata": {
             "total_cvs": len(manifest_entries),
-            "source_datasets": ["d4rk3r/resumes-raw-pdf", "gigswar/cv_files"],
-            "filtering_criteria": {
-                "file_size_range": f"{MIN_FILE_SIZE_KB}-{MAX_FILE_SIZE_KB} KB",
-                "page_count_range": "1-10 pages",
-                "selection_method": "Random sampling with file size filtering"
-            },
-            "notes": [
-                "Many CVs in these datasets are image-based PDFs without extractable text",
-                "No classification performed at download stage - use cv3_classify.py after parsing",
-                "Manual quality validation is critical to verify suitability"
-            ]
+            "source_datasets": ["d4rk3r/resumes-raw-pdf", "gigswar/cv_files"]            
         },
         "cvs": manifest_entries
     }

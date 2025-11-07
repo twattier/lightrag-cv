@@ -43,8 +43,6 @@ env/
 volumes/
 
 # Data files (CVs and CIGREF profiles)
-data/cvs/*
-data/cvs.backup/*
 data/lightrag/*
 
 # Logs
@@ -65,3 +63,4 @@ htmlcov/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+data/cvs/*

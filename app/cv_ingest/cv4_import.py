@@ -251,10 +251,21 @@ async def import_cvs(candidate_label: Optional[str] = None):
     # Import CVs
     successful = 0
     failed = 0
+    skipped_non_latin = 0
 
     async with httpx.AsyncClient(timeout=settings.INGESTION_TIMEOUT) as client:
         for cv_meta in cvs_to_import:
             candidate_label = cv_meta["candidate_label"]
+
+            # Filter: Only import CVs with is_latin_text=True
+            if not cv_meta.get("is_latin_text", False):
+                logger.info(
+                    "Skipping non-Latin text CV",
+                    extra={"candidate_label": candidate_label}
+                )
+                skipped_non_latin += 1
+                continue
+
             parsed_file = settings.CV_PARSED_DIR / f"{candidate_label}_parsed.json"
 
             # Check if parsed file exists
@@ -303,9 +314,10 @@ async def import_cvs(candidate_label: Optional[str] = None):
     logger.info("=" * 70)
     logger.info("IMPORT SUMMARY")
     logger.info("=" * 70)
-    logger.info(f"Total CVs processed:  {len(cvs_to_import)}")
-    logger.info(f"Successful imports:   {successful}")
-    logger.info(f"Failed imports:       {failed}")
+    logger.info(f"Total CVs processed:      {len(cvs_to_import)}")
+    logger.info(f"Skipped (non-Latin text): {skipped_non_latin}")
+    logger.info(f"Successful imports:       {successful}")
+    logger.info(f"Failed imports:           {failed}")
     logger.info("")
 
     if successful > 0:

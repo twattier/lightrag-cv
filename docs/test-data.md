@@ -238,9 +238,7 @@ done
 {
   "metadata": {
     "total_cvs": 25,
-    "source_datasets": ["d4rk3r/resumes-raw-pdf", "gigswar/cv_files"],
-    "filtering_criteria": { ... },
-    "notes": [ ... ]
+    "source_datasets": ["d4rk3r/resumes-raw-pdf", "gigswar/cv_files"]    
   },
   "cvs": [
     {
@@ -253,8 +251,7 @@ done
       "file_size_kb": 102.2,
       "page_count": 2,
       "source_dataset": "d4rk3r/resumes-raw-pdf",
-      "manual_tags": [],
-      "notes": "Requires manual validation - many CVs are image-based PDFs"
+      "manual_tags": []
     },
     // ... 24 more entries
   ]

@@ -199,8 +199,7 @@ The manifest should align with the future database schema to minimize transforma
       "file_format": "PDF",
       "file_size_kb": 245,
       "source_dataset": "gigswar/cv_files",
-      "manual_tags": ["cloud", "backend", "python"],
-      "notes": "Senior backend developer with AWS experience"
+      "manual_tags": ["cloud", "backend", "python"]
     }
   ]
 }

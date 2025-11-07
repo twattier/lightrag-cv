@@ -77,14 +77,7 @@ def create_parsed_manifest(
             "ready_for_ingestion": len([cv for cv in parsed_cvs if cv["ready_for_ingestion"]]),
             "total_chunks": sum(cv["chunks_count"] for cv in parsed_cvs),
             "avg_chunks_per_cv": sum(cv["chunks_count"] for cv in parsed_cvs) / len(parsed_cvs) if parsed_cvs else 0,
-            "validation_sample_size": len(quality_ratings),
-            "notes": [
-                "All 25 CVs successfully parsed with 100% success rate",
-                "Timeout increased to 300s to accommodate larger files",
-                "Manual quality validation performed on 5 sample CVs",
-                "Average extraction quality: 86% (exceeds NFR2 85% target)",
-                "Ready for Story 2.6: CV LightRAG Ingestion"
-            ]
+            "validation_sample_size": len(quality_ratings)            
         },
         "parsed_cvs": parsed_cvs
     }

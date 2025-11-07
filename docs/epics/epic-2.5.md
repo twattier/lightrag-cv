@@ -126,7 +126,7 @@ Abstract LLM provider configuration to support multiple providers (Ollama, OpenA
 ---
 
 ### Story 2.5.3: Migrate CIGREF & CV Workflow Scripts
-**Effort**: 3-4 hours | **Status**: ✅ Done (2025-11-06) | **Dependencies**: Story 2.5.2
+**Effort**: 3-4 hours | **Status**: ✅ Done (2025-11-07) | **QA**: PASS (Quinn) | **Dependencies**: Story 2.5.2
 
 Move all CIGREF and CV workflow scripts to appropriate `/app` subdirectories with updated imports, leveraging the new LLM provider abstraction.
 
@@ -162,10 +162,16 @@ Move all CIGREF and CV workflow scripts to appropriate `/app` subdirectories wit
 - ✅ No changes to service API calls or `.env` variables
 - ✅ If any ImportError occurs, fix and re-test before marking complete
 
+**QA Review Results** (2025-11-07):
+- **Gate**: PASS (Quality Score: 100/100)
+- **Gate File**: [docs/qa/gates/2.5.3-migrate-workflows.yml](../qa/gates/2.5.3-migrate-workflows.yml)
+- **Story File**: [docs/stories/story-2.5.3-migrate-workflows.md](../stories/story-2.5.3-migrate-workflows.md)
+- **Status**: Done - Clean migration with zero breaking changes, all manual testing confirmed
+
 ---
 
 ### Story 2.5.3b: Refactor CIGREF Ingestion for Simplicity
-**Effort**: 4-5 hours | **Status**: Approved | **Dependencies**: Story 2.5.3 ✅
+**Effort**: 4-5 hours | **Status**: ✅ Done (2025-11-07) | **QA**: PASS (Quinn) | **Dependencies**: Story 2.5.3 ✅
 
 Simplify CIGREF ingestion by splitting into two clean scripts: `cigref_1_parse.py` (Docling parsing + enrichment + filtering) and `cigref_2_import.py` (LightRAG import grouped by domain).
 
@@ -186,12 +192,47 @@ Simplify CIGREF ingestion by splitting into two clean scripts: `cigref_1_parse.p
 
 **Rationale**: Current `ingest_cigref_batched.py` is overly complex (504 lines) with manual batch monitoring. LightRAG has an internal queue, so we can simplify by submitting domains directly without batching logic.
 
-**Story File**: [docs/stories/2.5.3b.cigref-refactor.md](../stories/2.5.3b.cigref-refactor.md)
+**QA Review Results** (2025-11-07):
+- **Gate**: PASS (Quality Score: 100/100)
+- **Gate File**: [docs/qa/gates/2.5.3b-cigref-refactor.yml](../qa/gates/2.5.3b-cigref-refactor.yml)
+- **Story File**: [docs/stories/2.5.3b.cigref-refactor.md](../stories/2.5.3b.cigref-refactor.md)
+- **Status**: Done - Exceptional refactoring quality, 642 chunks across 9 domains successfully imported
+
+---
+
+### Story 2.5.3c: Refactor CV Ingest Workflow for Simplicity
+**Effort**: 4-5 hours | **Status**: ✅ Done (2025-11-07) | **QA**: PASS (Quinn) | **Dependencies**: Story 2.5.3b ✅
+
+Simplify CV ingestion into a clean 4-script workflow: `cv1_download.py` (download CVs), `cv2_parse.py` (Docling parsing), `cv3_classify.py` (LLM classification), and `cv4_import.py` (LightRAG import with metadata tracking).
+
+**Key Tasks**:
+- Update `cv1_download.py`: Add `--max-cvs` parameter, use settings paths (CV_DOCS_DIR, CV_MANIFEST)
+- Update `cv2_parse.py`: Add retry logic with exponential backoff, proper config usage
+- Update `cv3_classify.py`: Verify LLM client abstraction usage, update settings paths
+- Create `cv4_import.py`: Follow CIGREF pattern with PostgreSQL document_metadata table, optional `--candidate-label` parameter
+- Add config settings: `CV_DOCS_DIR`, `CV_PARSED_DIR`
+- Manual testing: Download → Parse → Classify → Import pipeline end-to-end
+
+**Acceptance Criteria**:
+- ✅ `cv1_download.py` supports `--max-cvs` parameter and uses settings paths
+- ✅ `cv2_parse.py` has retry logic and proper config integration
+- ✅ `cv3_classify.py` uses LLM abstraction correctly
+- ✅ `cv4_import.py` created with PostgreSQL metadata tracking and optional `--candidate-label` filter
+- ✅ Config settings added: `CV_DOCS_DIR`, `CV_PARSED_DIR`
+- ✅ Manual testing complete: Full workflow tested end-to-end
+- ✅ No breaking changes to services or `.env`
+- ✅ **Enhancement**: Added `is_latin_text=True` filtering in cv4_import.py
+
+**QA Review Results** (2025-11-07):
+- **Gate**: PASS (Quality Score: 100/100)
+- **Gate File**: [docs/qa/gates/2.5.3c-cv-ingest-refactor.yml](../qa/gates/2.5.3c-cv-ingest-refactor.yml)
+- **Story File**: [docs/stories/2.5.3c.cv-ingest-refactor.md](../stories/2.5.3c.cv-ingest-refactor.md)
+- **Status**: Done - Clean 4-stage pipeline with excellent code quality
 
 ---
 
 ### Story 2.5.4: Cleanup & Documentation Update
-**Effort**: 2-3 hours | **Status**: Not Started | **Dependencies**: Story 2.5.3b
+**Effort**: 2-3 hours | **Status**: Not Started | **Dependencies**: Story 2.5.3c ✅
 
 Remove obsolete scripts, consolidate artifacts, and update all documentation to reflect new structure and LLM provider configuration.
 
@@ -229,10 +270,10 @@ Remove obsolete scripts, consolidate artifacts, and update all documentation to 
 ## Epic Status
 
 - **Status**: In Progress
-- **Story Count**: 5
-- **Completed**: 3/5 (60%)
-- **Estimated Effort**: 16-21 hours
-- **Current Story**: Story 2.5.3b (Refactor CIGREF Ingestion)
+- **Story Count**: 6
+- **Completed**: 4/6 (67%)
+- **Estimated Effort**: 20-26 hours
+- **Current Story**: Story 2.5.4 (Cleanup & Documentation Update)
 - **Dependencies**: Epic 2 (Stories 2.1-2.5) ✅ Complete
 - **Blocked By**: None
 - **Type**: Brownfield Refactoring (organizational + multi-provider LLM abstraction)
@@ -241,8 +282,9 @@ Remove obsolete scripts, consolidate artifacts, and update all documentation to 
 
 - ✅ **Story 2.5.1 Complete**: Application structure created, shared services migrated
 - ⚠️ **Story 2.5.2 In Review**: LLM provider abstraction (CONCERNS - backward compatibility issues)
-- ✅ **Story 2.5.3 Complete**: All 16 workflow scripts migrated to `/app` subdirectories
-- ✅ **Story 2.5.3b Approved**: CIGREF ingestion refactoring (simplify to 2 scripts by domain)
+- ✅ **Story 2.5.3 Done**: All 16 workflow scripts migrated to `/app` subdirectories (QA: PASS)
+- ✅ **Story 2.5.3b Done**: CIGREF ingestion refactored to 2 clean scripts, 642 chunks across 9 domains imported (QA: PASS)
+- ✅ **Story 2.5.3c Done**: CV ingestion refactored to 4-stage pipeline with metadata tracking (QA: PASS)
 - 🔄 **Story 2.5.4 Pending**: Documentation cleanup and obsolete script removal
 
 ## Success Criteria
