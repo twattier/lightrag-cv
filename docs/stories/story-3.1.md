@@ -42,7 +42,7 @@
 - **Status**: Not Started
 - **Assigned To**: TBD
 - **Estimated Effort**: 8-12 hours
-- **Dependencies**: Story 2.7 (Document Processing Performance Baseline)
+- **Dependencies**: Story 2.6 (LightRAG Knowledge Base Ingestion - CVs)
 - **Blocks**: Story 3.2, Story 3.3
 
 ## QA
@@ -53,6 +53,6 @@
 ---
 
 **Navigation:**
-- ← Previous: [Story 2.7](story-2.7.md)
+- ← Previous: [Story 2.6](story-2.6.md)
 - → Next: [Story 3.2](story-3.2.md)
 - ↑ Epic: [Epic 3](../epics/epic-3.md)

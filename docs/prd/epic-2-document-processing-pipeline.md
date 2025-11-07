@@ -1,6 +1,8 @@
 # Epic 2: Document Processing Pipeline
 
-> 🎯 **Development Artifacts**: [Epic 2 Card](../epics/epic-2.md) | [Stories 2.1-2.7](../stories/README.md#epic-2-document-processing-pipeline-7-stories)
+> 🎯 **Status**: ✅ **COMPLETE**
+>
+> 🎯 **Development Artifacts**: [Epic 2 Card](../epics/epic-2.md) | [Stories 2.1-2.6](../stories/README.md#epic-2-document-processing-pipeline-6-stories)
 >
 
 > 📋 **Architecture References**:
@@ -204,34 +206,16 @@
 
 7. Ingestion metrics documented: Total CVs ingested, processing time, entity count, any failed ingestions
 
-## Story 2.7: Document Processing Performance Baseline
-
-**As a** product manager,
-**I want** baseline performance metrics for document processing,
-**so that** I can assess whether throughput meets POC requirements and understand GPU acceleration impact.
-
-### Acceptance Criteria
-
-1. Performance test measures:
-   - Docling parsing time per CV (average, min, max) in CPU-only mode
-   - Docling parsing time per CV with GPU acceleration (if available)
-   - LightRAG ingestion time per document (parsing → embedding → storage)
-   - End-to-end time: Upload CV → Available for search
-
-2. Test conducted on sample of 10 CVs with varied characteristics (1-page, 2-page, 3-page resumes)
-
-3. Results documented in `/docs/performance-baseline.md`:
-   - CPU-only throughput: X CVs per minute
-   - GPU-accelerated throughput: Y CVs per minute (if tested)
-   - LightRAG embedding generation time
-   - Total pipeline throughput assessment
-
-4. Comparison to requirements:
-   - Target: 1-2 CVs per minute acceptable for POC
-   - Assessment: "Meets/Exceeds/Below expectations"
-
-5. If performance below expectations, document mitigation strategies for Phase 2 (batch processing, queue system, model optimization)
-
-6. Recommendations for production optimization noted (e.g., "GPU acceleration provides 3x improvement, recommended for scale")
-
 ---
+
+## Epic Completion
+
+**Epic 2 is now complete.** All stories (2.1-2.6) have been successfully delivered:
+- ✅ Docling REST API implemented and validated
+- ✅ CIGREF profiles parsed and quality validated
+- ✅ CV dataset acquired and preprocessed
+- ✅ CV parsing quality validated
+- ✅ CIGREF profiles ingested into LightRAG
+- ✅ CV dataset ingested into LightRAG and validated
+
+**Note**: Story 2.7 (Performance Baseline) was cancelled and will be addressed separately if needed in future phases.
