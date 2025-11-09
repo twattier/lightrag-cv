@@ -84,7 +84,10 @@ LightRAG API (port 9621) ← existing
 
 ## Stories
 
-1. ✅ [Story 3.1: MCP Server Scaffold and Protocol Implementation](../stories/story-3.1.md) - **Updated**
+1. ✅ [Story 3.1: MCP Server Scaffold and Protocol Implementation](../stories/story-3.1.md) - **COMPLETE** (2025-11-09)
+   - QA Gate: CONCERNS (Score: 85/100)
+   - Issues: No test coverage (high), AC5 endpoints return 404 (medium)
+   - Note: Ready for Done with conditions (add tests before Story 3.2)
 2. [Story 3.2: Core Search Tool - Profile Match Query](../stories/story-3.2.md) - *Needs Update*
 3. [Story 3.3: Core Search Tool - Multi-Criteria Skill Search](../stories/story-3.3.md) - *Needs Update*
 4. [Story 3.4: OpenWebUI Configuration and MCP Integration](../stories/story-3.4.md) - *Needs Update*
@@ -94,7 +97,8 @@ LightRAG API (port 9621) ← existing
 8. [Story 3.8: Basic Candidate Detail View](../stories/story-3.8.md) - *Needs Update*
 
 **Story Status**:
-- ✅ Updated: 1/8 (Story 3.1)
+- ✅ Complete: 1/8 (Story 3.1)
+- 🔄 In Progress: 0/8
 - ⏳ Pending Updates: 6/8 (Stories 3.2-3.5, 3.7-3.8)
 - ✔️ No Updates Needed: 1/8 (Story 3.6)
 
@@ -102,15 +106,17 @@ LightRAG API (port 9621) ← existing
 
 ## Epic Status
 
-- **Status**: ✅ **READY** - Technical Spikes Complete, Development Can Begin
+- **Status**: 🔄 **IN PROGRESS** - Story 3.1 Complete, Ready for Story 3.2
 - **Story Count**: 8
-- **Completed Stories**: 0/8
-- **Updated Stories**: 1/8 (Story 3.1)
+- **Completed Stories**: 1/8 (12.5%)
+  - ✅ Story 3.1: MCP Server Scaffold (2025-11-09) - QA: CONCERNS (85/100)
+- **In Progress**: 0/8
 - **Dependencies**:
   - ✅ Epic 2 (Document Processing Pipeline) - COMPLETE
   - ✅ Technical Spike: OpenWebUI MCP Integration - **COMPLETE**
   - ✅ Technical Spike: MCP SDK Selection - **COMPLETE**
-- **Blockers**: None - Epic 3 is unblocked
+- **Blockers**: None - Story 3.2 ready to begin
+- **Next**: Story 3.2 (Core Search Tool - Profile Match Query)
 
 ---
 
@@ -299,39 +305,46 @@ Based on Epic 2 learnings, each story requires specific updates:
 
 ### Key Artifacts
 
-- MCP server codebase (`app/mcp_server/` or `services/mcp-server/`)
-- OpenWebUI configuration and setup documentation
-- Tool schemas and invocation examples
-- Query interpretation test results
-- Integration test suite
+- ✅ MCP server codebase (`app/mcp_server/`) - **COMPLETE** (Story 3.1)
+- ✅ MCP server documentation ([docs/architecture/mcp-server-implementation.md](../architecture/mcp-server-implementation.md)) - **COMPLETE**
+- ✅ QA Gate Decision ([docs/qa/gates/3.1-mcp-server-scaffold-and-protocol-implementation.yml](../qa/gates/3.1-mcp-server-scaffold-and-protocol-implementation.yml)) - **COMPLETE**
+- [ ] OpenWebUI configuration and setup documentation (Story 3.4)
+- [ ] Tool schemas and invocation examples (Stories 3.2-3.3, 3.8)
+- [ ] Query interpretation test results (Story 3.5)
+- [ ] Integration test suite (Story 3.4)
 
 ---
 
 ## Risk Assessment
 
-### High Risks
+### High Risks (Updated 2025-11-09)
 
-1. **OpenWebUI MCP Integration Unknown** (CRITICAL)
-   - **Impact**: Could block entire epic if not compatible
-   - **Mitigation**: Technical spike validates early
-   - **Fallback**: Alternative UI or custom plugin approach
+1. ~~**OpenWebUI MCP Integration Unknown** (CRITICAL)~~ ✅ **RESOLVED**
+   - Technical spike completed, integration validated via mcpo proxy approach
+   - OpenWebUI v0.6.34 supports MCP, stdio → HTTP bridge confirmed
 
-2. **SDK Availability/Compatibility** (HIGH)
-   - **Impact**: May need custom MCP implementation
-   - **Mitigation**: Technical spike evaluates both SDKs
-   - **Fallback**: Build custom MCP implementation from spec
+2. ~~**SDK Availability/Compatibility** (HIGH)~~ ✅ **RESOLVED**
+   - Python `mcp` SDK v1.21.0 selected and implemented
+   - Story 3.1 validates SDK integration successfully
 
-3. **Natural Language Query Interpretation Quality** (MEDIUM)
+3. **Natural Language Query Interpretation Quality** (MEDIUM) - **ACTIVE**
    - **Impact**: <70% success rate reduces UX value
-   - **Mitigation**: Tool description tuning, model selection
+   - **Mitigation**: Tool description tuning, model selection (qwen2.5:7b-instruct-q4_K_M)
    - **Acceptance**: POC may have interpretation limitations
+   - **Status**: To be validated in Story 3.5
+
+4. **Test Coverage Gap** (HIGH) - **NEW RISK** (Identified in QA)
+   - **Impact**: MCP server scaffold has zero automated tests
+   - **Mitigation**: Add unit tests before Story 3.2 development
+   - **Effort**: 2-3 hours
+   - **Owner**: Dev team
 
 ### Mitigations in Place
 
-- Technical spikes validate assumptions before development
-- Epic 2 learnings applied to avoid rework
-- Fallback options documented for each risk
-- Risk buffer (1 week) in timeline
+- ✅ Technical spikes validated all critical unknowns (completed 2025-11-08)
+- ✅ Epic 2 learnings applied to Story 3.1 (RULE 2, 7, 8, 9 compliance)
+- ✅ Story 3.1 QA review identified test coverage gap early
+- ⏳ Test framework to be established before Story 3.2
 
 ---
 
@@ -343,6 +356,6 @@ Based on Epic 2 learnings, each story requires specific updates:
 
 ---
 
-**Document Version**: 2.0 (Updated 2025-11-08)
-**Last Review**: 2025-11-08
-**Status**: BLOCKED - Awaiting Technical Spikes
+**Document Version**: 2.1 (Updated 2025-11-09)
+**Last Review**: 2025-11-09
+**Status**: IN PROGRESS - Story 3.1 Complete (1/8 stories done)

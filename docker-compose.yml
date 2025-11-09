@@ -101,30 +101,47 @@ services:
 
   mcp-server:
     build:
-      context: ./services/mcp-server
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./services/mcp-server/Dockerfile
     container_name: lightrag-cv-mcp
     environment:
-      LIGHTRAG_API_URL: http://lightrag:9621
-      POSTGRES_HOST: postgres
-      POSTGRES_PORT: 5432
+      # Connection Configuration (Docker internal network)
+      LIGHTRAG_HOST: ${LIGHTRAG_HOST_DOCKER:-lightrag}
+      LIGHTRAG_PORT: ${LIGHTRAG_PORT_DOCKER:-9621}
+      POSTGRES_HOST: ${POSTGRES_HOST_DOCKER:-postgres}
+      POSTGRES_PORT: ${POSTGRES_PORT_DOCKER:-5432}
       POSTGRES_DB: ${POSTGRES_DB:-lightrag_cv}
       POSTGRES_USER: ${POSTGRES_USER:-lightrag}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?error}
+      # LLM Configuration
+      LLM_BINDING: ${LLM_BINDING:-ollama}
+      LLM_BINDING_HOST: ${LLM_BINDING_HOST:-http://host.docker.internal:11434}
+      LLM_MODEL: ${LLM_MODEL:-qwen2.5:7b-instruct-q4_K_M}
+      LLM_BINDING_API_KEY: ${LLM_BINDING_API_KEY:-}
+      # Embedding Configuration
+      EMBEDDING_BINDING: ${EMBEDDING_BINDING:-ollama}
+      EMBEDDING_BINDING_HOST: ${EMBEDDING_BINDING_HOST:-http://host.docker.internal:11434}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-bge-m3:latest}
+      EMBEDDING_DIM: ${EMBEDDING_DIM:-1024}
+      # Logging
       LOG_LEVEL: ${LOG_LEVEL:-INFO}
-      MCP_INTERNAL_PORT: 3000
     ports:
       - "${MCP_PORT:-3000}:3000"
     networks:
       - lightrag-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     depends_on:
       lightrag:
         condition: service_healthy
+      postgres:
+        condition: service_healthy
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:$${MCP_INTERNAL_PORT}/health || exit 1"]
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/docs || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3
+      start_period: 10s
     restart: unless-stopped
 
 networks:
