@@ -6,7 +6,8 @@ Model Context Protocol server implementation using Python mcp SDK.
 Exposes LightRAG-CV search capabilities as MCP tools for OpenWebUI consumption.
 
 Story 3.1: Scaffold implementation with empty tool registry.
-Tools will be added in Stories 3.2, 3.3, and 3.8.
+Story 3.2: Added search_by_profile tool.
+Tools will be added in Stories 3.3 and 3.8.
 """
 
 import asyncio
@@ -26,6 +27,7 @@ from mcp.types import (
 )
 
 from app.shared.config import settings
+from app.mcp_server.tools.search_by_profile import search_by_profile_tool
 
 # MCP Server Configuration (RULE 2: All Environment Variables via app.shared.config)
 MCP_SERVER_NAME = "lightrag-cv-mcp"
@@ -48,8 +50,15 @@ class LightRAGMCPServer:
     def __init__(self):
         """Initialize MCP server with configuration."""
         self.server = Server(MCP_SERVER_NAME)
-        self.tools_registry = {}  # Will be populated in Stories 3.2, 3.3, 3.8
         self.resources_registry = {}  # Will be used in Epic 4
+
+        # Register tools (AC3: Tool exposed via MCP protocol)
+        # Story 3.2: search_by_profile
+        # Story 3.3: search_by_skills (future)
+        # Story 3.8: get_candidate_details (future)
+        self.tools_registry = {
+            "search_by_profile": search_by_profile_tool
+        }
 
         # Register handlers
         self._register_handlers()
@@ -57,7 +66,8 @@ class LightRAGMCPServer:
         # Log initialization (RULE 7: Structured logging)
         logger.info(
             f"MCP server initialized: {MCP_SERVER_NAME} v{MCP_SERVER_VERSION} "
-            f"(transport={MCP_TRANSPORT}, lightrag_url={settings.lightrag_url})"
+            f"(transport={MCP_TRANSPORT}, lightrag_url={settings.lightrag_url}, "
+            f"tools_registered={list(self.tools_registry.keys())})"
         )
 
     def _register_handlers(self):
@@ -66,33 +76,44 @@ class LightRAGMCPServer:
         @self.server.list_tools()
         async def list_tools() -> list[Tool]:
             """
-            List available tools (AC2: Tool Discovery).
+            List available tools (AC3: Tool Discovery).
 
-            Story 3.1: Returns empty list.
-            Tools will be registered in:
-            - Story 3.2: search_by_profile
-            - Story 3.3: search_by_skills
-            - Story 3.8: get_candidate_details
+            Story 3.2: Returns search_by_profile tool definition.
+            Tools registered:
+            - Story 3.2: search_by_profile ✓
+            - Story 3.3: search_by_skills (future)
+            - Story 3.8: get_candidate_details (future)
             """
-            logger.info(f"Tool discovery requested (tool_count={len(self.tools_registry)})")
-            return list(self.tools_registry.values())
+            logger.info(
+                "Tool discovery requested",
+                extra={"tool_count": len(self.tools_registry), "tools": list(self.tools_registry.keys())}
+            )
+            # Return Tool definitions from registered tool instances
+            return [tool.TOOL_DEFINITION for tool in self.tools_registry.values()]
 
         @self.server.call_tool()
         async def call_tool(name: str, arguments: dict[str, Any]) -> list[TextContent]:
             """
-            Tool invocation handler (AC2: Tool Invocation).
+            Tool invocation handler (AC3: Tool Invocation).
 
-            Story 3.1: Scaffold only - no tools registered yet.
-            Tool implementations will be added in Stories 3.2, 3.3, 3.8.
+            Story 3.2: Executes search_by_profile tool.
+            Tool implementations added in Stories 3.2, 3.3, 3.8.
             """
             logger.info(
-                f"Tool invocation requested (tool_name={name}, has_arguments={bool(arguments)})"
+                "Tool invocation requested",
+                extra={"tool_name": name, "has_arguments": bool(arguments)}
             )
 
-            # AC2: Handle invocation even with no tools (error response)
+            # Check if tool exists
             if name not in self.tools_registry:
-                error_msg = f"Tool '{name}' not found. No tools are registered yet (Story 3.1 scaffold)."
-                logger.warning(f"Tool not found: {name} (available_tools={list(self.tools_registry.keys())})")
+                error_msg = (
+                    f"Tool '{name}' not found. "
+                    f"Available tools: {', '.join(self.tools_registry.keys())}"
+                )
+                logger.warning(
+                    "Tool not found",
+                    extra={"requested_tool": name, "available_tools": list(self.tools_registry.keys())}
+                )
                 return [
                     TextContent(
                         type="text",
@@ -100,9 +121,29 @@ class LightRAGMCPServer:
                     )
                 ]
 
-            # Future: Tool execution will happen here in Stories 3.2, 3.3, 3.8
-            # Example: return await self.tools_registry[name].execute(arguments)
-            return [TextContent(type="text", text="Tool execution not implemented (Story 3.1)")]
+            # Execute tool (Story 3.2+)
+            try:
+                tool_instance = self.tools_registry[name]
+                result = await tool_instance.execute(arguments)
+                return result
+            except Exception as e:
+                # RULE 6: Error handling with structured logging
+                error_msg = f"Tool execution failed: {str(e)}"
+                logger.error(
+                    "Tool execution error",
+                    extra={
+                        "tool_name": name,
+                        "error_type": type(e).__name__,
+                        "error": str(e)
+                    },
+                    exc_info=True
+                )
+                return [
+                    TextContent(
+                        type="text",
+                        text=error_msg
+                    )
+                ]
 
         @self.server.list_resources()
         async def list_resources() -> ListResourcesResult:
