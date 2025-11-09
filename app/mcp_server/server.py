@@ -5,9 +5,10 @@ LightRAG-CV MCP Server
 Model Context Protocol server implementation using Python mcp SDK.
 Exposes LightRAG-CV search capabilities as MCP tools for OpenWebUI consumption.
 
-Story 3.1: Scaffold implementation with empty tool registry.
-Story 3.2: Added search_by_profile tool.
-Tools will be added in Stories 3.3 and 3.8.
+Story 3.1: Scaffold implementation with empty tool registry ✓
+Story 3.2: Added search_by_profile tool ✓
+Story 3.3: Added search_by_skills tool ✓
+Story 3.8: get_candidate_details tool (future)
 """
 
 import asyncio
@@ -28,6 +29,7 @@ from mcp.types import (
 
 from app.shared.config import settings
 from app.mcp_server.tools.search_by_profile import search_by_profile_tool
+from app.mcp_server.tools.search_by_skills import search_by_skills_tool
 
 # MCP Server Configuration (RULE 2: All Environment Variables via app.shared.config)
 MCP_SERVER_NAME = "lightrag-cv-mcp"
@@ -53,11 +55,12 @@ class LightRAGMCPServer:
         self.resources_registry = {}  # Will be used in Epic 4
 
         # Register tools (AC3: Tool exposed via MCP protocol)
-        # Story 3.2: search_by_profile
-        # Story 3.3: search_by_skills (future)
+        # Story 3.2: search_by_profile ✓
+        # Story 3.3: search_by_skills ✓
         # Story 3.8: get_candidate_details (future)
         self.tools_registry = {
-            "search_by_profile": search_by_profile_tool
+            "search_by_profile": search_by_profile_tool,
+            "search_by_skills": search_by_skills_tool
         }
 
         # Register handlers
@@ -78,10 +81,11 @@ class LightRAGMCPServer:
             """
             List available tools (AC3: Tool Discovery).
 
-            Story 3.2: Returns search_by_profile tool definition.
+            Story 3.2: search_by_profile tool ✓
+            Story 3.3: search_by_skills tool ✓
             Tools registered:
             - Story 3.2: search_by_profile ✓
-            - Story 3.3: search_by_skills (future)
+            - Story 3.3: search_by_skills ✓
             - Story 3.8: get_candidate_details (future)
             """
             logger.info(

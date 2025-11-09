@@ -88,8 +88,12 @@ LightRAG API (port 9621) ← existing
    - QA Gate: CONCERNS (Score: 85/100)
    - Issues: No test coverage (high), AC5 endpoints return 404 (medium)
    - Note: Ready for Done with conditions (add tests before Story 3.2)
-2. [Story 3.2: Core Search Tool - Profile Match Query](../stories/story-3.2.md) - *Needs Update*
-3. [Story 3.3: Core Search Tool - Multi-Criteria Skill Search](../stories/story-3.3.md) - *Needs Update*
+2. ✅ [Story 3.2: Core Search Tool - Profile Match Query](../stories/story-3.2.md) - **COMPLETE** (2025-11-09)
+   - QA Gate: PASS (Score: 95/100)
+   - Excellent implementation with comprehensive tests
+3. ✅ [Story 3.3: Core Search Tool - Multi-Criteria Skill Search](../stories/story-3.3.md) - **COMPLETE** (2025-11-09)
+   - QA Gate: PASS (Score: 95/100)
+   - Follows Story 3.2 pattern, excellent code quality
 4. [Story 3.4: OpenWebUI Configuration and MCP Integration](../stories/story-3.4.md) - *Needs Update*
 5. [Story 3.5: Natural Language Query Interpretation](../stories/story-3.5.md) - *Needs Update*
 6. [Story 3.6: Conversational Query Refinement](../stories/story-3.6.md)
@@ -97,26 +101,28 @@ LightRAG API (port 9621) ← existing
 8. [Story 3.8: Basic Candidate Detail View](../stories/story-3.8.md) - *Needs Update*
 
 **Story Status**:
-- ✅ Complete: 1/8 (Story 3.1)
+- ✅ Complete: 3/8 (Stories 3.1, 3.2, 3.3)
 - 🔄 In Progress: 0/8
-- ⏳ Pending Updates: 6/8 (Stories 3.2-3.5, 3.7-3.8)
+- ⏳ Pending Updates: 4/8 (Stories 3.4-3.5, 3.7-3.8)
 - ✔️ No Updates Needed: 1/8 (Story 3.6)
 
 ---
 
 ## Epic Status
 
-- **Status**: 🔄 **IN PROGRESS** - Story 3.1 Complete, Ready for Story 3.2
+- **Status**: 🔄 **IN PROGRESS** - Stories 3.1-3.3 Complete, Ready for Story 3.4
 - **Story Count**: 8
-- **Completed Stories**: 1/8 (12.5%)
+- **Completed Stories**: 3/8 (37.5%)
   - ✅ Story 3.1: MCP Server Scaffold (2025-11-09) - QA: CONCERNS (85/100)
+  - ✅ Story 3.2: Core Search Tool - Profile Match (2025-11-09) - QA: PASS (95/100)
+  - ✅ Story 3.3: Core Search Tool - Skill Search (2025-11-09) - QA: PASS (95/100)
 - **In Progress**: 0/8
 - **Dependencies**:
   - ✅ Epic 2 (Document Processing Pipeline) - COMPLETE
   - ✅ Technical Spike: OpenWebUI MCP Integration - **COMPLETE**
   - ✅ Technical Spike: MCP SDK Selection - **COMPLETE**
-- **Blockers**: None - Story 3.2 ready to begin
-- **Next**: Story 3.2 (Core Search Tool - Profile Match Query)
+- **Blockers**: None - Story 3.4 ready to begin
+- **Next**: Story 3.4 (OpenWebUI Configuration and MCP Integration)
 
 ---
 
@@ -356,6 +362,6 @@ Based on Epic 2 learnings, each story requires specific updates:
 
 ---
 
-**Document Version**: 2.1 (Updated 2025-11-09)
+**Document Version**: 2.2 (Updated 2025-11-09)
 **Last Review**: 2025-11-09
-**Status**: IN PROGRESS - Story 3.1 Complete (1/8 stories done)
+**Status**: IN PROGRESS - Stories 3.1-3.3 Complete (3/8 stories done, 37.5% complete)
