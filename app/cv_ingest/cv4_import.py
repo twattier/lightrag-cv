@@ -150,11 +150,7 @@ async def submit_cv_to_lightrag(
 
         # Submit to LightRAG (RULE 9: Async I/O)
         logger.info(
-            "Submitting CV to LightRAG",
-            extra={
-                "candidate_label": candidate_label,
-                "chunks_count": len(texts)
-            }
+            f"Submitting CV to LightRAG: {candidate_label} ({len(texts)} chunks)"
         )
 
         response = await client.post(
@@ -165,11 +161,7 @@ async def submit_cv_to_lightrag(
         response.raise_for_status()
 
         logger.info(
-            "CV submitted successfully",
-            extra={
-                "candidate_label": candidate_label,
-                "chunks_count": len(texts)
-            }
+            f"CV submitted successfully: {candidate_label}"
         )
         return True
 
@@ -260,8 +252,7 @@ async def import_cvs(candidate_label: Optional[str] = None):
             # Filter: Only import CVs with is_latin_text=True
             if not cv_meta.get("is_latin_text", False):
                 logger.info(
-                    "Skipping non-Latin text CV",
-                    extra={"candidate_label": candidate_label}
+                    f"Skipping non-Latin text CV: {candidate_label}"
                 )
                 skipped_non_latin += 1
                 continue
@@ -290,12 +281,11 @@ async def import_cvs(candidate_label: Optional[str] = None):
                     await insert_document_metadata(conn, cv_meta, parsed_data)
                     successful += 1
                     logger.info(
-                        "Metadata recorded",
-                        extra={"candidate_label": candidate_label}
+                        f"Metadata recorded: {candidate_label}"
                     )
                 except Exception as e:
                     logger.error(
-                        "Failed to record metadata",
+                        f"Failed to record metadata for {candidate_label}: {str(e)}",
                         extra={
                             "candidate_label": candidate_label,
                             "error": str(e)

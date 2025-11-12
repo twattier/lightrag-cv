@@ -78,7 +78,9 @@ class Settings:
     CV_DIR: Path = DATA_DIR / "cvs"
     CV_DOCS_DIR: Path = CV_DIR / "docs"  # Downloaded CV PDFs
     CV_PARSED_DIR: Path = CV_DIR / "parsed"  # Parsed JSON outputs
-    CV_MANIFEST: Path = CV_DIR / "cvs-manifest.json"
+    CV_MANIFEST: Path = CV_DIR / "cvs-manifest.json"  # Current batch manifest
+    CV_DB: Path = CV_DIR / "cvs-db.json"  # Historical CV database
+    CV_IMPORTED_DIR: Path = CV_DIR / "imported"  # Archived manifests
 
     # Ingestion settings
     INGESTION_TIMEOUT: int = int(os.getenv("INGESTION_TIMEOUT", "1200"))  # 20 minutes

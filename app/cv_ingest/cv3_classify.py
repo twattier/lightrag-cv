@@ -184,6 +184,11 @@ async def classify_all_cvs():
         "total_cvs": len(manifest['cvs']),
         "latin_text_cvs": latin_count
     }
+
+    # Initialize notes field if it doesn't exist
+    if 'notes' not in manifest['metadata']:
+        manifest['metadata']['notes'] = []
+
     manifest['metadata']['notes'].append(
         f"LLM classification completed using {MODEL} for automated role/domain/experience detection"
     )

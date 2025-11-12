@@ -1,0 +1,139 @@
+{
+  "document_id": "cv_026",
+  "document_type": "CV",
+  "source_filename": "cv_026.pdf",
+  "candidate_label": "cv_026",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "teaching, and working in Al- Computer science, data analysis, information systems, IT infrastructure, programming, office informatics (MOs, IC3..)",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Objective",
+        "page": 1,
+        "token_count": 34
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "A committed professional lecturer with 11 years of experience in the field of managing, teaching, working, and maintaining systems from companies and universities. Specializing in teaching subjects about programming, databases, application interfaces, websites, ICT..In the last few years, have been involved in building and developing big data architectures and Al models from universities to companies.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Experience",
+        "page": 1,
+        "token_count": 80
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "- TeachICT-related subjects to universitystudents.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Lecturer\u00b7Inviting Lecturer\u00b7Nguyen Tat Thanh University",
+        "page": 1,
+        "token_count": 12
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "- TeachIT-related subjectstouniversity students.\n- Assist students during class interactions and deliberation of instructional lessons.\n- Develop methodologies and techniques appropriate to the type of research being pursued and that add to the knowledge/understanding appropriate to the discipline of the department\n2019",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Lecturer\u00b7Inviting Lecturer\u00b7HCMCUniversityof Education",
+        "page": 1,
+        "token_count": 60
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "- System and data analyst by industry",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Analyst of RMCE\u00b7Fulltime Analyst\u00b7Samsung VietNam Electronics Co., Ltd",
+        "page": 1,
+        "token_count": 8
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "- ? Responsible for writing syllabus for different IT professional courses/modules as prescribed by the Institute\n- ? Teach at the undergraduate level in areas allocated by the head of the department and reviewed from time to\n2021-2022",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Lecturer\u00b7Inviting Lecturer\u00b7NTT Institute of International Education",
+        "page": 1,
+        "token_count": 54
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "- Responsible for writing syllabus for different IT professional courses/modules as prescribed by the IT ? department\n- ? time\n- .\n- ?",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Lecturer\u00b7Fultime Lecturer\u00b7The Saigon International University",
+        "page": 1,
+        "token_count": 34
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "Lecturer\u00b7Inviting Lecturer\u00b7Binh Duong University\nLecturer\u00b7Inviting Lecturer\u00b7Hutech University\nLecturer\u00b7InvitingLecturer\u00b7HutechNTTInstituteofInternational Education\nLecturer\u00b7Inviting Lecturer\u00b7University of Economics and Finance\n2022-2023\n- Responsibleforrecruitingpersonnel and assigning worktoteam members\n- Researching andbuilding solutionswith theAlteamfor:\n- OA Content Moderation system(text/media)for posts on social networks\n- Team size:3\n- Tech used: YOLOv5, phoBERT...\n- Team size:2\n- Tech used: Gradient Boosting, BM25... \u25a0\n- Alanguage detectionsystembased on userposts\n- Team size:3\n- Tech used:phoBERT\n- O A system to analyze post content (text/media) and group it into categories\n- Team size: 3 \u25a0\n- Tech used: EficientNet, Mask R-CNN, phoBERT...\n- An Analysis system that extracts the data contained in the user's image\n- Team size:2\n- Techused:Transformer\n- OAproductrecommendationsystembasedonuserbehaviorandpostcontent\n- \u25a0 Team size:3\n- \u53e3 Tech used: TF-IDF, phoBERT...\n- O\n- Analyzing and building with the DA team for:\n- 0A User dashboard for HHLL's social network\n- Team size:4\n- \u25a0 Tech used: Xmind, Excel, Kafka, PowerBi, Python, NoSQL...\n- A Tours/ Hotels/ Flight ticket - dashboard for HHLL's business department\n- Team size: 3\n- Tech used:Xmind,Excel,Kafka,PowerBi,Python,NoSQL...\n- A system for tracking and sharing user's travel journey\n- Team size:5\n- Tech used:Xmind, Figma...\n- Rules and formulas for Cancel/Refund for payment system O\n- \u25a0 Team size:5\n- \u25a0 Tech used: Excel, Python...",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "201g-Present",
+        "page": 2,
+        "token_count": 441
+      }
+    },
+    {
+      "chunk_id": "chunk_8",
+      "content": "- MasterofComputerScience\nAdvisor:A/Prof.Le Hoang Thai",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Masterin Informatics\u00b7University ofScience,HCMC",
+        "page": 4,
+        "token_count": 16
+      }
+    },
+    {
+      "chunk_id": "chunk_9",
+      "content": "- College of Teaching Information Technology",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Teacher diploma in Informatics\u00b7University of Education, HCMC",
+        "page": 4,
+        "token_count": 7
+      }
+    },
+    {
+      "chunk_id": "chunk_10",
+      "content": "- Born and raised by an educated family. Is a friendly, fun, and sociable person with colleagues as well as\n- Being an active person to learn, improve, and update new knowledge in lectures and work. Able to work under pressure (working overtime, teaching in other provinces...)",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Communication",
+        "page": 4,
+        "token_count": 64
+      }
+    },
+    {
+      "chunk_id": "chunk_11",
+      "content": "- Kieu, P. N., Tran, H. S., Le, T. H., Le, T., & Nguyen, T. T.(2o18, November). Applying Multi-CNNs model for detecting abnormal problems on chest x-ray images. In 2o18 1oth International Conference on Knowledge and Systems Engineering (KSE) (pp. 300-305). IEEE.\n- Applying Convolutional Neural Network for Detecting Highlight Football Events - 2o21- EAl ICCASA 2021 1oth EAl International Conference on Context-Aware Systems and Applications\n- Master of Microsoft Office Specialist-2017\n- 3rd prize in the startup competition at NllE-Mentor- 2021 ?",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "PublishedResearch,Certificates,andAwards",
+        "page": 4,
+        "token_count": 160
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 1657.17,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 12,
+    "parsing_timestamp": "2025-11-12T14:13:42.897291Z",
+    "processing_time_ms": 74518,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

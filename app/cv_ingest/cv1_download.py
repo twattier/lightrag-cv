@@ -15,11 +15,14 @@ Story: Story 2.5.3c - Refactor CV Ingest Workflow for Simplicity
 """
 
 import argparse
+import hashlib
 import json
 import logging
 import random
+import shutil
 import sys
 from collections import defaultdict
+from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional
 
@@ -60,11 +63,26 @@ def estimate_page_count(pdf_bytes: bytes) -> int:
         return 0
 
 
-def collect_cvs_from_dataset(dataset_name: str, split: str, max_samples: int) -> List[Dict]:
+def collect_cvs_from_dataset(dataset_name: str, split: str, max_samples: int, cv_db: Optional[List[Dict]] = None) -> List[Dict]:
     """
     Collect CV candidates from a HuggingFace dataset.
     Uses pragmatic filtering based on file size and structure.
+
+    Duplicate Detection Strategy (Story 2.7):
+    - HuggingFace datasets do not provide unique IDs (no 'id', 'uuid', or 'document_id' fields)
+    - Uses SHA-256 content hash of PDF bytes as unique identifier
+    - Fast (~1-2ms per PDF), collision-resistant, deterministic
+
+    Args:
+        dataset_name: Name of the HuggingFace dataset
+        split: Dataset split to use
+        max_samples: Maximum number of samples to collect
+        cv_db: Optional CV database to check for already-imported CVs
+
+    Returns:
+        List of CV candidates with content_hash field
     """
+    cv_db = cv_db or []
     logger.info(
         "Processing dataset",
         extra={"dataset": dataset_name, "split": split, "max_samples": max_samples}
@@ -117,11 +135,23 @@ def collect_cvs_from_dataset(dataset_name: str, split: str, max_samples: int) ->
                 if not content:
                     continue
 
+                # Calculate SHA-256 content hash for duplicate detection (Story 2.7)
+                # SHA-256 chosen for: speed (~200-500 MB/s), collision-resistance, standard library support
+                content_hash = hashlib.sha256(content).hexdigest()
+
                 # Extract just the base filename
                 if isinstance(filename, str):
                     filename = Path(filename).name
                 else:
                     filename = f"cv_{idx}.pdf"
+
+                # Skip if already imported (based on content hash, not filename)
+                if is_cv_already_imported(content_hash, dataset_name, cv_db):
+                    logger.debug(
+                        "Skipping CV - already imported (duplicate content)",
+                        extra={"content_hash": content_hash[:16], "dataset": dataset_name}
+                    )
+                    continue
 
                 # File size filtering
                 file_size_kb = len(content) / 1024
@@ -144,11 +174,12 @@ def collect_cvs_from_dataset(dataset_name: str, split: str, max_samples: int) ->
                     continue
 
                 cv_metadata = {
-                    "original_filename": filename,
                     "file_format": "PDF",
                     "file_size_kb": round(file_size_kb, 2),
                     "page_count": page_count,
                     "source_dataset": dataset_name,
+                    "source_id": None,  # HuggingFace datasets don't provide unique IDs
+                    "content_hash": content_hash,  # SHA-256 hash for duplicate detection (Story 2.7)
                     "content": content
                 }
 
@@ -198,6 +229,129 @@ def ensure_diversity(cvs: List[Dict], target_count: int) -> List[Dict]:
     return cvs[:target_count]
 
 
+def load_cv_db() -> List[Dict]:
+    """
+    Load the CV database (historical tracking of all imported CVs).
+    Returns empty list if database doesn't exist.
+
+    CV Database Schema (Story 2.7):
+    - filename: Standardized filename (cv_XXX.pdf) - links to docs/cv_XXX.pdf and parsed/cv_XXX_parsed.json
+    - source_dataset: HuggingFace dataset name
+    - source_id: Unique ID from dataset (None if dataset doesn't provide IDs)
+    - content_hash: SHA-256 hash of PDF content for duplicate detection
+
+    Returns:
+        List of CV records
+    """
+    if not settings.CV_DB.exists():
+        logger.info("CV database does not exist, starting fresh")
+        return []
+
+    try:
+        with open(settings.CV_DB, 'r', encoding='utf-8') as f:
+            db = json.load(f)
+            logger.info(f"Loaded CV database with {len(db)} previously imported CVs")
+            return db
+    except Exception as e:
+        logger.error(f"Error loading CV database: {e}")
+        return []
+
+
+def save_cv_db(cv_db: List[Dict]) -> None:
+    """
+    Save the updated CV database.
+
+    Args:
+        cv_db: List of CV records to save
+    """
+    try:
+        with open(settings.CV_DB, 'w', encoding='utf-8') as f:
+            json.dump(cv_db, f, indent=2, ensure_ascii=False)
+        logger.info(f"Saved CV database with {len(cv_db)} total CVs")
+    except Exception as e:
+        logger.error(f"Error saving CV database: {e}")
+        raise
+
+
+def archive_manifest() -> None:
+    """
+    Archive the current cvs-manifest.json to the imported directory.
+    Filename format: YYYYMMDD_HHMMSS_cvs-manifest.json
+    """
+    if not settings.CV_MANIFEST.exists():
+        logger.info("No existing manifest to archive")
+        return
+
+    # Create imported directory if it doesn't exist
+    settings.CV_IMPORTED_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Generate timestamp-based filename
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    archived_filename = f"{timestamp}_cvs-manifest.json"
+    archived_path = settings.CV_IMPORTED_DIR / archived_filename
+
+    # Copy manifest to archive
+    shutil.copy2(settings.CV_MANIFEST, archived_path)
+    logger.info(f"Archived manifest to: {archived_path}")
+
+
+def is_cv_already_imported(content_hash: str, source_dataset: str, cv_db: List[Dict]) -> bool:
+    """
+    Check if a CV has already been imported using content hash.
+
+    Uses SHA-256 content hash for reliable duplicate detection (Story 2.7).
+    Backward compatible: skips old database entries without content_hash field.
+
+    Args:
+        content_hash: SHA-256 hash of PDF content bytes
+        source_dataset: Source dataset name
+        cv_db: CV database to check against
+
+    Returns:
+        True if CV with same content_hash already exists in database
+    """
+    for record in cv_db:
+        # Backward compatibility: Skip old entries without content_hash
+        if 'content_hash' not in record:
+            continue
+
+        if (record.get('content_hash') == content_hash and
+            record.get('source_dataset') == source_dataset):
+            return True
+    return False
+
+
+def get_next_cv_index() -> int:
+    """
+    Determine the next available CV index by checking existing files.
+
+    Returns:
+        Next available index (e.g., 26 if cv_025.pdf exists)
+    """
+    if not settings.CV_DOCS_DIR.exists():
+        return 1
+
+    # Find all existing cv_XXX.pdf files
+    existing_files = list(settings.CV_DOCS_DIR.glob("cv_*.pdf"))
+    if not existing_files:
+        return 1
+
+    # Extract indices from filenames
+    indices = []
+    for file in existing_files:
+        try:
+            # Extract number from cv_XXX.pdf
+            num_str = file.stem.split('_')[1]
+            indices.append(int(num_str))
+        except (IndexError, ValueError):
+            continue
+
+    if not indices:
+        return 1
+
+    return max(indices) + 1
+
+
 def main():
     """Main execution function."""
     # Parse command-line arguments
@@ -226,6 +380,16 @@ def main():
     settings.CV_DOCS_DIR.mkdir(parents=True, exist_ok=True)
     logger.info(f"Created directory: {settings.CV_DOCS_DIR}")
 
+    # Archive existing manifest if present
+    archive_manifest()
+
+    # Load CV database to track historical imports
+    cv_db = load_cv_db()
+
+    # Get next available CV index
+    next_cv_index = get_next_cv_index()
+    logger.info(f"Starting CV index: {next_cv_index}")
+
     # Collect CVs from datasets
     all_candidates = []
 
@@ -235,7 +399,8 @@ def main():
         candidates_1 = collect_cvs_from_dataset(
             "d4rk3r/resumes-raw-pdf",
             split="train",
-            max_samples=MAX_SAMPLES_TO_COLLECT
+            max_samples=MAX_SAMPLES_TO_COLLECT,
+            cv_db=cv_db
         )
         all_candidates.extend(candidates_1)
     except Exception as e:
@@ -248,7 +413,8 @@ def main():
             candidates_2 = collect_cvs_from_dataset(
                 "gigswar/cv_files",
                 split=split,
-                max_samples=50
+                max_samples=MAX_SAMPLES_TO_COLLECT,
+                cv_db=cv_db
             )
             all_candidates.extend(candidates_2)
             if candidates_2:
@@ -257,41 +423,66 @@ def main():
             logger.warning(f"Failed with split '{split}': {e}")
             continue
 
-    logger.info(f"\nTotal candidates collected: {len(all_candidates)}")
+    # Track duplicates before diversity selection (Story 2.7)
+    total_candidates_before_dedup = len(all_candidates)
 
-    if len(all_candidates) < target_cv_count:
-        logger.error(f"Insufficient candidates ({len(all_candidates)}). Need at least {target_cv_count}.")
-        logger.info("Consider adjusting filtering criteria or max_samples.")
+    logger.info(f"\nTotal candidates collected: {total_candidates_before_dedup}")
+
+    # Adjust target to actual available candidates (Story 2.7)
+    actual_target = min(len(all_candidates), target_cv_count)
+
+    if len(all_candidates) == 0:
+        logger.error("No candidates found. Cannot continue.")
         sys.exit(1)
 
+    if len(all_candidates) < target_cv_count:
+        logger.warning(f"Only {len(all_candidates)} candidates available (requested {target_cv_count}). Will download all available CVs.")
+
     # Select diverse final set
-    logger.info(f"\nSelecting {target_cv_count} diverse CVs...")
-    final_cvs = ensure_diversity(all_candidates, target_count=target_cv_count)
+    logger.info(f"\nSelecting {actual_target} diverse CVs...")
+    final_cvs = ensure_diversity(all_candidates, target_count=actual_target)
 
     # Download and organize files
     logger.info(f"\nDownloading {len(final_cvs)} CVs to {settings.CV_DOCS_DIR}...")
     manifest_entries = []
+    new_cv_db_entries = []
 
-    for idx, cv_meta in enumerate(final_cvs, start=1):
-        # Standardized filename
-        standardized_filename = f"cv_{idx:03d}.pdf"
+    for idx, cv_meta in enumerate(final_cvs, start=0):
+        # Use incremental index
+        cv_index = next_cv_index + idx
+        standardized_filename = f"cv_{cv_index:03d}.pdf"
         output_path = settings.CV_DOCS_DIR / standardized_filename
+
+        # Skip if file already exists (shouldn't happen, but defensive check)
+        if output_path.exists():
+            logger.warning(f"File already exists, skipping: {standardized_filename}")
+            continue
 
         # Write file
         output_path.write_bytes(cv_meta['content'])
 
         # Create manifest entry
         manifest_entry = {
-            "candidate_label": f"cv_{idx:03d}",
+            "candidate_label": f"cv_{cv_index:03d}",
             "filename": standardized_filename,
-            "original_filename": cv_meta['original_filename'],
             "file_format": cv_meta['file_format'],
             "file_size_kb": cv_meta['file_size_kb'],
             "page_count": cv_meta['page_count'],
-            "source_dataset": cv_meta['source_dataset'],            
+            "source_dataset": cv_meta['source_dataset'],
+            "source_id": cv_meta['source_id'],
+            "content_hash": cv_meta['content_hash']  # SHA-256 hash (Story 2.7)
         }
 
         manifest_entries.append(manifest_entry)
+
+        # Create CV database entry (lightweight tracking)
+        cv_db_entry = {
+            "filename": standardized_filename,
+            "source_dataset": cv_meta['source_dataset'],
+            "source_id": cv_meta['source_id'],
+            "content_hash": cv_meta['content_hash']  # SHA-256 hash (Story 2.7)
+        }
+        new_cv_db_entries.append(cv_db_entry)
 
         logger.info(
             "CV downloaded",
@@ -313,11 +504,23 @@ def main():
     with open(settings.CV_MANIFEST, 'w', encoding='utf-8') as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
 
+    # Update CV database with new entries
+    logger.info("\nUpdating CV database...")
+    cv_db.extend(new_cv_db_entries)
+    save_cv_db(cv_db)
+
     # Summary statistics
     logger.info("\n" + "=" * 70)
     logger.info("SUMMARY")
     logger.info("=" * 70)
     logger.info(f"Total CVs curated: {len(manifest_entries)}")
+
+    # Duplicate detection statistics (Story 2.7)
+    duplicates_skipped = total_candidates_before_dedup - len(manifest_entries)
+    logger.info("\nDuplicate Detection:")
+    logger.info(f"  Total candidates found: {total_candidates_before_dedup}")
+    logger.info(f"  Duplicates skipped: {duplicates_skipped}")
+    logger.info(f"  Unique CVs downloaded: {len(manifest_entries)}")
 
     # File size distribution
     sizes = [e['file_size_kb'] for e in manifest_entries]

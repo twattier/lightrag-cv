@@ -1,0 +1,79 @@
+{
+  "document_id": "cv_028",
+  "document_type": "CV",
+  "source_filename": "cv_028.pdf",
+  "candidate_label": "cv_028",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "\u00ae",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "",
+        "page": 1,
+        "token_count": 1
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "?\nKho San Xuat -Kho Dich Vu\nB\nBinh Tri Dong B -Binh Tan\nPhu Yen",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "NGUYEN I MINH VUONG",
+        "page": 1,
+        "token_count": 23
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "La mot sinh vien tot nghiep chuyen nganh Logistics, toi mong muon tim kiem co hoi lam vi\u00e9c trong y bupy dx dos o ug unbbuuy  noy nyu bu  uo o yupu ppyd tey wpo !1 'K bugo pno bugp 4boy pnb na!y opA dob buop p !pq ouy yuun Knb pgy nn !o1 trien ban than, hoc hoi tu moi truong lam viec chuyen nghiep va dong gop vao su ph\u00e1t trien ben vung cua doanh nghiep",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "MUC TIEU NGHE NGHIEP",
+        "page": 1,
+        "token_count": 137
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "- Quan ly hoat dong kho: xuat - nhap va to chuc sap xep, bao quan hang h6a, thong ke, kiem soat so lieu, theo doi hang ton kho.\n- \u00b7Kiem tra theo doi ke hogch tu NCC, luu tru chung tu, duy tri s6 li\u00e9u xuat/nhap hang qua h\u00e9 thong quan ly kho Appsheet va Excel.\n- \u00b7Dam bao vi\u00e9c nhan don va dieu phoi nhan luc, xuat hang hoa dung theo don, kip thdi v?i y\u00e9u c\u00e1u - chinh s\u00e1ch cua nen tang, chinh xac dam bao chat luong, so luong.\n- \u00b7B6 tri, s\u00e1p x\u00e9p lich va hang hoa nhap kho, xuat kho.\n- n             y y\n- \u00b7Admin: Lam viec truc tiep voi cac phong ban de dam bao xu ly thong tin va cong vi\u00e9c dat hi\u00e9u qua cao. B\u00e1o c\u00e1o c\u00e1c thong tin ve viec phat sinh.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Thoi gian: 03.2024 - 08.2024 Mo ta cong viec:",
+        "page": 1,
+        "token_count": 234
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "- \u00b7Thuc hien ho tro theo quy trinh xuat/ nhap hang h6a.\n- Ho trg Admin kho trong chung tu, nhap lieu vao ton kho he thong.\n- Thuc hien doi chieu, kiem ke moi ngay va b\u00e1o c\u00e1o so lieu moi ngay.\n- Thuc hien c\u00e1c cong vi\u00e9c phat sinh khac theo yeu cau cap tren.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Thoi gian: 06.2023 -07.2023 Mo ta cong viec:",
+        "page": 1,
+        "token_count": 88
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "NGOC QUAN Pho Giam Doc Cong ty TNHH Logistics Minh Viet Phone: Email:\n2002",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "THONG TIN THAM KHAO",
+        "page": 1,
+        "token_count": 21
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 555.93,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 6,
+    "parsing_timestamp": "2025-11-12T14:13:16.850605Z",
+    "processing_time_ms": 48581,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}
