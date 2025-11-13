@@ -82,6 +82,9 @@ class Settings:
     CV_DB: Path = CV_DIR / "cvs-db.json"  # Historical CV database
     CV_IMPORTED_DIR: Path = CV_DIR / "imported"  # Archived manifests
 
+    # Parsing settings
+    MAX_PARSE: int = int(os.getenv("MAX_PARSE", "5"))
+
     # Ingestion settings
     INGESTION_TIMEOUT: int = int(os.getenv("INGESTION_TIMEOUT", "1200"))  # 20 minutes
     MAX_RETRIES: int = int(os.getenv("MAX_RETRIES", "3"))

@@ -6,22 +6,22 @@
   "chunks": [
     {
       "chunk_id": "chunk_0",
-      "content": "- Build a WordPress team.\n- Recruiting developers.\n- Plan your way.\n- Develop a to-do process\n- Project management.\n- Review code from the developer.\n- Website and Systems programming in pure PHP language, WordPress, Laravel, Odoo Shopify.\n- Create a new plugin\n- Setup Github, Gitlab, Server, Hosting, Domain\n- Cut CSS, JS, HTML, and responsive standards from PSD or Figma files as per customer request.\n- Achievements:\n- o\n- o\n- o\n- o\n- o\no\nFull name: Tran Anh Tuan\nDate of birth: 17-08-1991\nAddress: 66/16 Phan Sao Nam Street,\nWard 11, Tan Binh District.\nMobile:\nEmail:\nWebsite:\no\no\n- o\no\n- o\n- o\no\n- o\n- o\n- o\no\no\no\n- o\n- o\n- o\n- o\no\no",
+      "content": "- Build a WordPress team.\n- Recruiting developers.\n- Plan your way.\n- Develop a to-do process\n- Project management.\n- Review code from the developer.\n- Website and Systems programming in pure PHP language, WordPress, Laravel, Odoo Shopify.\n- Create a new plugin\n- Setup Github, Gitlab, Server, Hosting, Domain\n- Cut CSS, JS, HTML, and responsive standards from PSD or Figma files as per customer request.\n- Achievements:\no\n- o\n- o\n- o\n- o\no\nFull name: Tran Anh Tuan\nDate of birth: 17-08-1991\nAddress: 66/16 Phan Sao Nam Street,\nWard 11, Tan Binh District.\nMobile:\nEmail:\nWebsite:\no\no\n- o\no\n- o\n- o\no\n- o\n- o\n- o\no\no\no\n- o\n- o\n- o\n- o\no\no",
       "chunk_type": "list_item",
       "metadata": {
         "section": "August - 2022 to now : Senior Team Lead at Floating Cube Studios",
         "page": 1,
-        "token_count": 187
+        "token_count": 186
       }
     },
     {
       "chunk_id": "chunk_1",
-      "content": "- Website and Systems programming in pure PHP language, Wordpress, Odoo, Laravel, C#, Github.\n- Cut css, js, html, reponsive standards from psd files as per customer request.\n- Other work required by the supervisor\n- Achievements:\no\no\no\n- o\n- o\no\n- o\no\no\no\no\no\n- o\no\no\no\no\no\no\no\no\no\no\no\no\no\n- o\n- o\no\no\no\n- o",
+      "content": "- Website and Systems programming in pure PHP language, Wordpress, Odoo, Laravel, C#, Github.\n- Cut css, js, html, reponsive standards from psd files as per customer request.\n- Other work required by the supervisor\n- Achievements:\no\no\no\n- o\n- o\n- o\n- o\no\no\no\no\no\n- o\no\no\no\no\n- o\no\no\no\no\no\no\no\no\n- o\no\no\no\no\n- o",
       "chunk_type": "list_item",
       "metadata": {
         "section": "July - 2018 to August - 2022 : Web and System Developer for QLM Group",
         "page": 2,
-        "token_count": 105
+        "token_count": 106
       }
     },
     {
@@ -71,8 +71,8 @@
     "page_count": 0,
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "chunks_count": 6,
-    "parsing_timestamp": "2025-11-07T13:02:27.812194Z",
-    "processing_time_ms": 7671,
+    "parsing_timestamp": "2025-11-13T09:58:38.903569Z",
+    "processing_time_ms": 25363,
     "format": "PDF",
     "tables_extracted": 0
   }

@@ -1,0 +1,229 @@
+{
+  "document_id": "cv_035",
+  "document_type": "CV",
+  "source_filename": "cv_035.pdf",
+  "candidate_label": "cv_035",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "My short-term have a stable job, become an excellent employee, accumulate more experience, practice skills to handle the job effectively, accurately and quickly.\nMy long-term goal is to explore different areas of technology and work to address the area of   expertise that I want to study. I want to be an expert in a particular eld of mobile programming in the long term, but I know the rst step is to build a solid foundation and study the basics of programming.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "FLUTTER DEVELOPER",
+        "page": 1,
+        "token_count": 100
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "239 Hoa Binh street, Hiep Tan Ward, Tan Phu District, HCM City",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "PROFILE",
+        "page": 1,
+        "token_count": 20
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "May 2021 -end of Mar 2023",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "WORK EXPERIENCE",
+        "page": 1,
+        "token_count": 7
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "Dec 2018 -Dec 2020",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "CNV HOLDINGS JOINT STOCK COMPANY",
+        "page": 1,
+        "token_count": 5
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "INFOTMATION TECHNOLOGY\nSep 2014 -Dec 2018",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "CAN THO UNIVERSITY",
+        "page": 1,
+        "token_count": 13
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "- Able to working with RESTFul API, Firebase, Push Notication, Provider with Flutter.\n- Deeplink open app payment Momo\n- Embed payment and delivery app Ahamove\n- Participate in developing some projects running on App Store and Google Play.\n- Teamwork and independence.\n- Research and Learning.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "MOBILE DEVELOPER",
+        "page": 1,
+        "token_count": 70
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "- Custom add rental Point of sale for WooCommerce.\n- Used to manipulate wordpress hooks.\n- Used RESTful API\n- Kotlin basic\n- Procient in using Git to manage source code\n- Dartcore and Widget Tree\n- Debug and optimize application performance\n- Procient use of Getx\n- Knowledge of MVP, MVVM, Clean Architecture",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "WEB DEVELOPER AND MOBILE FLUTTER BASIC",
+        "page": 1,
+        "token_count": 79
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "is a framework that makes mobile app code faster",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "FLUTTER",
+        "page": 1,
+        "token_count": 10
+      }
+    },
+    {
+      "chunk_id": "chunk_8",
+      "content": "Website programming and administration",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "PHP",
+        "page": 1,
+        "token_count": 5
+      }
+    },
+    {
+      "chunk_id": "chunk_9",
+      "content": "Jan 2020 - Mar 2020",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "PROJECTS",
+        "page": 2,
+        "token_count": 5
+      }
+    },
+    {
+      "chunk_id": "chunk_10",
+      "content": "Aug 2020 - Oct 2020\nENGLISH LEARNING APP\nMay 2021 - Dec 2022\nLOYALTY APP\nDec 2021 - Jun 2022\nPOS APP",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "WEB AN TUONG DEP",
+        "page": 2,
+        "token_count": 28
+      }
+    },
+    {
+      "chunk_id": "chunk_11",
+      "content": "Website to buy, sell and rent products",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "DESCRIPTION",
+        "page": 2,
+        "token_count": 8
+      }
+    },
+    {
+      "chunk_id": "chunk_12",
+      "content": "Web wordpress features\n+ Product rental function\n+ Integration shipping\n+ Rental product management function",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "TECHNOLOGY DESCRIPTION",
+        "page": 2,
+        "token_count": 17
+      }
+    },
+    {
+      "chunk_id": "chunk_13",
+      "content": "Application to watch videos with pronunciation according to the mouth and worth the test with pictures",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "DESCRIPTION",
+        "page": 2,
+        "token_count": 17
+      }
+    },
+    {
+      "chunk_id": "chunk_14",
+      "content": "App features\n+ Developing UI by design\n+ Video processing at client\n+ Listening test to choose pictures",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "TECHNOLOGY DESCRIPTION",
+        "page": 2,
+        "token_count": 21
+      }
+    },
+    {
+      "chunk_id": "chunk_15",
+      "content": "This application serves as a comprehensive answer to the needs of rms in the e-commerce, booking, spa.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "DESCRIPTION",
+        "page": 2,
+        "token_count": 24
+      }
+    },
+    {
+      "chunk_id": "chunk_16",
+      "content": "App features\n+ Login Google, Apple ID, Firebase\n+ Developing UI by design\n+ Integration Payment with Momo, Vnpay\n+ Releasing app on App Store and Play Store\n+ Booking, Order.\nAppstore:\nholdings/id1548425062",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "TECHNOLOGY DESCRIPTION",
+        "page": 2,
+        "token_count": 55
+      }
+    },
+    {
+      "chunk_id": "chunk_17",
+      "content": "Loyalty management app",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "DESCRIPTION",
+        "page": 2,
+        "token_count": 5
+      }
+    },
+    {
+      "chunk_id": "chunk_18",
+      "content": "App features\n+ Developing UI by design\n+ Integration shipping Ahamove\n+ Push notications when there is an order, a reservation\n+ Statistical chart display",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "TECHNOLOGY DESCRIPTION",
+        "page": 2,
+        "token_count": 33
+      }
+    },
+    {
+      "chunk_id": "chunk_19",
+      "content": "Swimming Watching movies\n+ Scan qr order and booking\nAppstore:",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "INTERESTS",
+        "page": 3,
+        "token_count": 15
+      }
+    },
+    {
+      "chunk_id": "chunk_20",
+      "content": "Nguyen, like many people, enjoys traveling and discovering new places, cultures, and ways of life. Traveling allows them to broaden their perspectives and gain a better understanding of the world around them.\nNguyen is also someone who is always eager to learn new things. Whether it's picking up a new hobby, studying a new subject, or simply trying something new, Nguyen is always looking for ways to grow and improve. \u00a9",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "ADDITIONAL INFORMATION",
+        "page": 3,
+        "token_count": 94
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 122.84,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 21,
+    "parsing_timestamp": "2025-11-13T10:57:10.757867Z",
+    "processing_time_ms": 21642,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

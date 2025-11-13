@@ -1,0 +1,179 @@
+{
+  "document_id": "cv_053",
+  "document_type": "CV",
+  "source_filename": "cv_053.pdf",
+  "candidate_label": "cv_053",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "Next step goal: be the part of  big data world",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Data Engineer | BI Solutions",
+        "page": 1,
+        "token_count": 11
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "- Email:\nAddress: Go Vap Dist, HCMC\n- Phone:",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Contact Me",
+        "page": 1,
+        "token_count": 16
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "- OS: Linux, Window\n- Programming Language: SQL, Python\n- Storage: Mssql, mySQL, MongoDB, Hadoop, sFTP\n- Processing Engine: Pandas, pyspark, DBT\n- BI Tools: Power BI, DAX\n- Data Oschestration: Airflow\n- CI/CD: Git",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Technology",
+        "page": 1,
+        "token_count": 73
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "- Institution: Hoa Sen University\n- Year of Graduation: 2021 with GPA: 3.43/4",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Bachelor of Management Information System",
+        "page": 1,
+        "token_count": 20
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "- English ( Aptis B2 Level )",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Language",
+        "page": 1,
+        "token_count": 9
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "- Cloud Service\n- Big Data Framework",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "On-learning",
+        "page": 1,
+        "token_count": 7
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "- Github:\n- Linkedin:",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "External link",
+        "page": 1,
+        "token_count": 10
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "Kimberly-Clark Viet Nam ( Feb 2023 - Current )\nSmall BI Team work under Sales Operation Department, interact with other departments and IT Regional to enrich raw data and build value KPIs.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Data Engineer",
+        "page": 1,
+        "token_count": 44
+      }
+    },
+    {
+      "chunk_id": "chunk_8",
+      "content": "- Work closely with end-users and vendors to enrich data warehouse and enhance operation report\n- Develop all data pipelines for Kimberly Clark Viet Nam make sure daily operation report run well ( ~ 50 pipeline )\n- Daily Operation: Maintain data pipeline, server, backup database, optimize query execution",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "1 . Main responsibilities:",
+        "page": 1,
+        "token_count": 69
+      }
+    },
+    {
+      "chunk_id": "chunk_9",
+      "content": "- Leading project to apply row-level security in excel report for avoid leaking data ( team size : 3 members )",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "2 . Achievement:",
+        "page": 1,
+        "token_count": 27
+      }
+    },
+    {
+      "chunk_id": "chunk_10",
+      "content": "- Key member as data engineer role joining project revamp data warehouse for whole kimberly clark Viet Nam ( team size : 7 members )",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "2. Project:",
+        "page": 1,
+        "token_count": 31
+      }
+    },
+    {
+      "chunk_id": "chunk_11",
+      "content": "- sFTP, mssql, python ( pandas, pyspark ), airflow, power bi",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "3. Technology",
+        "page": 1,
+        "token_count": 24
+      }
+    },
+    {
+      "chunk_id": "chunk_12",
+      "content": "Phu Nhuan Jewelry Joint Stock Company ( PNJ ) Sep 2021 - Nov 2022 (1 yr, 2 mos)\nWorking as Digital Transformation Center department to collect demands from other departments, understanding their pain points to build meaningful daily report to help them making right decision at right time.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Data Engineer",
+        "page": 1,
+        "token_count": 63
+      }
+    },
+    {
+      "chunk_id": "chunk_13",
+      "content": "- Maintain and build all data pipelines for PNJ Corp and its members ( approximate 300 jobs )\n- Working  and  handle  billions  records  (  ~  3  millions records for daily )\n- Release nearly real-time  report  serving  up  to  200  endusers  view  report  daily.  Also,  30  end-users  for  selfserving report.\n- Extract data from diverse sources (Relational Database, NoSQL, Social )\n- Ensuring  stable  system  operation  up  to  95%  and  SLA 4.9/5 in serving user.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "1 . Main responsibilities:",
+        "page": 1,
+        "token_count": 110
+      }
+    },
+    {
+      "chunk_id": "chunk_14",
+      "content": "- Build and maintain Incentive project ( ~ 5000 active endusers view data on App/Web/Dashboard )\n- Build and maintain Camera AI project",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "2 . Achievement:",
+        "page": 1,
+        "token_count": 35
+      }
+    },
+    {
+      "chunk_id": "chunk_15",
+      "content": "- Talend, SSIS, MongoDB , Mssql, Power BI, SSAS, SAP",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "3. Technology",
+        "page": 1,
+        "token_count": 23
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 289.39,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 16,
+    "parsing_timestamp": "2025-11-13T10:02:07.132230Z",
+    "processing_time_ms": 8864,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

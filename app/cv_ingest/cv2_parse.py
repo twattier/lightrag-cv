@@ -9,9 +9,11 @@ Processes all CVs through Docling /parse endpoint and saves parsed outputs.
 Implements structured logging, async batch processing, and error handling.
 
 Usage:
-    python -m app.cv_ingest.parse_cvs
+    python -m app.cv_ingest.cv2_parse              # Parse all CVs
+    python -m app.cv_ingest.cv2_parse --retry      # Retry only failed CVs
 """
 
+import argparse
 import asyncio
 import json
 import logging
@@ -262,18 +264,18 @@ class CVParser:
             })
             return None
 
-    async def parse_all_cvs(
+    async def parse_cvs_list(
         self,
-        cvs_manifest_path: Path,
+        cvs_list: List[Dict],
         test_set_dir: Path,
         output_dir: Path,
         max_concurrent: int = 5
     ) -> CVParsingStats:
         """
-        Parse all CVs from manifest with concurrent processing.
+        Parse a specific list of CVs with concurrent processing.
 
         Args:
-            cvs_manifest_path: Path to cvs-manifest.json
+            cvs_list: List of CV metadata dicts to parse
             test_set_dir: Directory containing CV files
             output_dir: Directory to save parsed outputs
             max_concurrent: Maximum concurrent requests
@@ -281,16 +283,6 @@ class CVParser:
         Returns:
             CVParsingStats with results
         """
-        # Load manifest
-        logger.info(
-            "Loading CV manifest",
-            extra={"manifest_path": str(cvs_manifest_path)}
-        )
-
-        with open(cvs_manifest_path, 'r') as f:
-            manifest = json.load(f)
-
-        cvs_list = manifest.get("cvs", [])
         self.stats.total_cvs = len(cvs_list)
 
         logger.info(
@@ -342,6 +334,62 @@ class CVParser:
 
         return self.stats
 
+    async def parse_all_cvs(
+        self,
+        cvs_manifest_path: Path,
+        test_set_dir: Path,
+        output_dir: Path,
+        max_concurrent: int = 5
+    ) -> CVParsingStats:
+        """
+        Parse all CVs from manifest with concurrent processing.
+
+        Args:
+            cvs_manifest_path: Path to cvs-manifest.json
+            test_set_dir: Directory containing CV files
+            output_dir: Directory to save parsed outputs
+            max_concurrent: Maximum concurrent requests
+
+        Returns:
+            CVParsingStats with results
+        """
+        # Load manifest
+        logger.info(
+            "Loading CV manifest",
+            extra={"manifest_path": str(cvs_manifest_path)}
+        )
+
+        with open(cvs_manifest_path, 'r') as f:
+            manifest = json.load(f)
+
+        cvs_list = manifest.get("cvs", [])
+        return await self.parse_cvs_list(cvs_list, test_set_dir, output_dir, max_concurrent)
+
+
+def get_cvs_needing_retry(manifest_path: Path, parsed_dir: Path) -> List[Dict]:
+    """
+    Identify CVs from manifest that don't have parsed files.
+
+    Args:
+        manifest_path: Path to cvs-manifest.json
+        parsed_dir: Directory containing parsed JSON files
+
+    Returns:
+        List of CV metadata dicts that need to be retried
+    """
+    with open(manifest_path, 'r') as f:
+        manifest = json.load(f)
+
+    cvs_needing_retry = []
+    for cv_meta in manifest.get("cvs", []):
+        candidate_label = cv_meta["candidate_label"]
+        parsed_file = parsed_dir / f"{candidate_label}_parsed.json"
+
+        if not parsed_file.exists():
+            cvs_needing_retry.append(cv_meta)
+
+    return cvs_needing_retry
+
 
 def print_summary(stats: CVParsingStats):
     """Print parsing summary statistics."""
@@ -374,6 +422,17 @@ def print_summary(stats: CVParsingStats):
 
 async def main():
     """Main execution function."""
+    # Parse command-line arguments
+    arg_parser = argparse.ArgumentParser(
+        description="Parse CVs through Docling service"
+    )
+    arg_parser.add_argument(
+        "--retry",
+        action="store_true",
+        help="Only retry CVs that don't have parsed files"
+    )
+    args = arg_parser.parse_args()
+
     # Configuration paths from centralized settings (RULE 2)
     manifest_path = settings.CV_MANIFEST
     docs_dir = settings.CV_DOCS_DIR
@@ -403,14 +462,38 @@ async def main():
         logger.error("Docling service not available. Exiting.")
         sys.exit(1)
 
-    # Parse all CVs
+    # Parse CVs (either all or retry failed ones)
     try:
-        stats = await parser.parse_all_cvs(
-            cvs_manifest_path=manifest_path,
-            test_set_dir=docs_dir,
-            output_dir=output_dir,
-            max_concurrent=5
-        )
+        if args.retry:
+            # Retry mode: only parse CVs without parsed files
+            cvs_to_retry = get_cvs_needing_retry(manifest_path, output_dir)
+
+            if not cvs_to_retry:
+                print("\n✅ All CVs have been parsed successfully!")
+                print("No CVs need to be retried.")
+                sys.exit(0)
+
+            print(f"\n🔄 RETRY MODE: Found {len(cvs_to_retry)} CVs without parsed files")
+            print("="*60)
+            for cv in cvs_to_retry:
+                print(f"  - {cv['candidate_label']}: {cv['filename']}")
+            print("="*60)
+            print()
+
+            stats = await parser.parse_cvs_list(
+                cvs_list=cvs_to_retry,
+                test_set_dir=docs_dir,
+                output_dir=output_dir,
+                max_concurrent=settings.MAX_PARSE
+            )
+        else:
+            # Normal mode: parse all CVs
+            stats = await parser.parse_all_cvs(
+                cvs_manifest_path=manifest_path,
+                test_set_dir=docs_dir,
+                output_dir=output_dir,
+                max_concurrent=settings.MAX_PARSE
+            )
 
         # Print summary
         print_summary(stats)

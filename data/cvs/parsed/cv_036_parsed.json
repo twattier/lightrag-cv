@@ -1,0 +1,89 @@
+{
+  "document_id": "cv_036",
+  "document_type": "CV",
+  "source_filename": "cv_036.pdf",
+  "candidate_label": "cv_036",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "Backend Deueloper",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "NGUYEN VAN THANH",
+        "page": 1,
+        "token_count": 5
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "aa em optimizing the company's product development process. My long-term goal is to become a Senior Developer within3years and progress towards a Technical Specialist role in the future.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Career objective",
+        "page": 1,
+        "token_count": 40
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "- \u25cfNodeJs (Express)\n- Javascript, Typescript, Java, C#\n- \u00b7Database: MongoDb, PostgreSQL, MySQL\n- \u00b7Cloud Platforms:AWs",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Skills",
+        "page": 1,
+        "token_count": 42
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "- \u00b7Analyzed and understood business and technical requirements to work with Japanese customers.\n- \u00b7Developed and implemented new web and database programs.\n- Implementedmanual testing and unittests.\n- \u00b7Documented APIs with comprehensive descriptions and examples using Swagger.\n- \u00b7Maintained and improved the performance of existing web applications.\n- \u00b7Delivered a successful project with a high rating (3.9/4) from the Japanese client.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "FRESHER BACKEND DEVELOPER, NEC Vietnam Co Ltd. 2023-Present",
+        "page": 1,
+        "token_count": 95
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "07/2022-10/2022\n- Independently learned Java, reinforcing understanding of syntax, object-oriented principles, and core functionalities.\n- \u00b7Explored MongoDB, understanding its data modeling concepts, document-oriented structure, and query language.\n- \u00b7Adapted to the company's disciplined environment and project developmentprocess.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "INTERN BACKEND DEVELOPER,Viettel High Tech",
+        "page": 1,
+        "token_count": 78
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "- Toeic LR:710\n- \u00b7Toeic SW:260",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Language",
+        "page": 1,
+        "token_count": 15
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "- University of Information Technology -UIT\n- Engineer in Computer Network & Communication\n- \u00b7Version Control: Git,SVN\n- Another: Postman, SonarQube, JMeter, Swagger, Unit Test, Manual Testing",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Education",
+        "page": 1,
+        "token_count": 50
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 443.21,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 7,
+    "parsing_timestamp": "2025-11-13T12:19:55.247635Z",
+    "processing_time_ms": 30787,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

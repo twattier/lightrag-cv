@@ -6,143 +6,133 @@
   "chunks": [
     {
       "chunk_id": "chunk_0",
-      "content": "Frontend Web Developer with 3 years of experience specializing in HTML , CSS , SCSS , JavaScript ,  and React.js. Skilled  in  creating  responsive, user-friendly websites and applications. Passionate about delivering highquality,  performance-driven  solutions  with  a  focus  on  clean,  maintainable code.  Strong  problem-solving  skills,  focused  on  building  scalable  and efficient applications that meet user needs.",
+      "content": "MOBILE WORLD GROUP| D.9, HCMC, Business Analyst/Product Owner JUNE 2020- PRESENT",
       "chunk_type": "text",
       "metadata": {
-        "section": "Summary",
+        "section": "Work experiences",
         "page": 1,
-        "token_count": 87
+        "token_count": 28
       }
     },
     {
       "chunk_id": "chunk_1",
-      "content": "Carelon Global Solutions is a top provider of data analytics, IT services, and  business solutions for the healthcare industry. The platform connects patients  with medical professionals to improve healthcare delivery and services.",
+      "content": "- -Framework for the service of making installment records, mortgage loan, pay on behalf,collectonbehalf,touchless paymentmethods\n- Improve the flow of selling SIM services, internet installation, scratch cards, pincode, top-up",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Projects:",
+        "page": 1,
+        "token_count": 55
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "1. More than 3 million contracts (from January to November 2021). Save labor cost nearly 10,000 PG.Apply Al tools-identify identity cards, driver's\nlicenses to save time on data entry.\n2. Can handle up to 5,000 transactions/ day with a total amount of up to 30 billion/ day.\nSaving nearly 18 billion/ month compared to card payment. Save time and labor in controlling transfer transactions.\nOrders are processed in less than 1 second which enhances the customer experience. Limit direct contact during the pandemic. Reducing the risk of cash fund control at supermarkets.\nCPTech|D.4,HCMC,Business Analyst/Product Owner\nMAY 2019 - MAY 2020",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Recognition and Gains:",
+        "page": 1,
+        "token_count": 150
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "- Riviu application\n- Ticket tool for CS Lixifood\n- Customer Care application for Dien May Chg Lon",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Projects:",
+        "page": 1,
+        "token_count": 24
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "- -Learn agile methods, how to write user stories, how to analyze use cases with as much context as possible\nGiao Hang Nhanh | D.11, HCMC, Product Specialist\nAPR 2017 - DEC 2017",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Achievements and skills gained:",
+        "page": 1,
+        "token_count": 49
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "Iused to work as a BA/PO for Mobile World Group, experienced projects to develop touchless payment channels,financial projects with banks and financial companies, mortgage lending projects. My goal in the near future is to become a professional business analyst, contributing to the development of the company.",
       "chunk_type": "text",
       "metadata": {
-        "section": "1.ServeCoTrack1 (Carelon.com Support & Refactori (#Antem-UST))",
+        "section": "66",
+        "page": 1,
+        "token_count": 63
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "- Communication and negotiation: 8/10\n- -Analysis and problem solving: 8/10\n- Time management: 9/10\n- Operation data: 9/10",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Soft Skills:",
+        "page": 1,
+        "token_count": 33
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "- Use case Diagram: 8/10\n- -Sequense Diagram: 9/10\n- Data Flow Diagram: 8/10\n- -BPMN: 9/10\n- -UI/UX:8/10",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Advanced Skills:",
         "page": 1,
         "token_count": 42
       }
     },
     {
-      "chunk_id": "chunk_2",
-      "content": "- Designed and developed reusable AEM components using HTL ( HTML Template Language ) for scalable and maintainable code.\n- Developed responsive UI screens in line with Figma designs, ensuring a seamless user experience across devices.\n- Conducted thorough widget testing , identified bugs, and implemented bug fixes to ensure high-quality performance.\n- Integrated external APIs and implemented data fetching and processing logic to support dynamic content.\n- Collaborated with cross-functional teams using Jira for task management and Git for version control.\n- Utilized HTML , CSS , and JavaScript to develop the core web application features, optimizing for performance and accessibility.",
-      "chunk_type": "list_item",
-      "metadata": {
-        "section": "Role & Responsibilities:",
-        "page": 1,
-        "token_count": 153
-      }
-    },
-    {
-      "chunk_id": "chunk_3",
-      "content": "Contributed  to  the  development  of Albertsons  MSP ,  a  web-based platform      designed  to  optimize  and  manage  various  internal  services within the   organization. The platform integrates multiple functionalities, providing a   centralized solution for employees to efficiently access and manage key   services such as procurement, support, and operations.",
+      "chunk_id": "chunk_8",
+      "content": "Volleyball, soccer,movies,music, shopping",
       "chunk_type": "text",
       "metadata": {
-        "section": "2. Albertsons MSP Frontend development (MOON-SAFF-01-00)",
+        "section": "Interests",
         "page": 1,
-        "token_count": 65
-      }
-    },
-    {
-      "chunk_id": "chunk_4",
-      "content": "- Developed responsive user interfaces using JavaScript , React.js , and Redux for state management.\n- Designed and implemented components with Material-UI , ensuring a modern, user-friendly experience.\n- Utilized HTML5 and CSS3 to create structured, styled, and responsive web pages.\n- Collaborated with backend teams to implement data fetching, user authentication, and ensure proper API integrations.\n- Participated in code versioning and collaboration using Git , maintaining efficient workflows in team environments.\n- Gained exposure to MVC architecture and web app deployment processes, contributing to platform launch and updates.\nCompany: UST Global\nContact:+91-7821965532\nDesignation :Web Developer\nvaibhavipatil858@gmail.com",
-      "chunk_type": "list_item",
-      "metadata": {
-        "section": "Role & Responsibilities:",
-        "page": 1,
-        "token_count": 176
-      }
-    },
-    {
-      "chunk_id": "chunk_5",
-      "content": "- JavaScript\n- HTML5\n- CSS3\n- SCSS",
-      "chunk_type": "list_item",
-      "metadata": {
-        "section": "Languages:",
-        "page": 1,
-        "token_count": 11
-      }
-    },
-    {
-      "chunk_id": "chunk_6",
-      "content": "- React.js",
-      "chunk_type": "list_item",
-      "metadata": {
-        "section": "Frameworks & Libraries:",
-        "page": 1,
-        "token_count": 5
-      }
-    },
-    {
-      "chunk_id": "chunk_7",
-      "content": "- Material-UI\n- Bootstrap",
-      "chunk_type": "list_item",
-      "metadata": {
-        "section": "UI/UX:",
-        "page": 1,
-        "token_count": 8
-      }
-    },
-    {
-      "chunk_id": "chunk_8",
-      "content": "- Git\n- GitHub\n- Bitbucket",
-      "chunk_type": "list_item",
-      "metadata": {
-        "section": "Version Control:",
-        "page": 1,
-        "token_count": 11
+        "token_count": 13
       }
     },
     {
       "chunk_id": "chunk_9",
-      "content": "- Media Queries\n- Flexbox\n- Grid Layout",
-      "chunk_type": "list_item",
+      "content": "Mr. L\u00e9 Anh Tu\nTrurong phong - Phong Phat Trien Ung Dung ERP of MWG\nEmail:\nMobile:\nFEMALE\nLe Van Sy Str, W.12 D.3, HCMC, Vietnam\n28/11/1993\n- -Customer communication system, Bl tool\n- Internal app for logistics\n- -Write BRD and mockup wireframe.",
+      "chunk_type": "text",
       "metadata": {
-        "section": "Responsive Design:",
+        "section": "References",
         "page": 1,
-        "token_count": 11
+        "token_count": 77
       }
     },
     {
       "chunk_id": "chunk_10",
-      "content": "- VS Code",
-      "chunk_type": "list_item",
+      "content": "HCMC University of Food Industry,Major:Accounting\nOct 2012 - May 2016\nGPA:3.2/4",
+      "chunk_type": "text",
       "metadata": {
-        "section": "Code Editors:",
-        "page": 1,
-        "token_count": 3
+        "section": "Education",
+        "page": 2,
+        "token_count": 23
       }
     },
     {
       "chunk_id": "chunk_11",
-      "content": "- Jira",
-      "chunk_type": "list_item",
-      "metadata": {
-        "section": "Project Management:",
-        "page": 1,
-        "token_count": 3
-      }
-    },
-    {
-      "chunk_id": "chunk_12",
-      "content": "Nanded - 2018 Bachelor's Degree Electronics and Tele Communications CGPA - 8.5\nGramin Polytechnic College,\nNanded -\n2015\nDiploma Electronics and Tele Communications CGPA - 8.0",
+      "content": "JapanVietnamFesstival|HCMC,Staff Leader\n2014 - 2018\n- Staff in charge of areas: stage, guests\n- -Leadinga teamof 5-7employees\n- -Arrange a timetable forexchangesbetweenguests andparticipants,responsible for staffing",
       "chunk_type": "text",
       "metadata": {
-        "section": "MGM's College Of Engineering,",
-        "page": 1,
-        "token_count": 45
+        "section": "Activities",
+        "page": 2,
+        "token_count": 64
       }
     }
   ],
   "metadata": {
     "file_format": "PDF",
-    "file_size_kb": 30.31,
+    "file_size_kb": 731.99,
     "page_count": 0,
-    "source_dataset": "gigswar/cv_files",
-    "chunks_count": 13,
-    "parsing_timestamp": "2025-11-12T14:12:39.077288Z",
-    "processing_time_ms": 10726,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 12,
+    "parsing_timestamp": "2025-11-13T11:16:07.248377Z",
+    "processing_time_ms": 52910,
     "format": "PDF",
     "tables_extracted": 0
   }

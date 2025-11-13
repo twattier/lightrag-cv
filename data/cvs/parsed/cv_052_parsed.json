@@ -1,0 +1,79 @@
+{
+  "document_id": "cv_052",
+  "document_type": "CV",
+  "source_filename": "cv_052.pdf",
+  "candidate_label": "cv_052",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "Accustomed to handling IT support, managing IT projects, and supporting resolve customer issue with IT tools and applications for over three years. Wanting to change and improve myself with new challenge in new role.\nWorking with all concentration and responsibility. Committed to working as a collaborative and positive team member, striving to utilize my knowledge and expertise for optimal engineering results.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Profile",
+        "page": 1,
+        "token_count": 78
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "System Administrator, Vietnix, Ho Chi Minh\nAUGUST 2018 - PRESENT\n- Supporting the customer resolve their issue.\n- Deploying and operating and monitoring private cloud - OpenStack with CEPH Storage.\n- Deploying monitor traffic in/out in network for Switch (Using ELK Stack)\n- Working on Linux over 3 years (CentOS and Ubuntu), almost in CentOS.\n- Working on hyper-vision (VMWare Esxi, Proxmox,...)\n- Working on Hosting like Cpanel, DirectAdmin, VestaCP, AApanel.\n- Preventing attack DDoS at layer 3 and layer 7 ( with Iptables and NGINX).\n- Experience on NGINX, Apache, HA-proxy.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Employment History",
+        "page": 1,
+        "token_count": 166
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "HCMC University of Science, Ho Chi Minh\nAPRIL 2014\nGPA 7.0",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Education",
+        "page": 1,
+        "token_count": 15
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "Preparing for Google Cloud Certification: Cloud Engineer Specialization, Coursera\nNOVEMBER 2\n1 - PRESENT\nElastic Google Cloud Infrastructure: Scaling and Automation, Coursera NOVEMBER 2021 - PRESENT",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Courses",
+        "page": 1,
+        "token_count": 49
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "Doan Duy Thuc from Vietnix",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "References",
+        "page": 1,
+        "token_count": 9
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "103/15/4 street 18 ward 8 district Go Vap Ho Chi Minh, 700000\nVietnam\nDATE OF BIRTH\n22/05/1996\nLinks\nLinkedIn - Certificates\nSkills\nLinux\nNetwork\nIT Troubleshooting\nBash Scripting\nPython\nC++\nDocker\nCloud Computing\nGoogle Cloud Platform\nLanguages\nEnglish\n+",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Details",
+        "page": 1,
+        "token_count": 61
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 36.75,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 6,
+    "parsing_timestamp": "2025-11-13T10:02:09.892555Z",
+    "processing_time_ms": 11660,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

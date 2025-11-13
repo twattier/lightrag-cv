@@ -1,0 +1,139 @@
+{
+  "document_id": "cv_073",
+  "document_type": "CV",
+  "source_filename": "cv_073.pdf",
+  "candidate_label": "cv_073",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "Date of birth: July 11, 1988\nSex: Male.\nAddress: 404/20/4 Phu Dinh Street, Ward 16, 8 District, Ho Chi Minh City.\nPhone:\nEmail:\nLinkedin:\n9545b9142/",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "CONTACT INFORMATION:",
+        "page": 1,
+        "token_count": 50
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "- The most efficient segment for 4 consecutive years (Internal Investigation Report by more than 200 employees and 90 stores for 6 brands).",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "QSR Viet Nam: 2015 - 2018",
+        "page": 1,
+        "token_count": 30
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "-  2007-2009:  Software  Development  Specialist  -  Kien Giang Community College - NIIT Institute\n- English skills: Speaking, Reading, Writing average.\n- Specialization: POS Solutions, Power BI, SQL Server, C#,  DMS,  ITMS,  eOffice,  Webapp,  ERP  (SAP,  Bravo), HRM",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "EDUCATION:",
+        "page": 1,
+        "token_count": 66
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "- \uf0b7 Leadership, management skill and teamwork.\n- \uf0b7 Communication, deal effectively skills.\n- \uf0b7 IT policies and procedures.\n- \uf0b7 IT system, Optimize the system.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "HIGHLIGHTS SKILLS:",
+        "page": 1,
+        "token_count": 36
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "Manage supporters and implementers for D-ERP project (DMS + ERP).\nSQL server data management and data management hana database.\nI have successfully built and optimized SAP ERP system for many businesses in different fields such as: F&B, FMCG, Retail. I  have  achieved  the  best  user  support  and  quickly  guide  users  to  solve  day-to-day operational problems on SAP.\nUsing  the  knowledge  that  I  have  accumulated,  I  have  successfully  integrated  and  connected  many systems such as POS, Invoice, DMS systems to ERP and successfully built a centralized database to make analytical reports. demonstrated through Power BI and Tableau.\nSkills: Office 365, IT Infrastructure Management, ETL Tool, Hana Database, MySQL, SQL server, Mongodb, SAP B1, Power BI, Tableau, Devops (CICD), DMS, Intergartion",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "IT operation system manager",
+        "page": 2,
+        "token_count": 191
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "(\n)",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "II. 04/2019 - 11/2020 : TNI CORPORATION.",
+        "page": 2,
+        "token_count": 2
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "Application management of IT software services provided such as: eOffice, ERP Bravo, DMS, CRM, POS, HRM L\u1ea1c Vi\u1ec7t, and coordinating the integration of POS systems with other systems such as ERP, Delivery systems, eInvoice, Power BI, Data and divide human resources according to the software service providers for the company  application development to provide solutions for information security in audit of IT system audit. Manage software license certificates used. Developers of tools for optimal service. Planning  system  audit  on  45  periodic  stores.  Develop  business  process  for analysis reports as required.\nSkills: Office 365, IT Infrastructure Management, DMS, Power BI, Data management, POS, Intergartion",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Acting Application Development Team Leader",
+        "page": 2,
+        "token_count": 144
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "Technical  team  management  6  people.  Training  team  development.  Plan  and  divide  human  resources according to the project. Support sales and customer care departments in technical matters. Solve serious problems from the customer system. Consulting and implementing POS, Warehouse, CRM reports according to customer requirements. Consulting and coordinating the integration of POS systems with other systems such as ERP, Delivery systems, eInvoice, Power PI, Data warehouse, ...",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Account Manager",
+        "page": 2,
+        "token_count": 90
+      }
+    },
+    {
+      "chunk_id": "chunk_8",
+      "content": "(",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "IV. 01/2015 - 06/2018: QSR VIET NAM (Invested by VIG investment funds).",
+        "page": 2,
+        "token_count": 1
+      }
+    },
+    {
+      "chunk_id": "chunk_9",
+      "content": "Manage two employees at the  HCM office. Deploying and  operating the IT  system managing 5 brands (Pizza  Company,  Swensen's,  Dairy  Queen,  Buffalo  Wild  Wings,  AKA  ...)  and  more  than  90  shops  in Vietnam nationwide.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Application Supervisor.",
+        "page": 2,
+        "token_count": 57
+      }
+    },
+    {
+      "chunk_id": "chunk_10",
+      "content": "Be  responsible  for  implementing,  managing  and  monitoring  IT  activities  on  a  daily  basis.  Design  and implement a POS system RKEEPER, Delivery, CRM, HR Tinh Hoa, , organize, control and evaluate the  effectiveness  of  applying  IT  in  the  enterprise  through  quarterly  and  annual  reviews  and  surveys. Manage  IT  application  staff  by  recruiting,  training  and  training  staff  (skills,  soft  skills,  analytical  skills, etc.),  communicating  the  desired  work  and  evaluating  the  effectiveness.  Their  activities  (based  on  the department's  KPI  and  allocation  to  employees).Formulate  policies  and  procedures  to  ensure  smooth operation  of  the  IT  system.  Develop  SLA  (Service  Level  Agreement)  to  measure  and  manage  IT performance. Coordinate with the Infrastructure Team, Operations Team to deploy consistent store chains based on IT standards. Coordinate with the franchisor to develop applications, standards of information technology. Predict potential problems (application, design of the report) in the future and take concrete\n)\naction  to  address  or  mitigate  risk.  Check  /  evaluate  system  performance,  exit  and  make  appropriate adjustments / improvements. Developing, proposing and defending the budget for application software development, application development plan according to the development demands of enterprises.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Job details:",
+        "page": 2,
+        "token_count": 272
+      }
+    },
+    {
+      "chunk_id": "chunk_11",
+      "content": "Building and developing application software according to the development trend of enterprises. Optimized multi-branch  management  application  software.  Participate  in  the  implementation  of  software  projects such as SAP, POS, Call Center, BI Report, CRM, HR Portal, Service Desk, ....\nHOBBIES\n:\n- \uf0b7 Traveling, exchanging friends.\n- \uf0b7 Research new technology.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Key IT project management",
+        "page": 3,
+        "token_count": 75
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 1896.58,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 12,
+    "parsing_timestamp": "2025-11-13T11:20:11.651092Z",
+    "processing_time_ms": 54099,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

@@ -65,10 +65,11 @@ Return ONLY the JSON object, nothing else."""
 
     try:
         # Use LLM abstraction layer instead of direct httpx calls
+        # Note: GPT-5 is a reasoning model that uses tokens for thinking,
+        # so we need enough tokens for both reasoning AND output (typically 500-1000)
         llm_response = await llm_client.generate(
             prompt=prompt,
             temperature=0.1,  # Low temperature for consistent classification
-            max_tokens=300,
             format="json"
         )
 
@@ -92,7 +93,7 @@ Return ONLY the JSON object, nothing else."""
         print(f"  ⚠️  JSON parsing failed: {e}")
         print(f"  Response was: {llm_response[:200]}")
         return {
-            "is_latin_text": True,
+            "is_latin_text": "Unknown",
             "role_domain": "Unknown",
             "job_title": "Unknown",
             "experience_level": "Unknown"
@@ -100,7 +101,7 @@ Return ONLY the JSON object, nothing else."""
     except (LLMTimeoutError, LLMProviderError) as e:
         print(f"  ⚠️  LLM provider error: {e}")
         return {
-            "is_latin_text": True,
+            "is_latin_text": "Unknown",
             "role_domain": "Unknown",
             "job_title": "Unknown",
             "experience_level": "Unknown"
@@ -108,7 +109,7 @@ Return ONLY the JSON object, nothing else."""
     except Exception as e:
         print(f"  ⚠️  LLM analysis failed: {e}")
         return {
-            "is_latin_text": True,
+            "is_latin_text": "Unknown",
             "role_domain": "Unknown",
             "job_title": "Unknown",
             "experience_level": "Unknown"
@@ -128,10 +129,19 @@ async def classify_all_cvs():
     # Paths from centralized config (RULE 2)
     parsed_dir = settings.CV_PARSED_DIR
     manifest_path = settings.CV_MANIFEST
+    cv_db_path = settings.CV_DB
 
     # Load original manifest
     with open(manifest_path, 'r') as f:
         manifest = json.load(f)
+
+    # Load CV database (cvs-db.json)
+    if cv_db_path.exists():
+        with open(cv_db_path, 'r') as f:
+            cv_db = json.load(f)
+    else:
+        cv_db = []
+        print(f"⚠️  CV database not found at {cv_db_path}, will create new one")
 
     print("=" * 70)
     print("LLM-BASED CV CLASSIFICATION")
@@ -142,6 +152,8 @@ async def classify_all_cvs():
 
     # Get LLM client using abstraction layer
     llm_client = get_llm_client()
+
+    total_cvs = len(manifest['cvs'])
 
     for i, cv_meta in enumerate(manifest['cvs'], 1):
         candidate_label = cv_meta['candidate_label']
@@ -159,7 +171,7 @@ async def classify_all_cvs():
         cv_text = extract_cv_text(parsed_cv)
 
         # Analyze with LLM using abstraction layer
-        print(f"🔍 {i}/25 - Analyzing {candidate_label}...")
+        print(f"🔍 {i}/{total_cvs} - Analyzing {candidate_label}...")
         analysis = await analyze_cv_with_llm(cv_text, llm_client)
 
         # Update manifest with LLM analysis
@@ -168,6 +180,17 @@ async def classify_all_cvs():
         cv_meta['experience_level'] = analysis['experience_level']
         cv_meta['is_latin_text'] = analysis['is_latin_text']
         cv_meta['llm_classified'] = True
+
+        # Update CV database with is_latin_text
+        filename = cv_meta.get('filename')
+        if filename:
+            # Find matching entry in CV database by filename
+            db_entry = next((entry for entry in cv_db if entry.get('filename') == filename), None)
+            if db_entry:
+                db_entry['is_latin_text'] = analysis['is_latin_text']
+                db_entry['role_domain'] = analysis['role_domain']
+                db_entry['job_title'] = analysis['job_title']
+                db_entry['experience_level'] = analysis['experience_level']
 
         # Print results
         lang = "Latin" if analysis['is_latin_text'] else "Non-Latin"
@@ -197,13 +220,18 @@ async def classify_all_cvs():
     with open(manifest_path, 'w') as f:
         json.dump(manifest, f, indent=2)
 
+    # Save updated CV database
+    with open(cv_db_path, 'w') as f:
+        json.dump(cv_db, f, indent=2)
+
     print("=" * 70)
     print("CLASSIFICATION COMPLETE")
     print("=" * 70)
     print(f"Total CVs classified:  {len(manifest['cvs'])}")
-    print(f"Latin text CVs:        {latin_count}/25")
+    print(f"Latin text CVs:        {latin_count}/{len(manifest['cvs'])}")
     print()
     print(f"✅ Updated manifest saved to: {manifest_path}")
+    print(f"✅ Updated CV database saved to: {cv_db_path}")
 
 
 if __name__ == "__main__":

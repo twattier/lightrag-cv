@@ -1,0 +1,69 @@
+{
+  "document_id": "cv_075",
+  "document_type": "CV",
+  "source_filename": "cv_075.pdf",
+  "candidate_label": "cv_075",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "I - PERSONAL INFORMATION, 1 = I - PERSONAL INFORMATION. Full name, 1 = TRAN DUC VIET. Date of birth, 1 = 01/09/1999. Address, 1 = 105, Yen Hoa, Cau Giay, Ha Noi, Viet Nam. Email, 1 = . Phon, 1 = Phon. Position, 1 = Developer. Personal Statement, 1 = I am Java Back-End developer. I have 3 years of experience in developing web-based application using Java, REST web services and work in Agile/Scrum. I am a hard-working, willing to explore new technologies and easily integrate into the new environment. I am seeking a working environment where I can gain more knowledge and experience to widen not only my technical skills but also people skills.",
+      "chunk_type": "table",
+      "metadata": {
+        "section": "CURRICULUM VITAE",
+        "page": 1,
+        "token_count": 165
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "- 2017 - 2020: National Economics University (NEU)\n- Bachelor of Information Technology\nCommunication, III - SOFT SKILLS.Description = Highly developed communication skills both verbal and nonverbal through experience in working with co-workers, managers, and customers via calls, chat, email or in person.. Collaboration &Teamwork, III - SOFT SKILLS.Description = Integrate into all team situations easily and comfortably, possessing a personality that is open to teamwork and cooperation. Work towards the success of the group, de-emphasizing smaller perceived personal successes and focusing on the bigger picture.\nAdaptability, 1 = Capable of working in a fast-paced environment, adapt to all arising situations, and able to develop solutions to problems as they appear to the satisfaction of client. Adapted to new industry standards, actively learn new information to keep up to date with new skill requirements and technological innovations.. Research, 1 = Good researching ability developed through experiences in learning new technologies and apply them into works quickly and effectively.. Problem solving, 1 = Have ability to analyze information and produce comprehensive solutions to different types of problems such as technical, managerial, or interpersonal problems.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "II - EDUCATION",
+        "page": 1,
+        "token_count": 269
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "- English:\n- Aptis C\n- Listening and reading fluently\n- Ability to write and speak in basic\n- Japanese:\n- Equivalent of N5(I am learning N3)\nTechniques &Languages, V. TECHNICAL SKILLS.Skill Metrics.Last used = Techniques &Languages. Techniques &Languages, V. TECHNICAL SKILLS.Skill Metrics.Proficiency level = Techniques &Languages. Techniques &Languages, V. TECHNICAL SKILLS.Skill Metrics.Experience = Techniques &Languages. Java, V. TECHNICAL SKILLS.Skill Metrics.Last used = 2024. Java, V. TECHNICAL SKILLS.Skill Metrics.Proficiency level = Advanced. Java, V. TECHNICAL SKILLS.Skill Metrics.Experience = 3 years. JavaScript, V. TECHNICAL SKILLS.Skill Metrics.Last used = 2024. JavaScript, V. TECHNICAL SKILLS.Skill Metrics.Proficiency level = Fundamental. JavaScript, V. TECHNICAL SKILLS.Skill Metrics.Experience = 3 years. SQL, V. TECHNICAL SKILLS.Skill Metrics.Last used = 2024. SQL, V. TECHNICAL SKILLS.Skill Metrics.Proficiency level = Advanced. SQL, V. TECHNICAL SKILLS.Skill Metrics.Experience = 3 years. HTML/CSS, V. TECHNICAL SKILLS.Skill Metrics.Last used = 2024. HTML/CSS, V. TECHNICAL SKILLS.Skill Metrics.Proficiency level = Fundamental. HTML/CSS, V. TECHNICAL SKILLS.Skill Metrics.Experience = 4 years. Frameworks &Libraries, V. TECHNICAL SKILLS.Skill Metrics.Last used = Frameworks &Libraries. Frameworks &Libraries, V. TECHNICAL SKILLS.Skill Metrics.Proficiency level = Frameworks &Libraries. Frameworks &Libraries, V. TECHNICAL SKILLS.Skill Metrics.Experience = Frameworks &Libraries. Spring Framework, V. TECHNICAL SKILLS.Skill Metrics.Last used = 2021. Spring Framework, V. TECHNICAL SKILLS.Skill Metrics.Proficiency level = Intermediate. Spring Framework, V. TECHNICAL SKILLS.Skill Metrics.Experience = 1 years. Junit / Mockito /Jest, V. TECHNICAL SKILLS.Skill Metrics.Last used = 2023. Junit / Mockito /Jest, V. TECHNICAL SKILLS.Skill Metrics.Proficiency level = Intermediate. Junit / Mockito /Jest, V. TECHNICAL SKILLS.Skill Metrics.Experience = 1 years. Databases, V. TECHNICAL SKILLS.Skill Metrics.Last used = Databases. Databases, V. TECHNICAL SKILLS.Skill Metrics.Proficiency level = Databases. Databases, V. TECHNICAL SKILLS.Skill Metrics.Experience = Databases. MySQL, V. TECHNICAL SKILLS.Skill Metrics.Last used = 2022. MySQL, V. TECHNICAL SKILLS.Skill Metrics.Proficiency level = Intermediate. MySQL, V. TECHNICAL SKILLS.Skill Metrics.Experience = 2 years. PostgreSQL, V. TECHNICAL SKILLS.Skill Metrics.Last used = 2024. PostgreSQL, V. TECHNICAL SKILLS.Skill Metrics.Proficiency level = Intermediate. PostgreSQL, V. TECHNICAL SKILLS.Skill Metrics.Experience = 2 years",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "IV - FOREIGN LANGUAGES",
+        "page": 2,
+        "token_count": 979
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "SQL Server, 1 = 2024. SQL Server, 2 = Intermediate. SQL Server, 3 = 2 years. Source Control, 1 = Source Control. Source Control, 2 = Source Control. Source Control, 3 = Source Control. Git, 1 = 2024. Git, 2 = Advanced. Git, 3 = 4 years. IDE &Tools, 1 = IDE &Tools. IDE &Tools, 2 = IDE &Tools. IDE &Tools, 3 = IDE &Tools. Visual Studio, 1 = 2024. Visual Studio, 2 = Fundamental. Visual Studio, 3 = 3 years. Eclipse, 1 = 2024. Eclipse, 2 = Intermediate. Eclipse, 3 = 2 years. SQL Server Management Studio, 1 = 2022. SQL Server Management Studio, 2 = Fundamental. SQL Server Management Studio, 3 = 1 years. Programming paradigms, 1 = Programming paradigms. Programming paradigms, 2 = Programming paradigms. Programming paradigms, 3 = Programming paradigms. OOP (Object Oriented Programming), 1 = 2024. OOP (Object Oriented Programming), 2 = Advanced. OOP (Object Oriented Programming), 3 = 4 years\nCompany, VI - TYPICAL PROJECTS.Universal Kinjirou = Nittsu System Co., Ltd.. Duration, VI - TYPICAL PROJECTS.Universal Kinjirou = 3/2022 > Now. Project Description, VI - TYPICAL PROJECTS.Universal Kinjirou = Universal Kinjirou is an internal management system in the company. For examples: Personal information, checkin - checkout, assigned tasks, timekeeping,\u2026. Team size, VI - TYPICAL PROJECTS.Universal Kinjirou = 5 members. Position (s), VI - TYPICAL PROJECTS.Universal Kinjirou = Backend Developer, Frontend Developer. Responsibility, VI - TYPICAL PROJECTS.Universal Kinjirou = \u2022 Developing business features \u2022 Communicating with customers when design documents have problems. \u2022 Bug fixing &maintenance. \u2022 Testing. \u2022 Preparing documents for releasing product. Technologies, VI - TYPICAL PROJECTS.Universal Kinjirou = \u2022 Backend: Java \u2022 Frontend: TypeScript, HTML, CSS, KnockoutJS \u2022 Database: PostgreSQL, SQL Server \u2022 Unit Test: JUnit \u2022 IDE &Tools: Eclipse, Visual Studio Code, SQL Server Management Studio.\n2. Project, 1 = Bao Viet Insurance\nDuration, GCT . TECHNOLOGY SOLUTION JOINT STOCK = 9/2021 > 4/2022. Project Description, GCT . TECHNOLOGY SOLUTION JOINT STOCK = Bao Viet Insurance is a management system for insurance products issued by the company. Team size, GCT . TECHNOLOGY SOLUTION JOINT STOCK = 10 members. Position (s), GCT . TECHNOLOGY SOLUTION JOINT STOCK = Backend Developer, Frontend Developer. Responsibility, GCT . TECHNOLOGY SOLUTION JOINT STOCK = \u2022 Requirement gathering &analysis \u2022 Developing business features \u2022 Bug fixing &maintenance \u2022 Testing \u2022 Preparing documents for releasing product.. Technologies, GCT . TECHNOLOGY SOLUTION JOINT STOCK = \u2022 Framework: Java EJB, Struts Framework. \u2022 Database: SQL Server \u2022 IDE &Tools: Jdev, SQL Server Management Studio\nCompany, CP54 = GCT . TECHNOLOGY SOLUTION JOINT STOCK. Duration, CP54 = 6/2021 > 8/2021. Project Description, CP54 = CP54 is a user information management project such as managing photos, files, reading files, exporting files,.... Team size, CP54 = 5 members. Position (s), CP54 = Backend Developer. Responsibility, CP54 = \u2022 Requirement gathering &analysis \u2022 Write API to handle the assigned business. \u2022 Testing \u2022 Preparing documents for releasing product.. Technologies, CP54 = \u2022 Backend: Java 8, Spring Boot \u2022 Database: SQL Server \u2022 IDE &Tools: IntelliJ IDEA, SQL Server Management Studio",
+      "chunk_type": "table",
+      "metadata": {
+        "section": "IV - FOREIGN LANGUAGES",
+        "page": 3,
+        "token_count": 957
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "4. Project, 1 = State Capital Management Committee. Company, 1 = GCT . TECHNOLOGY SOLUTION JOINT STOCK. Duration, 1 = 03/2021 > 05/2021\nProject Description, 1 = State Capital Management Committee is a state capital management project that supports capital management of state-owned enterprises.. Team size, 1 = 7 members. Position (s), 1 = Backend Developer. Responsibility, 1 = \u2022 Requirement gathering &analysis \u2022 Bug fixing &maintenance \u2022 Testing \u2022 Creating reports from a variety of data sources.. Technologies, 1 = \u2022 Backend: .NET 3 \u2022 Database: Oracle \u2022 IDE &Tools: Visual Studio\nCompany, e-commerce website = HT VIETNAM CONSTRUCTION AND TECHNOLOGY JOINT STOCK COMPANY. Duration, e-commerce website = 06/2020 > 12/2020. Project Description, e-commerce website = e-commerce website is a product that helps introduce and support the purchase and sale of products and services on the internet through a system of websites.. Team size, e-commerce website = 3 members. Position (s), e-commerce website = Backend Developer, Frontend Developer. Responsibility, e-commerce website = \u2022 Requirement gathering &analysis \u2022 Develop a number of SEO standard sales websites according to customer requirements. Technologies, e-commerce website = \u2022 Backend: PHP (CodeIgniter). \u2022 Frontend: HTML5, CSS3, Jquery, SQL \u2022 Database: MySQL \u2022 IDE &Tools: Visual Code, xampp.",
+      "chunk_type": "table",
+      "metadata": {
+        "section": "IV - FOREIGN LANGUAGES",
+        "page": 4,
+        "token_count": 354
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 186.09,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 5,
+    "parsing_timestamp": "2025-11-13T11:00:21.826408Z",
+    "processing_time_ms": 99800,
+    "format": "PDF",
+    "tables_extracted": 12
+  }
+}

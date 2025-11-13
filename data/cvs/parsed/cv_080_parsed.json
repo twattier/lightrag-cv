@@ -1,0 +1,249 @@
+{
+  "document_id": "cv_080",
+  "document_type": "CV",
+  "source_filename": "cv_080.pdf",
+  "candidate_label": "cv_080",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "<unknown>",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "",
+        "page": 1,
+        "token_count": 5
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "As  an  IT  Technical  Delivery  Manager  at  Pharmacity,  I  manage  a  team  of  more  than  10  professionals responsible for ensuring that all in-house applications function seamlessly, and that the existing system is enhanced with microservices and AWS cloud. I have experience working with Cloud technologies such as: RDS, Kubernetes, Kafka, S3, SES; and open-source technologies, including NodeJS, Golang, PHP, React Native, Elasticsearch, and databases like MongoDB, Redis, and MySQL. The Project manager role I work with vendor to implement HR system and E-contract system. Furthermore, I'm proficient in managing API integrations with third-party systems, including AX, BI, Salesforce, and Delivery partners. As part of my role, I  effectively  manage  budgets.  Additionally,  I  work  closely  with  business  owners,  providing  them  with solutions and best practices for their requirements. Before joining Pharmacity, I worked as an IT Business Solutions Manager at DKSH Vietnam, where I managed a team of three people and outsourced vendor teams responsible for IT development, delivery, and maintenance for four BUs in Healthcare, FMCG, Technology, and PM. My experience includes managing in-house applications and supporting global applications, such as SAP ERP, DMS, HR, E-contract, E-invoice, and Salesforce CRM. I also managed a team responsible for proposing  solutions,  designing,  developing  with  .NET  technology,  and  supporting  users.  Additionally,  I managed  various  projects  such  as  the  development  of  the  financial  workflow  system,  and  SAP  ERP implementation. Overall, I possess strong leadership skills, a proactive attitude, and a proven track record of delivering excellent results on time and within budget.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "SUMMARY",
+        "page": 1,
+        "token_count": 386
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "Role: As the IT Technical Delivery Manager, I report to the CIO and oversee a team of over 10 professionals including Backend, Frontend, Mobile, BA, Designer, and DevOps. My primary responsibility is to ensure the smooth functioning of all internal IT applications. Additionally, I work towards enhancing the current system by implementing microservices and leveraging the AWS cloud.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "PHARMACITY , Ho Chi Minh City : Mar 2022 - Current",
+        "page": 1,
+        "token_count": 88
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "1. Inhouse applications management: oversee the management of all in-house applications on AWS utilizing open-source technologies such as NodeJS, Golang, PHP, React Native, Mongo, Redis, and MySQL, among others.\n2. Integrations: successfully  managed  third-party  integrations  such  as  E-Contract  and  ensured  API security using tools like Kraken, Kong, and Digi runner.\n3. Leadership: developed standard code and workflow, built an engaged team, and positively impacted the team's behavior. Additionally, I have effectively planned and controlled my team.\n4. Built the technical architect : standard code/ SonarQube; Source control: GitHub; Task control: Jira and azure board; Deployment: Jenkin; API gateway: Kraken; Monitoring: New relic/Grafana.\nFull name: Tr\u1ea7n Trung Khuy\u1ebfn - Born in 1986\nEmail:\n| Mobile phone:\nWorking styles: Professional ethics, industriousness, high sense of responsibility, never giving up.\n5. Work with business owners: Working  closely  with  business  owners,  I  manage  project  delivery timelines, propose solutions, and best practices, and ensure the timely delivery of results.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Key responsibilities",
+        "page": 1,
+        "token_count": 271
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "- HR system, E-contract system, AI chatbot, Salesforce implementation with the vendor.\n- Manage the videos running at the store. Control the video running at the store on smart Tivi, the staff office can be removed, or upload new videos on the web page.\n- Stock count at the store. Built the mobile app for pharmacists to count the stock at the store which will be integrated with the ERP system.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Projects",
+        "page": 2,
+        "token_count": 92
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "Role :  As the IT Business Solutions Manager, my key responsibility is to ensure smooth IT development, delivery, and maintenance for four different Business Units (BUs) - Healthcare, FMCG, Technology, and PM. I manage a team of three people along with outsourced vendor teams, which include Hitachi, VNPT, Planet Press from Thailand, and CRM-Thailand.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "DKSH VIETNAM, Ho Chi Minh City : June 2018 - Mar 2022",
+        "page": 2,
+        "token_count": 81
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "1. Non-SAP Applications  Management : Owner  of  all in-house applications  (web,  Windows application,  and  windows  services,  API,  SQL  server,  C#)  and  support  the  operation  for  global applications such as DMS, Echo-plus, and Salesforce CRM global.\n- Support the operation for taking orders with huge transactions and big data by web, PDA, or customer connect, and E-commerce order (Lazada) integration with SAP.\n- Support business following the government degree and Audit.\n- Propose the solutions for business and IT Director\n- Enhancing the systems can scale up the system easily.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Key Responsibilities",
+        "page": 2,
+        "token_count": 128
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "- Integrated SAP ERP with in-house-developed applications: web-ordering, SAP contract, SAP pricing, \u2026\n- Integrated with a third-Party company such as B2B and Lazada for order processing.\n3. Manage a team of 3 people and an outsourced vendors '  team to propose the solutions, design, develop and support users, my team manages the outsourced vendors and manages the global IT team to support business.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "2. Integrations",
+        "page": 2,
+        "token_count": 99
+      }
+    },
+    {
+      "chunk_id": "chunk_8",
+      "content": "- Redesign  the  web-order to  adapt  the  business  growth  by  enhancing  SQL  query  and applying LinQ and Ajax C#, SQL server, SAP)\n- SFA (salesforce adminis is  a  project  to  manage sales KPI  and sales performance, and manage the sales mapping integrated with HEC echo-plus.\n- Upgrade DMS web and PDA system to enhance performance and apply new technology (MVC, new PDA application) for FMCG.\n- Develop SAP and Echo-plus for sales HEC to take the order on PDA and integrate with SAP to create the sales order.\n- Develop  Full  E-invoice  systems  with  32  Degrees  with  about  15.000  to  20.000  bills  per  day. Implement E-invoice for Agency with VNPT and Soft Dream vendor.\n- Develop a Tender system for full-agency clients and internal user access to control and manage the tender, update status win-fail, and integrate with SAP (ASP, C#, SQL server)\n- RPA for finance process: automation the workflow and replace human workload.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Projects",
+        "page": 2,
+        "token_count": 233
+      }
+    },
+    {
+      "chunk_id": "chunk_9",
+      "content": "- Committed to the DKSH award 2019.\n- HEC award in 2020 for a new entity project.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Awards",
+        "page": 3,
+        "token_count": 23
+      }
+    },
+    {
+      "chunk_id": "chunk_10",
+      "content": "Role\n: Senior IT Supervisor, Applications. Manage a team of 2 people.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "MARICO SOUTHEAST ASIA, Ho Chi Minh City: Sep 2014 - June 2018",
+        "page": 3,
+        "token_count": 19
+      }
+    },
+    {
+      "chunk_id": "chunk_11",
+      "content": "1. SAP ERP functional support : SD, PP, MM, HR SuccessFactors and Master data\n- Discuss with business users to understand the business requirements and then write down the functional specification and get it signed off and then work with the SAP team in configuration or enhancement.\n- Take part in all related SAP and Master data management portal projects implemented in VN.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Key Responsibilities",
+        "page": 3,
+        "token_count": 73
+      }
+    },
+    {
+      "chunk_id": "chunk_12",
+      "content": "- Work with function heads to get the requirements and discuss with the IT Head and the CFO to decide the business process and priorities of each project to do.\n- Review  technical  feasibility  and  work  with  the  team  to  develop  timelines  for  product development.\n- Manage projects to upgrade and enhance business system software. Create training and SOP documents and provide training.\n- Integrate SAP ERP with in-house-developed applications.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "2. Business analysis and application development",
+        "page": 3,
+        "token_count": 89
+      }
+    },
+    {
+      "chunk_id": "chunk_13",
+      "content": "- Planning and delivering the development of the financial workflow system (ASP, C#, SQL server).\n- SAP ERP implementation for the Food business go-live smoothly.\n- Successfully developed the Inhouse application workflow systems such as Expense Claim, Travel request, Contract Management, In-direct procurement, document control (ASP, C#, SQL server)",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Projects",
+        "page": 3,
+        "token_count": 80
+      }
+    },
+    {
+      "chunk_id": "chunk_14",
+      "content": "- Group award - Team values award.\n- Excellent employee award.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Awards",
+        "page": 3,
+        "token_count": 13
+      }
+    },
+    {
+      "chunk_id": "chunk_15",
+      "content": "Role\n: Developer and Business Analyst/IT Supervisor, Applications. Manage 1 person.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "TH\u00c1I TU\u00c2N GROUP/BEAUTY COSMETICS, Ho Chi Minh City : Sep 2008 - Sep 2014",
+        "page": 3,
+        "token_count": 21
+      }
+    },
+    {
+      "chunk_id": "chunk_16",
+      "content": "1. Business analysis\n- Managed all IT systems for the company (budget, help desk team, application team, and IT planning).\n- Collaborate with cross-functional teams in global locations to build software architectures that resolve complex business problems.\n- Work with senior management and executive staff to develop cohesive plans for the development of innovative software products.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Responsibilities",
+        "page": 3,
+        "token_count": 75
+      }
+    },
+    {
+      "chunk_id": "chunk_17",
+      "content": "- Project end to end development process (BA->DB Design \uf0e0 Development -> Implementation).\n- SQL development for background job and enhancement SQL query performance.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "2. Application development",
+        "page": 4,
+        "token_count": 33
+      }
+    },
+    {
+      "chunk_id": "chunk_18",
+      "content": "- Ensure all systems work correctly and smoothly.\n- Support end user.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "3. Operation support",
+        "page": 4,
+        "token_count": 17
+      }
+    },
+    {
+      "chunk_id": "chunk_19",
+      "content": "- Implement a successful finance system/Sales system/Inventory system and reduce order processing (ASP, C#, SQL server)\n- Implement  successful  documents  Management/IT  requirement/HR  management.  (ASP,  C#,  SQL server)",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Projects",
+        "page": 4,
+        "token_count": 53
+      }
+    },
+    {
+      "chunk_id": "chunk_20",
+      "content": "- Award for the most improvement in 2013.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Awards",
+        "page": 4,
+        "token_count": 8
+      }
+    },
+    {
+      "chunk_id": "chunk_21",
+      "content": "IT Engineer, Mekong University,\n2008.\nDatabase DB2 9.7, IBM information management software .\nNetwork admin, University of Science HCM, Vinh Long Province\n2006.\nTime management, University of Economics,\nThai Tuan Group 2010.\nSAP implementation:\nSAP Implementation for Foods Plant.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "EDUCATION",
+        "page": 4,
+        "token_count": 56
+      }
+    },
+    {
+      "chunk_id": "chunk_22",
+      "content": "Name:\nMr. Cao T\u1ea5n Thi\u1ebft\nPosition:\nCIO Pharmacity\nEmail:\nPhone :\nName:\nMs. H\u1ee9a Tr\u1ea7n M\u1ef9 Ph\u01b0\u01a1ng\nPosition:\nIT Director DKSH Vietnam\nEmail:\nPhone:",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "REFERENCE",
+        "page": 4,
+        "token_count": 40
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 425.3,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 23,
+    "parsing_timestamp": "2025-11-13T10:04:28.037339Z",
+    "processing_time_ms": 17014,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

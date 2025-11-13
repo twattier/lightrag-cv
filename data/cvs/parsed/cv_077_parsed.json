@@ -1,0 +1,99 @@
+{
+  "document_id": "cv_077",
+  "document_type": "CV",
+  "source_filename": "cv_077.pdf",
+  "candidate_label": "cv_077",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "ISEEKCHALLENGINGOPPORTUNITIESWHEREICANFULLYUSEMY SKILLSFORTHESUCCESSOFTHEORGANIZATIONTHATIAMPARTOF",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "NGUYEN MINH TUYEN",
+        "page": 1,
+        "token_count": 39
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "Nov 2012\nTally Man Service\nJan 2022",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Experience",
+        "page": 1,
+        "token_count": 8
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "Supervise,keep trackofimportand exportcontainers atCatLaiport. steel coils, large machinery parts, cars, exported clothes, beer, cigarettes,etc.\nJan2022\nField Operation Staff\nJun 2022",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Seaports,warehouses,loading yards in the South",
+        "page": 1,
+        "token_count": 49
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "Workwithrelevantpartiestoclearcustoms shipments. Provides the procedure; oversees and reports the process of stuffing containers.\nJun 2022\nCarriers Agent Employees",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Airports, seaports and Regional Customs offices in Ho Chi Minh City",
+        "page": 1,
+        "token_count": 40
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "Operation;Equimentqualitycontrol;Maintenance and repairbased on llICL6;Internal accounting-Sales coordinator;Import department.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Carriers representative office",
+        "page": 1,
+        "token_count": 35
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "- Organized\n- Management Skills\n- Communication\n- Teamwork\n- Creativity\n- Critical Thinking\nUntil now\n- +84 777172227\ntuyennm93@gmail.com\nHoangHoaThamStr,Ward5,Phu Nhuan District, Ho Chi Minh City",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Skills",
+        "page": 1,
+        "token_count": 62
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "Nguyen Tat Thanh University INFORMATIONTECHNOLOGY\nGreatLearning Certificates EFFECTIVECOMMUNICATION https://verify.mygreatlearning.com/APQQPYEZ PUBLICSPEAKING https://verify.mygreatlearning.com/ITRTTLKM",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Education",
+        "page": 1,
+        "token_count": 59
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "Badminton, Soccer, Climbing, Swimming, Etc.\nEvent organization, Singing, Etc.\nCommunity activities: Marathon CharityFundraiser,Camping,Etc.\nEnglish",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Interests",
+        "page": 1,
+        "token_count": 40
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 996.52,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 8,
+    "parsing_timestamp": "2025-11-13T10:04:47.906757Z",
+    "processing_time_ms": 59382,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

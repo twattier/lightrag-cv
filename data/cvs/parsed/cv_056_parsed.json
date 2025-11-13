@@ -1,0 +1,109 @@
+{
+  "document_id": "cv_056",
+  "document_type": "CV",
+  "source_filename": "cv_056.pdf",
+  "candidate_label": "cv_056",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "Ho Chi Minh City, Viet Nam\nA dedicated Product Manager with more than 6 years of experience in the tech industry and a passion for delivering successful product development, especially in SaaS and B2B products. Demonstrated expertise in leading cross-functional teams and launching successful products, using data analysis and user research to inform product decisions and drive success",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Viet Nguyen",
+        "page": 1,
+        "token_count": 71
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "Sep 2021 Oct 2023\n- Led the development and launch of web and mobile apps for doctors and B2B clinics, driving digital adoption of 70% active customers, with a retention rate of 43%\n- Analyzed user feedback (surveys, bi-weekly interviews) and stakeholder input (sales, executives) to develop solutions that meet customer needs\n- Partnered with the designer to conduct user research and iterate on prototypes, resulting in an improvement of CSAT\n- Leveraged Mixpanel to build a data-driven system to monitor key metrics, optimizing user engagement and behavior for improved product performance\n- Bridged the gap between technical and business aspects, managing project lifecycles from defining success metrics with stakeholders to documenting requirements and contributing to design specifications\n- Collaborated with the Head of Product to build the product roadmap and execute product strategy that aligns with company business goals",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Product Manager, Diag",
+        "page": 1,
+        "token_count": 201
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "Jun 2020 - Jul 2021\n- Led a 8-person team to develop a Saas application published in Shopify, optimizing hundreds of e-commerce sites to achieve high performance based on Google metrics.\n- Acquired 700 monthly active customers within 4 months after launch, generating $14,000 monthly revenue through subscription and in-app purchase.\n- Crafted an effective pricing strategy to optimize revenue, coupled with a user acquisition strategy to maximize reach and conversion\n- Collaborated with developers to explore technical solutions, applying best practices learned from Google documentation to enhance website speed.\n- Led product roadmap sessions with the Director, ensuring alignment with market needs.\n- Maintained regular communication with customers and conducted market research to identify opportunities for product improvement.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Senior Product Owner, FireGroup",
+        "page": 1,
+        "token_count": 164
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "Jan 2019 - Jun 2020\n- Played a key role in the Finance Product Team, developing and bringing insurance and lending products to market\n- Partnered with the Engineering team to understand technical documents and evaluate trade-offs, ensuring informed decision-making\n- Collaborate with the Designer to define user flows and test the prototypes to deliver a great user experience\n- Define events and build reports in Facebook Analytics.\n- Ran A/B testing with Data Engineers to optimize features.\n- Conducted user research and user interviews to uncover valuable insights to inform product decisions.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Product Owner, MoMo",
+        "page": 1,
+        "token_count": 124
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "- Collaborated with developers to build a simple search engine\n- Defined specs, testing feature\n- Work with a product team to develop a product roadmap\n- Prioritize features and functionality based on user feedback",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Product Owner, Larion",
+        "page": 2,
+        "token_count": 45
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "- Interviewed stakeholders to collect requirement\n- Build and maintain product documentation\n- Work closely with designers, developers, and other stakeholders to ensure the product meets user needs and business goals",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Business Analyst, Officience",
+        "page": 2,
+        "token_count": 44
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "\u25cf Mastering Product Management, Reforge, 1 = 2023. \u25cf Retention &Engagement, Reforge, 1 = 2023. \u25cf Business Administration, Ton Duc Thang University, 1 = 2012 - 2016",
+      "chunk_type": "table",
+      "metadata": {
+        "section": "Education and Certifications",
+        "page": 2,
+        "token_count": 46
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "- English: Advanced\n- Vietnamese: Native",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Languages",
+        "page": 2,
+        "token_count": 10
+      }
+    },
+    {
+      "chunk_id": "chunk_8",
+      "content": "- Customer Discovery\n- Product Roadmap\n- Product Analytics\n- Growth\n- Stakeholder management\n- Prioritization\n- Running Agile Team\n- Leadership\nJul 2018 - Jun 2019\nJun 2017 - Jul 2018",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Skills",
+        "page": 2,
+        "token_count": 38
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 74.87,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 9,
+    "parsing_timestamp": "2025-11-13T10:02:20.931180Z",
+    "processing_time_ms": 13783,
+    "format": "PDF",
+    "tables_extracted": 1
+  }
+}

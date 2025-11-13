@@ -8,6 +8,21 @@ Module: app.cv_ingest.cv4_import
 Imports CVs from parsed data into LightRAG with metadata headers and
 tracks import status in PostgreSQL document_metadata table.
 
+Cleanup Phase:
+Before importing, automatically removes rejected CVs:
+- CVs without parsed files
+- CVs with is_latin_text != True
+
+Cleanup actions:
+- Removes record from cvs-manifest.json
+- Deletes parsed JSON file (if exists)
+- Deletes source PDF file
+
+Usage:
+    python -m app.cv_ingest.cv4_import                  # Import all (with cleanup)
+    python -m app.cv_ingest.cv4_import --skip-cleanup   # Import all (no cleanup)
+    python -m app.cv_ingest.cv4_import --candidate-label cv_001  # Import specific CV
+
 Story: Story 2.5.3c - Refactor CV Ingest Workflow for Simplicity
 """
 
@@ -185,12 +200,94 @@ async def submit_cv_to_lightrag(
         return False
 
 
-async def import_cvs(candidate_label: Optional[str] = None):
+async def cleanup_rejected_cvs(manifest: Dict) -> Dict:
+    """
+    Remove rejected CVs from manifest and delete their files.
+
+    A CV is rejected if:
+    1. No parsed file exists, OR
+    2. is_latin_text != True
+
+    Cleanup actions:
+    - Remove record from manifest
+    - Delete parsed JSON file (if exists)
+    - Delete source PDF file
+
+    Args:
+        manifest: The manifest dict loaded from cvs-manifest.json
+
+    Returns:
+        Updated manifest dict with rejected CVs removed
+    """
+    cvs = manifest.get("cvs", [])
+    cvs_to_keep = []
+    rejected_count = 0
+
+    logger.info("=" * 70)
+    logger.info("CLEANUP: Removing rejected CVs")
+    logger.info("=" * 70)
+
+    for cv_meta in cvs:
+        candidate_label = cv_meta["candidate_label"]
+        parsed_file = settings.CV_PARSED_DIR / f"{candidate_label}_parsed.json"
+        pdf_file = settings.CV_DOCS_DIR / cv_meta.get("filename", f"{candidate_label}.pdf")
+
+        # Check rejection criteria
+        has_parsed_file = parsed_file.exists()
+        is_latin = cv_meta.get("is_latin_text", False)
+
+        if not has_parsed_file or is_latin != True:
+            # This CV is rejected
+            rejected_count += 1
+            reason = []
+            if not has_parsed_file:
+                reason.append("no parsed file")
+            if is_latin != True:
+                reason.append(f"is_latin_text={is_latin}")
+
+            logger.info(f"🗑️  Removing {candidate_label}: {', '.join(reason)}")
+
+            # Delete files
+            if parsed_file.exists():
+                parsed_file.unlink()
+                logger.info(f"   Deleted: {parsed_file.name}")
+
+            if pdf_file.exists():
+                pdf_file.unlink()
+                logger.info(f"   Deleted: {pdf_file.name}")
+
+            # Don't add to cvs_to_keep
+            continue
+
+        # Keep this CV
+        cvs_to_keep.append(cv_meta)
+
+    # Update manifest
+    manifest["cvs"] = cvs_to_keep
+
+    logger.info("")
+    logger.info(f"Rejected CVs removed: {rejected_count}")
+    logger.info(f"Valid CVs remaining: {len(cvs_to_keep)}")
+    logger.info("=" * 70)
+    logger.info("")
+
+    # Save updated manifest
+    manifest_path = settings.CV_MANIFEST
+    with open(manifest_path, 'w') as f:
+        json.dump(manifest, f, indent=2, ensure_ascii=False)
+    logger.info(f"✅ Updated manifest saved: {manifest_path}")
+    logger.info("")
+
+    return manifest
+
+
+async def import_cvs(candidate_label: Optional[str] = None, skip_cleanup: bool = False):
     """
     Main import function - submits CVs to LightRAG and tracks metadata.
 
     Args:
         candidate_label: If provided, import only this CV. Otherwise import all.
+        skip_cleanup: If True, skip the cleanup phase (for testing)
     """
     # Load manifest
     manifest_path = settings.CV_MANIFEST
@@ -204,6 +301,10 @@ async def import_cvs(candidate_label: Optional[str] = None):
 
     with open(manifest_path, 'r') as f:
         manifest = json.load(f)
+
+    # Cleanup rejected CVs (unless skipped or importing specific CV)
+    if not skip_cleanup and not candidate_label:
+        manifest = await cleanup_rejected_cvs(manifest)
 
     cvs = manifest.get("cvs", [])
 
@@ -327,10 +428,18 @@ def main():
         type=str,
         help="Import specific CV by candidate_label (e.g., cv_001)"
     )
+    parser.add_argument(
+        "--skip-cleanup",
+        action="store_true",
+        help="Skip the cleanup phase (don't remove rejected CVs)"
+    )
     args = parser.parse_args()
 
     # Run async import
-    asyncio.run(import_cvs(candidate_label=args.candidate_label))
+    asyncio.run(import_cvs(
+        candidate_label=args.candidate_label,
+        skip_cleanup=args.skip_cleanup
+    ))
 
 
 if __name__ == "__main__":

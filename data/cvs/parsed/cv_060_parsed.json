@@ -1,0 +1,99 @@
+{
+  "document_id": "cv_060",
+  "document_type": "CV",
+  "source_filename": "cv_060.pdf",
+  "candidate_label": "cv_060",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "Gender\nMale\nPhone\nEmail\nAddress\nHo Chi Minh City, Vietnam",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "July 02, 2000",
+        "page": 1,
+        "token_count": 12
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "Working in a professional environment that gives me opportunities to learn more experience, widen knowledge, and improve my skills such as communication, analysis as well as presentation.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "OBJECTIVE",
+        "page": 1,
+        "token_count": 33
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "Major: English Linguistics and Literature\nTOEIC: 890",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "University of Social Sciences and Humanities",
+        "page": 1,
+        "token_count": 16
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "Interpreter\n- Interpret between Singaporean teachers and students, and Vietnamese young learners during class time.\n- Observe classrooms and report to the team leader.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Eco Vietnam Group",
+        "page": 1,
+        "token_count": 35
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "Teacher\n- Teach the appropriate courses (vary from Starters, Movers, to Flyers).\n- Monitor classes to promptly report to the Board of Directors and students' parents",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Vietnam Australia English School",
+        "page": 1,
+        "token_count": 37
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "TOEIC Teacher\n- Teach the appropriate program according to the requirements of the class (Programs level varies between 450, 600, and 750+)\n- Propose appropriate new teaching methods to improve the quality of teaching and learning",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Nippon Seiko English Center",
+        "page": 1,
+        "token_count": 45
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "- Proficient in using English in terms of Teaching and Interpreting/Translation.\n- Proficient in using Microsoft Office tools (Microsoft Word, Excel and PowerPoint).\n- Able to schedule plan and deliver presentations.\n- Willing to learn & well-prepared for the tasks.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "SKILLS",
+        "page": 1,
+        "token_count": 62
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "2023 - \u00a0now\n2018 - 2023\n2021 - \u00a02022\n2022 - \u00a02023\n\u00a9 topcv.vn",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "ADDITIONAL INFORMATION",
+        "page": 1,
+        "token_count": 18
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 187.26,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 8,
+    "parsing_timestamp": "2025-11-13T10:02:27.959719Z",
+    "processing_time_ms": 8687,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

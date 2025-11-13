@@ -6,73 +6,123 @@
   "chunks": [
     {
       "chunk_id": "chunk_0",
-      "content": "\u00ae",
+      "content": "Apassionatemarketerwitha love forwords,planning,andcampaign coordination,Iaimtoreachasenior levelin2yearsandbecomealeader content,planning,and executing campaigns,combined with my dedication,drives me to continually improve and achieveimpactful results in the marketing industry.",
       "chunk_type": "text",
       "metadata": {
-        "section": "",
+        "section": "PROFILE",
         "page": 1,
-        "token_count": 1
+        "token_count": 75
       }
     },
     {
       "chunk_id": "chunk_1",
-      "content": "?\nKho San Xuat -Kho Dich Vu\nB\nBinh Tri Dong B -Binh Tan\nPhu Yen",
-      "chunk_type": "text",
+      "content": "- \u00b7Good Degree (Sep 2018- Sep 2022)\n- \u00b7Proficiency in English\n- \u00b7Marketing course on Google\n- \u00b7Marketing course Linkedin Learning\n- \u00b7Microsoft Office Certificate",
+      "chunk_type": "list_item",
       "metadata": {
-        "section": "NGUYEN I MINH VUONG",
+        "section": "Bachelorof PublicRelations(PR)",
         "page": 1,
-        "token_count": 23
+        "token_count": 43
       }
     },
     {
       "chunk_id": "chunk_2",
-      "content": "La mot sinh vien tot nghiep chuyen nganh Logistics, toi mong muon tim kiem co hoi lam vi\u00e9c trong y bupy dx dos o ug unbbuuy  noy nyu bu  uo o yupu ppyd tey wpo !1 'K bugo pno bugp 4boy pnb na!y opA dob buop p !pq ouy yuun Knb pgy nn !o1 trien ban than, hoc hoi tu moi truong lam viec chuyen nghiep va dong gop vao su ph\u00e1t trien ben vung cua doanh nghiep",
-      "chunk_type": "text",
+      "content": "- \u00b7PresidentofAcademicClub3N\n- \u00b7Top50 EnVang HocDuong 2020 (MC Contest)",
+      "chunk_type": "list_item",
       "metadata": {
-        "section": "MUC TIEU NGHE NGHIEP",
+        "section": "Activities",
         "page": 1,
-        "token_count": 137
+        "token_count": 25
       }
     },
     {
       "chunk_id": "chunk_3",
-      "content": "- Quan ly hoat dong kho: xuat - nhap va to chuc sap xep, bao quan hang h6a, thong ke, kiem soat so lieu, theo doi hang ton kho.\n- \u00b7Kiem tra theo doi ke hogch tu NCC, luu tru chung tu, duy tri s6 li\u00e9u xuat/nhap hang qua h\u00e9 thong quan ly kho Appsheet va Excel.\n- \u00b7Dam bao vi\u00e9c nhan don va dieu phoi nhan luc, xuat hang hoa dung theo don, kip thdi v?i y\u00e9u c\u00e1u - chinh s\u00e1ch cua nen tang, chinh xac dam bao chat luong, so luong.\n- \u00b7B6 tri, s\u00e1p x\u00e9p lich va hang hoa nhap kho, xuat kho.\n- n             y y\n- \u00b7Admin: Lam viec truc tiep voi cac phong ban de dam bao xu ly thong tin va cong vi\u00e9c dat hi\u00e9u qua cao. B\u00e1o c\u00e1o c\u00e1c thong tin ve viec phat sinh.",
-      "chunk_type": "list_item",
+      "content": "-The Grand Ceremony of\nBestHotels&ResortsAward2023\n(held in Indonesia)\n- -Onlineinterview article series ofglobal General Managersand Director of Marketing & Sales",
+      "chunk_type": "text",
       "metadata": {
-        "section": "Thoi gian: 03.2024 - 08.2024 Mo ta cong viec:",
+        "section": "\u00b7Project Management",
         "page": 1,
-        "token_count": 234
+        "token_count": 39
       }
     },
     {
       "chunk_id": "chunk_4",
-      "content": "- \u00b7Thuc hien ho tro theo quy trinh xuat/ nhap hang h6a.\n- Ho trg Admin kho trong chung tu, nhap lieu vao ton kho he thong.\n- Thuc hien doi chieu, kiem ke moi ngay va b\u00e1o c\u00e1o so lieu moi ngay.\n- Thuc hien c\u00e1c cong vi\u00e9c phat sinh khac theo yeu cau cap tren.",
-      "chunk_type": "list_item",
+      "content": "Prepare documentsandparticipate in the sharing session as a speaker Tourismand HotelManagementat RMIT Vietnam University.",
+      "chunk_type": "text",
       "metadata": {
-        "section": "Thoi gian: 06.2023 -07.2023 Mo ta cong viec:",
+        "section": "\u00b7Presentation",
         "page": 1,
-        "token_count": 88
+        "token_count": 24
       }
     },
     {
       "chunk_id": "chunk_5",
-      "content": "NGOC QUAN Pho Giam Doc Cong ty TNHH Logistics Minh Viet Phone: Email:\n2002",
+      "content": "- -Synthesizecommunicationdata to make reports after campaigns.\n- -Analyzeandevaluate thesuccess of social campaignsto learn from experience forfutureprojects.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "\u00b7Data Analysis",
+        "page": 1,
+        "token_count": 39
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "0902.390.534\nContent Execution(Samples)",
       "chunk_type": "text",
       "metadata": {
-        "section": "THONG TIN THAM KHAO",
+        "section": "Content Marketing Executive",
         "page": 1,
-        "token_count": 21
+        "token_count": 13
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "Feb2024-July2024\n- -Manage,operate,and providematerials for the AnhTrai Say Hiprogram as a mattress sponsor:\n- \u00b7Increasedbrandawarenessacrossmediachannels.\n- \u00b7Managedandtrackedover15sponsorshipactivitiesthroughouttheprogram.\n- programasaGiftPartner:\n- \u00b7Successfullynegotiated5majorsponsorshipbenefits.\n- \u00b7Securedsponsorshipforover2o0giftsand15o0shoppingvouchersfortheevent.\n- S\n- S\n- \u00b7Wroteandpostedover20sEo-optimizedarticles,increasingwebsite trafficby20%.\n- \u00b7Achieved top 5 positions in Google search results for 5keykeywords.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Marketing Staff- Dunlopillo Vietnam",
+        "page": 1,
+        "token_count": 171
+      }
+    },
+    {
+      "chunk_id": "chunk_8",
+      "content": "Dec2022- April2024\n- oooo\n- \u00b7Morethan1oooWebsitearticlespublished\n- Mexico,Taiwan,Indonesia,Thailand,Cambodia,MaldivesandVietnam).\n- Tiktok,and Linked In.\n- \u00b7Reach:increasemore than1.5timesfrom2022to2023(Linked In)\n- \u00b7Engagementand Metrics:increase more than1.5timesfrom2022to2023\uff08Linked In)\n- \u00b7AverageviewsonTiktok:5k-10k\n- \u00b7AverageinteractionsonTiktok:1.5k\n- -Planned,managed,assignedworkandexecutedevents:\n- 500influential people in theworld\u2019stourism industry,with theparticipationof Mrs.Ni MadeAyu Marthini,\n- \u00b7TheArtofRelaxationprogramwiththeparticipationof10leadersinVietnam:Mr.AgustavianoSofjan (Consul General of Indonesia),Mr.Enrico Padula (Consul General of Italy),Mr.FabioDe Cillis(Trade\n- s",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Wanderlust Tips Magazine(Vietnam&UsA)",
+        "page": 1,
+        "token_count": 245
+      }
+    },
+    {
+      "chunk_id": "chunk_9",
+      "content": "Sep2021-Apr2022\n- -Foundcustomerinsight,researchedcontent,analyzeddata,andbrainstormedwiththeinternalteamafter receiving clientbriefs.\n- ss\n- sss\n- S\n- o\n- -Wrote PR articles,captions, scriptsandmonitoredrecordingsessionstoensurethequalityfora",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Communications&ContentIntern ZEE Agency",
+        "page": 1,
+        "token_count": 80
+      }
+    },
+    {
+      "chunk_id": "chunk_10",
+      "content": "- -Planned,createdideas,andcontentforprojects:Therealityshow \"Mot Chuyen Di\",TV show\"Ngay May Man\",Music program\"Gala NhacViet s6 15\"\n- -Interviewedartists,andgotmaterialsformediaarticles.\n- sm VietNamTuoi Depfanpage,NgayMayManfanpage.\n- Minh\", Mashup\u201cDa Sai Tur LucDau& Can Dong Nuoc Mat\u201d\nOct2020-Feb2021",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "ScriptEditor&CommunicationsIntern T Production",
+        "page": 1,
+        "token_count": 107
       }
     }
   ],
   "metadata": {
     "file_format": "PDF",
-    "file_size_kb": 555.93,
+    "file_size_kb": 772.36,
     "page_count": 0,
     "source_dataset": "d4rk3r/resumes-raw-pdf",
-    "chunks_count": 6,
-    "parsing_timestamp": "2025-11-12T14:13:16.850605Z",
-    "processing_time_ms": 48581,
+    "chunks_count": 11,
+    "parsing_timestamp": "2025-11-13T11:16:06.735275Z",
+    "processing_time_ms": 52838,
     "format": "PDF",
     "tables_extracted": 0
   }

@@ -1,0 +1,249 @@
+{
+  "document_id": "cv_076",
+  "document_type": "CV",
+  "source_filename": "cv_076.pdf",
+  "candidate_label": "cv_076",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "L\u00ea Quang \u0110\u1ecbnh, Ph\u01b0\u1eddng 1, G\u00f2 V\u1ea5p, HCM\n\uf095\n\uf0e0\n\uf0c1 skype :",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "HU\u1ef2NH MINH KI\u1ec6T",
+        "page": 1,
+        "token_count": 22
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "Senior full-stack developer with over 7 years of experience building and maintaining web, mobile, and desktop applications. Proficient in .NET Core, C# on the back-end, and Flutter,Angular,\u00a0WinForms, and WPF on the front-end. Skilled in creating intuitive and user-friendly interfaces, with a strong focus on performance and security. Experience in both solo and team English, have experience working with foreigners.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "SUMMARIZE",
+        "page": 1,
+        "token_count": 97
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "+ Programming Languages: C#, Dart , Javascript, TypeScript, Express(NodeJs)\n+ Back-end:\u00a0Net Core 5 6 ,.Net MVC, ASP Webform,\u00a0ASP Classic, WCF, SOAP, RESTFUL API, Entity Framework, Nancy, Crystal Report, Devexpress XAF\n+ Web font-end:\u00a0Bootstrap, HTML5, CSS3, Jquery,Devextreme .AngularJS,Angular 4 & 8, ,Kendo UI, Javascript., SignalR.\n+ App desktop: Winform, WPF.\n+ Mobile Technologies: Flutter\n+ Database: SQL Server, Oracle, SQLite\n+ Other skills: Git, Agile development methodologies, REST API design, Azure cloud platform, Figma\n+ Tool: Visual Studio Code, Visual Studio 2017, Visual Studio 2019, Visual Studio 2022,GIT Hub,SVN,TFS...",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Technical Skill:",
+        "page": 1,
+        "token_count": 200
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "- \u2756 Capital Aid for Employment of the Poor Microfinance Institution (CEP)\nSenior Fullstack Developer",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "WORK EXPERIENCE",
+        "page": 1,
+        "token_count": 26
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "Develop features for credit department and staff such as customer survey, customer debt collection, community development, employee information, update new citizen identity by QR code...\nSubmit the app to apple store and google play.\n- Skills used: Flutter , Dart, RESTAPI .NET CORE.\n- Team size: 1",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "1/CEP-CBNV Project:",
+        "page": 1,
+        "token_count": 67
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "This is an application for customers, they use the app to know loan information, loan history, monthly payment date, interest rate information, apply for a new loan...\n- Skills used: React Native, RESTAPI .NET CORE.\n- Team size: 2",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "2/CEP Project:",
+        "page": 1,
+        "token_count": 57
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "This is a project for the banking system, they are used for loan application management, credit collection management, savings deposit management, and many functions for internal employees....\n- Skills used: .Net Core 6, Devextreme, DevExpress,AdminLTE,BootStrap.C#...\n- Team size: 4",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "3/CoreBanking Project",
+        "page": 1,
+        "token_count": 71
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "*Onsite in Standard Charter Bank",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "\u2756 Amaris VietNam Company",
+        "page": 1,
+        "token_count": 8
+      }
+    },
+    {
+      "chunk_id": "chunk_8",
+      "content": "Develop modules about mortgage loan, personal loans,car loans...\n- Front-end: HTML,CSS,Bootstrap,Javascript,Jquery, Devexpress Control.\n- Back-end: C#,.Net,Entity Framework,LINQ,Crystal Report...\n- Database:\u00a0SQL Server\n- Team size: 2\n*Onsite in Global CyberSoft",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "1/LITS(Lending Information Tracking System) Project:",
+        "page": 1,
+        "token_count": 80
+      }
+    },
+    {
+      "chunk_id": "chunk_9",
+      "content": "Develop a sales software application for Phuong Nam bookstore. It includes the following features: cashier, import and export goods, warehouse management, billing export...\n- App Technologies: WPF and RestFul API(Java).\nMarch 2021 - Currently\nFEB 2020 - MAR 2021",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "1/POS-PN Project:",
+        "page": 1,
+        "token_count": 61
+      }
+    },
+    {
+      "chunk_id": "chunk_10",
+      "content": "SOFTWARE DEVELOPER",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "\u2756 Minh Ph\u01b0\u01a1ng Logistics",
+        "page": 2,
+        "token_count": 8
+      }
+    },
+    {
+      "chunk_id": "chunk_11",
+      "content": "Staff management,assets management, book meeting rooms, take leave ...\n- Front-end: HTML,CSS,Bootstrap,Javascript,Typescript,Jquery, Angular 4,Devexpress.\n- Back-end: C#,.Net,Microservices,RESTFUL API,Entity Framework,SSO,OWIN\n- Database:\u00a0SQL Server",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "1/Intranet Website:",
+        "page": 2,
+        "token_count": 80
+      }
+    },
+    {
+      "chunk_id": "chunk_12",
+      "content": "E-commerce website\n- Front-end: HTML,CSS,Bootstrap,Javascript,Typescript,Jquery, Angular 7,Devexpress.\n- Back-end: C#,.Net,Microservices,RESTFUL API,Entity Framework,SSO,OWIN,Nancy.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "2/Enterprise Website:",
+        "page": 2,
+        "token_count": 69
+      }
+    },
+    {
+      "chunk_id": "chunk_13",
+      "content": "Driver management, vehicle management,trip management...\n- Front-end: Flutter , Dart lang.\n- Back-end:\u00a0C#,.Net,Microservices,RESTFUL API,Entity Framework,SSO,OWIN,Nancy.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "3/FMBP mobile app:",
+        "page": 2,
+        "token_count": 57
+      }
+    },
+    {
+      "chunk_id": "chunk_14",
+      "content": "Staff management,assets management, book meeting rooms, take leave ...\n- Front-end: Flutter , Dart lang.\n- Back-end: C#,.Net,Microservices,RESTFUL API,Entity Framework,SSO,OWIN,Nancy.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "4/MPI mobile app:",
+        "page": 2,
+        "token_count": 62
+      }
+    },
+    {
+      "chunk_id": "chunk_15",
+      "content": "Application for management tractors, containers, and warehousing...\n- C#,.Net + Devexpress.\n- Back-end: WCF,APIs,.Net\n- Database: SQL Server",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "5/IGLS Winform Application:",
+        "page": 2,
+        "token_count": 42
+      }
+    },
+    {
+      "chunk_id": "chunk_16",
+      "content": "Convert ASP Webform\u00a0 to Angular 4.\nDisplay order information, orders status at inbound and outbound, vehicle tracking.\n- Front-end: HTML,CSS,Bootstrap,Javascript,Typescript,Jquery, Angular 4,Devexpress.\n- Back-end: C#,.Net,Microservices,RESTFUL API,Entity Framework,SSO,OWIN\n- Database: SQL Server",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "6/IGLS Website for\u00a0third party .",
+        "page": 2,
+        "token_count": 93
+      }
+    },
+    {
+      "chunk_id": "chunk_17",
+      "content": "Install Open Source Nextcloud to Intranet Website to management image, document...\nTechnical:\u00a0 C#,.NET Webform, WCF, Entity Framework, Javascript,Typescript,Jquery,Ajax,Angular 2+, Flutter,Dart, SQL,SSO,Nancy Framework,Devexpress,Devextreme",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "7/Other:",
+        "page": 2,
+        "token_count": 72
+      }
+    },
+    {
+      "chunk_id": "chunk_18",
+      "content": "TV package management system, customers information management ...\n- ASP Classic,HTML,CSS,Bootstrap,Kendo UI,Javascript,Jquery,Ajax.\n- Database: SQLServer , Oracle.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "1/Member FPT",
+        "page": 2,
+        "token_count": 45
+      }
+    },
+    {
+      "chunk_id": "chunk_19",
+      "content": "Convert SQL Database to Oracle.\nConvert Asp Classic to MVC5.\nFront-end: ASP Classic, ASP MVC5, HTML, CSS, Bootstrap, KendoUI, Javascript, Jquery , Ajax.\nBack-end: REST API, ASP MVC, Entity Framework,\nDatabase: SQL Server, Oracle",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "2/ERP System",
+        "page": 2,
+        "token_count": 72
+      }
+    },
+    {
+      "chunk_id": "chunk_20",
+      "content": "Fullstack Developer(Freelancer)\n1/ S-Invest App mobile (available on both android and ios)\nThis is a project related to financial services, customers can freely choose investment packages such as bond investment, real estate investment, nursing home investment...\n- Skills used: Flutter , Dart, RESTAPI .NET CORE.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "\u2756 Tu\u1ea5n Minh Group",
+        "page": 2,
+        "token_count": 79
+      }
+    },
+    {
+      "chunk_id": "chunk_21",
+      "content": "This web is used to provide some functions for some departments such as accounting\nAugust 2016 - April 2018\ncustomer service\nIT\nThey",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "2/Web for admin",
+        "page": 2,
+        "token_count": 26
+      }
+    },
+    {
+      "chunk_id": "chunk_22",
+      "content": "- \u2756 HCM City University of Food Industry\nMajor: Information Technology Graduated : Good\nAugust 2013 - May 2016",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "EDUCATION",
+        "page": 3,
+        "token_count": 22
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 113.48,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 23,
+    "parsing_timestamp": "2025-11-13T10:04:12.446218Z",
+    "processing_time_ms": 24086,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

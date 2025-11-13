@@ -1,0 +1,119 @@
+{
+  "document_id": "cv_071",
+  "document_type": "CV",
+  "source_filename": "cv_071.pdf",
+  "candidate_label": "cv_071",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "I ' m a\nGraphic Designer\nI am a passionate graphic designer dedicated to continuous learning and artistic growth. My goal is to leverage my skills to create impactful designs and contribute to innovative projects. I thrive in dynamic environments and am always ready to embrace new challenges.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "THANH NGUYET",
+        "page": 1,
+        "token_count": 62
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "Mirei Viet Nam | Jun 2022 - Present",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Graphic Designer",
+        "page": 1,
+        "token_count": 10
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "- Designed visuals for monthly sales campaigns & livestreams\n- Created landing pages and product guidelines\n- Conducted research to develop taglines & content for banners",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Managed the creation of images for e-commerce platforms including Shopee, Tiki, Lazada & TikTok",
+        "page": 1,
+        "token_count": 36
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "- Increase views by 493%\n- Sales from confirmed orders increased by 285%\n- Page bounce rate reduced to 4.56%, improving user interaction and retention\n- New visitors increased by 394% & new followers by 451%",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Results:",
+        "page": 1,
+        "token_count": 49
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "- Results: within 6 months for promotional\n- Post likes increased by 163% (322 to 846)\n- Post shares increased by 250% (2 to 7)\n- Comments on posts increased by 11% (35 to 38)",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Designed promotional images for web & Facebook advertisements",
+        "page": 1,
+        "token_count": 45
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "Benh Vien Cong Dong | Feb 2021 - Dec 2021\n- Designed  engaging  visual  content  for  Facebook posts\nCoi Xay Gio Club Fanpage | Feb 2018 - Jun 2021\n- Led the creation of key visual designs for publications\n- Managed the publication timeline & coordinated media posts for various events.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Graphic Designer",
+        "page": 1,
+        "token_count": 66
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "Excellent active listening abilities\nAwareness of yourself and also of others",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "SOFT SKILLS",
+        "page": 1,
+        "token_count": 14
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "Certificate in Graphic Design\nColorME Sai Gon | Nov 2022 - Dec 2023",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "EDUCATION",
+        "page": 1,
+        "token_count": 16
+      }
+    },
+    {
+      "chunk_id": "chunk_8",
+      "content": "Ho Chi Minh University of Education | Jul 2017 - Jun 2021",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Bachelor of Chemistry",
+        "page": 1,
+        "token_count": 13
+      }
+    },
+    {
+      "chunk_id": "chunk_9",
+      "content": "Strong research & analytical skills\nHigh logical thinking",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "PORTFOLIO",
+        "page": 1,
+        "token_count": 11
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 682.33,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 10,
+    "parsing_timestamp": "2025-11-13T10:03:08.199576Z",
+    "processing_time_ms": 9195,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

@@ -151,8 +151,8 @@
     "page_count": 0,
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "chunks_count": 14,
-    "parsing_timestamp": "2025-11-07T13:01:49.105479Z",
-    "processing_time_ms": 12505,
+    "parsing_timestamp": "2025-11-13T09:57:41.777810Z",
+    "processing_time_ms": 15260,
     "format": "PDF",
     "tables_extracted": 0
   }

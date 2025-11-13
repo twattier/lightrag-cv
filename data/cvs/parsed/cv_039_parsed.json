@@ -1,0 +1,169 @@
+{
+  "document_id": "cv_039",
+  "document_type": "CV",
+  "source_filename": "cv_039.pdf",
+  "candidate_label": "cv_039",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "Nothing's Impossible",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "",
+        "page": 1,
+        "token_count": 4
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "- Le Thanh Tan Tao Apartment;HoVan Long street:Tan Tao Ward;Binh Tan District",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "About Me",
+        "page": 1,
+        "token_count": 21
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "- Enhance and continuously update specialized knowledge in the field of automation.\n- _Develop and refine soft skills, such management skills, to more effectively support professional work.\n- _Build strong relationshipswith colleagues within the company. Continuously improve your skills and maximizeyour potential to contribute to the company's development.\n- _Takestep by step to achieve the level ofteamleader,manager,or an importantpositionin thecompany.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Objective",
+        "page": 1,
+        "token_count": 97
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "AUTOMATION ENGINEER (SALE / PROJECT ENGINEER )",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "HO THANH DAT",
+        "page": 1,
+        "token_count": 16
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "- _Engineer of Electrical and Electronic Engineering Technology\n- _Major: Control and Automation Engineering",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "HCM University Of Food Industry ( HCM University of Industry and Trade ) (2014 -2019)",
+        "page": 1,
+        "token_count": 22
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "+ PLC programming for automatic machines; and industrial automatic production lines ( such as: Delta; Mitsubishi; Siemens; Omron; Xinje...)\n- +HMI design and programming (sush as:Delta;Mitsubishi; Siemens; Weintek; HNC...)\n- +Microcontrollers / Microprocessors programming (Arduino; PlC). Designschematicdiagrams onProteus:CADforElectronics\n- +Robotics control techniques:Programming and operating robots according to processes ( Mitsubishi;: Yaskawa )\n- +SCADAsystemsforsupervisorycontroland dataacquisition\n- monitoringsmarthome and smartbuildingsystemsviawebor mobile app.\n+ Electrical panel design.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Expertise",
+        "page": 1,
+        "token_count": 157
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "DONGTAMDOTALIAJOINTSTOCKCOMPANY (ELECTRICALINTERN&ENGINEER) 06/2019-08/2020",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Experience",
+        "page": 1,
+        "token_count": 31
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "+ Maintain, repair, and troubleshoot automation equipment and machinery in the production line.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "06/2019-10/2019(MAINTENANCEELECTRICALINTERN)",
+        "page": 1,
+        "token_count": 20
+      }
+    },
+    {
+      "chunk_id": "chunk_8",
+      "content": "- Responsible for the automation area in the factory.\n+ Monitor and manage automation equipment and machinery in the production line. ( Including PLC/HMI programs)\n- +Developing a maintenance schedule.\n- +Other maintenance tasks as assigned.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "10/2019-08/2020(ELECTRICALENGINEER)",
+        "page": 1,
+        "token_count": 60
+      }
+    },
+    {
+      "chunk_id": "chunk_9",
+      "content": "Englishcommunication Reading documents in English",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Language",
+        "page": 2,
+        "token_count": 6
+      }
+    },
+    {
+      "chunk_id": "chunk_10",
+      "content": "+ Customer Service\n+ Project Management\n+ Communication / Interpersonal skills\n+ Creativity\n+ Teamwork Skills\n+ Presentation skills\nInterests Sport: Badminton; Football Listen to music; singing\n- _PLC programming when upgrading or creating new machinery.\n- Delta:DOP-B;VFD037B43A..)\n+ Programming and improving the automated brick stacking conveyor system.(PLC Siemens:S7-1200;Inverter Panasonic;HMI Weintek...)\n- +Designing the control cabinet,selecting equipment,and programmingforTheRoboticPalletizing(PLCSiemensS7-3oO;Servo Schneider;HMI Weintek; Inverter Panasonic...)",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Soft skills",
+        "page": 2,
+        "token_count": 156
+      }
+    },
+    {
+      "chunk_id": "chunk_11",
+      "content": "- _Creating teaching plans and lesson plans.\n- Responsiblefor teaching specialized courses suchas:Roboticscontrol techniques:PLC Programming:Principles of ElectronicsEngineering: FundamentalsofElectrotechniques;Electrical equipments...\n- Researchandimprovethetrainingmodel.\n- +Autonomousrobotforautomaticwastecollection.(Arduino+image processing)\n- +Automatichandwashingmachine.\uff08Arduino+Sensor)\n- +Robotarmforproductcodeclassificationinanautomated\n- warehousingsystem.(PLCDelta-HMI Delta-ServoMitsubishi-cylinder -pneumatic system",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "HUNGVUONG TECHNOLOGYVOCATIONAL SCHOOL (TEACHERINTHEMECHATRONICSDEPARTMENT) 08/2020 - 06/2022",
+        "page": 2,
+        "token_count": 150
+      }
+    },
+    {
+      "chunk_id": "chunk_12",
+      "content": "- Searchingforandbuildingrelationshipswithcustomers.Advisingon suitableautomationsolutionsand equipment.(DELTA)\n- **Delta's equipment:\n- +Consulting on Delta's equipment.Such as:PLC;HMl;Inverter; Servo;Temperature Controller...\n- +Assisting in selecting equipment that meets customer requirements.\n+ Providing support for the transition of automation equipment from otherbrandstoDelta\n- +Technical supportfor customers.\n- ** Delta's Solutions\n- +Consultingand introducingDelta'ssolutionssuchas:SCADA; Robot;Energy Management System (EMs); Smart manufacturing management system...\n- oss\n+ Monitoring project progress.\n- **RoboticSolutions\n- _Consulting andintroducingRobotic'ssolutions.\n- +SCARARobot;\n- +6-axis Articulated Robots\n- _Surveying therobot placement location.\n- _Selecting therobotcodesuitablefor the application(such as:\nnumber of axis;Maximum Working Range; Maximum Payload...)\n- Providing a quote.\n- _Technical support for customers.( Software; program: settings...)",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "ETECAUTOMATIONTECHNOLOGYCO.,LTD (SALES AUTOMATION ENGINEER) 07/2022-07/2024",
+        "page": 2,
+        "token_count": 270
+      }
+    },
+    {
+      "chunk_id": "chunk_13",
+      "content": "PLCTOPONETRAININGCENTER (PLCTRAININGINSTRUCTOR) 04/2024-Present(After6:30pm)\n- _Responsible for the Mitsubishi PLC programming class (FX3U).\n- ProgrammingPLCstoconnectwithinverters.\n- _ProgrammingPLCsforservocontrol.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Part-time job",
+        "page": 3,
+        "token_count": 74
+      }
+    },
+    {
+      "chunk_id": "chunk_14",
+      "content": "- 2O2ONATIONALOCCUPATIONALSKILLSCERTIFICATE\n- 2O2OPEDAGOGICALCERTIFICATEFORTEACHINGAT THE COLLEGE LEVEL.\n- 2O2TBASICINFORMATIONTECHNOLOGY APPLICATIONSCERTIFICATE",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Certifications",
+        "page": 3,
+        "token_count": 61
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 1364.34,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 15,
+    "parsing_timestamp": "2025-11-13T11:17:45.906174Z",
+    "processing_time_ms": 81333,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

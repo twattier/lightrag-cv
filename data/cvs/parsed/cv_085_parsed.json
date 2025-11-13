@@ -1,0 +1,149 @@
+{
+  "document_id": "cv_085",
+  "document_type": "CV",
+  "source_filename": "cv_085.pdf",
+  "candidate_label": "cv_085",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "TRAN PHUNG QUY WebDeveloper-Full Stack\n- 15/06/1992\nMale\n- 402/6HoaHa0,Ward5,District 10\n/<nb6",
+      "chunk_type": "caption",
+      "metadata": {
+        "section": "",
+        "page": 1,
+        "token_count": 41
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "I am currently looking for a full time position in an environment that offers a greaterchallenge,incerased benefits for myself anh the opportunity to help the company advance efficiently and productively",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "TARGET",
+        "page": 1,
+        "token_count": 40
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "HTML/CSS/Bootstrap/Tailwind/JQuery\nPHP-PHPFramwork (Wordpress,Codeigniter,Laravel, CakePHP,Template Magento)\nNodejs\nVuejs\nNextJS\nPython (django, fastapi)\nRuby (Ruby on Rails)\nGraphics (Photoshop, Figma)\nAWS(Lambda,EC2,S3,CI/CD)\nGIT",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "SKILLS-FULL STACK",
+        "page": 1,
+        "token_count": 96
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "Information Technology\nCourse 52.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "NHATRANGUNIVERSITY",
+        "page": 1,
+        "token_count": 5
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "Full-Stack Developer\n- -Collaborated with Japanese development team tojointly develop company webproject\n- -As a Tech lead in the development team,in charge of technical projects forthe company and training new members\n- -As PM, develop subproject for the company",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "MARKETENTERPRISEVIETNAM",
+        "page": 1,
+        "token_count": 56
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "Full-StackDeveloper\n- -Server operation and technical monitoring for electronic newspaper\n- Develop website projects.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "FREELANCER",
+        "page": 1,
+        "token_count": 22
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "Technical director\n- Track and analyze the project.\n- -Functional development.\n- -Development, operation and technical monitoring for the e-newspaper and\n- -Configure the server, operate the server running electronic newspaper service.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "ITSMEDIAANDINFORMATIONTECHNOLOGYGROUPJOINT STOCKCOMPANY",
+        "page": 1,
+        "token_count": 53
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "Full-Stack Developer\n- Build Website use Wordpress, Opencart, Magento, Codeigniter",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "FREELANCER",
+        "page": 1,
+        "token_count": 22
+      }
+    },
+    {
+      "chunk_id": "chunk_8",
+      "content": "Full-Stack Developer\n- Build theme Magento, Wordpress.\n- -Build template, module.\n- Build app mobile (use lonic).",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "WISEROBOTDEVELOPMENTSLIMITEDCOMPANY",
+        "page": 1,
+        "token_count": 31
+      }
+    },
+    {
+      "chunk_id": "chunk_9",
+      "content": "Photo processing specialist\n- Image processing",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "SIMILARTVIETNAMLIMITEDCOMPANY",
+        "page": 1,
+        "token_count": 8
+      }
+    },
+    {
+      "chunk_id": "chunk_10",
+      "content": "Citech Certified Photoshop Specialist\n02/12/2015-02/06/2016\n02/06/2014-11/11/2015\n2013-01/06/2014\n22/7/2013\n22/04/2021-PRESENT\n01/11/2019-04/2021\n15/06/2016-30/10/2019\nDocker/Docker Swarm\nTeamwork",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "CERTIFICATE",
+        "page": 1,
+        "token_count": 53
+      }
+    },
+    {
+      "chunk_id": "chunk_11",
+      "content": "- o Listen to lyrical music,Dj, Remix\n- Watch cartoons, action,fiction.\nKINH TE NONG THON\nPHUNUVIETNAM\nTONPHUONGNAM\nMAPLE LEAF VIETNAM\nROTMAN SCHOOL\nC.P. VietNam\nHALO GROUP",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "INTERESTS",
+        "page": 2,
+        "token_count": 60
+      }
+    },
+    {
+      "chunk_id": "chunk_12",
+      "content": "402/6 Hoa Hao,Ward 5,District10,City.Ho Chi Minh\nTel:\nEmail:\nLinkedin:[",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "TRANPHUNGQUY",
+        "page": 2,
+        "token_count": 29
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 589.26,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 13,
+    "parsing_timestamp": "2025-11-13T11:20:47.706030Z",
+    "processing_time_ms": 36032,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

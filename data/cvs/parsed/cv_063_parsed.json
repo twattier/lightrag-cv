@@ -1,0 +1,189 @@
+{
+  "document_id": "cv_063",
+  "document_type": "CV",
+  "source_filename": "cv_063.pdf",
+  "candidate_label": "cv_063",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "I am Thien(Tian Tran), an experienced and passionate iOS developer in the eld of iOS application development. I am looking for an opportunity to apply my knowledge and skills to contribute to the growth and success of a trusted organization. My goal is to create great iOS products that combine creativity, problem solving and teamwork to achieve excellent results and meet company goals. I aim to build a sustainable and progressive career, while growing and learning continuously in a challenging environment. Willing to contribute and work with a professional, dynamic team ready to promote personal and organizational growth.",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "OBJECTIVE",
+        "page": 1,
+        "token_count": 122
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "SOFTWARE TECHNOLOGY 2014 - 2018",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "EDUCATION",
+        "page": 1,
+        "token_count": 12
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "IOS DEVELOPER\n03/2022 - 06/2023",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "WORK EXPERIENCE",
+        "page": 1,
+        "token_count": 13
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "Wee Digital is the rst Fintech company with facial recognition technology in Vietnam. Some of Wee Digital's partners include Vietinbank, Agribank, TPBank, OCB, GS25, EuroWindow, Vinpearl, Novaland and more.\nIOS,.NET, SEO\n10/2018 - 12/2021",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "WEE DIGITAL",
+        "page": 1,
+        "token_count": 69
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "1Byte is a company that Outsources products to foreign customers",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "1BYTE",
+        "page": 1,
+        "token_count": 14
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "- Knowledge :Sequential programing , Object-oriented programming (OOP), Swift language\n- Networking : Server-Client WebRTC, Call API.\n- Application Architecture: MVC, MVP, MVVM, Clean Architecture.\n- Version Control System : Git, SVN, Bitbucket\n- Database : My SQL, FireBase",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Normal Basic",
+        "page": 1,
+        "token_count": 79
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "- \uf133 28/05/1996\n+\n- \uf3c5 45 L \u1ea5 p V\u00f2 \u0110 \u1ed3\nng Th\u00e1p",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Thi \u1ec7 n Ch\u00ed Tr \u1ea7 n",
+        "page": 1,
+        "token_count": 24
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "An Giang University (VNU HCMC-An Giang University) is a multidisciplinary university, a member of the National University of Ho Chi Minh City in An Giang, classied as a key national university in Vietnam. , plays a pivotal role in the education system in Vietnam.\n- \uf007 Male\n- \uf05a Experience: 2 years iOS\n- UI,UX : Auto Layout, Snapkit, Using NSLayoutContraint\n- Architecture: MVVM, Noticationcenter, POP(Protocol-Oriented Programming), closure in\nswift,URLSessionDataTask , Alamore, RxSwift, Unit Test, Swift UI Basic, jwt (json web token), biometric\n- Debug:\nDebug UI, Bebug Code, using breakpoint\n- \u2022\n- Design tools:\nFigma",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "AN GIANG UNIVERSITY",
+        "page": 1,
+        "token_count": 182
+      }
+    },
+    {
+      "chunk_id": "chunk_8",
+      "content": "- Worked closely with product managers and designers to dene a rich iOS experience for the user. Supported the architect in improving the native iOS.\n- Explored new technologies and shared ndings with the team.\nSupported and streamlined company policies, procedures, mission, and standards of ethics and integrity. Led the discovery phase of medium to large projects to come up with a high-level design.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Comunication skill",
+        "page": 2,
+        "token_count": 93
+      }
+    },
+    {
+      "chunk_id": "chunk_9",
+      "content": "- Resolve conicts with team members and offer solutions for errors, be creative as well as always listen to everyone's opinions and comments about themselves as well as about work.",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Problem Solving Skills :",
+        "page": 2,
+        "token_count": 38
+      }
+    },
+    {
+      "chunk_id": "chunk_10",
+      "content": "05/2023 - Present\nVIDEO CALL\n05/2023 - Present\nUBANK PROJECT\n02/2023 - 05/2023",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "VIDEO STATEMENT PROJECT",
+        "page": 2,
+        "token_count": 25
+      }
+    },
+    {
+      "chunk_id": "chunk_11",
+      "content": "- Project: Create a video statement module for the project, develop the feature of creating bots to talk to customers with the record feature. This is a small feature to create a module that integrates into the super app\n- Team size: 6 people\n- Language: Swift\n- Experience in: Cocoapod, Lifecycle, UIKit, AVAudio, RxSwift, MVVM\n- Database: Firebase\n- IDE: XCode, Visual Studio, Source Tree\n- Project: Create video call module using WEBRTC, develop video call module through WEBRTC between devices\n- Team size: 6 people\n- Language: Swift\n- Experience in: Cocoapod, Lifecycle, UIKit, AVAudio, RxSwift, MVVM\n- Database: Firebase, sever WebRTC\n- IDE: XCode, Visual Studio,Source Tree",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "WEE DEGITAL",
+        "page": 2,
+        "token_count": 179
+      }
+    },
+    {
+      "chunk_id": "chunk_12",
+      "content": "- Project: UBank Digital Bank. \u00dcbank application is an online banking application for fast withdrawal and money transfer, user information security built on many innovative technologies with the functions of a digital bank including hyper kyc, biometric, receiving and transferring money, user information transaction history\u2026.etc.\n- Team size: 15 people\n- Language: Swift\n- Experience in: Cocoapod, Lifecycle, UIKit, AVAudio, RxSwift, MVVM, WEEID, HYPER KYC, Unit Test\n- Database: Firebase, sever WebRTC\n- IDE: XCode, Visual Studio,Source Tree\n- Project Facepay: a money transfer application that uses facial recognition to make payments, including many functions using faces. Use facial recognition to log in, log out, transfer money, and receive money. Some basic features in the application to receive notications, transaction history of user information,\n- Team size: 15 people\n- Language: Swift\n- Experience in: Cocoapod, Lifecycle, UIKit, RxSwift, MVVM, WEEID, Banuba sdk, Unitest, mapbox SDK, Unit Test, biometric, Callkit\n- Database: Firebase\n- IDE: XCode, Visual Studio, Source Tree\nVIEWER APPLICATION\n12/2021 - 03/2022",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "WEE DIGITAL",
+        "page": 2,
+        "token_count": 285
+      }
+    },
+    {
+      "chunk_id": "chunk_13",
+      "content": "- Develop the Admin tool of the website\n- Team size: 6 people\n\u2022 Framework: Bootstrap,CSS, HTML.\n- Database: MySQL. Experience in: MVC\n- IDE: Visual Studio. Support tools: SVN.\nLOTTERY APPLICATION\n06/2021 - 12/2021\n- App Loterry\n- Team size: 6 people\n- Language: Swift\n- Library: Cocoapod, UIKit, SpeedToText\n- Design pattern: MVC\n- Database: SQLite\n- IDE: Xcode\nVIEWER APPLICATION\n12/2020 - 07/2021\n- Backup data viewing application for smart mobile devices\n- Team size: 6 people\n- Language: Swift\n- Experience in: Cocoapod, Lifecycle, UIKit, Maps, Notication, AVAudio\n- Database: Realm Data\n- IDE: Xcode",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "1BYTE COMPANY",
+        "page": 3,
+        "token_count": 176
+      }
+    },
+    {
+      "chunk_id": "chunk_14",
+      "content": "Certication English Talk rst 05/2023",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "CERTIFICATIONS",
+        "page": 3,
+        "token_count": 10
+      }
+    },
+    {
+      "chunk_id": "chunk_15",
+      "content": "Consolation prizes Music Award WeeDigital 01/2023",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "HONORS & AWARDS",
+        "page": 3,
+        "token_count": 13
+      }
+    },
+    {
+      "chunk_id": "chunk_16",
+      "content": "- Learn new technology: I'm always interested in learning and experimenting with new technologies applied to\n- Music:  Music is an indispensable thing to help me reduce stress at work as well as regain energy for\n- my apps to improve their performance. Always listen and share to develop yourself in the process of making products.\n- Read Book: Books help me improve my thinking as well as develop myself better. Books help me nd solutions as well as learn more experiences in work as well as in life.\nmyself\n- English: English is like a friend who always supports me in work and life. English helps me have a positive view of the world around me, connecting with friends. I always try to improve my English to open up opportunities for advancement in work and career\n\u00a9",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "HOBIES",
+        "page": 3,
+        "token_count": 157
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 286.29,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 17,
+    "parsing_timestamp": "2025-11-13T10:02:44.074803Z",
+    "processing_time_ms": 16089,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

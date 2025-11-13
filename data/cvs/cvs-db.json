@@ -3,55 +3,91 @@
     "filename": "cv_001.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "f74a6b1474d21d987a1736a3e7148c1b171b03535521576ced6f72e4a825b22c"
+    "content_hash": "f74a6b1474d21d987a1736a3e7148c1b171b03535521576ced6f72e4a825b22c",
+    "is_latin_text": true,
+    "role_domain": "Pastry Chef & Hospitality",
+    "job_title": "Pastry trainee",
+    "experience_level": "junior"
   },
   {
     "filename": "cv_002.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "169b6ffdb911ccf300adc8bc0057c086c0593704e98e63a7093a8c4eb52cef7f"
+    "content_hash": "169b6ffdb911ccf300adc8bc0057c086c0593704e98e63a7093a8c4eb52cef7f",
+    "is_latin_text": true,
+    "role_domain": "IT Account Management",
+    "job_title": "Account Manager",
+    "experience_level": "mid"
   },
   {
     "filename": "cv_003.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "0cfb8725cd73fbb23785cd1a6e065c4cf500453c2eedd0afb4257f46504cac06"
+    "content_hash": "0cfb8725cd73fbb23785cd1a6e065c4cf500453c2eedd0afb4257f46504cac06",
+    "is_latin_text": false,
+    "role_domain": "Advertising/Signage Production Management",
+    "job_title": "Qu\u1ea3n l\u00fd x\u01b0\u1edfng s\u1ea3n xu\u1ea5t qu\u1ea3ng c\u00e1o, n\u1ed9i th\u1ea5t",
+    "experience_level": "senior"
   },
   {
     "filename": "cv_004.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "579dcd75d2409e601ad56dacf421967b224b6337d3358f3ed517c357ece38feb"
+    "content_hash": "579dcd75d2409e601ad56dacf421967b224b6337d3358f3ed517c357ece38feb",
+    "is_latin_text": true,
+    "role_domain": "Industrial Automation",
+    "job_title": "Intern",
+    "experience_level": "junior"
   },
   {
     "filename": "cv_005.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "014b61b1dc42c9c5636e0c817e99bb9a67053a13a2f50bcc6446f72bba15f8cc"
+    "content_hash": "014b61b1dc42c9c5636e0c817e99bb9a67053a13a2f50bcc6446f72bba15f8cc",
+    "is_latin_text": true,
+    "role_domain": "Software Product Management",
+    "job_title": "Associate Product Manager / Associate Product Owner / Business Analyst",
+    "experience_level": "mid"
   },
   {
     "filename": "cv_006.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "d8e50c493192bcd0efb3546893e68538fcb1658e3c577d4da2241c66d0fd5e1a"
+    "content_hash": "d8e50c493192bcd0efb3546893e68538fcb1658e3c577d4da2241c66d0fd5e1a",
+    "is_latin_text": false,
+    "role_domain": "Industrial B2B Sales & Business Development",
+    "job_title": "Sales Executive",
+    "experience_level": "mid"
   },
   {
     "filename": "cv_007.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "0e862f3d0b95a97864b1df84408fe457c86d5ccc9ed874cb5ddd8c00719de395"
+    "content_hash": "0e862f3d0b95a97864b1df84408fe457c86d5ccc9ed874cb5ddd8c00719de395",
+    "is_latin_text": false,
+    "role_domain": "Accounting & Finance",
+    "job_title": "Nh\u00e2n vi\u00ean K\u1ebf To\u00e1n",
+    "experience_level": "mid"
   },
   {
     "filename": "cv_008.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "89ec90f69f3f410a107414565ec25c6dad84e4853dd2acd441258b17e534e779"
+    "content_hash": "89ec90f69f3f410a107414565ec25c6dad84e4853dd2acd441258b17e534e779",
+    "is_latin_text": false,
+    "role_domain": "Education Management",
+    "job_title": "Qu\u1ea3n l\u00fd \u0111i\u1ec1u h\u00e0nh",
+    "experience_level": "senior"
   },
   {
     "filename": "cv_009.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "3a675b91c5a63234dd7564f26a7d49b275a75a417c61c5d10572ffbc48d6c734"
+    "content_hash": "3a675b91c5a63234dd7564f26a7d49b275a75a417c61c5d10572ffbc48d6c734",
+    "is_latin_text": false,
+    "role_domain": "Sales Management (Consumer Electronics & FMCG)",
+    "job_title": "GI\u00c1M S\u00c1T KINH DOANH",
+    "experience_level": "senior"
   },
   {
     "filename": "cv_010.pdf",
@@ -63,19 +99,31 @@
     "filename": "cv_011.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "35b355bff6d11946d67fde3fd09373c9bae22a1b94290a07d05d2cc48b7829e9"
+    "content_hash": "35b355bff6d11946d67fde3fd09373c9bae22a1b94290a07d05d2cc48b7829e9",
+    "is_latin_text": false,
+    "role_domain": "Accounting",
+    "job_title": "K\u1ebf to\u00e1n t\u1ed5ng h\u1ee3p",
+    "experience_level": "mid"
   },
   {
     "filename": "cv_012.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "f3d53914b9f923590d998dd2ba8e4c20e8658010ff2426a6a3ecabf2e0be04f1"
+    "content_hash": "f3d53914b9f923590d998dd2ba8e4c20e8658010ff2426a6a3ecabf2e0be04f1",
+    "is_latin_text": true,
+    "role_domain": "Education Consulting",
+    "job_title": "Customer Service Officer",
+    "experience_level": "senior"
   },
   {
     "filename": "cv_013.pdf",
     "source_dataset": "gigswar/cv_files",
     "source_id": null,
-    "content_hash": "59940834a89fc27bcfbf059b3b5092c791a890b26c2f7d7d997343d3c5a7d4c6"
+    "content_hash": "59940834a89fc27bcfbf059b3b5092c791a890b26c2f7d7d997343d3c5a7d4c6",
+    "is_latin_text": true,
+    "role_domain": "Software Development",
+    "job_title": "Software Engineer",
+    "experience_level": "mid"
   },
   {
     "filename": "cv_014.pdf",
@@ -87,96 +135,860 @@
     "filename": "cv_015.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "7c6d3e71b83eb3b55d0a8874a99bcf77e8b4c74612b36ca342b7150d0d375d6c"
+    "content_hash": "7c6d3e71b83eb3b55d0a8874a99bcf77e8b4c74612b36ca342b7150d0d375d6c",
+    "is_latin_text": true,
+    "role_domain": "IT Account Management",
+    "job_title": "B2B Sales",
+    "experience_level": "mid"
   },
   {
     "filename": "cv_016.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "04405388e9c2758adef457d4aa589238abea766b8f87cb63417fa10b7bc521d1"
+    "content_hash": "04405388e9c2758adef457d4aa589238abea766b8f87cb63417fa10b7bc521d1",
+    "is_latin_text": false,
+    "role_domain": "Mechanical Design Engineering",
+    "job_title": "K\u1ef9 s\u01b0 thi\u1ebft k\u1ebf v\u00e0 s\u1ea3n xu\u1ea5t",
+    "experience_level": "mid"
   },
   {
     "filename": "cv_017.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "5cad2d3b51066fd94f31222daf161a4e71ffbd82d3c2a66fcd040624ae0e8ba2"
+    "content_hash": "5cad2d3b51066fd94f31222daf161a4e71ffbd82d3c2a66fcd040624ae0e8ba2",
+    "is_latin_text": true,
+    "role_domain": "Operations Management (Hospitality & Entertainment)",
+    "job_title": "Operation Manager",
+    "experience_level": "senior"
   },
   {
     "filename": "cv_018.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "a0744fb9157765a8b63802a2d5e5aab98a8c7a1e9c2bcbc75787a3fbb2636c25"
+    "content_hash": "a0744fb9157765a8b63802a2d5e5aab98a8c7a1e9c2bcbc75787a3fbb2636c25",
+    "is_latin_text": true,
+    "role_domain": "Software Development",
+    "job_title": "Backend Developer",
+    "experience_level": "senior"
   },
   {
     "filename": "cv_019.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "cb05e65ea366a111ac438630392569105b24904727c31c6f6e523eda4d0baa3a"
+    "content_hash": "cb05e65ea366a111ac438630392569105b24904727c31c6f6e523eda4d0baa3a",
+    "is_latin_text": true,
+    "role_domain": "ERP Implementation & Consulting",
+    "job_title": "Project Manager / ERP Consultant",
+    "experience_level": "mid"
   },
   {
     "filename": "cv_020.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "b124284439ba6a3fe88244b2cbda43ef0684e815cb97196fd84ecf04649fb580"
+    "content_hash": "b124284439ba6a3fe88244b2cbda43ef0684e815cb97196fd84ecf04649fb580",
+    "is_latin_text": true,
+    "role_domain": "Software Development",
+    "job_title": "Lecturer",
+    "experience_level": "senior"
   },
   {
     "filename": "cv_021.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "9bc4dd6480fc0a8474a2f63e5d4ef06abe066699f98c3c5f4fa6a3f5b8e0e587"
+    "content_hash": "9bc4dd6480fc0a8474a2f63e5d4ef06abe066699f98c3c5f4fa6a3f5b8e0e587",
+    "is_latin_text": false,
+    "role_domain": "Software Development",
+    "job_title": "Full Stack developer",
+    "experience_level": "senior"
   },
   {
     "filename": "cv_022.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "dd73f70f7e71b7c9990399f6a2b67ca329243a8d409da436e31fe73f19232c71"
+    "content_hash": "dd73f70f7e71b7c9990399f6a2b67ca329243a8d409da436e31fe73f19232c71",
+    "is_latin_text": false,
+    "role_domain": "Electrical & Electronics Engineering",
+    "job_title": "Th\u1ef1c t\u1eadp sinh t\u1ea1i khoa k\u1ef9 thu\u1eadt s\u1ea3n xu\u1ea5t",
+    "experience_level": "junior"
   },
   {
     "filename": "cv_023.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "6fb4e74cc5380594c877bca3f3c084f38b6cc9711074c28928245a2a285baa2d"
+    "content_hash": "6fb4e74cc5380594c877bca3f3c084f38b6cc9711074c28928245a2a285baa2d",
+    "is_latin_text": false,
+    "role_domain": "Game Development",
+    "job_title": "Backend Game Developer Leader",
+    "experience_level": "senior"
   },
   {
     "filename": "cv_024.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "ad0750fc0936b92d8dde2f346c7f0d97bb58b04821da386b442b279ad552626d"
+    "content_hash": "ad0750fc0936b92d8dde2f346c7f0d97bb58b04821da386b442b279ad552626d",
+    "is_latin_text": true,
+    "role_domain": "ERP Implementation & Business Analysis",
+    "job_title": "ERP Business Analyst",
+    "experience_level": "senior"
   },
   {
     "filename": "cv_025.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "128c8212fa86e3ef92c37314c151b1177d0c26de72c47d73f2ed407b81323928"
+    "content_hash": "128c8212fa86e3ef92c37314c151b1177d0c26de72c47d73f2ed407b81323928",
+    "is_latin_text": true,
+    "role_domain": "Software Development",
+    "job_title": "",
+    "experience_level": "senior"
   },
   {
     "filename": "cv_026.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "da9539b0a5d77eef21ee236b6a187184d1d5a4167420ea3b293088ff6f26e3fa"
+    "content_hash": "b4a3740846b29219c7778939b29fb0adcd008e44e8f05337fddbe52741b868e3",
+    "is_latin_text": true,
+    "role_domain": "Software Quality Assurance / Testing",
+    "job_title": "QC",
+    "experience_level": "mid"
   },
   {
     "filename": "cv_027.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "ff73112ade655b71c99411b419912b13ddd0e6cf039f3341a143c7babf0318f4"
+    "content_hash": "b98067cee295eb94b86884b04fccb7dc3a045906d8bb752816861b95cb76d24f",
+    "is_latin_text": false,
+    "role_domain": "Software Development",
+    "job_title": "Chuy\u00ean vi\u00ean",
+    "experience_level": "senior"
   },
   {
     "filename": "cv_028.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "232efe8f02e1d9a11e61d3bae371d383f2759d2f8a77e54631beedbd6ec3c0fd"
+    "content_hash": "7f06da8ca49459a09ba01e2bf2a2d35d25bae8f7d1bf73fa96104c804569f6ee",
+    "is_latin_text": true,
+    "role_domain": "Digital Marketing",
+    "job_title": "Content Executive",
+    "experience_level": "junior"
   },
   {
     "filename": "cv_029.pdf",
-    "source_dataset": "gigswar/cv_files",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "50d01c4fe80f5895fd812b4c690db81043a52260719e21d5438467e7ebaf73ed"
+    "content_hash": "4cb696c5cf500f7efc69d83b5d2e9811c22b94b69946294bd28f2eba9b4912b9",
+    "is_latin_text": true,
+    "role_domain": "FinTech (Payments)",
+    "job_title": "Business Analyst/Product Owner",
+    "experience_level": "mid"
   },
   {
     "filename": "cv_030.pdf",
     "source_dataset": "d4rk3r/resumes-raw-pdf",
     "source_id": null,
-    "content_hash": "ecd75789c24b3b936bb65efa1ecb43bb149b6fc92730bc754631d41c45e267e1"
+    "content_hash": "62f320b89637637ee394545f51fa8c95480aec0bb6605eee8452af710806b295",
+    "is_latin_text": false,
+    "role_domain": "Data Analysis",
+    "job_title": "Qu\u1ea3n l\u00fd h\u1ec7 th\u1ed1ng \u1ee9ng d\u1ee5ng",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_031.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "04a7a7a87c20e8cb622078da7592015cd8c10c0dda8db823822461bd31a241cb",
+    "is_latin_text": false,
+    "role_domain": "Software Development",
+    "job_title": "L\u1eadp tr\u00ecnh vi\u00ean Fullstack",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_032.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "c6a3a3efa20ce18910984484664165c0e5ed8b0d0c7b999626e4fbc9ea533e53",
+    "is_latin_text": false,
+    "role_domain": "MEP Engineering (Construction)",
+    "job_title": "KY SU MEP",
+    "experience_level": "junior"
+  },
+  {
+    "filename": "cv_033.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "330bdf77f0c8f39bb916499b31c51e89aea88dafc5cfa88301d2b7eba13a5d9a",
+    "is_latin_text": false,
+    "role_domain": "Accounting & Finance",
+    "job_title": "K\u1ebf to\u00e1n tr\u01b0\u1edfng",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_034.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "840455a5289cd8c68ec457de27d567fc6ecb79bdf6adc4acbd7965645c9915d3",
+    "is_latin_text": false,
+    "role_domain": "Accounting & Sales Administration",
+    "job_title": "K\u1ebf to\u00e1n b\u00e1n h\u00e0ng - Sale admin",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_035.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "c7fad64909412361f326c72f7545c96eb545c4d3d11a2de9968c907bed3ff343",
+    "is_latin_text": true,
+    "role_domain": "Mobile App Development",
+    "job_title": "Flutter Developer",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_036.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "cb356b39faa9d5d3cef52f180b472c8311ca0097b5bef1f206ed07eb0da0d76b",
+    "is_latin_text": true,
+    "role_domain": "Software Development",
+    "job_title": "Backend Developer",
+    "experience_level": "junior"
+  },
+  {
+    "filename": "cv_037.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "b2542529d20695f93cf3b00768c15da20bad511502b156fea163b2839eb9e50b",
+    "is_latin_text": true,
+    "role_domain": "Occupational Health & Safety (HSE)",
+    "job_title": "Office Staff",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_038.pdf",
+    "source_dataset": "gigswar/cv_files",
+    "source_id": null,
+    "content_hash": "50d01c4fe80f5895fd812b4c690db81043a52260719e21d5438467e7ebaf73ed",
+    "is_latin_text": true,
+    "role_domain": "Frontend Web Development",
+    "job_title": "Web Developer",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_039.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "1209a5692b620d3edaed82aa291d24b1ce0a8d60fc1af2b379eaa79eafeccbfc",
+    "is_latin_text": true,
+    "role_domain": "Industrial Automation",
+    "job_title": "Electrical Intern & Engineer",
+    "experience_level": "junior"
+  },
+  {
+    "filename": "cv_040.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "b71e416648dea2cf29c82e63b985facd2453257eb091b5f965a8ce0394663fad",
+    "is_latin_text": false,
+    "role_domain": "Software Development",
+    "job_title": "L\u1eacP TR\u00ccNH VI\u00caN FRONT END",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_041.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "a48030c55626783caeaa4ec6e4405710b20f95964c1ff20e7e9ca17afe6a758f",
+    "is_latin_text": false,
+    "role_domain": "Retail Sales (Consumer Electronics)",
+    "job_title": "T\u01b0 v\u1ea5n b\u00e1n h\u00e0ng",
+    "experience_level": "junior"
+  },
+  {
+    "filename": "cv_042.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "9471e9b86f654df36d078fe19c3cb8c99719619db025f3235e1b0f4d235e1830",
+    "is_latin_text": true,
+    "role_domain": "Hotel Management & Sales",
+    "job_title": "Owner",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_043.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "5f83c263211ddacb5d7e288b5ea63d4931b55538fc40bdc3ed2cd4d11695b5ee",
+    "is_latin_text": true,
+    "role_domain": "Data Analysis",
+    "job_title": "Relationship Manager",
+    "experience_level": "junior"
+  },
+  {
+    "filename": "cv_044.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "ca06c7a38a3b3d45bbd3bcd7b129dd208e354f63c68d312c96117ed4ae217313",
+    "is_latin_text": false,
+    "role_domain": "IT Management",
+    "job_title": "President (CEO)",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_045.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "22b1fbcb0a9bf9b48146dc5fb65d4cb0e65a20f58feef4c89d4c9c0a61425397",
+    "is_latin_text": false,
+    "role_domain": "Sales Management",
+    "job_title": "Gi\u00e1m \u0111\u1ed1c KD \u0110\u1ea1i L\u00fd v\u00e0 D\u1ef1 \u00c1N Mi\u1ec1n B\u1eafc",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_046.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "84372a5340b725a5a30e362b27fc7b0600b2bba5daf11ea1c08cb4f1786b1106",
+    "is_latin_text": false,
+    "role_domain": "Digital Marketing",
+    "job_title": "Digital Marketer",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_047.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "5a351c7cb524475b3c5e9ff4c1904317cd8e517ee534d2d1a2cea802e2a0a96b",
+    "is_latin_text": false,
+    "role_domain": "UI/UX Design",
+    "job_title": "UIUX Designer",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_048.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "124aa2a5fab119d1b0ff71b2531c19a9849ccdf89cfecef98fd2aaf4aa9ca029",
+    "is_latin_text": false,
+    "role_domain": "Construction Quality Control",
+    "job_title": "Th\u01b0 k\u00fd c\u00f4ng tr\u00ecnh",
+    "experience_level": "junior"
+  },
+  {
+    "filename": "cv_049.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "fd0c3a99b2646bd3add4124d866b63a1d7cf946fb053fc75cde9c62e00fecd8b",
+    "is_latin_text": false,
+    "role_domain": "Architecture & Urban Planning",
+    "job_title": "Architecture and Interior Design Intern",
+    "experience_level": "junior"
+  },
+  {
+    "filename": "cv_050.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "dfc8a2c7a37a5c34f577e96a7cd3b7e3f1770f4fa37d4aff8d975d3b003ba61b",
+    "is_latin_text": false,
+    "role_domain": "Insurance Customer Service",
+    "job_title": "Customer Service Representative",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_051.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "972b394b5f6b42071408aaa032f1c6ff5a3bfe31640c1f77e09bc902292ba42e",
+    "is_latin_text": true,
+    "role_domain": "Software Development",
+    "job_title": "Frontend Developer",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_052.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "7832588a382010b28c7f90730f8e6e0bbe8e9b5da72eb6fc19f1dd36186efc9f",
+    "is_latin_text": true,
+    "role_domain": "System Administration & Cloud Infrastructure",
+    "job_title": "System Administrator",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_053.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "ec6a35363e405cd2f4b012773b0c1892564bec37e2509d65e4912d0c9dbf744d",
+    "is_latin_text": true,
+    "role_domain": "Data Engineering",
+    "job_title": "Data Engineer",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_054.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "ff73112ade655b71c99411b419912b13ddd0e6cf039f3341a143c7babf0318f4",
+    "is_latin_text": true,
+    "role_domain": "IT Program/Project Management",
+    "job_title": "Senior Consultant, Project Manager IT",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_055.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "1d5da5265a2887fe54d2779ef1bfa1f4bca10d978ceb75a526e303b6004ecb7b",
+    "is_latin_text": true,
+    "role_domain": "Human Resources & Recruitment",
+    "job_title": "Recruitment and Human Resources Administrative Intern",
+    "experience_level": "junior"
+  },
+  {
+    "filename": "cv_056.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "4ee1b94b1046e4b8bdf4231d7a4834daa4b9cf73354f931782d9c2afa50abba2",
+    "is_latin_text": true,
+    "role_domain": "Product Management (SaaS/B2B Tech)",
+    "job_title": "Product Manager",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_057.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "5409c8a316381c9ceeb3353f3a241fee0d9f16c5c406cac3aac40537efb08b4e",
+    "is_latin_text": false,
+    "role_domain": "Human Resources & Legal Administration",
+    "job_title": "Chuy\u00ean vi\u00ean H\u00e0nh ch\u00ednh Nh\u00e2n s\u1ef1",
+    "experience_level": "junior"
+  },
+  {
+    "filename": "cv_058.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "806a7e7cb5d7e237bb633634deb16bb9443b1bf06998e6fcebd04f0d02cbb843",
+    "is_latin_text": false,
+    "role_domain": "Digital Marketing",
+    "job_title": "Gi\u1ea3ng vi\u00ean - Tr\u01b0\u1edfng Ph\u00f2ng Truy\u1ec1n Th\u00f4ng Marketing",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_059.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "10405346aa599ba4d9e0bfc281997ad32dc1213865cb2260c9faa049c5447e66",
+    "is_latin_text": false,
+    "role_domain": "Manufacturing Quality Assurance (Apparel/Footwear)",
+    "job_title": "CFA Leader",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_060.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "4db285a5942323249de2c2e4db37e261e381f31f8d0a14ba71c8e7e903fd5b09",
+    "is_latin_text": true,
+    "role_domain": "Education & Language Services",
+    "job_title": "Interpreter",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_061.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "22509459498f2de0d46aee6ec824b82a025044e82f2a548876287ab112c5c234",
+    "is_latin_text": false,
+    "role_domain": "Oil & Gas Chemicals R&D",
+    "job_title": "",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_062.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "4d318b5496e76e4ebd1c784e6156777849dae9fbdbc78dfde8d83944bedc1870",
+    "is_latin_text": false,
+    "role_domain": "IT Project Management",
+    "job_title": "Implementation Team Lead",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_063.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "25b4442f926d0569fe67d7ab674ab8fd947ea780af0344c3a451c5d03aad2fd9",
+    "is_latin_text": true,
+    "role_domain": "Software Development",
+    "job_title": "iOS Developer",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_064.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "547a3c6c8dd57ade534ca5aed89249325daf258484cad17d384cc4f27df2a38b",
+    "is_latin_text": true,
+    "role_domain": "Product Management",
+    "job_title": "Product Manager",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_065.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "1f9bf5821558fcc83764a04b01882cf39c56542056c8d9095d2f77df9e6ff773",
+    "is_latin_text": false,
+    "role_domain": "Software Development",
+    "job_title": "Mobile Developer",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_066.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "8ba76d4e84eb00656cf976db34e6d334cb2543f4e47466a6227cae49b00b3523",
+    "is_latin_text": false,
+    "role_domain": "Food & Beverage and Hospitality Management",
+    "job_title": "Qu\u1ea3n L\u00fd Trung T\u00e2m",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_067.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "c817190f8c7128924c5d05a7d34f952a6b42a2b8770ec328fdb6a99ff351dd33",
+    "is_latin_text": false,
+    "role_domain": "IT Solutions Consulting",
+    "job_title": "Director",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_068.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "d780352734ff1d40b8ce4a42c5a97c8bd47bebeebce675d8fc20fb90a34aaeed",
+    "is_latin_text": false,
+    "role_domain": "Software Development",
+    "job_title": "Software Developer (C#.NET)",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_069.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "108613fb4240c832d685f3c1dbfe0d4ee04d81c8b27bbee85eb53d299aed81d3",
+    "is_latin_text": false,
+    "role_domain": "Digital Marketing",
+    "job_title": "SEO Leader",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_070.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "a435cfd40c9f0e4691f5cb6aa5a81c216db544e2789a7a89a391280cf29605a8",
+    "is_latin_text": false,
+    "role_domain": "Software Development",
+    "job_title": "Qu\u1ea3n l\u00fd d\u1ef1 \u00e1n - L\u1eadp tr\u00ecnh vi\u00ean",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_071.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "457c7141b2d7f51fff9157ee3de08b4936256a9255f0812412cbbdcbe00c0cc5",
+    "is_latin_text": true,
+    "role_domain": "Graphic Design",
+    "job_title": "Graphic Designer",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_072.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "ecd75789c24b3b936bb65efa1ecb43bb149b6fc92730bc754631d41c45e267e1",
+    "is_latin_text": true,
+    "role_domain": "Computer Vision & Industrial Automation",
+    "job_title": "Vision Software Senior",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_073.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "7da550685bef9bfd21f84845fb6f0826ebd85228f1a2cd0a43b116ca162daa99",
+    "is_latin_text": true,
+    "role_domain": "IT Systems & ERP Integration",
+    "job_title": "IT Manager",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_074.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "8492e4333f7a17de603e3dc6b444d6fdc9a2e87ae0709dd3b1d2150561e23e8a",
+    "is_latin_text": false,
+    "role_domain": "Manufacturing Production Management",
+    "job_title": "Production Manager (Deputy Production Director)",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_075.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "e99169178b2195712d5659187db73db348f6a120731712769f7fbf4fff908225",
+    "is_latin_text": true,
+    "role_domain": "Software Development",
+    "job_title": "Java Back-End Developer",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_076.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "66e5d1242a0800c4b0c2ce182c270b1cd458257aa012461bd4935837b1645dac",
+    "is_latin_text": true,
+    "role_domain": "Software Development",
+    "job_title": "Senior Fullstack Developer",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_077.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "33a69a4d9ec6ac88ad62f7dd5940d8e865f888de11b50494a2dd168ad299db1e",
+    "is_latin_text": true,
+    "role_domain": "Logistics & Shipping Operations",
+    "job_title": "Carriers Agent Employees",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_078.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "49e9c5550b145c470e93ca3671f57c644d601465372d021983c1d5507ed8cc5c",
+    "is_latin_text": false,
+    "role_domain": "Construction Management",
+    "job_title": "B\u00f3c kh\u1ed1i l\u01b0\u1ee3ng v\u1eadt t\u01b0, tham gia l\u1eadp h\u1ed3 s\u01a1 d\u1ef1 th\u1ea7u",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_079.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "f311adb13ecc1a066dc0af005cd14721b4506f68d42f2a07c37b5b379f4eec4d",
+    "is_latin_text": false,
+    "role_domain": "Construction Management",
+    "job_title": "K\u1ef9 s\u01b0 hi\u1ec7n tr\u01b0\u1eddng",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_080.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "a7ce283d806dcc12a8bf578d2384a2791095d32017ec54c49163f7d9c2f5b10e",
+    "is_latin_text": true,
+    "role_domain": "IT Delivery Management",
+    "job_title": "IT Technical Delivery Manager",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_081.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "7d34991abff8bcafc37513936ec0e3239aaa0dbbf0819fd6e032fe30fcc418a2",
+    "is_latin_text": false,
+    "role_domain": "FMCG Sales Management",
+    "job_title": "Qu\u1ea3n l\u00fd kinh doanh Khu v\u1ef1c",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_082.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "eaaa4510c2ef7259833a0e88032656948328f255240c0d69c316f6913a89042d",
+    "is_latin_text": false,
+    "role_domain": "Accounting",
+    "job_title": "K\u1ebf to\u00e1n n\u1ed9i b\u1ed9 chi nh\u00e1nh",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_083.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "e519bbb143cf86754d76b7e1fdf9a095bc33eeb6b108d4a1e9a9579c29efb423",
+    "is_latin_text": false,
+    "role_domain": "Sales Administration (FMCG/Retail)",
+    "job_title": "Sales admin D\u1ef1 \u00c1n",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_084.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "11a79cb675c20cf851ba3a6f8a919d4c93cd0932c7863353d760e382d12379bb",
+    "is_latin_text": false,
+    "role_domain": "Culinary Arts & Hospitality",
+    "job_title": "Ch\u1ea3o Ch\u00ednh",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_085.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "25d1710f03a5c7a1af43c895d9b0007e2af3a2bedaf97e86939c16baa05b9d7d",
+    "is_latin_text": true,
+    "role_domain": "Software Development",
+    "job_title": "Full-Stack Developer",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_086.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "95e606a20667c8a032fe9513a6414c79066a443a8534424cacdcca43846213fa",
+    "is_latin_text": false,
+    "role_domain": "Manufacturing IT Support",
+    "job_title": "IT-LABEL Department Intern",
+    "experience_level": "junior"
+  },
+  {
+    "filename": "cv_087.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "da9539b0a5d77eef21ee236b6a187184d1d5a4167420ea3b293088ff6f26e3fa",
+    "is_latin_text": true,
+    "role_domain": "Data Science & Machine Learning",
+    "job_title": "Lecturer",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_088.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "6a27b3ecba274ff943362ef1bfbc47bfcc0d8ae5e04d996df0eafef10e9d5d23",
+    "is_latin_text": false,
+    "role_domain": "Construction Management",
+    "job_title": "Gi\u00e1m s\u00e1t thi c\u00f4ng",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_089.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "5640ada3c74dd16e518008baf03d4c0fef945109cddcd7f76d6fb44835a0bf80",
+    "is_latin_text": false,
+    "role_domain": "Software Implementation & IT Support",
+    "job_title": "Nh\u00e2n vi\u00ean tri\u1ec3n khai ph\u1ea7n m\u1ec1m",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_090.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "f8eef997a00c18aa510e83a94985e8a37fd15f737d678b55560e2de9ac1cb86b",
+    "is_latin_text": false,
+    "role_domain": "Printing & Packaging",
+    "job_title": "Thuc tap sinh",
+    "experience_level": "junior"
+  },
+  {
+    "filename": "cv_091.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "fce9ac8da7c56549dc8a92a31222ee5f221e8fa7dd46c11990d085c5c08a554a",
+    "is_latin_text": false,
+    "role_domain": "Construction Management",
+    "job_title": "Tr\u1ee3 l\u00fd G\u0110 / CEO / Ch\u1ee7 t\u1ecbch / H\u0110QT",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_092.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "b78b3408e0bdb4a3f7ae6707b085f9f677e62e3199dd8c7403415ff0600d5692",
+    "is_latin_text": false,
+    "role_domain": "Education Administration & Student Services",
+    "job_title": "Student Services Coordinator",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_093.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "e4e12424c344a9f0480e149fc6470200938c4cb9855f4ef7d71d63eb211469c0",
+    "is_latin_text": true,
+    "role_domain": "Telecommunications Project Management",
+    "job_title": "Project Leader",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_094.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "af4e0960ff3003aecd954331c3b740625c093780fa52d88eff8a48126e88a66b",
+    "is_latin_text": false,
+    "role_domain": "Software Development",
+    "job_title": "IT Manager",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_095.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "68dd9de17f66012ac59b08a2b7756f759178f89ac5f127e147821ca005c989f9",
+    "is_latin_text": true,
+    "role_domain": "Software Project Management",
+    "job_title": "Scrum Master",
+    "experience_level": "mid"
+  },
+  {
+    "filename": "cv_096.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "649ab03297236f746c8eab71ac2c83801c32c5c4733adbaa13d8fe873947084b",
+    "is_latin_text": false,
+    "role_domain": "Accounting",
+    "job_title": "K\u1ebf to\u00e1n",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_097.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "464ca9d65d42c76798fe7168eedc74e95663fdf4e4656e6062a59621d6aca6af",
+    "is_latin_text": false,
+    "role_domain": "Human Resources & Administration",
+    "job_title": "Truong bo phan HC-NS",
+    "experience_level": "senior"
+  },
+  {
+    "filename": "cv_098.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "d05d1e1e7a5204602a0dbdc2ddf721ff74642435672d0bd28bd29c57087cad0e",
+    "is_latin_text": false,
+    "role_domain": "Mobile App Development",
+    "job_title": "Flutter Developer Intern",
+    "experience_level": "junior"
+  },
+  {
+    "filename": "cv_099.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "232efe8f02e1d9a11e61d3bae371d383f2759d2f8a77e54631beedbd6ec3c0fd",
+    "is_latin_text": false,
+    "role_domain": "Logistics & Warehouse Operations",
+    "job_title": "Warehouse Admin",
+    "experience_level": "junior"
+  },
+  {
+    "filename": "cv_100.pdf",
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "source_id": null,
+    "content_hash": "5267bcb5bf48d9f7afbd30be6d07e7128acc17af156d385ed0de4bb1ab2bac72",
+    "is_latin_text": true,
+    "role_domain": "Software Development",
+    "job_title": "Leader - Fullstack",
+    "experience_level": "mid"
   }
 ]

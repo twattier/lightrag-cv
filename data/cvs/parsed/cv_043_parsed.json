@@ -1,0 +1,149 @@
+{
+  "document_id": "cv_043",
+  "document_type": "CV",
+  "source_filename": "cv_043.pdf",
+  "candidate_label": "cv_043",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "- 223, Trinh Dinh Trong, Tan Phu, Ho Chi Minh",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "CONTACT ME",
+        "page": 1,
+        "token_count": 16
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "FUNiX A Technology Training Institute 2022 - 2023\nElectronics - Telecommunications engineering",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "EDUCATION",
+        "page": 1,
+        "token_count": 17
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "TON DUC THANG UNIVERSITY\n2015 - 2022",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Data Analysis",
+        "page": 1,
+        "token_count": 11
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "- Programming Languages: Python, C\n- Data Manipulation and Analysis: Pandas, NumPy, Rapids\n- Data Visualization: Matplotlib, Pyplot, Power BI\n- Database: Microsoft SQL Server",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "SKILLS",
+        "page": 1,
+        "token_count": 46
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "- Toeic 500+\n- Microsoft Office Specialist 700+\n- Data Analyst Funix",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "CERTIFICATION",
+        "page": 1,
+        "token_count": 17
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "Data  A n a l y s t",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Do Tu Ky Vi",
+        "page": 1,
+        "token_count": 8
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "Relationship Manager",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "WORK EXPERIENCE",
+        "page": 1,
+        "token_count": 3
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "- Customer service\n- Insurance product consultation\n- Personal financial analysis",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "Nest by AIA",
+        "page": 1,
+        "token_count": 11
+      }
+    },
+    {
+      "chunk_id": "chunk_8",
+      "content": "- Customer prospecting\n- Sales data analysis\n- Promotion program design\n- Product marketing",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "DANH DANG CO., LTD",
+        "page": 1,
+        "token_count": 15
+      }
+    },
+    {
+      "chunk_id": "chunk_9",
+      "content": "PowerBI Projects",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "PROJECTS",
+        "page": 1,
+        "token_count": 4
+      }
+    },
+    {
+      "chunk_id": "chunk_10",
+      "content": "Link project: Processed data from .json and .csv files with a size of over 35Mb, and visualized the data into two dashboards using Power BI as the main tool.\nSQL Projects",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Visualizing Covid cases using Power BI",
+        "page": 1,
+        "token_count": 45
+      }
+    },
+    {
+      "chunk_id": "chunk_11",
+      "content": "Used  a  database  on  pets  to  build  a  suitable  data  warehouse,  performed  ETL  for  the database using SQL server and Visual Studio to complete the project.\nLink project:\nPython Projects",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Build Data Warehouse",
+        "page": 1,
+        "token_count": 39
+      }
+    },
+    {
+      "chunk_id": "chunk_12",
+      "content": "Link project: Used Python to collect and analyze data and then visualize the analyzed data.\n2022- 2023\n20121 - 2022",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "Visualizing Covid cases using Python",
+        "page": 1,
+        "token_count": 30
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 70.79,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 13,
+    "parsing_timestamp": "2025-11-13T10:00:42.259325Z",
+    "processing_time_ms": 10190,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}

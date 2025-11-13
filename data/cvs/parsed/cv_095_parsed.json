@@ -1,0 +1,109 @@
+{
+  "document_id": "cv_095",
+  "document_type": "CV",
+  "source_filename": "cv_095.pdf",
+  "candidate_label": "cv_095",
+  "chunks": [
+    {
+      "chunk_id": "chunk_0",
+      "content": "- PhamVanBachStreet,Tan Binh District, Ho Chi Minh City",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "CONTACT",
+        "page": 1,
+        "token_count": 19
+      }
+    },
+    {
+      "chunk_id": "chunk_1",
+      "content": "- AgileDevelopment andBestpractices\n- \u00b7JIRA,Redmine,SQL(Oracle)\n- \u00b7Agile Framework-Scrum\n- \u00b7Coaching Scrum practices\n- \u00b7Servant-leadership",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "SKILLS",
+        "page": 1,
+        "token_count": 51
+      }
+    },
+    {
+      "chunk_id": "chunk_2",
+      "content": "- Professional Scrum MasterI(PsM1)\nDateAwarded:2023-02-12\n- Professional Scrum Masterll(PsM II)\nDateAwarded:2023-02-26\n- RobocorpAutomation RobocorpAutomationdeveloper Levell RobocorpAutomationdeveloper Level ll\n- Foundation of Project Manager(Google) shments/certificate/R8H3UR2S5FJL\n- Toeic Listening-Reading:570\nWriting-Speaking:215",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "CERTIFICATES",
+        "page": 1,
+        "token_count": 106
+      }
+    },
+    {
+      "chunk_id": "chunk_3",
+      "content": "BachelorofInformationSystems Aug 2015- Dec 2019 GPA:7.25",
+      "chunk_type": "text",
+      "metadata": {
+        "section": "UNIVERSITY OF INFORMATION TECHNOLOGY (UIT)",
+        "page": 1,
+        "token_count": 14
+      }
+    },
+    {
+      "chunk_id": "chunk_4",
+      "content": "- \u00b7Multi maintenance projects | Team size:10\n- -Managedateamof10peoplefrominternal andoutsource\n- -Transforming from Enterprise Application to Public Application on AppStore\n- -Creating the business plan,detail plan\n- -Organizing procedures to hot fixthe systemwhen have issues\n- -ComplywithScrumframeworkforproject\n- -Having theretrospectiveforteam todiscusstheirproblems\n- -Facilitating a discussion to remove their impediments\n- -Responsibleformyteamandproject\n- -Managing my resources,deadline and expectations\n- Experience in using Jira tool to manage timeline, tasks,...\n- \u00b7Big Project|Team size:35\n- -Communicates to customers about project requirements, scopeofwork,milestone\n- stakeholders\n- -Theabilitytoworkwithmultipleteamsonmultipleprojects\n- -Multi-tasking and time-management skills,with the ability to prioritize tasks\n- -Understanding of software development life cycle\n- -Organizetheprojectdevelopmentoperationsaround the Scrum activities (daily Scrums, sprint plannings, retrospectives)\n- -Experience inusing Jira,Confluence,SVN tool to manage timeline, tasks, .\n- -Outstanding servant-leadership,organizational,andtime managementskills\n- \u00b7SystemRestoreProject|Team size:15\n- Organizing the team to restore the system after attack by malwarewithin7days\n- -Meeting with customer to catchupprogress andreport workingtasks daily\n- Making the short-term strategy to recovery the data for systemfrommanysystems\n- \u00b7Migrate System Project|Team size:5\n- Migrate system from the on-premise to cloud system\n- -Creating the testing strategytomakesurethe system stably",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "PROJECT MANAGER (ERP domain; Web/Mobile (ios/Android)) ViettelSolutions(03/2022-Present)",
+        "page": 1,
+        "token_count": 400
+      }
+    },
+    {
+      "chunk_id": "chunk_5",
+      "content": "- \u00b7Big project from many globalteams | Team size:40\n- -Troubleshooting the laboratorywhenhappens theissues\n- -Build the laboratory from many componentswhich is sent by global dev team\n- -Component testing,Integration testing\n- -ExperienceinusingDocker\n- Meeting with dev team to catch up progress and report working tasks",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "TMA Solutions Company I Mar 2021- Mar 2022",
+        "page": 2,
+        "token_count": 81
+      }
+    },
+    {
+      "chunk_id": "chunk_6",
+      "content": "- -Using Docker to build the Mobile Security Framework tool(MobsF) to scan the.apk and.ipa files\n- -Reportingthevulnerabilitiesforcustomer\n- -Researchthesolutionstoprovidefordevteamtofixtheirvulnerabilities\n- Meeting with customer to catch up progress and report working tasks",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "\u00b7Small project about security(Mobile application) I Team size:4",
+        "page": 2,
+        "token_count": 74
+      }
+    },
+    {
+      "chunk_id": "chunk_7",
+      "content": "- \u00b7Millionaire project (Japan) I Team size: 110\n- -Write the scenarios\n- -Writeandexecutethematrixtestcases\n- Component testing, Ul testing\n- -Scrum meeting to catch upprogress and report working tasks\n- -Testingon Ipad device andWeb application\n- \u00b7The next phase of the millionaire project I Team size:70\n- -Writeandexecutethetestcases\n- Integration testing, System testing, API testing (Postman tool)\n- TestingonIpaddeviceandWebapplication\n- Using SQL Query to testing database\n- \u00b7The migrate system project | Team size:3\n- -Writeand executethetestcases,scenarios\n- -Write the testcases to cover systemwhen migrate from IE6 to IE8\n- -Execute sanity testing",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "FPT Software Company - HcM, Can Tho Site I Sep 2019 - Feb 2021",
+        "page": 2,
+        "token_count": 182
+      }
+    },
+    {
+      "chunk_id": "chunk_8",
+      "content": "- \u00b7InternshipatDevPythonposition-Odoo/ERPl Teamsize:15\n- -Createnewadd-onsandcustomizetheadd-ons\n- Improving and learning Odoo open source\n- \u00b7officialstaffatTesterposition\n- Testing for new features on the perfume project (Viet Nam)\n- -Createand executetestcases\n- -Learning the Scrum,HTML/csS,Python,Manual testing courses",
+      "chunk_type": "list_item",
+      "metadata": {
+        "section": "WinERP Company I Aug 2018 - Aug 2019",
+        "page": 2,
+        "token_count": 102
+      }
+    }
+  ],
+  "metadata": {
+    "file_format": "PDF",
+    "file_size_kb": 1023.71,
+    "page_count": 0,
+    "source_dataset": "d4rk3r/resumes-raw-pdf",
+    "chunks_count": 9,
+    "parsing_timestamp": "2025-11-13T11:22:13.302543Z",
+    "processing_time_ms": 67389,
+    "format": "PDF",
+    "tables_extracted": 0
+  }
+}
