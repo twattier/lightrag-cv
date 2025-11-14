@@ -1,9 +1,9 @@
 version: 4.44.3
-installed_at: '2025-11-02T22:55:21.810Z'
+installed_at: '2025-11-14T00:23:26.729Z'
 install_type: full
 agent: null
 ides_setup:
-  - claude-code
+  - opencode
 expansion_packs: []
 files:
   - path: .bmad-core/working-in-the-brownfield.md
