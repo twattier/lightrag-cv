@@ -7,7 +7,7 @@
 
 This directory contains user story artifacts for the LightRAG-CV project. Each story represents an atomic, testable increment of functionality with clear acceptance criteria and QA gates.
 
-**Total Stories**: 29 (across 4 epics)
+**Total Stories**: 30 (across 4 epics)
 
 ---
 
@@ -27,7 +27,7 @@ This directory contains user story artifacts for the LightRAG-CV project. Each s
 
 ---
 
-## Epic 2: Document Processing Pipeline (7 stories)
+## Epic 2: Document Processing Pipeline (8 stories)
 
 | # | Story | Status | Est. Effort | Dependencies |
 |---|-------|--------|-------------|--------------|
@@ -38,8 +38,9 @@ This directory contains user story artifacts for the LightRAG-CV project. Each s
 | 2.5 | [LightRAG Knowledge Base Ingestion - CIGREF Profiles](story-2.5.md) | Not Started | 6-8 hours | 2.2 |
 | 2.6 | [LightRAG Knowledge Base Ingestion - CVs](story-2.6.md) | Not Started | 6-8 hours | 2.4, 2.5 |
 | 2.7 | [Document Processing Performance Baseline](story-2.7.md) | Not Started | 4-6 hours | 2.6 |
+| 2.8 | [Knowledge Graph Entity Deduplication](story-2.8.md) | Not Started | 4-6 hours | 2.6 |
 
-**Epic 2 Total**: ~33-46 hours (4-6 days)
+**Epic 2 Total**: ~37-52 hours (5-7 days)
 
 ---
 
@@ -80,11 +81,11 @@ This directory contains user story artifacts for the LightRAG-CV project. Each s
 
 | Metric | Value |
 |--------|-------|
-| Total Stories | 29 |
-| Total Estimated Effort | 159-225 hours |
+| Total Stories | 30 |
+| Total Estimated Effort | 163-231 hours |
 | Estimated Calendar Time | 10-12 weeks (with overhead) |
-| Stories per Epic (avg) | 7.25 |
-| Average Story Size | 5.5-7.8 hours |
+| Stories per Epic (avg) | 7.5 |
+| Average Story Size | 5.4-7.7 hours |
 
 ---
 
