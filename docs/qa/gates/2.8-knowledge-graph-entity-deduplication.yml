@@ -1,0 +1,68 @@
+# Quality Gate: Story 2.8
+schema: 1
+story: "2.8"
+story_title: "Knowledge Graph Entity Deduplication"
+gate: CONCERNS
+status_reason: "Implementation complete with excellent code quality, but lacks automated tests and requires manual validation before production use."
+reviewer: "Quinn (Test Architect)"
+updated: "2025-11-14T02:30:00Z"
+
+waiver: { active: false }
+
+top_issues:
+  - id: "TEST-001"
+    severity: medium
+    finding: "No automated unit tests for duplicate detection algorithms"
+    suggested_action: "Add unit tests for identify_duplicates() and detect_candidate_prefix_duplicates() functions"
+  - id: "TEST-002"
+    severity: medium
+    finding: "No integration tests for database queries or API interactions"
+    suggested_action: "Add integration tests with test database or mock LightRAG API"
+  - id: "TEST-003"
+    severity: medium
+    finding: "Manual testing only - no automated validation of merge operations"
+    suggested_action: "Add automated validation queries to verify no data loss"
+  - id: "DOC-001"
+    severity: low
+    finding: "Inconsistent canonical entity selection in cv_merge_identify_20251114_020004.json"
+    suggested_action: "Review why 'Candidate CV 001' selected over 'CV_001' despite equal relationship counts"
+
+quality_score: 70
+expires: "2025-11-28T00:00:00Z"
+
+evidence:
+  tests_reviewed: 0
+  risks_identified: 4
+  trace:
+    ac_covered: [1, 2, 3, 5]
+    ac_gaps: [4]
+
+nfr_validation:
+  security:
+    status: PASS
+    notes: "No sensitive data exposure, proper use of settings for credentials, safe SQL queries with parameterization"
+  performance:
+    status: PASS
+    notes: "Efficient batch processing with configurable batch sizes, retry logic with exponential backoff, reasonable delays between API calls"
+  reliability:
+    status: CONCERNS
+    notes: "Good error handling and retry logic, but lacks automated tests to ensure reliability under various conditions"
+  maintainability:
+    status: PASS
+    notes: "Excellent code structure, comprehensive docstrings, clear function separation, follows project conventions"
+
+recommendations:
+  immediate:
+    - action: "Add unit tests for core duplicate detection logic before production use"
+      refs: ["app/db_clean/cv1_merge_identify.py:123-168", "app/db_clean/cv1_merge_identify.py:171-277"]
+    - action: "Manually validate merge results using SQL queries from story documentation"
+      refs: ["docs/stories/story-2.8.md:1084-1106"]
+    - action: "Review canonical entity selection logic for tie-breaking when relationship counts are equal"
+      refs: ["app/db_clean/cv1_merge_identify.py:147-154"]
+  future:
+    - action: "Consider adding dry-run verification step that compares before/after entity counts"
+      refs: ["app/db_clean/cv2_merge_entities.py:176-265"]
+    - action: "Add monitoring/alerting for new duplicate creation in ingestion pipeline"
+      refs: ["docs/stories/story-2.8.md:1218-1223"]
+    - action: "Create reusable deduplication framework for other entity types (companies, skills)"
+      refs: ["docs/stories/story-2.8.md:1224-1227"]
