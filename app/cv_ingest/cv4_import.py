@@ -19,11 +19,13 @@ Cleanup actions:
 - Deletes source PDF file
 
 Usage:
-    python -m app.cv_ingest.cv4_import                  # Import all (with cleanup)
-    python -m app.cv_ingest.cv4_import --skip-cleanup   # Import all (no cleanup)
+    python -m app.cv_ingest.cv4_import                  # Import all (with cleanup, with entities)
+    python -m app.cv_ingest.cv4_import --skip-cleanup   # Import all (no cleanup, with entities)
+    python -m app.cv_ingest.cv4_import --skip-entities  # Import all (with cleanup, no entities)
     python -m app.cv_ingest.cv4_import --candidate-label cv_001  # Import specific CV
 
 Story: Story 2.5.3c - Refactor CV Ingest Workflow for Simplicity
+Story: Story 2.9.2 - CV Custom Entity Creation
 """
 
 import argparse
@@ -31,8 +33,7 @@ import asyncio
 import json
 import logging
 import sys
-from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Any, Dict, Optional, Set, Tuple
 
 import asyncpg
 import httpx
@@ -46,6 +47,235 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
+
+
+# ============================================================================
+# Entity Creation Helper Functions (Story 2.9.2)
+# ============================================================================
+
+
+async def check_entity_exists(entity_name: str, client: httpx.AsyncClient) -> bool:
+    """Check if entity exists in LightRAG knowledge graph.
+
+    Args:
+        entity_name: Name of entity to check
+        client: HTTP client for API calls
+
+    Returns:
+        True if entity exists, False otherwise
+    """
+    try:
+        response = await client.get(
+            f"{settings.lightrag_url}/graph/entity/exists",
+            params={"name": entity_name},
+            timeout=10.0,
+        )
+        response.raise_for_status()
+        return response.json().get("exists", False)
+    except httpx.HTTPError as e:
+        logger.warning(f"Error checking entity existence: {entity_name} - {e}")
+        return False
+
+
+async def create_entity(
+    name: str,
+    description: str,
+    entity_type: str,
+    client: httpx.AsyncClient,
+    retry_count: int = 0,
+) -> bool:
+    """Create entity in LightRAG knowledge graph with retry logic.
+
+    Args:
+        name: Entity name
+        description: Entity description
+        entity_type: Entity type (CV, DOMAIN_JOB, JOB, XP)
+        client: HTTP client for API calls
+        retry_count: Current retry attempt number
+
+    Returns:
+        True if created successfully, False otherwise
+    """
+    try:
+        response = await client.post(
+            f"{settings.lightrag_url}/graph/entity/create",
+            json={
+                "entity_name": name,
+                "entity_data": {"description": description, "entity_type": entity_type},
+            },
+            timeout=10.0,
+        )
+        response.raise_for_status()
+        return True
+    except httpx.HTTPError as e:
+        if retry_count < settings.MAX_RETRIES:
+            await asyncio.sleep(2**retry_count)  # Exponential backoff
+            return await create_entity(
+                name, description, entity_type, client, retry_count + 1
+            )
+        else:
+            logger.error(
+                f"Failed to create entity after {settings.MAX_RETRIES} retries: "
+                f"{name} (type: {entity_type}) - {e}"
+            )
+            return False
+
+
+async def create_relationship(
+    src_id: str, tgt_id: str, relation: str, client: httpx.AsyncClient, retry_count: int = 0
+) -> bool:
+    """Create relationship in LightRAG knowledge graph with retry logic.
+
+    Args:
+        src_id: Source entity name
+        tgt_id: Target entity name
+        relation: Relationship type
+        client: HTTP client for API calls
+        retry_count: Current retry attempt number
+
+    Returns:
+        True if created/exists successfully, False otherwise
+    """
+    try:
+        response = await client.post(
+            f"{settings.lightrag_url}/graph/relation/create",
+            json={
+                "source_entity": src_id,
+                "target_entity": tgt_id,
+                "relation_data": {
+                    "description": f"{src_id} {relation} {tgt_id}",
+                    "keywords": relation,
+                    "weight": 1.0,
+                },
+            },
+            timeout=10.0,
+        )
+        response.raise_for_status()
+        return True
+    except httpx.HTTPError as e:
+        if retry_count < settings.MAX_RETRIES:
+            await asyncio.sleep(2**retry_count)  # Exponential backoff
+            return await create_relationship(src_id, tgt_id, relation, client, retry_count + 1)
+        else:
+            logger.error(
+                f"Failed to create relationship after {settings.MAX_RETRIES} retries: "
+                f"{src_id} --[{relation}]--> {tgt_id} - {e}"
+            )
+            return False
+
+
+async def create_cv_entities(
+    cv_meta: Dict[str, Any],
+    client: httpx.AsyncClient,
+    shared_relationships: Set[Tuple[str, str, str]]
+) -> Dict[str, int]:
+    """Create custom entities for a CV with relationships.
+
+    This function creates typed entities and relationships for CV knowledge graph:
+    - CV entity (unique per CV)
+    - DOMAIN_JOB, JOB, XP entities (shared, deduplicated)
+    - CV-specific relationships (WORKS_IN, HAS_JOB_TITLE, HAS_EXPERIENCE_LEVEL)
+    - Shared relationships (INCLUDES_JOB, REQUIRES_LEVEL) with client-side deduplication
+
+    Args:
+        cv_meta: CV metadata from manifest
+        client: HTTP client for API calls
+        shared_relationships: Set to track created shared relationships (deduplication)
+
+    Returns:
+        Dictionary with creation statistics
+    """
+    stats = {
+        "cv_entities_created": 0,
+        "domain_job_entities_created": 0,
+        "job_entities_created": 0,
+        "xp_entities_created": 0,
+        "relationships_created": 0,
+        "relationships_skipped": 0,  # Duplicates avoided
+        "errors": 0
+    }
+
+    # Extract metadata
+    candidate_label = cv_meta["candidate_label"]
+    role_domain = cv_meta.get("role_domain", "Unknown")
+    job_title = cv_meta.get("job_title", "Unknown")
+    experience_level = cv_meta.get("experience_level", "Unknown")
+
+    # Build CV description
+    description = f"{role_domain} / {job_title} / {experience_level}"
+
+    try:
+        # Create CV entity (unique per CV)
+        cv_exists = await check_entity_exists(candidate_label, client)
+        if not cv_exists:
+            if await create_entity(candidate_label, description, "CV", client):
+                stats["cv_entities_created"] += 1
+                logger.info(f"   ✓ Created CV entity: {candidate_label}")
+        else:
+            logger.info(f"   • CV entity already exists: {candidate_label}")
+
+        # Create shared entities (deduplicated across CVs)
+        domain_exists = await check_entity_exists(role_domain, client)
+        if not domain_exists:
+            if await create_entity(role_domain, role_domain, "DOMAIN_JOB", client):
+                stats["domain_job_entities_created"] += 1
+                logger.info(f"   ✓ Created DOMAIN_JOB entity: {role_domain}")
+        else:
+            logger.debug(f"   • DOMAIN_JOB entity already exists: {role_domain}")
+
+        job_exists = await check_entity_exists(job_title, client)
+        if not job_exists:
+            if await create_entity(job_title, job_title, "JOB", client):
+                stats["job_entities_created"] += 1
+                logger.info(f"   ✓ Created JOB entity: {job_title}")
+        else:
+            logger.debug(f"   • JOB entity already exists: {job_title}")
+
+        xp_exists = await check_entity_exists(experience_level, client)
+        if not xp_exists:
+            if await create_entity(experience_level, experience_level, "XP", client):
+                stats["xp_entities_created"] += 1
+                logger.info(f"   ✓ Created XP entity: {experience_level}")
+        else:
+            logger.debug(f"   • XP entity already exists: {experience_level}")
+
+        # Create CV-specific relationships (always create)
+        cv_relationships = [
+            (candidate_label, "WORKS_IN", role_domain),
+            (candidate_label, "HAS_JOB_TITLE", job_title),
+            (candidate_label, "HAS_EXPERIENCE_LEVEL", experience_level),
+        ]
+
+        for src_id, relation, tgt_id in cv_relationships:
+            if await create_relationship(src_id, tgt_id, relation, client):
+                stats["relationships_created"] += 1
+            else:
+                stats["errors"] += 1
+
+        # Create shared relationships (with client-side deduplication)
+        shared_rels = [
+            (role_domain, "INCLUDES_JOB", job_title),
+            (job_title, "REQUIRES_LEVEL", experience_level),
+        ]
+
+        for src_id, relation, tgt_id in shared_rels:
+            rel_key = (src_id, relation, tgt_id)
+            if rel_key not in shared_relationships:
+                if await create_relationship(src_id, tgt_id, relation, client):
+                    shared_relationships.add(rel_key)  # Track to avoid duplicates
+                    stats["relationships_created"] += 1
+                else:
+                    stats["errors"] += 1
+            else:
+                # Already created by previous CV
+                stats["relationships_skipped"] += 1
+                logger.debug(f"   • Skipped duplicate relationship: {src_id} --[{relation}]--> {tgt_id}")
+
+    except Exception as e:
+        logger.error(f"Error creating entities for CV: {candidate_label} - {e}")
+        stats["errors"] += 1
+
+    return stats
 
 
 async def create_document_metadata_table(conn: asyncpg.Connection):
@@ -157,8 +387,7 @@ async def submit_cv_to_lightrag(
                 f"[CANDIDATE_LABEL: {candidate_label}]\n"
                 f"[JOB_TITLE: {cv_meta.get('job_title', 'Unknown')}]\n"
                 f"[ROLE_DOMAIN: {cv_meta.get('role_domain', 'Unknown')}]\n"
-                f"[EXPERIENCE_LEVEL: {cv_meta.get('experience_level', 'Unknown')}]\n"
-                f"[PAGE: {chunk.get('metadata', {}).get('page', 'N/A')}]\n\n"
+                f"[EXPERIENCE_LEVEL: {cv_meta.get('experience_level', 'Unknown')}]\n\n"                
             )
             texts.append(metadata_header + chunk.get("content", ""))
             file_sources.append(f"cv_{candidate_label}_{idx}")
@@ -236,13 +465,13 @@ async def cleanup_rejected_cvs(manifest: Dict) -> Dict:
         has_parsed_file = parsed_file.exists()
         is_latin = cv_meta.get("is_latin_text", False)
 
-        if not has_parsed_file or is_latin != True:
+        if not has_parsed_file or not is_latin:
             # This CV is rejected
             rejected_count += 1
             reason = []
             if not has_parsed_file:
                 reason.append("no parsed file")
-            if is_latin != True:
+            if not is_latin:
                 reason.append(f"is_latin_text={is_latin}")
 
             logger.info(f"🗑️  Removing {candidate_label}: {', '.join(reason)}")
@@ -281,13 +510,18 @@ async def cleanup_rejected_cvs(manifest: Dict) -> Dict:
     return manifest
 
 
-async def import_cvs(candidate_label: Optional[str] = None, skip_cleanup: bool = False):
+async def import_cvs(
+    candidate_label: Optional[str] = None,
+    skip_cleanup: bool = False,
+    skip_entities: bool = False
+):
     """
     Main import function - submits CVs to LightRAG and tracks metadata.
 
     Args:
         candidate_label: If provided, import only this CV. Otherwise import all.
         skip_cleanup: If True, skip the cleanup phase (for testing)
+        skip_entities: If True, skip entity creation (backward compatibility)
     """
     # Load manifest
     manifest_path = settings.CV_MANIFEST
@@ -324,6 +558,10 @@ async def import_cvs(candidate_label: Optional[str] = None, skip_cleanup: bool =
     logger.info("CV IMPORT TO LIGHTRAG")
     logger.info("=" * 70)
     logger.info(f"Total CVs to import: {len(cvs_to_import)}")
+    if skip_entities:
+        logger.info("⚠ Entity creation SKIPPED (--skip-entities flag)")
+    else:
+        logger.info("📊 Entity creation ENABLED")
     logger.info("")
 
     # Connect to database
@@ -345,6 +583,20 @@ async def import_cvs(candidate_label: Optional[str] = None, skip_cleanup: bool =
     successful = 0
     failed = 0
     skipped_non_latin = 0
+
+    # Entity creation stats (Story 2.9.2)
+    total_entity_stats = {
+        "cv_entities_created": 0,
+        "domain_job_entities_created": 0,
+        "job_entities_created": 0,
+        "xp_entities_created": 0,
+        "relationships_created": 0,
+        "relationships_skipped": 0,
+        "errors": 0
+    }
+
+    # Initialize shared relationships tracking set (Story 2.9.2)
+    shared_relationships: Set[Tuple[str, str, str]] = set()
 
     async with httpx.AsyncClient(timeout=settings.INGESTION_TIMEOUT) as client:
         for cv_meta in cvs_to_import:
@@ -372,6 +624,28 @@ async def import_cvs(candidate_label: Optional[str] = None, skip_cleanup: bool =
             # Load parsed data
             with open(parsed_file, 'r') as f:
                 parsed_data = json.load(f)
+
+            # Create custom entities first (if not skipped) - Story 2.9.2
+            if not skip_entities:
+                entity_stats = await create_cv_entities(cv_meta, client, shared_relationships)
+                logger.info(
+                    f"   Entities for {candidate_label}: "
+                    f"CV={entity_stats['cv_entities_created']}, "
+                    f"DOMAIN_JOB={entity_stats['domain_job_entities_created']}, "
+                    f"JOB={entity_stats['job_entities_created']}, "
+                    f"XP={entity_stats['xp_entities_created']}, "
+                    f"Relations={entity_stats['relationships_created']} "
+                    f"(skipped {entity_stats['relationships_skipped']} duplicates), "
+                    f"Errors={entity_stats['errors']}"
+                )
+                # Aggregate stats
+                total_entity_stats["cv_entities_created"] += entity_stats["cv_entities_created"]
+                total_entity_stats["domain_job_entities_created"] += entity_stats["domain_job_entities_created"]
+                total_entity_stats["job_entities_created"] += entity_stats["job_entities_created"]
+                total_entity_stats["xp_entities_created"] += entity_stats["xp_entities_created"]
+                total_entity_stats["relationships_created"] += entity_stats["relationships_created"]
+                total_entity_stats["relationships_skipped"] += entity_stats["relationships_skipped"]
+                total_entity_stats["errors"] += entity_stats["errors"]
 
             # Submit to LightRAG
             success = await submit_cv_to_lightrag(cv_meta, parsed_data, client)
@@ -411,6 +685,22 @@ async def import_cvs(candidate_label: Optional[str] = None, skip_cleanup: bool =
     logger.info(f"Failed imports:           {failed}")
     logger.info("")
 
+    # Entity creation summary (Story 2.9.2)
+    if not skip_entities:
+        logger.info("=" * 70)
+        logger.info("ENTITY CREATION SUMMARY")
+        logger.info("=" * 70)
+        logger.info(f"CV entities created:         {total_entity_stats['cv_entities_created']}")
+        logger.info(f"DOMAIN_JOB entities created: {total_entity_stats['domain_job_entities_created']}")
+        logger.info(f"JOB entities created:        {total_entity_stats['job_entities_created']}")
+        logger.info(f"XP entities created:         {total_entity_stats['xp_entities_created']}")
+        logger.info(f"Relationships created:       {total_entity_stats['relationships_created']}")
+        logger.info(f"Relationships skipped:       {total_entity_stats['relationships_skipped']} (duplicates avoided)")
+        logger.info(f"Unique shared relationships: {len(shared_relationships)}")
+        if total_entity_stats['errors'] > 0:
+            logger.warning(f"Entity creation errors:      {total_entity_stats['errors']}")
+        logger.info("")
+
     if successful > 0:
         logger.info("✅ CV import completed successfully!")
     else:
@@ -421,7 +711,7 @@ async def import_cvs(candidate_label: Optional[str] = None, skip_cleanup: bool =
 def main():
     """Main execution with CLI argument parsing."""
     parser = argparse.ArgumentParser(
-        description="Import CVs to LightRAG with metadata tracking"
+        description="Import CVs to LightRAG with metadata tracking and custom entity creation"
     )
     parser.add_argument(
         "--candidate-label",
@@ -433,12 +723,18 @@ def main():
         action="store_true",
         help="Skip the cleanup phase (don't remove rejected CVs)"
     )
+    parser.add_argument(
+        "--skip-entities",
+        action="store_true",
+        help="Skip entity creation, only submit text chunks (default: False)"
+    )
     args = parser.parse_args()
 
     # Run async import
     asyncio.run(import_cvs(
         candidate_label=args.candidate_label,
-        skip_cleanup=args.skip_cleanup
+        skip_cleanup=args.skip_cleanup,
+        skip_entities=args.skip_entities
     ))
 
 

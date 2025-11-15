@@ -18,6 +18,14 @@
 6. [Story 2.6: LightRAG Knowledge Base Ingestion - CVs](../stories/story-2.6.md)
 7. [Story 2.7: Document Processing Performance Baseline](../stories/story-2.7.md)
 
+## Related Epics
+
+- 🚧 [Epic 2.9: Custom Entity Creation During Ingestion](epic-2.9.md) - **In Progress** (2/3 stories complete)
+  - Brownfield enhancement adding custom typed entities to knowledge graph
+  - ✅ Story 2.9.1: CIGREF Custom Entity Creation - **Done**
+  - ✅ Story 2.9.2: CV Custom Entity Creation - **Done** (WAIVED concerns)
+  - ⏸️ Story 2.9.3: Testing & Documentation - **Deferred to Phase 2**
+
 ## Epic Status
 
 - **Status**: In Progress

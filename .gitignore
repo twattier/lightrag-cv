@@ -45,6 +45,7 @@ volumes/
 # Data files (CVs and CIGREF profiles)
 data/lightrag/*
 data/cvs/imported/*
+data/db_clean/*
 
 # Logs
 *.log

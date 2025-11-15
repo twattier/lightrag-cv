@@ -1,0 +1,107 @@
+schema: 1
+story: '2.9.2'
+story_title: 'CV Custom Entity Creation'
+gate: WAIVED
+status_reason: 'Exit condition logic issue waived for POC scope - functionality confirmed working, code quality improvement deferred to future iteration'
+reviewer: 'Quinn (Test Architect)'
+updated: '2025-01-15T00:00:00Z'
+
+top_issues:
+  - severity: medium
+    category: logic_error
+    title: 'Exit condition incorrectly reports failure on legitimate cleanup scenarios'
+    description: 'Lines 704-708 report "No CVs were imported" and exit(1) when successful==0, but this doesn''t differentiate between all CVs rejected during cleanup (expected) vs all CVs failed during processing (error)'
+    location: 'app/cv_ingest/cv4_import.py:704-708'
+    suggested_owner: dev
+    recommendation: 'Add logic to check if cvs_to_import is empty (cleanup removed all) vs processing failed'
+    status: 'waived'
+    waiver_reason: 'User confirmed functionality works as expected. Issue documented as technical debt for future improvement.'
+
+waiver:
+  active: true
+  reason: 'Functionality validated and working correctly. Exit condition edge case does not impact current POC scope. Issue documented in technical_debt for future iteration.'
+  approved_by: 'Product Owner (via user confirmation "it works")'
+  approved_date: '2025-01-15T00:00:00Z'
+
+# Extended fields
+quality_score: 80
+expires: '2025-01-29T00:00:00Z'  # 2 weeks from review
+
+evidence:
+  tests_reviewed: 10  # SQL validation queries
+  risks_identified: 1  # Exit logic error
+  trace:
+    ac_covered: [1, 2, 3, 4, 5, 7]  # ACs with full coverage
+    ac_gaps: [6]  # AC6 partially met (exit logic issue)
+
+nfr_validation:
+  security:
+    status: PASS
+    notes: 'No sensitive data exposure, proper error handling, parameterized SQL queries, centralized credential management'
+  performance:
+    status: PASS
+    notes: 'Excellent optimization with client-side deduplication (44% API call reduction from ~900 to ~503). Async patterns properly implemented'
+  reliability:
+    status: CONCERNS
+    notes: 'Exit condition logic error may cause false failure reports. Otherwise robust with retry logic and graceful degradation'
+  maintainability:
+    status: PASS
+    notes: 'Well-documented code with clear structure, comprehensive docstrings, and thorough SQL validation queries'
+
+recommendations:
+  immediate:  # Must fix before production
+    - action: 'Fix exit condition logic to differentiate cleanup vs processing failures'
+      refs: ['app/cv_ingest/cv4_import.py:704-708']
+      code_suggestion: |
+        total_processed = len(cvs_to_import)
+        if total_processed == 0:
+            logger.info("ℹ️  No CVs available for import (all rejected during cleanup)")
+            sys.exit(0)  # Not an error
+        elif successful > 0:
+            logger.info("✅ CV import completed successfully!")
+        elif successful == 0 and total_processed > 0:
+            logger.error("❌ No CVs were imported (all processing attempts failed)")
+            sys.exit(1)  # Actual error
+
+  future:  # Can be addressed later
+    - action: 'Consider enhancing structured logging to use extra={} for consistency'
+      refs: ['app/cv_ingest/cv4_import.py:multiple']
+    - action: 'Add edge case handling for empty manifest before cleanup'
+      refs: ['app/cv_ingest/cv4_import.py:300']
+
+technical_debt:
+  items:
+    - description: 'Some logging statements use f-strings instead of structured extra={} format'
+      impact: low
+      effort: low
+    - description: 'No automated test execution (SQL queries provided but manual)'
+      impact: medium
+      effort: high
+      note: 'Acceptable for POC scope, should be addressed in Phase 2'
+
+strengths:
+  - 'Excellent client-side relationship deduplication reduces API calls by 44%'
+  - 'Robust exponential backoff retry logic with configurable MAX_RETRIES'
+  - 'Comprehensive entity creation statistics tracking'
+  - 'Well-structured async/await patterns throughout'
+  - 'Proper adherence to coding standards (RULE 2, 7, 9, 10)'
+  - 'Clear separation of concerns with helper functions'
+  - 'Thorough SQL validation queries with documented expected counts'
+  - 'Backward compatibility maintained with --skip-entities flag'
+
+metrics:
+  lines_of_code: 742
+  functions_added: 4  # check_entity_exists, create_entity, create_relationship, create_cv_entities
+  api_calls_optimized: 397  # Reduced from ~900 to ~503
+  test_queries: 10
+  acceptance_criteria_met: 6/7
+
+risk_assessment:
+  overall_risk: medium
+  risk_score: 5/10
+  factors:
+    - 'No security-sensitive files touched'
+    - 'Moderate code complexity (742 lines)'
+    - 'SQL validation queries provided'
+    - 'Logic error in exit condition (medium severity)'
+    - '7 acceptance criteria (moderate scope)'
