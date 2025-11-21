@@ -46,6 +46,6 @@ Create new volume with the same name and restore a snapshot:
 docker run --rm -it -v data:/backup/my-app-backup -v /path/to/local_backups:/archive:ro alpine tar -xvzf /archive/full_backup_filename.tar.gz
 
 ==>
-docker run --rm -it -v lightrag-cv-postgres-data:/backup/postgres_data -v ./data/backups:/archive:ro alpine tar -xvzf /archive/backup-2025-11-15T01-05-28.tar.gz
+docker run --rm -it -v lightrag-cv-postgres-data:/backup/postgres_data -v ./data/backups:/archive:ro alpine tar -xvzf /archive/backup-Cigref-CV.tar.gz
 
 Restart the container(s) that are using the volume.
