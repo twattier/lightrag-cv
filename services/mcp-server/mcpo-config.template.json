@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "lightrag-cv": {
+      "command": "python3",
+      "args": ["-m", "app.mcp_server.server"]
+    },
+    "postgres": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-postgres",
+        "postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}"
+      ]
+    }
+  }
+}

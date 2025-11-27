@@ -74,6 +74,13 @@ services:
       EMBEDDING_BINDING_HOST: ${EMBEDDING_BINDING_HOST:-http://host.docker.internal:11434}
       EMBEDDING_BINDING_API_KEY: ${EMBEDDING_BINDING_API_KEY:-}
       EMBEDDING_TIMEOUT: ${EMBEDDING_TIMEOUT:-600}
+
+      # Reranking Configuration (uses local reranker service)
+      # RERANK_BINDING: ${RERANK_BINDING:-jina}
+      # RERANK_BINDING_HOST: ${RERANK_BINDING_HOST:-http://reranker:8182}
+      # RERANK_BINDING_API_KEY: ${RERANK_BINDING_API_KEY:-dummy}
+      # RERANK_MODEL: ${RERANK_MODEL:-jina-reranker-v3}
+      
       # Server Configuration
       PORT: 9621
       WORKING_DIR: /app/data/lightrag
@@ -179,6 +186,12 @@ services:
       - "host.docker.internal:host-gateway"
     volumes:
       - open-webui:/app/backend/data
+    networks:
+      - lightrag-network
+    # environment:
+    #   ENABLE_SIGNUP: "false"
+    #   OPENAI_API_BASE_URL: ${LLM_BINDING_HOST:-https://api.openai.com/v1}
+    #   OPENAI_API_KEY: ${LLM_BINDING_API_KEY:-}
 
 networks:
   lightrag-network:

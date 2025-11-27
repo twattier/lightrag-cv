@@ -2,7 +2,7 @@
 
 ## Status
 
-**In Progress** 🚧
+**Complete** ✅
 
 ---
 
@@ -28,14 +28,33 @@
   - Deferred to Phase 2 based on POC scope constraints
   - Manual SQL validation queries provided as interim solution
 
+- ✅ **Story 2.9.4 Complete** - Entity Cleanup Utilities:
+  - Regex-based entity extraction (`clean_extract.py`)
+  - Batch entity deletion via API (`clean_list.py`)
+  - QA Gate: CONCERNS (noted SQL injection for future fix)
+  - Completed: 2025-11-15
+
+- ✅ **Story 2.9.5 Complete** - MCP Server Refactoring for Multi-Source Tool Aggregation:
+  - Refactored mcp-server to use MCPO config file
+  - Custom LightRAG-CV tools + external MCP integrations (postgres) working
+  - QA Gate: PASS (95/100)
+  - Completed: 2025-11-27
+
+- ❌ **Story 2.9.6 Cancelled** - Local Reranker Service with Jina-Reranker-v3:
+  - Originally planned: Deploy local FastAPI service with Hugging Face jina-reranker-v3 model
+  - Cancelled: Not required for current scope
+
 ---
 
 ## Epic Status Tracking
 
-- **Status**: 2/3 Stories Complete (67%)
+- **Status**: Epic Complete (4/6 Stories Done, 1 Deferred, 1 Cancelled)
 - **Story 2.9.1**: ✅ Done
 - **Story 2.9.2**: ✅ Done (with WAIVED concerns)
 - **Story 2.9.3**: ⏸️ Deferred to Phase 2
+- **Story 2.9.4**: ✅ Done
+- **Story 2.9.5**: ✅ Done
+- **Story 2.9.6**: ❌ Cancelled
 
 ---
 
